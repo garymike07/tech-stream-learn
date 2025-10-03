@@ -640,16 +640,18 @@ export const courses: Course[] = [
     prerequisites: ["TypeScript", "Advanced JavaScript"],
     modules: [
       {
-        id: "module-1",
+        id: "module-ae-1",
         title: "Introduction",
         sections: [
           {
-            id: "section-1-1",
+            id: "section-ae-1-1",
             title: "Getting Started",
             lessons: [
               {
-                id: "lesson-1-1-1",
+                id: "lesson-ae-1-1-1",
                 title: "Course Overview",
+                videoUrl: "https://www.youtube.com/embed/placeholder",
+                videoDuration: "10:00",
               },
             ],
           },
@@ -667,16 +669,18 @@ export const courses: Course[] = [
     prerequisites: ["JavaScript", "Svelte"],
     modules: [
       {
-        id: "module-1",
+        id: "module-se-1",
         title: "Introduction",
         sections: [
           {
-            id: "section-1-1",
+            id: "section-se-1-1",
             title: "Getting Started",
             lessons: [
               {
-                id: "lesson-1-1-1",
+                id: "lesson-se-1-1-1",
                 title: "Course Overview",
+                videoUrl: "https://www.youtube.com/embed/placeholder",
+                videoDuration: "10:00",
               },
             ],
           },
@@ -694,16 +698,18 @@ export const courses: Course[] = [
     prerequisites: ["HTML", "CSS"],
     modules: [
       {
-        id: "module-1",
+        id: "module-acs-1",
         title: "Introduction",
         sections: [
           {
-            id: "section-1-1",
+            id: "section-acs-1-1",
             title: "Getting Started",
             lessons: [
               {
-                id: "lesson-1-1-1",
+                id: "lesson-acs-1-1-1",
                 title: "Course Overview",
+                videoUrl: "https://www.youtube.com/embed/placeholder",
+                videoDuration: "10:00",
               },
             ],
           },
@@ -720,16 +726,18 @@ export const courses: Course[] = [
     duration: "11 hours",
     modules: [
       {
-        id: "module-1",
+        id: "module-gfb-1",
         title: "Introduction",
         sections: [
           {
-            id: "section-1-1",
+            id: "section-gfb-1-1",
             title: "Getting Started",
             lessons: [
               {
-                id: "lesson-1-1-1",
+                id: "lesson-gfb-1-1-1",
                 title: "Course Overview",
+                videoUrl: "https://www.youtube.com/embed/placeholder",
+                videoDuration: "10:00",
               },
             ],
           },
@@ -747,16 +755,18 @@ export const courses: Course[] = [
     prerequisites: ["Java", "Spring Framework"],
     modules: [
       {
-        id: "module-1",
+        id: "module-msb-1",
         title: "Introduction",
         sections: [
           {
-            id: "section-1-1",
+            id: "section-msb-1-1",
             title: "Getting Started",
             lessons: [
               {
-                id: "lesson-1-1-1",
+                id: "lesson-msb-1-1-1",
                 title: "Course Overview",
+                videoUrl: "https://www.youtube.com/embed/placeholder",
+                videoDuration: "10:00",
               },
             ],
           },
@@ -774,16 +784,18 @@ export const courses: Course[] = [
     prerequisites: ["Ruby"],
     modules: [
       {
-        id: "module-1",
+        id: "module-iror-1",
         title: "Introduction",
         sections: [
           {
-            id: "section-1-1",
+            id: "section-iror-1-1",
             title: "Getting Started",
             lessons: [
               {
-                id: "lesson-1-1-1",
+                id: "lesson-iror-1-1-1",
                 title: "Course Overview",
+                videoUrl: "https://www.youtube.com/embed/placeholder",
+                videoDuration: "10:00",
               },
             ],
           },
@@ -801,16 +813,18 @@ export const courses: Course[] = [
     prerequisites: ["Basic cloud knowledge"],
     modules: [
       {
-        id: "module-1",
+        id: "module-gcp-1",
         title: "Introduction",
         sections: [
           {
-            id: "section-1-1",
+            id: "section-gcp-1-1",
             title: "Getting Started",
             lessons: [
               {
-                id: "lesson-1-1-1",
+                id: "lesson-gcp-1-1-1",
                 title: "Course Overview",
+                videoUrl: "https://www.youtube.com/embed/placeholder",
+                videoDuration: "10:00",
               },
             ],
           },
@@ -828,16 +842,18 @@ export const courses: Course[] = [
     prerequisites: ["Docker"],
     modules: [
       {
-        id: "module-1",
+        id: "module-kfd-1",
         title: "Introduction",
         sections: [
           {
-            id: "section-1-1",
+            id: "section-kfd-1-1",
             title: "Getting Started",
             lessons: [
               {
-                id: "lesson-1-1-1",
+                id: "lesson-kfd-1-1-1",
                 title: "Course Overview",
+                videoUrl: "https://www.youtube.com/embed/placeholder",
+                videoDuration: "10:00",
               },
             ],
           },
@@ -855,16 +871,18 @@ export const courses: Course[] = [
     prerequisites: ["Basic cloud knowledge"],
     modules: [
       {
-        id: "module-1",
+        id: "module-tiac-1",
         title: "Introduction",
         sections: [
           {
-            id: "section-1-1",
+            id: "section-tiac-1-1",
             title: "Getting Started",
             lessons: [
               {
-                id: "lesson-1-1-1",
+                id: "lesson-tiac-1-1-1",
                 title: "Course Overview",
+                videoUrl: "https://www.youtube.com/embed/placeholder",
+                videoDuration: "10:00",
               },
             ],
           },
@@ -882,16 +900,18 @@ export const courses: Course[] = [
     prerequisites: ["Python", "Machine Learning"],
     modules: [
       {
-        id: "module-1",
+        id: "module-dlt-1",
         title: "Introduction",
         sections: [
           {
-            id: "section-1-1",
+            id: "section-dlt-1-1",
             title: "Getting Started",
             lessons: [
               {
-                id: "lesson-1-1-1",
+                id: "lesson-dlt-1-1-1",
                 title: "Course Overview",
+                videoUrl: "https://www.youtube.com/embed/placeholder",
+                videoDuration: "10:00",
               },
             ],
           },
@@ -909,16 +929,18 @@ export const courses: Course[] = [
     prerequisites: ["Python", "Machine Learning"],
     modules: [
       {
-        id: "module-1",
+        id: "module-nlp-1",
         title: "Introduction",
         sections: [
           {
-            id: "section-1-1",
+            id: "section-nlp-1-1",
             title: "Getting Started",
             lessons: [
               {
-                id: "lesson-1-1-1",
+                id: "lesson-nlp-1-1-1",
                 title: "Course Overview",
+                videoUrl: "https://www.youtube.com/embed/placeholder",
+                videoDuration: "10:00",
               },
             ],
           },
@@ -936,16 +958,18 @@ export const courses: Course[] = [
     prerequisites: ["Python or Scala"],
     modules: [
       {
-        id: "module-1",
+        id: "module-bds-1",
         title: "Introduction",
         sections: [
           {
-            id: "section-1-1",
+            id: "section-bds-1-1",
             title: "Getting Started",
             lessons: [
               {
-                id: "lesson-1-1-1",
+                id: "lesson-bds-1-1-1",
                 title: "Course Overview",
+                videoUrl: "https://www.youtube.com/embed/placeholder",
+                videoDuration: "10:00",
               },
             ],
           },
@@ -962,16 +986,18 @@ export const courses: Course[] = [
     duration: "8 hours",
     modules: [
       {
-        id: "module-1",
+        id: "module-rc-1",
         title: "Introduction",
         sections: [
           {
-            id: "section-1-1",
+            id: "section-rc-1-1",
             title: "Getting Started",
             lessons: [
               {
-                id: "lesson-1-1-1",
+                id: "lesson-rc-1-1-1",
                 title: "Course Overview",
+                videoUrl: "https://www.youtube.com/embed/placeholder",
+                videoDuration: "10:00",
               },
             ],
           },
@@ -989,16 +1015,18 @@ export const courses: Course[] = [
     prerequisites: ["Node.js", "Express"],
     modules: [
       {
-        id: "module-1",
+        id: "module-ga-1",
         title: "Introduction",
         sections: [
           {
-            id: "section-1-1",
+            id: "section-ga-1-1",
             title: "Getting Started",
             lessons: [
               {
-                id: "lesson-1-1-1",
+                id: "lesson-ga-1-1-1",
                 title: "Course Overview",
+                videoUrl: "https://www.youtube.com/embed/placeholder",
+                videoDuration: "10:00",
               },
             ],
           },
@@ -1016,16 +1044,18 @@ export const courses: Course[] = [
     prerequisites: ["Basic SQL"],
     modules: [
       {
-        id: "module-1",
+        id: "module-ddm-1",
         title: "Introduction",
         sections: [
           {
-            id: "section-1-1",
+            id: "section-ddm-1-1",
             title: "Getting Started",
             lessons: [
               {
-                id: "lesson-1-1-1",
+                id: "lesson-ddm-1-1-1",
                 title: "Course Overview",
+                videoUrl: "https://www.youtube.com/embed/placeholder",
+                videoDuration: "10:00",
               },
             ],
           },
@@ -1043,16 +1073,18 @@ export const courses: Course[] = [
     prerequisites: ["Protocol Buffers"],
     modules: [
       {
-        id: "module-1",
+        id: "module-grpc-1",
         title: "Introduction",
         sections: [
           {
-            id: "section-1-1",
+            id: "section-grpc-1-1",
             title: "Getting Started",
             lessons: [
               {
-                id: "lesson-1-1-1",
+                id: "lesson-grpc-1-1-1",
                 title: "Course Overview",
+                videoUrl: "https://www.youtube.com/embed/placeholder",
+                videoDuration: "10:00",
               },
             ],
           },
@@ -1070,16 +1102,18 @@ export const courses: Course[] = [
     prerequisites: ["Basic API knowledge"],
     modules: [
       {
-        id: "module-1",
+        id: "module-asbp-1",
         title: "Introduction",
         sections: [
           {
-            id: "section-1-1",
+            id: "section-asbp-1-1",
             title: "Getting Started",
             lessons: [
               {
-                id: "lesson-1-1-1",
+                id: "lesson-asbp-1-1-1",
                 title: "Course Overview",
+                videoUrl: "https://www.youtube.com/embed/placeholder",
+                videoDuration: "10:00",
               },
             ],
           },
@@ -1097,16 +1131,18 @@ export const courses: Course[] = [
     prerequisites: ["Python"],
     modules: [
       {
-        id: "module-1",
+        id: "module-baf-1",
         title: "Introduction",
         sections: [
           {
-            id: "section-1-1",
+            id: "section-baf-1-1",
             title: "Getting Started",
             lessons: [
               {
-                id: "lesson-1-1-1",
+                id: "lesson-baf-1-1-1",
                 title: "Course Overview",
+                videoUrl: "https://www.youtube.com/embed/placeholder",
+                videoDuration: "10:00",
               },
             ],
           },
