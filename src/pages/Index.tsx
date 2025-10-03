@@ -30,7 +30,7 @@ const Index = () => {
               Build Future-Proof Skills with Mike Learning Centre
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8">
-              Comprehensive tracks across frontend, backend, cloud, data science, and more. Learn at your own pace with curated video tutorials, detailed curriculum outlines, hands-on exercises, and embedded playgrounds for rapid experimentation.
+              Comprehensive tracks across frontend, backend, cloud, data science, and more. Learn at your own pace with curated video tutorials, detailed curriculum outlines, and our dynamic exercise centre packed with step-by-step practice briefs.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/categories">
@@ -41,7 +41,7 @@ const Index = () => {
               </Link>
               <Link to="/exercises">
                 <Button size="lg" variant="outline" className="group border-border/50 bg-card/60 backdrop-blur-lg">
-                  Browse Exercises
+                  Explore Exercise Centre
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>

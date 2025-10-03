@@ -10,6 +10,8 @@ export interface Exercise {
   overview: string;
   tasks: string[];
   resources: ExerciseResource[];
+  estimatedTime: string;
+  skills: string[];
 }
 
 export const courseExercises: Record<string, Exercise[]> = {
@@ -24,6 +26,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Pass data to those components entirely through props and render a list using the array `.map` method.",
         "Add a theme toggle button that switches light/dark styles using React state."
       ],
+      estimatedTime: "2-3 hours",
+      skills: ["JSX composition", "Props", "State management"],
       resources: [
         { label: "React Docs – Describing the UI", url: "https://react.dev/learn/describing-the-ui" },
         { label: "React Docs – Passing Props to a Component", url: "https://react.dev/learn/passing-props-to-a-component" }
@@ -39,6 +43,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Render summary cards (stars, forks, open issues) and a history chart using a lightweight charting library or SVG.",
         "Persist the last searched username in `localStorage` so it auto-loads on refresh."
       ],
+      estimatedTime: "3-4 hours",
+      skills: ["React hooks", "Data fetching", "State persistence"],
       resources: [
         { label: "React Docs – Synchronizing with Effects", url: "https://react.dev/learn/synchronizing-with-effects" },
         { label: "GitHub REST API", url: "https://docs.github.com/en/rest" }
@@ -54,6 +60,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Optimistically update user data and roll back on errors, showing toast notifications for every state transition.",
         "Use the React DevTools Profiler to identify a re-render hotspot and memoize it away. Document the improvement."
       ],
+      estimatedTime: "4-6 hours",
+      skills: ["Form validation", "React Query", "Performance profiling"],
       resources: [
         { label: "React Query Docs – Mutations", url: "https://tanstack.com/query/latest/docs/framework/react/guides/mutations" },
         { label: "WAI-ARIA Authoring Practices", url: "https://www.w3.org/WAI/ARIA/apg/" }
@@ -71,6 +79,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Validate incoming payloads with `zod` or `yup` and send descriptive error responses.",
         "Log concise request summaries (method, url, response time) using a custom middleware."
       ],
+      estimatedTime: "2-3 hours",
+      skills: ["Express routing", "Request validation", "Logging"],
       resources: [
         { label: "Express.js Guide", url: "https://expressjs.com/en/starter/hello-world.html" },
         { label: "Zod Validation", url: "https://zod.dev/" }
@@ -86,6 +96,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Integrate dotenv-driven configuration and provide default fallbacks for development vs production.",
         "Write integration tests with Jest or Vitest to cover critical routes, seeding an in-memory datastore before each run."
       ],
+      estimatedTime: "4-5 hours",
+      skills: ["Architecture refactoring", "Configuration management", "Integration testing"],
       resources: [
         { label: "Node.js Best Practices", url: "https://github.com/goldbergyoni/nodebestpractices" },
         { label: "Jest Docs", url: "https://jestjs.io/docs/getting-started" }
@@ -101,6 +113,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Implement healthcheck and readiness endpoints that inspect queue health, external APIs, and DB connectivity.",
         "Wire structured logging (Pino) and metrics (Prometheus client) with dashboards for queue throughput and failures."
       ],
+      estimatedTime: "5-6 hours",
+      skills: ["Background processing", "Health checks", "Observability"],
       resources: [
         { label: "BullMQ Guide", url: "https://docs.bullmq.io/" },
         { label: "Prometheus Node Client", url: "https://github.com/siimon/prom-client" }
@@ -118,6 +132,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Build class-based views (ListView, DetailView, CreateView) and connect them to URLs.",
         "Style the templates with Tailwind or DaisyUI and ensure CSRF tokens exist on forms."
       ],
+      estimatedTime: "3-4 hours",
+      skills: ["Django ORM", "Class-based views", "Template styling"],
       resources: [
         { label: "Django Tutorial", url: "https://docs.djangoproject.com/en/stable/intro/tutorial01/" },
         { label: "Class-Based Views", url: "https://docs.djangoproject.com/en/stable/ref/class-based-views/" }
@@ -133,6 +149,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Implement JWT authentication using `djangorestframework-simplejwt` and secure selected endpoints.",
         "Add search and ordering filters for courses plus pagination config documented for API consumers."
       ],
+      estimatedTime: "4-5 hours",
+      skills: ["Django REST Framework", "Authentication", "API filtering"],
       resources: [
         { label: "DRF Tutorial", url: "https://www.django-rest-framework.org/tutorial/quickstart/" },
         { label: "SimpleJWT", url: "https://django-rest-framework-simplejwt.readthedocs.io/en/latest/" }
@@ -148,6 +166,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Configure Django Channels with Redis to broadcast course completion events to connected clients.",
         "Record background Celery tasks as they progress and emit structured JSON payloads over the websocket."
       ],
+      estimatedTime: "5-6 hours",
+      skills: ["Async Django", "WebSockets", "Task orchestration"],
       resources: [
         { label: "Async Django Docs", url: "https://docs.djangoproject.com/en/stable/topics/async/" },
         { label: "Django Channels", url: "https://channels.readthedocs.io/en/stable/" }
@@ -165,6 +185,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Launch a t3.micro EC2 instance in a new security group with least-privilege inbound rules.",
         "Document the resources you created, their region, and teardown steps in a runbook."
       ],
+      estimatedTime: "2-3 hours",
+      skills: ["AWS console", "S3 lifecycle", "Security groups"],
       resources: [
         { label: "AWS Free Tier", url: "https://aws.amazon.com/free/" },
         { label: "Well-Architected Framework", url: "https://aws.amazon.com/architecture/well-architected/" }
@@ -180,6 +202,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Store transformed data in DynamoDB with a TTL attribute and expose a Query interface via Lambda.",
         "Set up CloudWatch alarms for error spikes and configure SNS notifications for the on-call rotation."
       ],
+      estimatedTime: "4-5 hours",
+      skills: ["Serverless design", "DynamoDB", "Monitoring"],
       resources: [
         { label: "Lambda Developer Guide", url: "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html" },
         { label: "DynamoDB Best Practices", url: "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/best-practices.html" }
@@ -195,6 +219,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Create an AWS CodePipeline (or GitHub Actions) workflow that lints templates, deploys to staging, then promotes to production via manual approval.",
         "Instrument the service with AWS X-Ray and capture traces into CloudWatch dashboards for latency analysis."
       ],
+      estimatedTime: "6-8 hours",
+      skills: ["Infrastructure as code", "CI/CD", "Distributed tracing"],
       resources: [
         { label: "Terraform AWS Provider", url: "https://registry.terraform.io/providers/hashicorp/aws/latest/docs" },
         { label: "AWS CodePipeline User Guide", url: "https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html" }
@@ -212,6 +238,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Inspect pods, logs, and events to understand the lifecycle; delete and recreate them to watch reconciliation.",
         "Define a ConfigMap and Secret, mount them into a pod, and print their values safely."
       ],
+      estimatedTime: "2-3 hours",
+      skills: ["Kubectl fundamentals", "Deployments", "Config management"],
       resources: [
         { label: "Kubernetes Basics", url: "https://kubernetes.io/docs/tutorials/kubernetes-basics/" },
         { label: "kubectl Cheat Sheet", url: "https://kubernetes.io/docs/reference/kubectl/cheatsheet/" }
@@ -227,6 +255,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Configure a PodDisruptionBudget and rolling update strategy, then perform a controlled upgrade.",
         "Back up the database using Velero or native tooling, simulate node failure, and restore from backup."
       ],
+      estimatedTime: "4-5 hours",
+      skills: ["Stateful workloads", "Release strategies", "Backup/restore"],
       resources: [
         { label: "StatefulSet Concepts", url: "https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/" },
         { label: "Velero", url: "https://velero.io/docs/" }
@@ -242,6 +272,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Enforce pod security using Kyverno or OPA Gatekeeper policies for namespaces and resource quotas.",
         "Collect metrics with Prometheus and visualize golden signals on Grafana; alert on saturation."
       ],
+      estimatedTime: "5-6 hours",
+      skills: ["Ingress", "Policy enforcement", "Observability"],
       resources: [
         { label: "Ingress NGINX", url: "https://kubernetes.github.io/ingress-nginx/" },
         { label: "Kyverno Policies", url: "https://kyverno.io/policies/" }
@@ -259,6 +291,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Generate descriptive statistics, correlation heatmaps, and at least three visualizations with seaborn.",
         "Document your findings in a Jupyter notebook with Markdown narratives and action items."
       ],
+      estimatedTime: "3-4 hours",
+      skills: ["Pandas", "Data cleaning", "Visualization"],
       resources: [
         { label: "Pandas User Guide", url: "https://pandas.pydata.org/docs/user_guide/index.html" },
         { label: "Seaborn Tutorial", url: "https://seaborn.pydata.org/tutorial.html" }
@@ -274,6 +308,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Compare performance of at least three scikit-learn models using cross-validation and ROC/AUC metrics.",
         "Log experiments with MLflow or Weights & Biases and summarize which features contributed most."
       ],
+      estimatedTime: "4-5 hours",
+      skills: ["Feature engineering", "Model evaluation", "Experiment tracking"],
       resources: [
         { label: "scikit-learn Feature Engineering", url: "https://scikit-learn.org/stable/modules/feature_engineering.html" },
         { label: "MLflow Tracking", url: "https://mlflow.org/docs/latest/tracking.html" }
@@ -289,6 +325,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Implement data quality checks with Great Expectations or Pandera and halt runs on critical failures.",
         "Containerize the pipeline and deploy on a managed scheduler (Astronomer, Prefect Cloud, or Kubernetes CronJob)."
       ],
+      estimatedTime: "6-8 hours",
+      skills: ["Data orchestration", "Data quality", "Containerization"],
       resources: [
         { label: "Prefect Docs", url: "https://docs.prefect.io/latest/" },
         { label: "Great Expectations", url: "https://greatexpectations.io/" }
@@ -306,6 +344,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Train logistic regression and decision tree models, tuning hyperparameters via grid search.",
         "Plot confusion matrices and learning curves, interpreting under/over-fitting signals."
       ],
+      estimatedTime: "3-4 hours",
+      skills: ["Data splitting", "Model training", "Evaluation metrics"],
       resources: [
         { label: "scikit-learn Model Evaluation", url: "https://scikit-learn.org/stable/modules/model_evaluation.html" },
         { label: "Kaggle Titanic", url: "https://www.kaggle.com/competitions/titanic" }
@@ -321,6 +361,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Use SHAP values to explain predictions for key observations and summarize global feature importance.",
         "Export the best model with joblib and serve predictions through a FastAPI endpoint."
       ],
+      estimatedTime: "4-5 hours",
+      skills: ["Gradient boosting", "Explainability", "Model serving"],
       resources: [
         { label: "XGBoost Docs", url: "https://xgboost.readthedocs.io/en/stable/" },
         { label: "SHAP Explainers", url: "https://shap.readthedocs.io/en/latest/" }
@@ -336,6 +378,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Automate retraining using GitHub Actions or GitLab CI triggered by new data in cloud storage.",
         "Implement drift detection with evidentlyAI or custom scripts and alert when thresholds are exceeded."
       ],
+      estimatedTime: "6-8 hours",
+      skills: ["Docker", "CI/CD", "Model monitoring"],
       resources: [
         { label: "Evidently AI", url: "https://docs.evidentlyai.com/" },
         { label: "MLOps Specialization", url: "https://cloud.google.com/learn/courses/mlops-fundamentals" }
@@ -353,6 +397,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Write advanced SELECT queries using window functions, CTEs, and conditional aggregates.",
         "Create indexes for frequent queries, measure improvements with `EXPLAIN (ANALYZE)`, and document findings."
       ],
+      estimatedTime: "3-4 hours",
+      skills: ["Schema design", "Advanced SQL", "Index tuning"],
       resources: [
         { label: "PostgreSQL Tutorial", url: "https://www.postgresql.org/docs/current/tutorial.html" },
         { label: "Use the Index", url: "https://use-the-index-luke.com/" }
@@ -368,6 +414,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Create a materialized view for reporting queries and refresh it incrementally.",
         "Set up pg_stat_statements and track top slow queries, applying tuning to reduce latency."
       ],
+      estimatedTime: "4-5 hours",
+      skills: ["Partitioning", "Materialized views", "Monitoring"],
       resources: [
         { label: "Partitioning", url: "https://www.postgresql.org/docs/current/ddl-partitioning.html" },
         { label: "pg_stat_statements", url: "https://www.postgresql.org/docs/current/pgstatstatements.html" }
@@ -383,6 +431,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Automate backups with WAL archiving and pgBackRest or barman.",
         "Perform a failover simulation, promote the replica, and re-establish the original primary as standby."
       ],
+      estimatedTime: "5-6 hours",
+      skills: ["Replication", "Backup strategies", "Disaster recovery"],
       resources: [
         { label: "Streaming Replication", url: "https://www.postgresql.org/docs/current/warm-standby.html" },
         { label: "pgBackRest", url: "https://pgbackrest.org/" }
@@ -400,6 +450,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Practice CRUD operations via MongoDB Shell or Compass, leveraging projections and `find` filters.",
         "Create compound indexes for common queries and observe their impact with `explain`."
       ],
+      estimatedTime: "2-3 hours",
+      skills: ["Document modeling", "CRUD operations", "Indexing"],
       resources: [
         { label: "MongoDB CRUD", url: "https://www.mongodb.com/docs/manual/crud/" },
         { label: "Data Modeling", url: "https://www.mongodb.com/docs/manual/core/data-modeling-introduction/" }
@@ -415,6 +467,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Use `$graphLookup` or `$unwind` to explore prerequisite relationships between courses.",
         "Create a reusable pipeline stage using `$setWindowFields` for moving averages."
       ],
+      estimatedTime: "3-4 hours",
+      skills: ["Aggregation", "Data analysis", "Pipeline optimization"],
       resources: [
         { label: "Aggregation Pipeline", url: "https://www.mongodb.com/docs/manual/core/aggregation-pipeline/" },
         { label: "Mongo Playground", url: "https://mongoplayground.net/" }
@@ -430,6 +484,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Shard a large collection based on a hashed key and analyze chunk distribution.",
         "Implement Ops Manager or Cloud Manager monitoring with alerting for replica lag and disk usage."
       ],
+      estimatedTime: "5-6 hours",
+      skills: ["Security", "Sharding", "Monitoring"],
       resources: [
         { label: "MongoDB Security", url: "https://www.mongodb.com/docs/manual/security/" },
         { label: "Sharding Introduction", url: "https://www.mongodb.com/docs/manual/sharding/" }
@@ -447,6 +503,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Document the API with OpenAPI/Swagger, including examples and authentication requirements.",
         "Build a Postman collection that demonstrates the happy path and typical failures."
       ],
+      estimatedTime: "2-3 hours",
+      skills: ["REST design", "API documentation", "Client testing"],
       resources: [
         { label: "REST API Tutorial", url: "https://restfulapi.net/" },
         { label: "OpenAPI Specification", url: "https://swagger.io/specification/" }
@@ -462,6 +520,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Add OAuth2 or JWT authentication flows with refresh token rotation.",
         "Capture structured logs and metrics for each endpoint, surfacing them on a Grafana dashboard."
       ],
+      estimatedTime: "4-5 hours",
+      skills: ["Security", "Authentication", "Monitoring"],
       resources: [
         { label: "OWASP API Security Top 10", url: "https://owasp.org/API-Security/" },
         { label: "Grafana", url: "https://grafana.com/docs/grafana/latest/" }
@@ -477,6 +537,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Introduce circuit breakers and bulkheads using library support (resilience4j, Envoy, or Istio).",
         "Set up consumer-driven contract testing with Pact and add it to CI."
       ],
+      estimatedTime: "5-6 hours",
+      skills: ["Resilience", "Fault tolerance", "Contract testing"],
       resources: [
         { label: "Resilience4j", url: "https://resilience4j.readme.io/" },
         { label: "Pact Docs", url: "https://docs.pact.io/" }
@@ -494,6 +556,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Add dependency-injected services for database access and wrap responses in pagination meta.",
         "Customize the OpenAPI schema with tags, summaries, and reusable response models."
       ],
+      estimatedTime: "3-4 hours",
+      skills: ["Pydantic", "Dependency injection", "OpenAPI"],
       resources: [
         { label: "FastAPI Tutorial", url: "https://fastapi.tiangolo.com/tutorial/" },
         { label: "Pydantic", url: "https://docs.pydantic.dev/latest/" }
@@ -509,6 +573,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Schedule background processing of long-running tasks via Celery or FastAPI BackgroundTasks.",
         "Secure endpoints with OAuth2 password flows and refresh tokens, verifying scopes per route."
       ],
+      estimatedTime: "4-5 hours",
+      skills: ["Async I/O", "Background tasks", "Security"],
       resources: [
         { label: "SQLModel", url: "https://sqlmodel.tiangolo.com/" },
         { label: "Celery", url: "https://docs.celeryq.dev/en/stable/" }
@@ -524,6 +590,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Containerize the app with a multi-stage Dockerfile and run behind Uvicorn + Gunicorn.",
         "Register Prometheus metrics, structured logging, and distributed tracing with OpenTelemetry."
       ],
+      estimatedTime: "5-6 hours",
+      skills: ["Testing", "Docker", "Observability"],
       resources: [
         { label: "FastAPI Testing", url: "https://fastapi.tiangolo.com/tutorial/testing/" },
         { label: "OpenTelemetry Python", url: "https://opentelemetry.io/docs/instrumentation/python/" }
@@ -541,6 +609,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Fetch data with `fetch` inside server components and stream results using Suspense boundaries.",
         "Implement metadata export for SEO and generate Open Graph images for routes."
       ],
+      estimatedTime: "3-4 hours",
+      skills: ["App Router", "Server components", "SEO metadata"],
       resources: [
         { label: "Next.js App Router", url: "https://nextjs.org/docs/app" },
         { label: "Metadata API", url: "https://nextjs.org/docs/app/building-your-application/optimizing/metadata" }
@@ -556,6 +626,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Implement ISR (Incremental Static Regeneration) and route-level caching strategies.",
         "Secure API routes with NextAuth or custom middleware protecting sensitive pages."
       ],
+      estimatedTime: "4-5 hours",
+      skills: ["Server actions", "Caching", "Authentication"],
       resources: [
         { label: "Next.js Server Actions", url: "https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions" },
         { label: "NextAuth", url: "https://next-auth.js.org/" }
@@ -571,6 +643,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Integrate Sentry (or OpenTelemetry) for error tracking and tracing server actions.",
         "Add full e2e tests with Playwright covering streaming UIs and server actions."
       ],
+      estimatedTime: "5-6 hours",
+      skills: ["Performance tuning", "Error monitoring", "E2E testing"],
       resources: [
         { label: "Next.js Performance Guide", url: "https://nextjs.org/learn/foundations/performance" },
         { label: "Playwright", url: "https://playwright.dev/docs/intro" }
@@ -588,6 +662,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Implement reusable composables for fetching data and debouncing inputs.",
         "Create a responsive layout using `<script setup>` and SFC `<style scoped>` utilities."
       ],
+      estimatedTime: "3-4 hours",
+      skills: ["Composition API", "Composables", "Responsive layouts"],
       resources: [
         { label: "Vue Composition API", url: "https://vuejs.org/guide/introduction.html" },
         { label: "VueUse Collection", url: "https://vueuse.org/" }
@@ -603,6 +679,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Implement route guards checking authentication and unsaved changes before navigation.",
         "Lazy-load route groups and analyze bundle impact using Vue CLI or Vite stats."
       ],
+      estimatedTime: "4-5 hours",
+      skills: ["Pinia", "Vue Router", "Code splitting"],
       resources: [
         { label: "Pinia", url: "https://pinia.vuejs.org/" },
         { label: "Vue Router", url: "https://router.vuejs.org/" }
@@ -618,6 +696,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Write component tests with Vitest + Testing Library and end-to-end tests with Cypress.",
         "Audit accessibility using Axe DevTools and remediate issues in critical flows."
       ],
+      estimatedTime: "5-6 hours",
+      skills: ["SSR", "Testing", "Accessibility"],
       resources: [
         { label: "Nuxt 3", url: "https://nuxt.com/docs" },
         { label: "Vue Testing Library", url: "https://testing-library.com/docs/vue-testing-library/intro/" }
@@ -635,6 +715,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Build writable stores for user settings and persist them via the browser Storage API.",
         "Handle progressive enhancement with form actions and enhance helper for optimistic UI."
       ],
+      estimatedTime: "3-4 hours",
+      skills: ["Svelte stores", "Routing", "Progressive enhancement"],
       resources: [
         { label: "SvelteKit Docs", url: "https://kit.svelte.dev/docs/introduction" },
         { label: "Svelte Stores", url: "https://svelte.dev/docs/svelte-store" }
@@ -650,6 +732,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Deploy to Vercel or Cloudflare using the corresponding SvelteKit adapter.",
         "Stream data to clients using `setHeaders` and EventSource integration for live updates."
       ],
+      estimatedTime: "4-5 hours",
+      skills: ["API endpoints", "Deployment", "Streaming"],
       resources: [
         { label: "SvelteKit Endpoints", url: "https://kit.svelte.dev/docs/load" },
         { label: "SvelteKit Hooks", url: "https://kit.svelte.dev/docs/hooks" }
@@ -665,6 +749,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Enable image optimization and fonts via SvelteKit's asset handling or external services.",
         "Implement security headers (CSP, HSTS) and analyze SSR performance using Lighthouse CI."
       ],
+      estimatedTime: "5-6 hours",
+      skills: ["Testing", "Asset optimization", "Security headers"],
       resources: [
         { label: "Playwright Test", url: "https://playwright.dev/docs/test-intro" },
         { label: "Lighthouse CI", url: "https://github.com/GoogleChrome/lighthouse-ci" }
@@ -682,6 +768,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Use goroutines and channels to parallelize heavy computations, ensuring deterministic ordering with WaitGroups.",
         "Write unit tests using Go's testing package and capture coverage reports."
       ],
+      estimatedTime: "3-4 hours",
+      skills: ["Go syntax", "Concurrency", "Testing"],
       resources: [
         { label: "Tour of Go", url: "https://go.dev/tour/welcome/1" },
         { label: "Go Modules", url: "https://go.dev/doc/modules" }
@@ -697,6 +785,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Connect to PostgreSQL using sqlc or GORM and implement repository patterns with context timeouts.",
         "Add rate limiting via a token bucket algorithm and benchmark throughput with autocannon."
       ],
+      estimatedTime: "4-5 hours",
+      skills: ["HTTP services", "Database access", "Performance benchmarking"],
       resources: [
         { label: "chi router", url: "https://github.com/go-chi/chi" },
         { label: "Go Context", url: "https://go.dev/doc/context" }
@@ -712,6 +802,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Implement saga-like workflows using NATS or Kafka for asynchronous processing.",
         "Instrument with OpenTelemetry exporting traces to Jaeger and metrics to Prometheus."
       ],
+      estimatedTime: "6-8 hours",
+      skills: ["Microservices", "Event-driven design", "Telemetry"],
       resources: [
         { label: "OpenTelemetry Go", url: "https://opentelemetry.io/docs/instrumentation/go/" },
         { label: "Jaeger", url: "https://www.jaegertracing.io/docs/" }
@@ -729,6 +821,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Implement CRUD endpoints with `@RestController`, using DTOs and ModelMapper for conversions.",
         "Write unit tests with JUnit 5 and Mockito for service and repository layers."
       ],
+      estimatedTime: "3-4 hours",
+      skills: ["Spring Boot", "Data JPA", "Testing"],
       resources: [
         { label: "Spring Boot Docs", url: "https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/" },
         { label: "Spring Guides", url: "https://spring.io/guides" }
@@ -744,6 +838,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Register services with Eureka or Consul and route traffic through Spring Cloud Gateway.",
         "Implement distributed tracing with Sleuth and Zipkin to visualize requests."
       ],
+      estimatedTime: "5-6 hours",
+      skills: ["Service decomposition", "Service discovery", "Distributed tracing"],
       resources: [
         { label: "Spring Cloud", url: "https://spring.io/projects/spring-cloud" },
         { label: "Zipkin", url: "https://zipkin.io/" }
@@ -759,6 +855,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Secure endpoints with Spring Security and OAuth2, protecting gateway routes with JWT scopes.",
         "Deploy to Kubernetes with Helm charts and configure Prometheus + Grafana dashboards."
       ],
+      estimatedTime: "6-8 hours",
+      skills: ["Resilience patterns", "Security", "Kubernetes deployment"],
       resources: [
         { label: "Resilience4j", url: "https://resilience4j.readme.io/docs" },
         { label: "Spring Security", url: "https://spring.io/projects/spring-security" }
@@ -776,6 +874,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Provision Azure Storage (Blob + Table) and connect it to the app with managed identities.",
         "Enable Activity Log alerts for unexpected resource deletions."
       ],
+      estimatedTime: "2-3 hours",
+      skills: ["Azure portal", "App Service", "Managed identities"],
       resources: [
         { label: "Azure Fundamentals", url: "https://learn.microsoft.com/azure/?view=azurerm" },
         { label: "Azure Pricing Calculator", url: "https://azure.microsoft.com/pricing/calculator/" }
@@ -791,6 +891,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Create a YAML pipeline that builds a container image, runs tests, and deploys to Azure Container Apps.",
         "Implement environment approval gates and integrate security scanning (Trivy or GitHub Advanced Security)."
       ],
+      estimatedTime: "4-5 hours",
+      skills: ["Azure DevOps", "CI/CD", "Security scanning"],
       resources: [
         { label: "Azure Pipeline Docs", url: "https://learn.microsoft.com/azure/devops/pipelines/?view=azure-devops" },
         { label: "Trivy", url: "https://aquasecurity.github.io/trivy/v0.49/" }
@@ -806,6 +908,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Implement Azure Monitor workbooks and log analytics queries for cost and security insights.",
         "Automate governance with Azure Policy to enforce tag conventions and allowed SKUs."
       ],
+      estimatedTime: "6-8 hours",
+      skills: ["Landing zones", "Monitoring", "Governance"],
       resources: [
         { label: "Azure Landing Zone", url: "https://learn.microsoft.com/azure/cloud-adoption-framework/ready/landing-zone/" },
         { label: "Azure Policy", url: "https://learn.microsoft.com/azure/governance/policy/overview" }
@@ -823,6 +927,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Deploy a Compute Engine VM with startup scripts installing a web server.",
         "Set up Cloud Storage buckets with lifecycle management and signed URLs."
       ],
+      estimatedTime: "2-3 hours",
+      skills: ["Project setup", "Compute Engine", "Cloud Storage"],
       resources: [
         { label: "GCP Getting Started", url: "https://cloud.google.com/docs/overview" },
         { label: "Cloud Shell", url: "https://cloud.google.com/shell/docs" }
@@ -838,6 +944,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Configure IAM custom roles and service accounts with least privilege for CI/CD pipelines.",
         "Deploy a Cloud Run service and restrict invocation to specific service accounts."
       ],
+      estimatedTime: "4-5 hours",
+      skills: ["VPC design", "IAM", "Cloud Run"],
       resources: [
         { label: "VPC Networks", url: "https://cloud.google.com/vpc/docs/overview" },
         { label: "IAM Best Practices", url: "https://cloud.google.com/iam/docs/using-iam-securely" }
@@ -853,6 +961,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Add Cloud Monitoring dashboards and uptime checks; configure alerting policies for key SLOs.",
         "Instrument a service with Cloud Trace and Cloud Profiler to diagnose latency."
       ],
+      estimatedTime: "6-8 hours",
+      skills: ["Data pipelines", "Monitoring", "Tracing"],
       resources: [
         { label: "BigQuery", url: "https://cloud.google.com/bigquery/docs" },
         { label: "Cloud Monitoring", url: "https://cloud.google.com/monitoring/docs" }
@@ -870,6 +980,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Visualize metrics with TensorBoard and apply callbacks for early stopping and checkpointing.",
         "Export and reload the SavedModel, running inference on custom inputs."
       ],
+      estimatedTime: "4-5 hours",
+      skills: ["TensorFlow basics", "Callbacks", "Model export"],
       resources: [
         { label: "TensorFlow Beginner", url: "https://www.tensorflow.org/tutorials/quickstart/beginner" },
         { label: "TensorBoard", url: "https://www.tensorflow.org/tensorboard" }
@@ -885,6 +997,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Fine-tune a pretrained EfficientNet or ResNet model and compare accuracy vs baseline.",
         "Deploy the model to TensorFlow Serving or TF Lite for edge inference."
       ],
+      estimatedTime: "5-6 hours",
+      skills: ["CNNs", "Transfer learning", "Model deployment"],
       resources: [
         { label: "Transfer Learning", url: "https://www.tensorflow.org/tutorials/images/transfer_learning" },
         { label: "TensorFlow Serving", url: "https://www.tensorflow.org/tfx/guide/serving" }
@@ -900,6 +1014,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Optimize input pipelines using `tf.data`, caching, and prefetching for maximal throughput.",
         "Integrate hyperparameter tuning with KerasTuner and track experiments via Vertex AI or Weights & Biases."
       ],
+      estimatedTime: "6-8 hours",
+      skills: ["Distributed training", "Input pipelines", "Hyperparameter tuning"],
       resources: [
         { label: "Distributed Training", url: "https://www.tensorflow.org/guide/distributed_training" },
         { label: "KerasTuner", url: "https://keras.io/keras_tuner/" }
@@ -917,6 +1033,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Compare Bag-of-Words vs TF-IDF features for sentiment analysis and evaluate results.",
         "Visualize word frequencies with word clouds and bar charts, noting domain-specific stopwords."
       ],
+      estimatedTime: "3-4 hours",
+      skills: ["Text cleaning", "Vectorization", "Visualization"],
       resources: [
         { label: "spaCy", url: "https://spacy.io/usage/spacy-101" },
         { label: "NLTK Book", url: "http://www.nltk.org/book/" }
@@ -932,6 +1050,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Measure metrics like accuracy, F1, and confusion matrix using `evaluate`.",
         "Deploy the model behind FastAPI or Streamlit, adding caching for embeddings with FAISS or Chroma."
       ],
+      estimatedTime: "4-5 hours",
+      skills: ["Transformer fine-tuning", "Evaluation", "Model serving"],
       resources: [
         { label: "Hugging Face Course", url: "https://huggingface.co/course/chapter1" },
         { label: "FAISS", url: "https://faiss.ai/" }
@@ -947,6 +1067,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Track prompt/response quality with human feedback loops and structured evaluation forms.",
         "Integrate guardrails for toxicity or PII detection, logging results to an analytics dashboard."
       ],
+      estimatedTime: "6-8 hours",
+      skills: ["RAG systems", "LLM evaluation", "Safety guardrails"],
       resources: [
         { label: "LangChain", url: "https://python.langchain.com/" },
         { label: "OpenAI Safety Best Practices", url: "https://platform.openai.com/docs/guides/safety-best-practices" }
@@ -964,6 +1086,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Experiment with Redis data structures (lists, sets, sorted sets) for leaderboards and tags.",
         "Measure hit/miss ratios and derive when to invalidate caches."
       ],
+      estimatedTime: "2-3 hours",
+      skills: ["Caching strategies", "Redis data types", "Metrics"],
       resources: [
         { label: "Redis Data Types", url: "https://redis.io/docs/data-types/" },
         { label: "Caching Patterns", url: "https://redis.io/docs/latest/develop/use-cases/caching/" }
@@ -979,6 +1103,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Build retry and dead-letter queues for failed stream entries.",
         "Benchmark throughput under load and scale consumers horizontally."
       ],
+      estimatedTime: "3-4 hours",
+      skills: ["Streams", "Queue design", "Scalability"],
       resources: [
         { label: "Redis Streams", url: "https://redis.io/docs/data-types/streams/" },
         { label: "Redis Pub/Sub", url: "https://redis.io/docs/latest/develop/use-cases/pubsub/" }
@@ -994,6 +1120,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Implement access control lists (ACLs) and TLS for secure connections.",
         "Monitor latency, memory fragmentation, and slow log events, alerting on anomalies."
       ],
+      estimatedTime: "5-6 hours",
+      skills: ["Clustering", "Security", "Monitoring"],
       resources: [
         { label: "Redis Cluster", url: "https://redis.io/docs/management/scaling/" },
         { label: "Redis ACL", url: "https://redis.io/topics/acl" }
@@ -1011,6 +1139,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Create stored procedures for enrollment operations and enforce business rules with triggers.",
         "Back up the database using mysqldump and restore into a fresh instance."
       ],
+      estimatedTime: "3-4 hours",
+      skills: ["Schema normalization", "Procedures & triggers", "Backup/restore"],
       resources: [
         { label: "MySQL Tutorial", url: "https://dev.mysql.com/doc/refman/8.0/en/tutorial.html" },
         { label: "Normalization", url: "https://dev.mysql.com/doc/refman/8.0/en/normalization.html" }
@@ -1026,6 +1156,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Enable slow query log and set up alerts when thresholds exceed expected values.",
         "Benchmark improvements using sysbench or mysqlslap and record results."
       ],
+      estimatedTime: "4-5 hours",
+      skills: ["Query analysis", "Monitoring", "Benchmarking"],
       resources: [
         { label: "MySQL Optimizer", url: "https://dev.mysql.com/doc/refman/8.0/en/execution-plan-information.html" },
         { label: "Sysbench", url: "https://github.com/akopytov/sysbench" }
@@ -1041,6 +1173,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Implement point-in-time recovery using binary logs.",
         "Set up MySQL InnoDB Cluster or Group Replication and test failure scenarios."
       ],
+      estimatedTime: "5-6 hours",
+      skills: ["Replication", "Recovery", "High availability"],
       resources: [
         { label: "MySQL Replication", url: "https://dev.mysql.com/doc/refman/8.0/en/replication.html" },
         { label: "InnoDB Cluster", url: "https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-innodb-cluster-userguide.html" }
@@ -1058,6 +1192,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Implement resolvers with data loaders to batch requests and prevent N+1.",
         "Document schema with descriptions and create example operations in Apollo Sandbox."
       ],
+      estimatedTime: "3-4 hours",
+      skills: ["Schema design", "Resolvers", "Documentation"],
       resources: [
         { label: "Apollo Server Docs", url: "https://www.apollographql.com/docs/apollo-server/" },
         { label: "GraphQL Best Practices", url: "https://graphql.org/learn/best-practices/" }
@@ -1073,6 +1209,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Implement field policies, pagination helpers, and optimistic UI states.",
         "Add GraphQL subscriptions for live updates via WebSocketLink."
       ],
+      estimatedTime: "4-5 hours",
+      skills: ["Apollo Client", "Caching", "Realtime updates"],
       resources: [
         { label: "Apollo Client", url: "https://www.apollographql.com/docs/react/" },
         { label: "GraphQL Subscriptions", url: "https://www.apollographql.com/docs/react/data/subscriptions/" }
@@ -1088,6 +1226,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Implement schema checks, contract testing, and feature flagging for new fields.",
         "Monitor GraphQL performance with Apollo Studio metrics and define schema governance rules."
       ],
+      estimatedTime: "5-6 hours",
+      skills: ["Federation", "Governance", "Performance monitoring"],
       resources: [
         { label: "Apollo Federation", url: "https://www.apollographql.com/docs/federation/" },
         { label: "Apollo Studio", url: "https://www.apollographql.com/docs/studio/" }
@@ -1105,6 +1245,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Implement unary RPCs and stream responses for long-running listings.",
         "Write automated tests to validate serialization compatibility across languages."
       ],
+      estimatedTime: "3-4 hours",
+      skills: ["Protocol Buffers", "RPC design", "Cross-language testing"],
       resources: [
         { label: "Protocol Buffers", url: "https://protobuf.dev/" },
         { label: "gRPC Basics", url: "https://grpc.io/docs/" }
@@ -1120,6 +1262,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Implement interceptors for authentication, logging, and tracing metadata.",
         "Handle deadlines and cancellation gracefully, propagating context to downstream calls."
       ],
+      estimatedTime: "4-5 hours",
+      skills: ["Resilience", "Interceptors", "Deadline handling"],
       resources: [
         { label: "gRPC Service Config", url: "https://grpc.io/blog/service-config/" },
         { label: "gRPC Interceptors", url: "https://grpc.io/docs/guides/concepts/#interceptors" }
@@ -1135,6 +1279,8 @@ export const courseExercises: Record<string, Exercise[]> = {
         "Secure connections with mTLS certificates and enforce RBAC using Open Policy Agent.",
         "Capture distributed traces with OpenTelemetry and visualize them in Jaeger."
       ],
+      estimatedTime: "5-6 hours",
+      skills: ["Protocol translation", "mTLS", "Tracing"],
       resources: [
         { label: "grpc-gateway", url: "https://github.com/grpc-ecosystem/grpc-gateway" },
         { label: "mTLS Concepts", url: "https://www.cloudflare.com/learning/access-management/what-is-mutual-tls/" }
