@@ -17,10 +17,13 @@ type SignupPayload = AuthCredentials & {
 interface AuthContextValue {
   user: AuthUser | null;
   enrollments: string[];
+  subscriptionStatus: "free" | "premium";
+  maxFreeCourses: number;
   signup: (payload: SignupPayload) => Promise<void>;
   login: (payload: AuthCredentials) => Promise<void>;
   logout: () => void;
   enrollCourse: (courseId: string) => void;
+  requestSubscription: () => void;
 }
 
 type StoredUser = {
@@ -33,6 +36,7 @@ const STORAGE_KEYS = {
   USERS: "tech-stream-learn-users",
   SESSION: "tech-stream-learn-session",
   ENROLLMENTS: "tech-stream-learn-enrollments",
+  SUBSCRIPTION: "tech-stream-learn-subscription",
 } as const;
 
 const AuthContext = createContext<AuthContextValue | undefined>(undefined);
@@ -81,6 +85,8 @@ const persistEnrollments = (map: Record<string, string[]>) => {
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState<AuthUser | null>(null);
   const [enrollments, setEnrollments] = useState<string[]>([]);
+  const [subscriptionStatus, setSubscriptionStatus] = useState<"free" | "premium">("free");
+  const maxFreeCourses = 3;
 
   useEffect(() => {
     const raw = localStorage.getItem(STORAGE_KEYS.SESSION);
@@ -112,6 +118,22 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     persistEnrollments(existing);
   }, [enrollments, user]);
 
+  useEffect(() => {
+    if (!user) return;
+    const raw = localStorage.getItem(`${STORAGE_KEYS.SUBSCRIPTION}-${user.email}`);
+    if (!raw) {
+      setSubscriptionStatus("free");
+      return;
+    }
+    try {
+      const parsed = JSON.parse(raw) as { status: "free" | "premium" };
+      setSubscriptionStatus(parsed.status ?? "free");
+    } catch (error) {
+      console.error("Failed to parse subscription", error);
+      setSubscriptionStatus("free");
+    }
+  }, [user]);
+
   const signup = useCallback(async ({ email, password, fullName }: SignupPayload) => {
     const trimmedEmail = email.trim().toLowerCase();
     const users = getStoredUsers();
@@ -130,6 +152,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     persistUsers([...users, newUser]);
     setUser({ email: trimmedEmail, fullName: newUser.fullName });
     setEnrollments([]);
+    localStorage.setItem(`${STORAGE_KEYS.SUBSCRIPTION}-${trimmedEmail}`, JSON.stringify({ status: "free" }));
+    setSubscriptionStatus("free");
   }, []);
 
   const login = useCallback(async ({ email, password }: AuthCredentials) => {
@@ -143,10 +167,23 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     }
 
     setUser({ email: trimmedEmail, fullName: match.fullName });
+    const raw = localStorage.getItem(`${STORAGE_KEYS.SUBSCRIPTION}-${trimmedEmail}`);
+    if (raw) {
+      try {
+        const parsed = JSON.parse(raw) as { status: "free" | "premium" };
+        setSubscriptionStatus(parsed.status ?? "free");
+      } catch (error) {
+        console.error("Failed to parse subscription on login", error);
+        setSubscriptionStatus("free");
+      }
+    } else {
+      setSubscriptionStatus("free");
+    }
   }, []);
 
   const logout = useCallback(() => {
     setUser(null);
+    setSubscriptionStatus("free");
   }, []);
 
   const enrollCourse = useCallback(
@@ -155,21 +192,39 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         throw new Error("You need to be signed in to enroll.");
       }
 
+      if (subscriptionStatus === "free") {
+        const currentCount = enrollments.length;
+        const isExisting = enrollments.includes(courseId);
+        if (!isExisting && currentCount >= maxFreeCourses) {
+          throw new Error("Free plan limit reached. Subscribe for unlimited course access.");
+        }
+      }
+
       setEnrollments((current) => (current.includes(courseId) ? current : [...current, courseId]));
     },
-    [user],
+    [user, subscriptionStatus, enrollments, maxFreeCourses],
   );
+
+  const requestSubscription = useCallback(() => {
+    if (!user) {
+      throw new Error("Sign in to manage your subscription.");
+    }
+    localStorage.setItem(`${STORAGE_KEYS.SUBSCRIPTION}-${user.email}`, JSON.stringify({ status: "free" }));
+  }, [user]);
 
   const value = useMemo<AuthContextValue>(
     () => ({
       user,
       enrollments,
+      subscriptionStatus,
+      maxFreeCourses,
       signup,
       login,
       logout,
       enrollCourse,
+      requestSubscription,
     }),
-    [user, enrollments, signup, login, logout, enrollCourse],
+    [user, enrollments, subscriptionStatus, maxFreeCourses, signup, login, logout, enrollCourse, requestSubscription],
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

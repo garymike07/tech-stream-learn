@@ -82,13 +82,13 @@ const Exercises = () => {
                     Real-world briefs
                   </Badge>
                   <Badge variant="secondary" className="bg-muted/40 text-muted-foreground">
+                    Skills-focused outcomes
+                  </Badge>
                   <Badge variant="secondary" className="bg-emerald-500/15 text-emerald-200">
                     {courseCompletionsLabel} course badges
                   </Badge>
                   <Badge variant="secondary" className="bg-blue-500/15 text-blue-200">
                     {exerciseCompletionsLabel} exercises completed
-                  </Badge>
-                    Skills-focused outcomes
                   </Badge>
                 </div>
               </CardContent>

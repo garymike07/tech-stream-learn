@@ -50,6 +50,12 @@ const Header = () => {
             >
               Exercises
             </Link>
+            <Link
+              to="/subscribe"
+              className="text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
+            >
+              Pricing
+            </Link>
           </nav>
 
           <div className="flex items-center gap-3">

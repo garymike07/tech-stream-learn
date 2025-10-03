@@ -30,7 +30,7 @@ const Index = () => {
               Build Future-Proof Skills with Mike Learning Centre
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8">
-              Comprehensive tracks across frontend, backend, cloud, data science, and more. Learn at your own pace with curated video tutorials, detailed curriculum outlines, and our dynamic exercise centre packed with step-by-step practice briefs.
+              Comprehensive tracks across frontend, backend, cloud, data science, and more. Learn at your own pace with curated video tutorials, detailed curriculum outlines, and our dynamic exercise centre packed with step-by-step practice briefs. Start free with three full courses—upgrade for unlimited mastery when you&apos;re ready.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/categories">
@@ -42,6 +42,12 @@ const Index = () => {
               <Link to="/exercises">
                 <Button size="lg" variant="outline" className="group border-border/50 bg-card/60 backdrop-blur-lg">
                   Explore Exercise Centre
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+              <Link to="/subscribe">
+                <Button size="lg" variant="ghost" className="group border border-border/40 bg-card/50 backdrop-blur-lg text-primary hover:text-primary">
+                  View Pricing
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
@@ -158,6 +164,53 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Plans Section */}
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <div className="mb-12 text-center">
+            <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-primary">
+              Flexible access
+            </span>
+            <h2 className="mt-4 text-3xl md:text-4xl font-bold">Choose how you learn</h2>
+            <p className="mt-2 text-lg text-muted-foreground">Master three courses for free. Upgrade anytime for unlimited access and premium exercises.</p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2">
+            <Card className="border border-border/40 bg-card/40 backdrop-blur-xl shadow-glow">
+              <CardHeader>
+                <CardTitle>Free • 0 KES</CardTitle>
+                <CardDescription>Kickstart your journey with generous limits.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li>✅ Full access to 3 complete courses</li>
+                  <li>✅ Dynamic exercise centre previews</li>
+                  <li>✅ Progress tracking on every lesson</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="border border-primary/40 bg-primary/10 backdrop-blur-xl shadow-glow">
+              <CardHeader>
+                <CardTitle className="text-primary">Premium • 500 KES / month</CardTitle>
+                <CardDescription className="text-primary/80">Unlimited learning, advanced exercises, and upcoming perks.</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <ul className="space-y-2 text-sm text-primary/80">
+                  <li>✨ Unlimited courses & exercise walkthroughs</li>
+                  <li>✨ Early access to new tracks & badges</li>
+                  <li>✨ Priority roadmap influence</li>
+                </ul>
+                <Button asChild variant="secondary" disabled className="w-full shadow-glow">
+                  <span>M-Pesa checkout launching soon</span>
+                </Button>
+                <p className="text-xs text-primary/70">Secure M-Pesa STK push payments are on the way. We&apos;ll notify you before launch.</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
@@ -173,6 +226,11 @@ const Index = () => {
                 Browse All Courses
               </Button>
             </Link>
+            <div className="mt-4 flex justify-center">
+              <Link to="/subscribe" className="text-sm text-primary underline-offset-4 hover:underline">
+                Unlock unlimited access for KES 500/month • M-Pesa coming soon
+              </Link>
+            </div>
           </div>
         </div>
       </section>
