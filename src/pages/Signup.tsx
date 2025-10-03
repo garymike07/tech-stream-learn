@@ -26,9 +26,10 @@ const schema = z
 type SignupFormValues = z.infer<typeof schema>;
 
 const Signup = () => {
-  const { signup } = useAuth();
+  const { signup, monthlyPriceKes } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
+  const formattedPrice = monthlyPriceKes.toLocaleString("en-KE");
 
   const returnTo = (location.state as { intended?: string } | null)?.intended ?? "/";
 
@@ -52,7 +53,7 @@ const Signup = () => {
 
       toast({
         title: "Account created",
-        description: "Welcome to Mike Learning Centre!",
+        description: `Welcome to Mike Learning Centre! Enjoy 30 days of unlimited access—after that it's just KES ${formattedPrice}/month to keep going.`,
       });
       navigate(returnTo, { replace: true });
     } catch (error) {
@@ -73,7 +74,7 @@ const Signup = () => {
           <CardHeader className="space-y-3 text-center">
             <CardTitle className="text-3xl font-bold text-primary">Create your account</CardTitle>
             <CardDescription className="text-muted-foreground">
-              Unlock personalized learning paths and track your progress across courses.
+              Unlock personalized learning paths, progress tracking, and an automatic 30-day unlimited trial.
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -137,7 +138,7 @@ const Signup = () => {
                 </div>
 
                 <Button type="submit" className="w-full">
-                  Create account
+                  Create account & start trial
                 </Button>
               </form>
             </Form>

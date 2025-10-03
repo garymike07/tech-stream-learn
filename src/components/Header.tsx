@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { LogOut } from "lucide-react";
 
@@ -6,8 +7,27 @@ import { useAuth } from "@/context/AuthContext";
 import { toast } from "@/hooks/use-toast";
 
 const Header = () => {
-  const { user, logout } = useAuth();
+  const { user, logout, subscriptionStatus, trialDaysRemaining } = useAuth();
   const navigate = useNavigate();
+
+  const statusText = useMemo(() => {
+    switch (subscriptionStatus) {
+      case "premium":
+        return "Premium member";
+      case "trial":
+        if (typeof trialDaysRemaining === "number") {
+          if (trialDaysRemaining > 0) {
+            return `Trial • ${trialDaysRemaining} day${trialDaysRemaining === 1 ? "" : "s"} left`;
+          }
+          return "Trial ends today";
+        }
+        return "Trial access";
+      case "trial_expired":
+        return "Trial ended";
+      default:
+        return "Free tier";
+    }
+  }, [subscriptionStatus, trialDaysRemaining]);
 
   const handleLogout = () => {
     logout();
@@ -62,7 +82,7 @@ const Header = () => {
             {user ? (
               <>
                 <div className="hidden text-sm font-medium text-foreground/60 sm:flex sm:flex-col sm:items-end">
-                  <span className="text-xs uppercase tracking-wide text-primary/80">Learner</span>
+                  <span className="text-xs uppercase tracking-wide text-primary/80">{statusText}</span>
                   <span>{user.fullName}</span>
                 </div>
                 <Button variant="ghost" size="icon" onClick={handleLogout} className="text-muted-foreground">

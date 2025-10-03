@@ -2,9 +2,13 @@ import Header from "@/components/Header";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Sparkles, CreditCard, Clock, ShieldCheck } from "lucide-react";
+import { Sparkles, Clock, ShieldCheck, Timer } from "lucide-react";
+import { useAuth } from "@/context/AuthContext";
 
 const Subscribe = () => {
+  const { monthlyPriceKes } = useAuth();
+  const formattedPrice = `KES ${monthlyPriceKes}/month`;
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
@@ -17,7 +21,7 @@ const Subscribe = () => {
               </div>
               <CardTitle className="text-4xl font-bold">Mike Learning Centre Premium</CardTitle>
               <CardDescription className="text-base md:text-lg">
-                Learn without limits for just <span className="font-semibold text-primary">KES 500/month</span>. We&apos;re bringing secure M-Pesa payments soon—lock in early access and stay notified when checkout opens.
+                Start with a complimentary 30-day trial. After that, continue learning without limits for just <span className="font-semibold text-primary">{formattedPrice}</span>. We&apos;re bringing secure M-Pesa payments soon—lock in early access and stay notified when checkout opens.
               </CardDescription>
             </CardHeader>
             <CardContent className="grid gap-6 md:grid-cols-2">
@@ -27,6 +31,7 @@ const Subscribe = () => {
                   <h3 className="text-2xl font-semibold">Free forever</h3>
                   <p className="mt-2 text-sm text-muted-foreground">Perfect for getting started.</p>
                   <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+                    <li>✅ 30-day unlimited trial for every new learner</li>
                     <li>✅ Access to 3 full-length courses</li>
                     <li>✅ Dynamic exercise centre previews</li>
                     <li>✅ Progress tracked locally</li>
@@ -36,7 +41,7 @@ const Subscribe = () => {
               <div className="space-y-4">
                 <p className="text-sm uppercase tracking-[0.35em] text-primary">Coming soon</p>
                 <div className="rounded-2xl border border-primary/40 bg-primary/10 p-6 shadow-glow">
-                  <h3 className="text-2xl font-semibold text-primary">Premium • KES 500 / month</h3>
+                  <h3 className="text-2xl font-semibold text-primary">Premium • {formattedPrice}</h3>
                   <p className="mt-2 text-sm text-primary/90">Unlock unlimited access, exclusive exercises, and badge-worthy challenges.</p>
                   <ul className="mt-4 space-y-2 text-sm text-primary/80">
                     <li>✨ Unlimited courses & lessons</li>
@@ -58,11 +63,11 @@ const Subscribe = () => {
             <Card className="border border-border/40 bg-card/40 backdrop-blur-xl">
               <CardHeader className="space-y-3">
                 <Badge variant="outline" className="border-primary/40 text-primary">
-                  <CreditCard className="mr-1 h-3.5 w-3.5" /> Seamless billing
+                  <Timer className="mr-1 h-3.5 w-3.5" /> 30-day trial included
                 </Badge>
                 <CardTitle>No hidden fees</CardTitle>
                 <CardDescription>
-                  One flat rate. Cancel anytime. We&apos;ll email you when checkout goes live.
+                  Enjoy full access for 30 days at no cost, then one flat monthly rate once you subscribe.
                 </CardDescription>
               </CardHeader>
             </Card>

@@ -4,8 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { categories } from "@/data/courses";
 import { ArrowRight, BookOpen, Users, Award, Code2 } from "lucide-react";
+import { useAuth } from "@/context/AuthContext";
 
 const Index = () => {
+  const { monthlyPriceKes } = useAuth();
+  const formattedPrice = `KES ${monthlyPriceKes}/month`;
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
@@ -30,7 +34,7 @@ const Index = () => {
               Build Future-Proof Skills with Mike Learning Centre
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8">
-              Comprehensive tracks across frontend, backend, cloud, data science, and more. Learn at your own pace with curated video tutorials, detailed curriculum outlines, and our dynamic exercise centre packed with step-by-step practice briefs. Start free with three full courses—upgrade for unlimited mastery when you&apos;re ready.
+              Comprehensive tracks across frontend, backend, cloud, data science, and more. Learn at your own pace with curated video tutorials, detailed curriculum outlines, and our dynamic exercise centre packed with step-by-step practice briefs. Every new learner begins with a 30-day unlimited trial, then continues for just {formattedPrice} when ready.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/categories">
@@ -172,7 +176,7 @@ const Index = () => {
               Flexible access
             </span>
             <h2 className="mt-4 text-3xl md:text-4xl font-bold">Choose how you learn</h2>
-            <p className="mt-2 text-lg text-muted-foreground">Master three courses for free. Upgrade anytime for unlimited access and premium exercises.</p>
+            <p className="mt-2 text-lg text-muted-foreground">Master three courses for free. Unlock a 30-day unlimited trial, then upgrade anytime for unlimited access and premium exercises.</p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2">
@@ -192,8 +196,8 @@ const Index = () => {
 
             <Card className="border border-primary/40 bg-primary/10 backdrop-blur-xl shadow-glow">
               <CardHeader>
-                <CardTitle className="text-primary">Premium • 500 KES / month</CardTitle>
-                <CardDescription className="text-primary/80">Unlimited learning, advanced exercises, and upcoming perks.</CardDescription>
+                <CardTitle className="text-primary">Premium • {formattedPrice}</CardTitle>
+                <CardDescription className="text-primary/80">30-day trial included for new learners, then unlimited learning, advanced exercises, and upcoming perks.</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <ul className="space-y-2 text-sm text-primary/80">
@@ -228,7 +232,7 @@ const Index = () => {
             </Link>
             <div className="mt-4 flex justify-center">
               <Link to="/subscribe" className="text-sm text-primary underline-offset-4 hover:underline">
-                Unlock unlimited access for KES 500/month • M-Pesa coming soon
+                Unlock unlimited access after your trial for {formattedPrice} • M-Pesa coming soon
               </Link>
             </div>
           </div>
