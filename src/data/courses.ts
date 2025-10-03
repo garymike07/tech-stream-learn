@@ -638,7 +638,24 @@ export const courses: Course[] = [
     difficulty: "Advanced",
     duration: "18 hours",
     prerequisites: ["TypeScript", "Advanced JavaScript"],
-    modules: [],
+    modules: [
+      {
+        id: "module-1",
+        title: "Introduction",
+        sections: [
+          {
+            id: "section-1-1",
+            title: "Getting Started",
+            lessons: [
+              {
+                id: "lesson-1-1-1",
+                title: "Course Overview",
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     id: "sveltekit-essentials",
@@ -648,7 +665,24 @@ export const courses: Course[] = [
     difficulty: "Intermediate",
     duration: "9 hours",
     prerequisites: ["JavaScript", "Svelte"],
-    modules: [],
+    modules: [
+      {
+        id: "module-1",
+        title: "Introduction",
+        sections: [
+          {
+            id: "section-1-1",
+            title: "Getting Started",
+            lessons: [
+              {
+                id: "lesson-1-1-1",
+                title: "Course Overview",
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     id: "advanced-css-sass",
@@ -658,7 +692,24 @@ export const courses: Course[] = [
     difficulty: "Intermediate",
     duration: "7 hours",
     prerequisites: ["HTML", "CSS"],
-    modules: [],
+    modules: [
+      {
+        id: "module-1",
+        title: "Introduction",
+        sections: [
+          {
+            id: "section-1-1",
+            title: "Getting Started",
+            lessons: [
+              {
+                id: "lesson-1-1-1",
+                title: "Course Overview",
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     id: "go-for-beginners",
@@ -667,7 +718,24 @@ export const courses: Course[] = [
     category: "backend",
     difficulty: "Beginner",
     duration: "11 hours",
-    modules: [],
+    modules: [
+      {
+        id: "module-1",
+        title: "Introduction",
+        sections: [
+          {
+            id: "section-1-1",
+            title: "Getting Started",
+            lessons: [
+              {
+                id: "lesson-1-1-1",
+                title: "Course Overview",
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     id: "microservices-spring-boot",
@@ -677,7 +745,24 @@ export const courses: Course[] = [
     difficulty: "Advanced",
     duration: "20 hours",
     prerequisites: ["Java", "Spring Framework"],
-    modules: [],
+    modules: [
+      {
+        id: "module-1",
+        title: "Introduction",
+        sections: [
+          {
+            id: "section-1-1",
+            title: "Getting Started",
+            lessons: [
+              {
+                id: "lesson-1-1-1",
+                title: "Course Overview",
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     id: "intro-ruby-on-rails",
@@ -687,7 +772,24 @@ export const courses: Course[] = [
     difficulty: "Beginner",
     duration: "13 hours",
     prerequisites: ["Ruby"],
-    modules: [],
+    modules: [
+      {
+        id: "module-1",
+        title: "Introduction",
+        sections: [
+          {
+            id: "section-1-1",
+            title: "Getting Started",
+            lessons: [
+              {
+                id: "lesson-1-1-1",
+                title: "Course Overview",
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     id: "gcp-associate-cloud-engineer",
@@ -697,7 +799,24 @@ export const courses: Course[] = [
     difficulty: "Intermediate",
     duration: "22 hours",
     prerequisites: ["Basic cloud knowledge"],
-    modules: [],
+    modules: [
+      {
+        id: "module-1",
+        title: "Introduction",
+        sections: [
+          {
+            id: "section-1-1",
+            title: "Getting Started",
+            lessons: [
+              {
+                id: "lesson-1-1-1",
+                title: "Course Overview",
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     id: "kubernetes-for-developers",
@@ -707,7 +826,24 @@ export const courses: Course[] = [
     difficulty: "Intermediate",
     duration: "16 hours",
     prerequisites: ["Docker"],
-    modules: [],
+    modules: [
+      {
+        id: "module-1",
+        title: "Introduction",
+        sections: [
+          {
+            id: "section-1-1",
+            title: "Getting Started",
+            lessons: [
+              {
+                id: "lesson-1-1-1",
+                title: "Course Overview",
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     id: "terraform-iac",
@@ -717,7 +853,24 @@ export const courses: Course[] = [
     difficulty: "Intermediate",
     duration: "12 hours",
     prerequisites: ["Basic cloud knowledge"],
-    modules: [],
+    modules: [
+      {
+        id: "module-1",
+        title: "Introduction",
+        sections: [
+          {
+            id: "section-1-1",
+            title: "Getting Started",
+            lessons: [
+              {
+                id: "lesson-1-1-1",
+                title: "Course Overview",
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     id: "deep-learning-tensorflow",
@@ -727,7 +880,24 @@ export const courses: Course[] = [
     difficulty: "Advanced",
     duration: "25 hours",
     prerequisites: ["Python", "Machine Learning"],
-    modules: [],
+    modules: [
+      {
+        id: "module-1",
+        title: "Introduction",
+        sections: [
+          {
+            id: "section-1-1",
+            title: "Getting Started",
+            lessons: [
+              {
+                id: "lesson-1-1-1",
+                title: "Course Overview",
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     id: "nlp-with-python",
@@ -737,7 +907,24 @@ export const courses: Course[] = [
     difficulty: "Advanced",
     duration: "19 hours",
     prerequisites: ["Python", "Machine Learning"],
-    modules: [],
+    modules: [
+      {
+        id: "module-1",
+        title: "Introduction",
+        sections: [
+          {
+            id: "section-1-1",
+            title: "Getting Started",
+            lessons: [
+              {
+                id: "lesson-1-1-1",
+                title: "Course Overview",
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     id: "big-data-spark",
@@ -747,7 +934,24 @@ export const courses: Course[] = [
     difficulty: "Advanced",
     duration: "24 hours",
     prerequisites: ["Python or Scala"],
-    modules: [],
+    modules: [
+      {
+        id: "module-1",
+        title: "Introduction",
+        sections: [
+          {
+            id: "section-1-1",
+            title: "Getting Started",
+            lessons: [
+              {
+                id: "lesson-1-1-1",
+                title: "Course Overview",
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     id: "redis-caching",
@@ -756,7 +960,24 @@ export const courses: Course[] = [
     category: "databases",
     difficulty: "Intermediate",
     duration: "8 hours",
-    modules: [],
+    modules: [
+      {
+        id: "module-1",
+        title: "Introduction",
+        sections: [
+          {
+            id: "section-1-1",
+            title: "Getting Started",
+            lessons: [
+              {
+                id: "lesson-1-1-1",
+                title: "Course Overview",
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     id: "graphql-apollo",
@@ -766,7 +987,24 @@ export const courses: Course[] = [
     difficulty: "Intermediate",
     duration: "11 hours",
     prerequisites: ["Node.js", "Express"],
-    modules: [],
+    modules: [
+      {
+        id: "module-1",
+        title: "Introduction",
+        sections: [
+          {
+            id: "section-1-1",
+            title: "Getting Started",
+            lessons: [
+              {
+                id: "lesson-1-1-1",
+                title: "Course Overview",
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     id: "database-design-modeling",
@@ -776,7 +1014,24 @@ export const courses: Course[] = [
     difficulty: "Beginner",
     duration: "9 hours",
     prerequisites: ["Basic SQL"],
-    modules: [],
+    modules: [
+      {
+        id: "module-1",
+        title: "Introduction",
+        sections: [
+          {
+            id: "section-1-1",
+            title: "Getting Started",
+            lessons: [
+              {
+                id: "lesson-1-1-1",
+                title: "Course Overview",
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     id: "grpc-high-performance-apis",
@@ -786,7 +1041,24 @@ export const courses: Course[] = [
     difficulty: "Advanced",
     duration: "15 hours",
     prerequisites: ["Protocol Buffers"],
-    modules: [],
+    modules: [
+      {
+        id: "module-1",
+        title: "Introduction",
+        sections: [
+          {
+            id: "section-1-1",
+            title: "Getting Started",
+            lessons: [
+              {
+                id: "lesson-1-1-1",
+                title: "Course Overview",
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     id: "api-security-best-practices",
@@ -796,7 +1068,24 @@ export const courses: Course[] = [
     difficulty: "Intermediate",
     duration: "10 hours",
     prerequisites: ["Basic API knowledge"],
-    modules: [],
+    modules: [
+      {
+        id: "module-1",
+        title: "Introduction",
+        sections: [
+          {
+            id: "section-1-1",
+            title: "Getting Started",
+            lessons: [
+              {
+                id: "lesson-1-1-1",
+                title: "Course Overview",
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     id: "building-apis-fastapi",
@@ -806,6 +1095,23 @@ export const courses: Course[] = [
     difficulty: "Intermediate",
     duration: "12 hours",
     prerequisites: ["Python"],
-    modules: [],
+    modules: [
+      {
+        id: "module-1",
+        title: "Introduction",
+        sections: [
+          {
+            id: "section-1-1",
+            title: "Getting Started",
+            lessons: [
+              {
+                id: "lesson-1-1-1",
+                title: "Course Overview",
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
 ];
