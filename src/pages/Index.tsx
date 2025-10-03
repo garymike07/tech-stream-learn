@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { categories } from "@/data/courses";
-import { ArrowRight, BookOpen, Users, Award } from "lucide-react";
+import { ArrowRight, BookOpen, Users, Award, Code2 } from "lucide-react";
 
 const Index = () => {
   return (
@@ -11,17 +11,26 @@ const Index = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-20 md:py-32">
-        <div className="absolute inset-0">
-          <div className="h-full w-full bg-gradient-hero opacity-80 blur-[120px]" />
-        </div>
+      <section
+        className="relative overflow-hidden py-20 md:py-32 bg-center bg-cover"
+        style={{ backgroundImage: "linear-gradient(120deg, rgba(10, 13, 35, 0.72), rgba(13, 19, 42, 0.82)), url('/mike-hero.png')" }}
+      >
+        <div className="absolute inset-0 bg-code-rain opacity-80" />
+        <div className="absolute -top-10 right-10 h-80 w-80 rounded-full bg-primary/30 blur-3xl opacity-60 animate-diagonal-drift" />
+        <div className="absolute bottom-[-6rem] left-[-4rem] h-[28rem] w-[28rem] rounded-full bg-secondary/25 blur-3xl opacity-70 animate-float-tilt" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background/90 to-transparent" />
+
         <div className="container relative z-10 mx-auto px-4">
-          <div className="max-w-3xl animate-fade-in rounded-3xl border border-border/40 bg-card/40 p-10 backdrop-blur-2xl shadow-glow">
+          <div className="max-w-4xl animate-fade-in rounded-3xl border border-border/40 bg-card/50 p-10 backdrop-blur-2xl shadow-glow animate-glow-pulse">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.4em] text-primary">
+              <Code2 className="h-3.5 w-3.5" />
+              Accelerate your craft
+            </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Build Future-Proof Skills with Mike Learning Centre
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8">
-              Comprehensive tracks across frontend, backend, cloud, data science, and more. Learn at your own pace with curated video tutorials and detailed curriculum outlines.
+              Comprehensive tracks across frontend, backend, cloud, data science, and more. Learn at your own pace with curated video tutorials, detailed curriculum outlines, hands-on exercises, and embedded playgrounds for rapid experimentation.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/categories">
@@ -30,13 +39,15 @@ const Index = () => {
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
+              <Link to="/exercises">
+                <Button size="lg" variant="outline" className="group border-border/50 bg-card/60 backdrop-blur-lg">
+                  Browse Exercises
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
-        
-        {/* Decorative elements */}
-        <div className="absolute top-24 right-16 h-72 w-72 rounded-full bg-primary/30 blur-3xl opacity-60 animate-float"></div>
-        <div className="absolute bottom-10 left-10 h-96 w-96 rounded-full bg-secondary/25 blur-3xl opacity-70 animate-float" style={{ animationDelay: "1s" }}></div>
       </section>
 
       {/* Features Section */}
@@ -50,7 +61,7 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="text-center border border-border/40 bg-card/50 backdrop-blur-xl shadow-lg animate-fade-in" style={{ animationDelay: "100ms" }}>
+            <Card className="text-center border border-border/40 bg-card/50 backdrop-blur-xl shadow-lg animate-fade-in animate-glow-pulse" style={{ animationDelay: "100ms" }}>
               <CardHeader>
                 <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/15 text-primary">
                   <BookOpen className="h-7 w-7" />
@@ -64,7 +75,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="text-center border border-border/40 bg-card/50 backdrop-blur-xl shadow-lg animate-fade-in" style={{ animationDelay: "200ms" }}>
+            <Card className="text-center border border-border/40 bg-card/50 backdrop-blur-xl shadow-lg animate-fade-in animate-glow-pulse" style={{ animationDelay: "200ms" }}>
               <CardHeader>
                 <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/15 text-primary">
                   <Users className="h-7 w-7" />
@@ -78,7 +89,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="text-center border border-border/40 bg-card/50 backdrop-blur-xl shadow-lg animate-fade-in" style={{ animationDelay: "300ms" }}>
+            <Card className="text-center border border-border/40 bg-card/50 backdrop-blur-xl shadow-lg animate-fade-in animate-glow-pulse" style={{ animationDelay: "300ms" }}>
               <CardHeader>
                 <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/15 text-primary">
                   <Award className="h-7 w-7" />

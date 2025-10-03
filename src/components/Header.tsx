@@ -44,6 +44,12 @@ const Header = () => {
             >
               Categories
             </Link>
+            <Link
+              to="/exercises"
+              className="text-sm font-medium text-foreground/80 transition-colors hover:text-primary"
+            >
+              Exercises
+            </Link>
           </nav>
 
           <div className="flex items-center gap-3">
