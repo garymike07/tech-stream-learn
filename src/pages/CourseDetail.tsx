@@ -100,8 +100,9 @@ const CourseDetail = () => {
                       </h4>
                       <div className="space-y-2 ml-4">
                         {section.lessons.map((lesson) => (
-                          <div
+                          <Link
                             key={lesson.id}
+                            to={`/course/${course.id}/lesson/${lesson.id}`}
                             className="flex items-center justify-between p-3 rounded-md hover:bg-muted/50 transition-colors group cursor-pointer"
                           >
                             <div className="flex items-center gap-3">
@@ -113,7 +114,7 @@ const CourseDetail = () => {
                                 {lesson.videoDuration}
                               </span>
                             )}
-                          </div>
+                          </Link>
                         ))}
                       </div>
                     </div>

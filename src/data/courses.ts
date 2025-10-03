@@ -88,7 +88,7 @@ export const courses: Course[] = [
     description: "Learn React from scratch and build modern web applications",
     category: "frontend",
     difficulty: "Beginner",
-    duration: "8 hours",
+    duration: "12 hours",
     prerequisites: ["JavaScript basics", "HTML & CSS"],
     modules: [
       {
@@ -160,12 +160,105 @@ export const courses: Course[] = [
     ],
   },
   {
+    id: "vue-complete",
+    title: "Complete Vue.js Course",
+    description: "Master Vue.js and build dynamic single-page applications",
+    category: "frontend",
+    difficulty: "Intermediate",
+    duration: "10 hours",
+    prerequisites: ["JavaScript", "HTML & CSS"],
+    modules: [
+      {
+        id: "module-1",
+        title: "Vue Fundamentals",
+        sections: [
+          {
+            id: "section-1-1",
+            title: "Introduction to Vue",
+            lessons: [
+              {
+                id: "lesson-1-1-1",
+                title: "What is Vue.js?",
+                videoUrl: "https://www.youtube.com/embed/bzlFvd0b65c",
+                videoDuration: "18:30",
+              },
+              {
+                id: "lesson-1-1-2",
+                title: "Vue Instance and Data Binding",
+                videoUrl: "https://www.youtube.com/embed/YrxBCBibVo0",
+                videoDuration: "22:15",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "html-css-mastery",
+    title: "HTML & CSS Mastery",
+    description: "Build beautiful, responsive websites from scratch",
+    category: "frontend",
+    difficulty: "Beginner",
+    duration: "8 hours",
+    modules: [
+      {
+        id: "module-1",
+        title: "HTML Fundamentals",
+        sections: [
+          {
+            id: "section-1-1",
+            title: "HTML Basics",
+            lessons: [
+              {
+                id: "lesson-1-1-1",
+                title: "Introduction to HTML",
+                videoUrl: "https://www.youtube.com/embed/qz0aGYrrlhU",
+                videoDuration: "25:00",
+              },
+              {
+                id: "lesson-1-1-2",
+                title: "HTML Elements and Structure",
+                videoUrl: "https://www.youtube.com/embed/pQN-pnXPaVg",
+                videoDuration: "30:45",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "module-2",
+        title: "CSS Styling",
+        sections: [
+          {
+            id: "section-2-1",
+            title: "CSS Fundamentals",
+            lessons: [
+              {
+                id: "lesson-2-1-1",
+                title: "CSS Selectors and Properties",
+                videoUrl: "https://www.youtube.com/embed/1PnVor36_40",
+                videoDuration: "28:20",
+              },
+              {
+                id: "lesson-2-1-2",
+                title: "Flexbox and Grid",
+                videoUrl: "https://www.youtube.com/embed/3YW65K6LcIA",
+                videoDuration: "35:00",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
     id: "nodejs-backend",
     title: "Node.js Backend Development",
     description: "Build scalable backend applications with Node.js and Express",
     category: "backend",
     difficulty: "Intermediate",
-    duration: "12 hours",
+    duration: "14 hours",
     prerequisites: ["JavaScript", "Basic HTTP knowledge"],
     modules: [
       {
@@ -190,6 +283,59 @@ export const courses: Course[] = [
               },
             ],
           },
+          {
+            id: "section-1-2",
+            title: "Express Framework",
+            lessons: [
+              {
+                id: "lesson-1-2-1",
+                title: "Setting up Express Server",
+                videoUrl: "https://www.youtube.com/embed/L72fhGm1tfE",
+                videoDuration: "20:15",
+              },
+              {
+                id: "lesson-1-2-2",
+                title: "Routing and Middleware",
+                videoUrl: "https://www.youtube.com/embed/lY6icfhap2o",
+                videoDuration: "25:45",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "python-backend",
+    title: "Python Backend with Django",
+    description: "Create robust web applications with Python and Django",
+    category: "backend",
+    difficulty: "Intermediate",
+    duration: "16 hours",
+    prerequisites: ["Python basics"],
+    modules: [
+      {
+        id: "module-1",
+        title: "Django Fundamentals",
+        sections: [
+          {
+            id: "section-1-1",
+            title: "Getting Started",
+            lessons: [
+              {
+                id: "lesson-1-1-1",
+                title: "Django Introduction",
+                videoUrl: "https://www.youtube.com/embed/F5mRW0jo-U4",
+                videoDuration: "18:00",
+              },
+              {
+                id: "lesson-1-1-2",
+                title: "Models and Databases",
+                videoUrl: "https://www.youtube.com/embed/rHux0gMZ3Eg",
+                videoDuration: "32:15",
+              },
+            ],
+          },
         ],
       },
     ],
@@ -200,7 +346,7 @@ export const courses: Course[] = [
     description: "Master Amazon Web Services and cloud computing fundamentals",
     category: "cloud",
     difficulty: "Beginner",
-    duration: "10 hours",
+    duration: "12 hours",
     modules: [
       {
         id: "module-1",
@@ -216,6 +362,58 @@ export const courses: Course[] = [
                 videoUrl: "https://www.youtube.com/embed/dH0yz-Osy54",
                 videoDuration: "18:00",
               },
+              {
+                id: "lesson-1-1-2",
+                title: "AWS Services Overview",
+                videoUrl: "https://www.youtube.com/embed/JIbIYCM48to",
+                videoDuration: "24:30",
+              },
+            ],
+          },
+          {
+            id: "section-1-2",
+            title: "EC2 and Compute",
+            lessons: [
+              {
+                id: "lesson-1-2-1",
+                title: "EC2 Instances",
+                videoUrl: "https://www.youtube.com/embed/iHX-jtKIVNA",
+                videoDuration: "28:15",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "azure-fundamentals",
+    title: "Microsoft Azure Fundamentals",
+    description: "Learn Azure cloud services and deployment",
+    category: "cloud",
+    difficulty: "Beginner",
+    duration: "10 hours",
+    modules: [
+      {
+        id: "module-1",
+        title: "Azure Basics",
+        sections: [
+          {
+            id: "section-1-1",
+            title: "Introduction to Azure",
+            lessons: [
+              {
+                id: "lesson-1-1-1",
+                title: "Azure Overview",
+                videoUrl: "https://www.youtube.com/embed/3vnmZF79E1Y",
+                videoDuration: "22:00",
+              },
+              {
+                id: "lesson-1-1-2",
+                title: "Azure Portal Tour",
+                videoUrl: "https://www.youtube.com/embed/pN8EekXx_1c",
+                videoDuration: "19:45",
+              },
             ],
           },
         ],
@@ -228,7 +426,7 @@ export const courses: Course[] = [
     description: "Learn data analysis, visualization, and machine learning with Python",
     category: "data-science",
     difficulty: "Beginner",
-    duration: "15 hours",
+    duration: "18 hours",
     prerequisites: ["Basic Python"],
     modules: [
       {
@@ -244,6 +442,187 @@ export const courses: Course[] = [
                 title: "What is Data Science?",
                 videoUrl: "https://www.youtube.com/embed/ua-CiDNNj30",
                 videoDuration: "20:00",
+              },
+              {
+                id: "lesson-1-1-2",
+                title: "Python for Data Analysis",
+                videoUrl: "https://www.youtube.com/embed/vmEHCJofslg",
+                videoDuration: "45:30",
+              },
+            ],
+          },
+          {
+            id: "section-1-2",
+            title: "Pandas and NumPy",
+            lessons: [
+              {
+                id: "lesson-1-2-1",
+                title: "NumPy Arrays",
+                videoUrl: "https://www.youtube.com/embed/QUT1VHiLmmI",
+                videoDuration: "32:15",
+              },
+              {
+                id: "lesson-1-2-2",
+                title: "Pandas DataFrames",
+                videoUrl: "https://www.youtube.com/embed/vmEHCJofslg",
+                videoDuration: "38:20",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "machine-learning",
+    title: "Machine Learning Fundamentals",
+    description: "Build and train ML models with Python and scikit-learn",
+    category: "data-science",
+    difficulty: "Advanced",
+    duration: "20 hours",
+    prerequisites: ["Python", "Statistics", "Linear Algebra"],
+    modules: [
+      {
+        id: "module-1",
+        title: "ML Basics",
+        sections: [
+          {
+            id: "section-1-1",
+            title: "Introduction to ML",
+            lessons: [
+              {
+                id: "lesson-1-1-1",
+                title: "What is Machine Learning?",
+                videoUrl: "https://www.youtube.com/embed/ukzFI9rgwfU",
+                videoDuration: "25:00",
+              },
+              {
+                id: "lesson-1-1-2",
+                title: "Supervised vs Unsupervised Learning",
+                videoUrl: "https://www.youtube.com/embed/1FZ0A1QCMWc",
+                videoDuration: "18:30",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "postgresql",
+    title: "PostgreSQL Database Mastery",
+    description: "Master PostgreSQL for robust data management",
+    category: "databases",
+    difficulty: "Intermediate",
+    duration: "12 hours",
+    prerequisites: ["Basic SQL"],
+    modules: [
+      {
+        id: "module-1",
+        title: "PostgreSQL Fundamentals",
+        sections: [
+          {
+            id: "section-1-1",
+            title: "Getting Started",
+            lessons: [
+              {
+                id: "lesson-1-1-1",
+                title: "Introduction to PostgreSQL",
+                videoUrl: "https://www.youtube.com/embed/qw--VYLpxG4",
+                videoDuration: "22:45",
+              },
+              {
+                id: "lesson-1-1-2",
+                title: "Database Design",
+                videoUrl: "https://www.youtube.com/embed/ztHopE5Wnpc",
+                videoDuration: "28:30",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "mongodb",
+    title: "MongoDB NoSQL Database",
+    description: "Learn MongoDB for flexible, scalable data storage",
+    category: "databases",
+    difficulty: "Beginner",
+    duration: "10 hours",
+    modules: [
+      {
+        id: "module-1",
+        title: "MongoDB Basics",
+        sections: [
+          {
+            id: "section-1-1",
+            title: "Introduction",
+            lessons: [
+              {
+                id: "lesson-1-1-1",
+                title: "What is MongoDB?",
+                videoUrl: "https://www.youtube.com/embed/-56x56UppqQ",
+                videoDuration: "20:15",
+              },
+              {
+                id: "lesson-1-1-2",
+                title: "CRUD Operations",
+                videoUrl: "https://www.youtube.com/embed/ExcRbA7fy_A",
+                videoDuration: "35:40",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "restful-apis",
+    title: "RESTful API Development",
+    description: "Design and build professional REST APIs",
+    category: "apis",
+    difficulty: "Intermediate",
+    duration: "14 hours",
+    prerequisites: ["JavaScript or Python", "HTTP basics"],
+    modules: [
+      {
+        id: "module-1",
+        title: "REST API Fundamentals",
+        sections: [
+          {
+            id: "section-1-1",
+            title: "API Design Principles",
+            lessons: [
+              {
+                id: "lesson-1-1-1",
+                title: "What is REST?",
+                videoUrl: "https://www.youtube.com/embed/lsMQRaeKNDk",
+                videoDuration: "16:30",
+              },
+              {
+                id: "lesson-1-1-2",
+                title: "HTTP Methods and Status Codes",
+                videoUrl: "https://www.youtube.com/embed/-mN3VyJuCjM",
+                videoDuration: "22:15",
+              },
+            ],
+          },
+          {
+            id: "section-1-2",
+            title: "Building APIs",
+            lessons: [
+              {
+                id: "lesson-1-2-1",
+                title: "Creating REST Endpoints",
+                videoUrl: "https://www.youtube.com/embed/pKd0Rpw7O48",
+                videoDuration: "38:45",
+              },
+              {
+                id: "lesson-1-2-2",
+                title: "Authentication and Security",
+                videoUrl: "https://www.youtube.com/embed/926mknSW9Lo",
+                videoDuration: "28:20",
               },
             ],
           },
