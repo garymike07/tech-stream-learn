@@ -3,8 +3,23 @@ import Header from "@/components/Header";
 import { courses } from "@/data/courses";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Clock, BarChart, PlayCircle, ArrowLeft } from "lucide-react";
+import { Clock, BarChart, PlayCircle, ArrowLeft, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { useMemo, useState } from "react";
+
+const COURSE_COMPLETIONS_KEY = "mlc-course-completions";
+
+const loadCompletionSet = () => {
+  try {
+    const raw = localStorage.getItem(COURSE_COMPLETIONS_KEY);
+    if (!raw) return new Set<string>();
+    return new Set(JSON.parse(raw) as string[]);
+  } catch (error) {
+    console.error("Failed to load completions", error);
+    return new Set<string>();
+  }
+};
 import { useAuth } from "@/context/AuthContext";
 import { toast } from "@/hooks/use-toast";
 
@@ -13,7 +28,8 @@ const CourseDetail = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { user, enrollCourse, enrollments } = useAuth();
-  const course = courses.find((c) => c.id === courseId);
+  const [completedCourses] = useState<Set<string>>(() => loadCompletionSet());
+  const course = useMemo(() => courses.find((c) => c.id === courseId), [courseId]);
 
   if (!course) {
     return (
@@ -34,6 +50,7 @@ const CourseDetail = () => {
 
   const firstLesson = course.modules[0]?.sections[0]?.lessons[0];
   const isEnrolled = courseId ? enrollments.includes(courseId) : false;
+  const isCourseCompleted = courseId ? completedCourses.has(courseId) : false;
 
   const handleEnroll = () => {
     if (!courseId) return;
@@ -79,15 +96,25 @@ const CourseDetail = () => {
             </Button>
           </Link>
 
-          <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center">
+          <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
             <Button onClick={handleEnroll} className="shadow-glow">
               {isEnrolled ? "Continue learning" : "Enroll & start course"}
             </Button>
+            <Button
+              variant="outline"
+              onClick={() => navigate(`/exercises?course=${course.id}`)}
+              className="border-primary/40 text-primary hover:text-primary"
+            >
+              Visit exercise centre
+            </Button>
             {!user && (
-              <p className="text-xs text-muted-foreground">
-                Enrollment requires a free account.
-              </p>
+              <p className="text-xs text-muted-foreground">Enrollment requires a free account.</p>
             )}
+            {isCourseCompleted ? (
+              <Badge variant="secondary" className="bg-emerald-500/15 text-emerald-200">
+                <Award className="mr-1 h-3.5 w-3.5" /> Course completed
+              </Badge>
+            ) : null}
           </div>
         </div>
 

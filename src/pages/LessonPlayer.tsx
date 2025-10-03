@@ -1,5 +1,5 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Header from "@/components/Header";
 import { courses, Lesson } from "@/data/courses";
 import { Button } from "@/components/ui/button";
@@ -9,6 +9,23 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { useAuth } from "@/context/AuthContext";
 import { toast } from "@/hooks/use-toast";
 
+const COURSE_COMPLETIONS_KEY = "mlc-course-completions";
+const loadCompletionSet = () => {
+  try {
+    const raw = localStorage.getItem(COURSE_COMPLETIONS_KEY);
+    if (!raw) return new Set<string>();
+    const parsed = JSON.parse(raw) as string[];
+    return new Set(parsed);
+  } catch (error) {
+    console.error("Failed to read course completions", error);
+    return new Set<string>();
+  }
+};
+
+const persistCompletionSet = (values: Set<string>) => {
+  localStorage.setItem(COURSE_COMPLETIONS_KEY, JSON.stringify(Array.from(values)));
+};
+
 const LessonPlayer = () => {
   const { courseId, lessonId } = useParams();
   const navigate = useNavigate();
@@ -16,9 +33,11 @@ const LessonPlayer = () => {
   const [nextLesson, setNextLesson] = useState<{ id: string; title: string } | null>(null);
   const [prevLesson, setPrevLesson] = useState<{ id: string; title: string } | null>(null);
 
-  const course = courses.find((c) => c.id === courseId);
+  const course = useMemo(() => courses.find((c) => c.id === courseId), [courseId]);
+  const [completedCourses, setCompletedCourses] = useState<Set<string>>(() => loadCompletionSet());
   const { user, enrollments } = useAuth();
   const isEnrolled = courseId ? enrollments.includes(courseId) : false;
+  const isCourseCompleted = courseId ? completedCourses.has(courseId) : false;
 
   useEffect(() => {
     if (!course || !lessonId) return;
@@ -67,6 +86,16 @@ const LessonPlayer = () => {
       </div>
     );
   }
+
+  const markCourseCompleted = () => {
+    if (!courseId || !course) return;
+    const next = new Set(completedCourses);
+    if (!next.has(courseId)) {
+      next.add(courseId);
+      setCompletedCourses(next);
+      persistCompletionSet(next);
+    }
+  };
 
   if (!user || !isEnrolled || !currentLesson) {
     const handleAccess = () => {
@@ -120,6 +149,24 @@ const LessonPlayer = () => {
       </div>
     );
   }
+
+  const handleExerciseRedirect = () => {
+    if (!courseId) return;
+    markCourseCompleted();
+    toast({
+      title: "Course badge earned",
+      description: "Great work! Head over to the exercise centre to put your skills into practice.",
+    });
+    navigate(`/exercises?course=${courseId}`);
+  };
+
+  const handleMarkComplete = () => {
+    markCourseCompleted();
+    toast({
+      title: "Course marked complete",
+      description: "You can rewatch lessons anytime or dive into the exercises to keep learning.",
+    });
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -181,9 +228,9 @@ const LessonPlayer = () => {
                     )}
                   </div>
                   
-                  <Button variant="default" className="mx-4">
+                  <Button variant="default" className="mx-4" onClick={handleExerciseRedirect}>
                     <CheckCircle className="h-4 w-4 mr-2" />
-                    Mark Complete
+                    {isCourseCompleted ? "Go to exercises" : "Complete course & exercise"}
                   </Button>
 
                   <div className="flex-1 flex justify-end">
@@ -203,6 +250,11 @@ const LessonPlayer = () => {
                 </div>
               </CardContent>
             </Card>
+            {!isCourseCompleted ? (
+              <Button variant="ghost" className="text-sm text-muted-foreground" onClick={handleMarkComplete}>
+                I&apos;ll revisit exercises later
+              </Button>
+            ) : null}
           </div>
 
           {/* Course Curriculum Sidebar */}

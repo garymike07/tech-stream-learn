@@ -1,3 +1,5 @@
+import { useEffect, useMemo, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import Header from "@/components/Header";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
@@ -7,7 +9,51 @@ import { courseExercises } from "@/data/exercises";
 import { categories, courses } from "@/data/courses";
 import { Sparkles } from "lucide-react";
 
+const COURSE_COMPLETIONS_KEY = "mlc-course-completions";
+const EXERCISE_COMPLETIONS_KEY = "mlc-exercise-completions";
+
+const loadCompletionSet = (key: string) => {
+  try {
+    const raw = localStorage.getItem(key);
+    if (!raw) return new Set<string>();
+    const parsed = JSON.parse(raw) as string[];
+    return new Set(parsed);
+  } catch (error) {
+    console.error("Failed to parse completion set", error);
+    return new Set<string>();
+  }
+};
+
 const Exercises = () => {
+  const location = useLocation();
+  const [highlightedCourse, setHighlightedCourse] = useState<string | null>(null);
+  const [completedCourses, setCompletedCourses] = useState<Set<string>>(() => loadCompletionSet(COURSE_COMPLETIONS_KEY));
+  const [completedExercises, setCompletedExercises] = useState<Set<string>>(() => loadCompletionSet(EXERCISE_COMPLETIONS_KEY));
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const targetCourse = (location.state as { course?: string } | null)?.course ?? params.get("course");
+    if (targetCourse) {
+      setHighlightedCourse(targetCourse);
+      setTimeout(() => {
+        const section = document.getElementById(`category-${targetCourse}`);
+        section?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 200);
+    }
+  }, [location]);
+
+  useEffect(() => {
+    const handleStorage = () => {
+      setCompletedCourses(loadCompletionSet(COURSE_COMPLETIONS_KEY));
+      setCompletedExercises(loadCompletionSet(EXERCISE_COMPLETIONS_KEY));
+    };
+    window.addEventListener("storage", handleStorage);
+    return () => window.removeEventListener("storage", handleStorage);
+  }, []);
+
+  const courseCompletionsLabel = useMemo(() => completedCourses.size, [completedCourses]);
+  const exerciseCompletionsLabel = useMemo(() => completedExercises.size, [completedExercises]);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
@@ -22,9 +68,7 @@ const Exercises = () => {
                   <Sparkles className="h-3.5 w-3.5" />
                   Practice Hub
                 </div>
-                <CardTitle className="text-3xl md:text-4xl font-bold">
-                  Dynamic Exercise Centre
-                </CardTitle>
+                <CardTitle className="text-3xl md:text-4xl font-bold">Dynamic Exercise Centre</CardTitle>
                 <CardDescription className="text-base md:text-lg">
                   Every learning path includes multi-stage briefs, realistic deliverables, and curated references sourced from trusted documentation so you can specialise through deliberate practice.
                 </CardDescription>
@@ -38,6 +82,12 @@ const Exercises = () => {
                     Real-world briefs
                   </Badge>
                   <Badge variant="secondary" className="bg-muted/40 text-muted-foreground">
+                  <Badge variant="secondary" className="bg-emerald-500/15 text-emerald-200">
+                    {courseCompletionsLabel} course badges
+                  </Badge>
+                  <Badge variant="secondary" className="bg-blue-500/15 text-blue-200">
+                    {exerciseCompletionsLabel} exercises completed
+                  </Badge>
                     Skills-focused outcomes
                   </Badge>
                 </div>
@@ -66,7 +116,10 @@ const Exercises = () => {
                   </Button>
                 </div>
 
-                <div id={`category-${category.id}`} className="grid gap-8 lg:grid-cols-2">
+                <div
+                  id={`category-${category.id}`}
+                  className={`grid gap-8 lg:grid-cols-2 ${highlightedCourse === category.id ? "animate-glow-pulse" : ""}`}
+                >
                   {categoryCourses.map((course) => {
                     const exercises = courseExercises[course.id] ?? [];
 
@@ -78,6 +131,11 @@ const Exercises = () => {
                         <CardHeader className="space-y-3">
                           <CardTitle className="text-2xl font-bold">{course.title}</CardTitle>
                           <CardDescription>{course.description}</CardDescription>
+                          {completedCourses.has(course.id) ? (
+                            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-200">
+                              <Sparkles className="h-3.5 w-3.5" /> Course badge earned
+                            </div>
+                          ) : null}
                         </CardHeader>
                         <CardContent className="space-y-6">
                           <div className="space-y-4">
@@ -94,6 +152,11 @@ const Exercises = () => {
                                         <Badge variant="outline" className="border-secondary/40 text-secondary">
                                           {exercise.estimatedTime}
                                         </Badge>
+                                        {completedExercises.has(exercise.id) ? (
+                                          <Badge variant="secondary" className="bg-emerald-500/15 text-emerald-200">
+                                            Completed
+                                          </Badge>
+                                        ) : null}
                                       </span>
                                       <span className="text-foreground">{exercise.title}</span>
                                     </div>
@@ -134,6 +197,11 @@ const Exercises = () => {
                                         </ul>
                                       </div>
                                     ) : null}
+                                    <div className="flex justify-end">
+                                      <Button asChild variant="secondary" size="sm" className="shadow-glow">
+                                        <Link to={`/exercise/${course.id}/${exercise.id}`}>Resolve this exercise</Link>
+                                      </Button>
+                                    </div>
                                   </AccordionContent>
                                 </AccordionItem>
                               ))}

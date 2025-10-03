@@ -11,6 +11,7 @@ import LessonPlayer from "./pages/LessonPlayer";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Exercises from "./pages/Exercises";
+import ExerciseDetail from "./pages/ExerciseDetail";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/course/:courseId" element={<CourseDetail />} />
           <Route path="/course/:courseId/lesson/:lessonId" element={<LessonPlayer />} />
           <Route path="/exercises" element={<Exercises />} />
+          <Route path="/exercise/:courseId/:exerciseId" element={<ExerciseDetail />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
