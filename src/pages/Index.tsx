@@ -18,11 +18,10 @@ const Index = () => {
         <div className="container relative z-10 mx-auto px-4">
           <div className="max-w-3xl animate-fade-in rounded-3xl border border-border/40 bg-card/40 p-10 backdrop-blur-2xl shadow-glow">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Master Technology Skills with Structured Learning
+              Build Future-Proof Skills with Mike Learning Centre
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8">
-              Comprehensive courses across frontend, backend, cloud, data science, and more. 
-              Learn at your own pace with curated video tutorials and detailed curriculum outlines.
+              Comprehensive tracks across frontend, backend, cloud, data science, and more. Learn at your own pace with curated video tutorials and detailed curriculum outlines.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/categories">
@@ -44,7 +43,7 @@ const Index = () => {
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center animate-fade-in">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose TechLearn?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose Mike Learning Centre?</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Everything you need to succeed in your technology learning journey
             </p>
@@ -156,7 +155,7 @@ const Index = () => {
               Ready to Start Learning?
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Join thousands of learners mastering technology skills. Start your journey today with our comprehensive courses.
+              Join thousands of learners mastering technology skills with Mike Learning Centre. Start your journey today with our comprehensive courses.
             </p>
             <Link to="/categories">
               <Button size="lg" variant="secondary" className="shadow-glow">

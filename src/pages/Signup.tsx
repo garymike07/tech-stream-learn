@@ -52,7 +52,7 @@ const Signup = () => {
 
       toast({
         title: "Account created",
-        description: "Welcome to TechLearn!",
+        description: "Welcome to Mike Learning Centre!",
       });
       navigate(returnTo, { replace: true });
     } catch (error) {

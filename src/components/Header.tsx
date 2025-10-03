@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { BookOpen, LogOut } from "lucide-react";
+import { LogOut } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/context/AuthContext";
@@ -22,12 +22,12 @@ const Header = () => {
     <header className="sticky top-0 z-50 border-b border-border/50 bg-card/40 backdrop-blur-2xl shadow-sm">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="p-2 bg-gradient-hero rounded-lg group-hover:shadow-glow transition-all duration-300">
-              <BookOpen className="h-6 w-6 text-primary-foreground" />
+          <Link to="/" className="flex items-center gap-3 group">
+            <div className="relative h-10 w-10 overflow-hidden rounded-xl border border-border/40 bg-card/60 shadow-glow">
+              <img src="/mike-logo.jpg" alt="Mike Learning Centre" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
             </div>
             <span className="text-xl font-bold bg-gradient-hero bg-clip-text text-transparent">
-              TechLearn
+              Mike Learning Centre
             </span>
           </Link>
           

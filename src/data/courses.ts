@@ -915,6 +915,812 @@ export const courses: Course[] = [
       },
     ],
   },
+  {
+    id: "nextjs-app-router",
+    title: "Next.js App Router Mastery",
+    description: "Build production-ready applications with the Next.js App Router and modern rendering patterns.",
+    category: "frontend",
+    difficulty: "Intermediate",
+    duration: "11 hours",
+    prerequisites: ["React fundamentals"],
+    modules: [
+      {
+        id: "nextjs-app-router-beginner",
+        title: "Beginner Foundations",
+        sections: [
+          {
+            id: "nextjs-app-router-intro",
+            title: "Getting Started",
+            lessons: [
+              {
+                id: "nextjs-app-router-lesson-1",
+                title: "Next.js 13 Crash Course",
+                videoUrl: "https://www.youtube.com/embed/T63nY70eZF0",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "nextjs-app-router-intermediate",
+        title: "Intermediate Projects",
+        sections: [
+          {
+            id: "nextjs-app-router-routing",
+            title: "Routing & Data Fetching",
+            lessons: [
+              {
+                id: "nextjs-app-router-lesson-2",
+                title: "Next.js App Router Deep Dive",
+                videoUrl: "https://www.youtube.com/embed/__mSgDEOyv8",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "nextjs-app-router-advanced",
+        title: "Advanced Production",
+        sections: [
+          {
+            id: "nextjs-app-router-production",
+            title: "Performance & Deployment",
+            lessons: [
+              {
+                id: "nextjs-app-router-lesson-3",
+                title: "NextJS App Router: Learn Modern Web Development",
+                videoUrl: "https://www.youtube.com/embed/Sbl04kOL1dM",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "vue-pro-engineer",
+    title: "Vue 3 Professional Engineer",
+    description: "Ship delightful Vue 3 interfaces with the Composition API, Pinia, and Vue Router.",
+    category: "frontend",
+    difficulty: "Intermediate",
+    duration: "10 hours",
+    prerequisites: ["JavaScript", "HTML & CSS"],
+    modules: [
+      {
+        id: "vue-pro-beginner",
+        title: "Beginner Foundations",
+        sections: [
+          {
+            id: "vue-pro-intro",
+            title: "Vue Basics",
+            lessons: [
+              {
+                id: "vue-pro-lesson-1",
+                title: "Vue JS Crash Course",
+                videoUrl: "https://www.youtube.com/embed/Wy9q22isx3U",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "vue-pro-intermediate",
+        title: "Intermediate Projects",
+        sections: [
+          {
+            id: "vue-pro-components",
+            title: "Composition API & Tooling",
+            lessons: [
+              {
+                id: "vue-pro-lesson-2",
+                title: "Vue 3 Crash Course",
+                videoUrl: "https://www.youtube.com/embed/qZXt1Aom3Cs",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "vue-pro-advanced",
+        title: "Advanced Production",
+        sections: [
+          {
+            id: "vue-pro-architecture",
+            title: "Scaling Vue Apps",
+            lessons: [
+              {
+                id: "vue-pro-lesson-3",
+                title: "Vue 3 Tutorial for Beginners",
+                videoUrl: "https://www.youtube.com/embed/ZqgiuPt5QZo",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "sveltekit-essentials",
+    title: "SvelteKit Essentials",
+    description: "Learn to build fast, dynamic web apps with SvelteKit, endpoints, and progressive enhancement.",
+    category: "frontend",
+    difficulty: "Intermediate",
+    duration: "9 hours",
+    prerequisites: ["JavaScript", "Svelte"],
+    modules: [
+      {
+        id: "sveltekit-beginner",
+        title: "Beginner Foundations",
+        sections: [
+          {
+            id: "sveltekit-intro",
+            title: "Getting Started",
+            lessons: [
+              {
+                id: "sveltekit-lesson-1",
+                title: "SvelteKit Crash Course",
+                videoUrl: "https://www.youtube.com/embed/9OlLxkaeVvw",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "sveltekit-intermediate",
+        title: "Intermediate Projects",
+        sections: [
+          {
+            id: "sveltekit-interactivity",
+            title: "Progressive Enhancement",
+            lessons: [
+              {
+                id: "sveltekit-lesson-2",
+                title: "SvelteKit in 8 Minutes",
+                videoUrl: "https://www.youtube.com/embed/UU7MgYIbtAk",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "sveltekit-advanced",
+        title: "Advanced Production",
+        sections: [
+          {
+            id: "sveltekit-auth",
+            title: "Authentication & Data",
+            lessons: [
+              {
+                id: "sveltekit-lesson-3",
+                title: "SvelteKit Authentication Tutorial",
+                videoUrl: "https://www.youtube.com/embed/SXmnrF3xfKo",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "go-backend-blueprints",
+    title: "Go Backend Blueprints",
+    description: "Design fast, concurrent backend services using Go, Chi, and modern tooling.",
+    category: "backend",
+    difficulty: "Intermediate",
+    duration: "13 hours",
+    prerequisites: ["Programming fundamentals"],
+    modules: [
+      {
+        id: "go-backend-beginner",
+        title: "Beginner Foundations",
+        sections: [
+          {
+            id: "go-backend-intro",
+            title: "Language Basics",
+            lessons: [
+              {
+                id: "go-backend-lesson-1",
+                title: "Go / Golang Crash Course",
+                videoUrl: "https://www.youtube.com/embed/SqrbIlUwR0U",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "go-backend-intermediate",
+        title: "Intermediate Services",
+        sections: [
+          {
+            id: "go-backend-concurrency",
+            title: "Concurrency & Channels",
+            lessons: [
+              {
+                id: "go-backend-lesson-2",
+                title: "Golang Concurrency Explained",
+                videoUrl: "https://www.youtube.com/embed/eqSgTJ6HTsw",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "go-backend-advanced",
+        title: "Advanced Production",
+        sections: [
+          {
+            id: "go-backend-microservices",
+            title: "Microservices & Deployment",
+            lessons: [
+              {
+                id: "go-backend-lesson-3",
+                title: "Build a Microservice with Go",
+                videoUrl: "https://www.youtube.com/embed/wpnN3RIRSxs",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "spring-boot-microservices",
+    title: "Spring Boot Microservices",
+    description: "Create resilient Java microservices with Spring Boot, Spring Security, and Spring Cloud.",
+    category: "backend",
+    difficulty: "Advanced",
+    duration: "15 hours",
+    prerequisites: ["Java", "Spring Framework"],
+    modules: [
+      {
+        id: "spring-boot-beginner",
+        title: "Beginner Foundations",
+        sections: [
+          {
+            id: "spring-boot-intro",
+            title: "Boot Fundamentals",
+            lessons: [
+              {
+                id: "spring-boot-lesson-1",
+                title: "Spring Boot Tutorial",
+                videoUrl: "https://www.youtube.com/embed/9SGDpanrc8U",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "spring-boot-intermediate",
+        title: "Intermediate Services",
+        sections: [
+          {
+            id: "spring-boot-system",
+            title: "System Design & Observability",
+            lessons: [
+              {
+                id: "spring-boot-lesson-2",
+                title: "Spring Boot End-to-End Tutorial",
+                videoUrl: "https://www.youtube.com/embed/GAgelbsTb9M",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "spring-boot-advanced",
+        title: "Advanced Production",
+        sections: [
+          {
+            id: "spring-boot-security",
+            title: "Security & Hardening",
+            lessons: [
+              {
+                id: "spring-boot-lesson-3",
+                title: "Securing Spring Boot REST APIs",
+                videoUrl: "https://www.youtube.com/embed/Sdixla2yjSI",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "azure-cloud-accelerator",
+    title: "Azure Cloud Accelerator",
+    description: "Deploy enterprise workloads on Microsoft Azure with confidence and best practices.",
+    category: "cloud",
+    difficulty: "Intermediate",
+    duration: "12 hours",
+    prerequisites: ["Cloud fundamentals"],
+    modules: [
+      {
+        id: "azure-cloud-beginner",
+        title: "Beginner Foundations",
+        sections: [
+          {
+            id: "azure-cloud-intro",
+            title: "AZ-900 Essentials",
+            lessons: [
+              {
+                id: "azure-cloud-lesson-1",
+                title: "Azure Fundamentals Full Course",
+                videoUrl: "https://www.youtube.com/embed/-pX5PjIYTJs",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "azure-cloud-intermediate",
+        title: "Intermediate Projects",
+        sections: [
+          {
+            id: "azure-cloud-devops",
+            title: "CI/CD with Azure",
+            lessons: [
+              {
+                id: "azure-cloud-lesson-2",
+                title: "Azure DevOps Tutorial for Beginners",
+                videoUrl: "https://www.youtube.com/embed/fWNZchSiBxI",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "azure-cloud-advanced",
+        title: "Advanced Production",
+        sections: [
+          {
+            id: "azure-cloud-landing-zones",
+            title: "Enterprise Architecture",
+            lessons: [
+              {
+                id: "azure-cloud-lesson-3",
+                title: "Azure Landing Zones Terraform Accelerator",
+                videoUrl: "https://www.youtube.com/embed/YxOzTwEnDE0",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "gcp-cloud-engineer",
+    title: "Google Cloud Engineer",
+    description: "Prepare for Google Cloud workloads with networking, IAM, and analytics best practices.",
+    category: "cloud",
+    difficulty: "Intermediate",
+    duration: "13 hours",
+    prerequisites: ["Cloud fundamentals"],
+    modules: [
+      {
+        id: "gcp-cloud-beginner",
+        title: "Beginner Foundations",
+        sections: [
+          {
+            id: "gcp-cloud-intro",
+            title: "GCP Fundamentals",
+            lessons: [
+              {
+                id: "gcp-cloud-lesson-1",
+                title: "Google Cloud Full Course for Beginners",
+                videoUrl: "https://www.youtube.com/embed/lvZk_sc8u5I",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "gcp-cloud-intermediate",
+        title: "Intermediate Projects",
+        sections: [
+          {
+            id: "gcp-cloud-networking",
+            title: "Networking & Compute",
+            lessons: [
+              {
+                id: "gcp-cloud-lesson-2",
+                title: "Create GCP VPC, Subnet, Firewall & Compute Engine",
+                videoUrl: "https://www.youtube.com/embed/5sC-_wCwmOE",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "gcp-cloud-advanced",
+        title: "Advanced Production",
+        sections: [
+          {
+            id: "gcp-cloud-analytics",
+            title: "BigQuery & Analytics",
+            lessons: [
+              {
+                id: "gcp-cloud-lesson-3",
+                title: "BigQuery + Jupyter Basics",
+                videoUrl: "https://www.youtube.com/embed/Ls_695He3Rs",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "deep-learning-tensorflow",
+    title: "Deep Learning with TensorFlow",
+    description: "Train neural networks and deploy deep learning models with TensorFlow 2.",
+    category: "data-science",
+    difficulty: "Advanced",
+    duration: "16 hours",
+    prerequisites: ["Python", "Linear algebra"],
+    modules: [
+      {
+        id: "deep-learning-beginner",
+        title: "Beginner Foundations",
+        sections: [
+          {
+            id: "deep-learning-intro",
+            title: "TensorFlow Basics",
+            lessons: [
+              {
+                id: "deep-learning-lesson-1",
+                title: "TensorFlow 2.0 Complete Course",
+                videoUrl: "https://www.youtube.com/embed/tPYj3fFJGjk",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "deep-learning-intermediate",
+        title: "Intermediate Models",
+        sections: [
+          {
+            id: "deep-learning-neural-networks",
+            title: "Neural Network Intuition",
+            lessons: [
+              {
+                id: "deep-learning-lesson-2",
+                title: "Neural Networks Demystified",
+                videoUrl: "https://www.youtube.com/embed/aircAruvnKk",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "deep-learning-advanced",
+        title: "Advanced Production",
+        sections: [
+          {
+            id: "deep-learning-systems",
+            title: "Scaling Deep Learning",
+            lessons: [
+              {
+                id: "deep-learning-lesson-3",
+                title: "Deep Learning Full Course 2025",
+                videoUrl: "https://www.youtube.com/embed/VsjhpUuOKn0",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "nlp-python-roadmap",
+    title: "NLP with Python Roadmap",
+    description: "Process text data, build transformers, and deploy NLP solutions with Python.",
+    category: "data-science",
+    difficulty: "Advanced",
+    duration: "15 hours",
+    prerequisites: ["Python", "Machine learning"],
+    modules: [
+      {
+        id: "nlp-python-beginner",
+        title: "Beginner Foundations",
+        sections: [
+          {
+            id: "nlp-python-intro",
+            title: "Text Processing Basics",
+            lessons: [
+              {
+                id: "nlp-python-lesson-1",
+                title: "NLP Tutorial with Python & NLTK",
+                videoUrl: "https://www.youtube.com/embed/X2vAabgKiuM",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "nlp-python-intermediate",
+        title: "Intermediate Models",
+        sections: [
+          {
+            id: "nlp-python-transformers",
+            title: "Transformer Architectures",
+            lessons: [
+              {
+                id: "nlp-python-lesson-2",
+                title: "Transformers Explained",
+                videoUrl: "https://www.youtube.com/embed/dIUTsFT2MeQ",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "nlp-python-advanced",
+        title: "Advanced Production",
+        sections: [
+          {
+            id: "nlp-python-large-models",
+            title: "Building Large Language Models",
+            lessons: [
+              {
+                id: "nlp-python-lesson-3",
+                title: "Let's Build GPT from Scratch",
+                videoUrl: "https://www.youtube.com/embed/kCc8FmEb1nY",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "redis-performance",
+    title: "Redis Performance Engineering",
+    description: "Optimize caching, streaming, and clustering workloads with Redis.",
+    category: "databases",
+    difficulty: "Intermediate",
+    duration: "9 hours",
+    prerequisites: ["Backend fundamentals"],
+    modules: [
+      {
+        id: "redis-beginner",
+        title: "Beginner Foundations",
+        sections: [
+          {
+            id: "redis-intro",
+            title: "Redis Basics",
+            lessons: [
+              {
+                id: "redis-lesson-1",
+                title: "Redis Crash Course",
+                videoUrl: "https://www.youtube.com/embed/jgpVdJB2sKQ",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "redis-intermediate",
+        title: "Intermediate Workloads",
+        sections: [
+          {
+            id: "redis-streams",
+            title: "Streams & Messaging",
+            lessons: [
+              {
+                id: "redis-lesson-2",
+                title: "Getting Started with Redis Stream",
+                videoUrl: "https://www.youtube.com/embed/qcv8xr1rp8U",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "redis-advanced",
+        title: "Advanced Production",
+        sections: [
+          {
+            id: "redis-cluster",
+            title: "Clustering & Scale",
+            lessons: [
+              {
+                id: "redis-lesson-3",
+                title: "Redis Cluster Setup Step-by-Step",
+                videoUrl: "https://www.youtube.com/embed/hlacDfYU6bM",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "mysql-masterclass",
+    title: "MySQL Data Engineering Masterclass",
+    description: "Design resilient relational databases and tune MySQL for performance and scale.",
+    category: "databases",
+    difficulty: "Intermediate",
+    duration: "10 hours",
+    prerequisites: ["SQL fundamentals"],
+    modules: [
+      {
+        id: "mysql-beginner",
+        title: "Beginner Foundations",
+        sections: [
+          {
+            id: "mysql-intro",
+            title: "SQL Essentials",
+            lessons: [
+              {
+                id: "mysql-lesson-1",
+                title: "MySQL Crash Course",
+                videoUrl: "https://www.youtube.com/embed/9ylj9NR0Lcg",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "mysql-intermediate",
+        title: "Intermediate Performance",
+        sections: [
+          {
+            id: "mysql-indexing",
+            title: "Indexing Strategies",
+            lessons: [
+              {
+                id: "mysql-lesson-2",
+                title: "Indexing in MySQL",
+                videoUrl: "https://www.youtube.com/embed/xDDlB51dX5E",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "mysql-advanced",
+        title: "Advanced Production",
+        sections: [
+          {
+            id: "mysql-replication",
+            title: "Replication & HA",
+            lessons: [
+              {
+                id: "mysql-lesson-3",
+                title: "Create a MySQL Replica Database",
+                videoUrl: "https://www.youtube.com/embed/mpCeatW4t_U",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "graphql-apollo-server",
+    title: "GraphQL with Apollo Server",
+    description: "Design GraphQL schemas, resolvers, and federated architectures with Apollo.",
+    category: "apis",
+    difficulty: "Intermediate",
+    duration: "13 hours",
+    prerequisites: ["JavaScript", "API fundamentals"],
+    modules: [
+      {
+        id: "graphql-apollo-beginner",
+        title: "Beginner Foundations",
+        sections: [
+          {
+            id: "graphql-apollo-intro",
+            title: "Core Concepts",
+            lessons: [
+              {
+                id: "graphql-apollo-lesson-1",
+                title: "GraphQL Crash Course with MERN",
+                videoUrl: "https://www.youtube.com/embed/BcLNfwF04Kw",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "graphql-apollo-intermediate",
+        title: "Intermediate APIs",
+        sections: [
+          {
+            id: "graphql-apollo-schema",
+            title: "Schema Design",
+            lessons: [
+              {
+                id: "graphql-apollo-lesson-2",
+                title: "GraphQL in 100 Seconds",
+                videoUrl: "https://www.youtube.com/embed/ed8SzALpx1Q",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "graphql-apollo-advanced",
+        title: "Advanced Production",
+        sections: [
+          {
+            id: "graphql-apollo-federation",
+            title: "Federation & Scale",
+            lessons: [
+              {
+                id: "graphql-apollo-lesson-3",
+                title: "Apollo Federation from Day One",
+                videoUrl: "https://www.youtube.com/embed/DGAkGULuwEI",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "grpc-microservices",
+    title: "gRPC Microservices",
+    description: "Implement high-performance service-to-service communication with gRPC and Protocol Buffers.",
+    category: "apis",
+    difficulty: "Advanced",
+    duration: "12 hours",
+    prerequisites: ["Backend development", "Protocol Buffers"],
+    modules: [
+      {
+        id: "grpc-beginner",
+        title: "Beginner Foundations",
+        sections: [
+          {
+            id: "grpc-intro",
+            title: "gRPC Basics",
+            lessons: [
+              {
+                id: "grpc-lesson-1",
+                title: "gRPC Crash Course",
+                videoUrl: "https://www.youtube.com/embed/Yw4rkaTc0f8",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "grpc-intermediate",
+        title: "Intermediate APIs",
+        sections: [
+          {
+            id: "grpc-node",
+            title: "gRPC with Node.js",
+            lessons: [
+              {
+                id: "grpc-lesson-2",
+                title: "gRPC in Node.js Tutorial",
+                videoUrl: "https://www.youtube.com/embed/MCwgV9idOeY",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "grpc-advanced",
+        title: "Advanced Production",
+        sections: [
+          {
+            id: "grpc-streaming",
+            title: "Streaming & Observability",
+            lessons: [
+              {
+                id: "grpc-lesson-3",
+                title: "gRPC Streaming using Rust",
+                videoUrl: "https://www.youtube.com/embed/WTWjWMy5hc8",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 export const categories: Category[] = Object.entries(categoryMeta).map(([id, meta]) => ({
