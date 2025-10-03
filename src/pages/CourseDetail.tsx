@@ -1,13 +1,18 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useLocation, useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import { courses } from "@/data/courses";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Clock, BarChart, PlayCircle, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useAuth } from "@/context/AuthContext";
+import { toast } from "@/hooks/use-toast";
 
 const CourseDetail = () => {
   const { courseId } = useParams();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { user, enrollCourse, enrollments } = useAuth();
   const course = courses.find((c) => c.id === courseId);
 
   if (!course) {
@@ -22,26 +27,73 @@ const CourseDetail = () => {
   }
 
   const difficultyColors = {
-    Beginner: "bg-green-500/10 text-green-600 border-green-500/20",
-    Intermediate: "bg-yellow-500/10 text-yellow-600 border-yellow-500/20",
-    Advanced: "bg-red-500/10 text-red-600 border-red-500/20",
+    Beginner: "border-emerald-400/40 bg-emerald-500/15 text-emerald-100",
+    Intermediate: "border-amber-400/40 bg-amber-500/15 text-amber-100",
+    Advanced: "border-rose-500/40 bg-rose-500/15 text-rose-100",
+  };
+
+  const firstLesson = course.modules[0]?.sections[0]?.lessons[0];
+  const isEnrolled = courseId ? enrollments.includes(courseId) : false;
+
+  const handleEnroll = () => {
+    if (!courseId) return;
+
+    if (!user) {
+      toast({
+        title: "Sign in required",
+        description: "Create an account or sign in to enroll in this course.",
+      });
+      navigate("/login", {
+        replace: false,
+        state: {
+          from: location.pathname,
+          intended: firstLesson ? `/course/${courseId}/lesson/${firstLesson.id}` : location.pathname,
+        },
+      });
+      return;
+    }
+
+    if (!isEnrolled) {
+      enrollCourse(courseId);
+      toast({
+        title: "Enrollment confirmed",
+        description: `You are now enrolled in ${course.title}.`,
+      });
+    }
+
+    if (firstLesson) {
+      navigate(`/course/${courseId}/lesson/${firstLesson.id}`);
+    }
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background text-foreground">
       <Header />
       
       <main className="container mx-auto px-4 py-12">
-        <Link to={`/category/${course.category}`}>
-          <Button variant="ghost" className="mb-6 group">
-            <ArrowLeft className="h-4 w-4 mr-2 group-hover:-translate-x-1 transition-transform" />
-            Back to courses
-          </Button>
-        </Link>
+        <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <Link to={`/category/${course.category}`}>
+            <Button variant="ghost" className="group">
+              <ArrowLeft className="h-4 w-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+              Back to courses
+            </Button>
+          </Link>
 
-        <div className="mb-8 animate-slide-up">
+          <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center">
+            <Button onClick={handleEnroll} className="shadow-glow">
+              {isEnrolled ? "Continue learning" : "Enroll & start course"}
+            </Button>
+            {!user && (
+              <p className="text-xs text-muted-foreground">
+                Enrollment requires a free account.
+              </p>
+            )}
+          </div>
+        </div>
+
+        <div className="mb-8 animate-fade-in rounded-3xl border border-border/40 bg-card/40 p-8 backdrop-blur-2xl shadow-glow">
           <div className="flex items-start justify-between mb-4">
-            <h1 className="text-4xl font-bold bg-gradient-hero bg-clip-text text-transparent">
+            <h1 className="text-4xl font-bold">
               {course.title}
             </h1>
             <Badge className={difficultyColors[course.difficulty]}>
@@ -78,13 +130,13 @@ const CourseDetail = () => {
           )}
         </div>
 
-        <div className="bg-gradient-card rounded-lg p-6 shadow-md animate-slide-up" style={{ animationDelay: "200ms" }}>
+        <div className="animate-fade-in rounded-3xl border border-border/40 bg-card/40 p-6 backdrop-blur-2xl shadow-glow" style={{ animationDelay: "200ms" }}>
           <h2 className="text-2xl font-bold mb-6">Course Curriculum</h2>
-          
+
           <Accordion type="single" collapsible className="space-y-4">
             {course.modules.map((module, moduleIndex) => (
-              <AccordionItem key={module.id} value={module.id} className="border rounded-lg bg-background">
-                <AccordionTrigger className="px-4 hover:no-underline hover:bg-muted/50 rounded-t-lg">
+              <AccordionItem key={module.id} value={module.id} className="overflow-hidden rounded-2xl border border-border/40 bg-background/60 backdrop-blur-xl">
+                <AccordionTrigger className="px-4 py-3 text-left hover:no-underline hover:bg-muted/40">
                   <div className="flex items-center gap-3">
                     <span className="text-lg font-semibold text-primary">
                       Module {moduleIndex + 1}

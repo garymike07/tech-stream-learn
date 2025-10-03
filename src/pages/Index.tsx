@@ -7,23 +7,26 @@ import { ArrowRight, BookOpen, Users, Award } from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background text-foreground">
       <Header />
       
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-hero py-20 md:py-32">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl animate-slide-up">
-            <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6">
+      <section className="relative overflow-hidden py-20 md:py-32">
+        <div className="absolute inset-0">
+          <div className="h-full w-full bg-gradient-hero opacity-80 blur-[120px]" />
+        </div>
+        <div className="container relative z-10 mx-auto px-4">
+          <div className="max-w-3xl animate-fade-in rounded-3xl border border-border/40 bg-card/40 p-10 backdrop-blur-2xl shadow-glow">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Master Technology Skills with Structured Learning
             </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/90 mb-8">
+            <p className="text-lg md:text-xl text-muted-foreground mb-8">
               Comprehensive courses across frontend, backend, cloud, data science, and more. 
               Learn at your own pace with curated video tutorials and detailed curriculum outlines.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/categories">
-                <Button size="lg" variant="secondary" className="group shadow-lg">
+                <Button size="lg" variant="secondary" className="group shadow-glow">
                   Explore Courses
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
@@ -33,14 +36,14 @@ const Index = () => {
         </div>
         
         {/* Decorative elements */}
-        <div className="absolute top-20 right-10 w-72 h-72 bg-primary-glow rounded-full blur-3xl opacity-20 animate-float"></div>
-        <div className="absolute bottom-10 left-10 w-96 h-96 bg-secondary rounded-full blur-3xl opacity-20 animate-float" style={{ animationDelay: "1s" }}></div>
+        <div className="absolute top-24 right-16 h-72 w-72 rounded-full bg-primary/30 blur-3xl opacity-60 animate-float"></div>
+        <div className="absolute bottom-10 left-10 h-96 w-96 rounded-full bg-secondary/25 blur-3xl opacity-70 animate-float" style={{ animationDelay: "1s" }}></div>
       </section>
 
       {/* Features Section */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12 animate-slide-up">
+          <div className="mb-12 text-center animate-fade-in">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose TechLearn?</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Everything you need to succeed in your technology learning journey
@@ -48,10 +51,10 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="text-center bg-gradient-card shadow-md border-border animate-slide-up" style={{ animationDelay: "100ms" }}>
+            <Card className="text-center border border-border/40 bg-card/50 backdrop-blur-xl shadow-lg animate-fade-in" style={{ animationDelay: "100ms" }}>
               <CardHeader>
-                <div className="mx-auto mb-4 p-3 bg-gradient-hero rounded-full w-fit">
-                  <BookOpen className="h-8 w-8 text-primary-foreground" />
+                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/15 text-primary">
+                  <BookOpen className="h-7 w-7" />
                 </div>
                 <CardTitle>Structured Curriculum</CardTitle>
               </CardHeader>
@@ -62,10 +65,10 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="text-center bg-gradient-card shadow-md border-border animate-slide-up" style={{ animationDelay: "200ms" }}>
+            <Card className="text-center border border-border/40 bg-card/50 backdrop-blur-xl shadow-lg animate-fade-in" style={{ animationDelay: "200ms" }}>
               <CardHeader>
-                <div className="mx-auto mb-4 p-3 bg-gradient-hero rounded-full w-fit">
-                  <Users className="h-8 w-8 text-primary-foreground" />
+                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/15 text-primary">
+                  <Users className="h-7 w-7" />
                 </div>
                 <CardTitle>Quality Content</CardTitle>
               </CardHeader>
@@ -76,10 +79,10 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="text-center bg-gradient-card shadow-md border-border animate-slide-up" style={{ animationDelay: "300ms" }}>
+            <Card className="text-center border border-border/40 bg-card/50 backdrop-blur-xl shadow-lg animate-fade-in" style={{ animationDelay: "300ms" }}>
               <CardHeader>
-                <div className="mx-auto mb-4 p-3 bg-gradient-hero rounded-full w-fit">
-                  <Award className="h-8 w-8 text-primary-foreground" />
+                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/15 text-primary">
+                  <Award className="h-7 w-7" />
                 </div>
                 <CardTitle>Self-Paced Learning</CardTitle>
               </CardHeader>
@@ -105,18 +108,18 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 mb-8">
             {categories.slice(0, 6).map((category, index) => (
               <Link
                 key={category.id}
                 to={`/category/${category.id}`}
-                className="group animate-slide-up"
+                className="group animate-fade-in"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <Card className="h-full transition-all duration-300 hover:shadow-lg hover:scale-105 border-border bg-gradient-card">
+                <Card className="h-full border border-border/40 bg-card/40 backdrop-blur-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-glow">
                   <CardHeader>
-                    <div className="text-5xl mb-4 group-hover:animate-float">{category.icon}</div>
-                    <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors">
+                    <div className="mb-4 text-4xl group-hover:animate-float">{category.icon}</div>
+                    <CardTitle className="text-xl mb-2 transition-colors group-hover:text-primary">
                       {category.name}
                     </CardTitle>
                     <CardDescription>{category.description}</CardDescription>
@@ -136,7 +139,7 @@ const Index = () => {
 
           <div className="text-center">
             <Link to="/categories">
-              <Button variant="outline" size="lg" className="group">
+              <Button variant="outline" size="lg" className="group border-border/40 bg-card/40 backdrop-blur-lg">
                 View All Categories
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -148,15 +151,15 @@ const Index = () => {
       {/* CTA Section */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <div className="bg-gradient-hero rounded-2xl p-8 md:p-12 text-center shadow-glow animate-slide-up">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
+          <div className="rounded-3xl border border-border/40 bg-card/40 p-8 text-center backdrop-blur-2xl shadow-glow animate-fade-in md:p-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Ready to Start Learning?
             </h2>
-            <p className="text-lg text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
               Join thousands of learners mastering technology skills. Start your journey today with our comprehensive courses.
             </p>
             <Link to="/categories">
-              <Button size="lg" variant="secondary" className="shadow-lg">
+              <Button size="lg" variant="secondary" className="shadow-glow">
                 Browse All Courses
               </Button>
             </Link>

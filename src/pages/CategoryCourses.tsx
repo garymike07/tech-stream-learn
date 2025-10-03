@@ -22,21 +22,21 @@ const CategoryCourses = () => {
   }
 
   const difficultyColors = {
-    Beginner: "bg-green-500/10 text-green-600 border-green-500/20",
-    Intermediate: "bg-yellow-500/10 text-yellow-600 border-yellow-500/20",
-    Advanced: "bg-red-500/10 text-red-600 border-red-500/20",
+    Beginner: "border-emerald-400/40 bg-emerald-500/15 text-emerald-100",
+    Intermediate: "border-amber-400/40 bg-amber-500/15 text-amber-100",
+    Advanced: "border-rose-500/40 bg-rose-500/15 text-rose-100",
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background text-foreground">
       <Header />
       
       <main className="container mx-auto px-4 py-12">
-        <div className="mb-12 animate-slide-up">
+        <div className="mb-12 animate-fade-in rounded-3xl border border-border/40 bg-card/40 p-8 backdrop-blur-2xl shadow-glow">
           <div className="flex items-center gap-4 mb-4">
             <span className="text-6xl">{category.icon}</span>
             <div>
-              <h1 className="text-4xl font-bold bg-gradient-hero bg-clip-text text-transparent">
+              <h1 className="text-4xl font-bold">
                 {category.name}
               </h1>
               <p className="text-lg text-muted-foreground mt-2">
@@ -51,18 +51,18 @@ const CategoryCourses = () => {
             <p className="text-lg text-muted-foreground">No courses available yet in this category.</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
             {categoryCourses.map((course, index) => (
               <Link
                 key={course.id}
                 to={`/course/${course.id}`}
-                className="group animate-slide-up"
+                className="group animate-fade-in"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <Card className="h-full transition-all duration-300 hover:shadow-lg hover:scale-[1.02] border-border bg-gradient-card">
+                <Card className="h-full border border-border/40 bg-card/40 backdrop-blur-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-glow">
                   <CardHeader>
                     <div className="flex items-start justify-between mb-2">
-                      <CardTitle className="text-2xl group-hover:text-primary transition-colors">
+                      <CardTitle className="text-2xl transition-colors group-hover:text-primary">
                         {course.title}
                       </CardTitle>
                       <Badge className={difficultyColors[course.difficulty]}>
