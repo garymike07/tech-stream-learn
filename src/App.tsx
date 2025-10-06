@@ -1,20 +1,25 @@
+import { Suspense, lazy } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
-import Index from "./pages/Index";
-import Categories from "./pages/Categories";
-import CategoryCourses from "./pages/CategoryCourses";
-import CourseDetail from "./pages/CourseDetail";
-import LessonPlayer from "./pages/LessonPlayer";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-import Exercises from "./pages/Exercises";
-import ExerciseDetail from "./pages/ExerciseDetail";
-import Subscribe from "./pages/Subscribe";
-import NotFound from "./pages/NotFound";
+import RouteLoading from "@/components/RouteLoading";
 import { useAuth } from "@/context/AuthContext";
+
+const Index = lazy(() => import("./pages/Index"));
+const Categories = lazy(() => import("./pages/Categories"));
+const CategoryCourses = lazy(() => import("./pages/CategoryCourses"));
+const CourseDetail = lazy(() => import("./pages/CourseDetail"));
+const LessonPlayer = lazy(() => import("./pages/LessonPlayer"));
+const LearningPaths = lazy(() => import("./pages/LearningPaths"));
+const Insights = lazy(() => import("./pages/Insights"));
+const Login = lazy(() => import("./pages/Login"));
+const Signup = lazy(() => import("./pages/Signup"));
+const Exercises = lazy(() => import("./pages/Exercises"));
+const ExerciseDetail = lazy(() => import("./pages/ExerciseDetail"));
+const Subscribe = lazy(() => import("./pages/Subscribe"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
 
@@ -45,13 +50,30 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
+        <Suspense fallback={<RouteLoading />}>
+          <Routes>
           <Route path="/" element={<Index />} />
           <Route
             path="/categories"
             element={(
               <RequireAuth>
                 <Categories />
+              </RequireAuth>
+            )}
+          />
+          <Route
+            path="/paths"
+            element={(
+              <RequireAuth>
+                <LearningPaths />
+              </RequireAuth>
+            )}
+          />
+          <Route
+            path="/insights"
+            element={(
+              <RequireAuth>
+                <Insights />
               </RequireAuth>
             )}
           />
@@ -107,7 +129,8 @@ const App = () => (
           <Route path="/signup/*" element={<Signup />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
-        </Routes>
+          </Routes>
+        </Suspense>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

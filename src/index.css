@@ -1,108 +1,37 @@
+@import "./styles/tokens.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
-@layer base {
-  :root {
-    --background: 222 63% 8%;
-    --foreground: 216 33% 92%;
-
-    --card: 220 60% 10%;
-    --card-foreground: 216 33% 92%;
-
-    --popover: 220 55% 9%;
-    --popover-foreground: 216 33% 92%;
-
-    --primary: 222 89% 66%;
-    --primary-foreground: 222 63% 8%;
-    --primary-glow: 199 89% 68%;
-
-    --secondary: 264 83% 68%;
-    --secondary-foreground: 222 63% 8%;
-
-    --muted: 222 44% 18%;
-    --muted-foreground: 217 22% 72%;
-
-    --accent: 194 88% 64%;
-    --accent-foreground: 222 63% 8%;
-
-    --destructive: 0 63% 45%;
-    --destructive-foreground: 216 33% 92%;
-
-    --border: 222 44% 24%;
-    --input: 222 44% 24%;
-    --ring: 222 89% 66%;
-
-    --radius: 0.9rem;
-
-    --gradient-hero: linear-gradient(135deg, hsl(222 89% 20% / 0.95) 0%, hsl(264 83% 34% / 0.9) 50%, hsl(194 88% 26% / 0.9) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(220 70% 12% / 0.7) 0%, hsl(216 50% 16% / 0.65) 100%);
-    
-    --shadow-sm: 0 10px 30px hsl(215 60% 5% / 0.35);
-    --shadow-md: 0 20px 45px hsl(217 65% 7% / 0.45);
-    --shadow-lg: 0 30px 60px hsl(220 70% 10% / 0.55);
-    --shadow-glow: 0 0 40px hsl(222 89% 50% / 0.45);
-
-    --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .dark {
-    --background: 222 63% 6%;
-    --foreground: 216 33% 94%;
-
-    --card: 220 58% 10%;
-    --card-foreground: 216 33% 94%;
-
-    --popover: 220 55% 9%;
-    --popover-foreground: 216 33% 94%;
-
-    --primary: 222 89% 70%;
-    --primary-foreground: 222 63% 6%;
-    --primary-glow: 199 89% 74%;
-
-    --secondary: 264 83% 72%;
-    --secondary-foreground: 222 63% 6%;
-
-    --muted: 222 44% 16%;
-    --muted-foreground: 217 22% 74%;
-
-    --accent: 194 88% 68%;
-    --accent-foreground: 222 63% 6%;
-
-    --destructive: 0 70% 42%;
-    --destructive-foreground: 216 33% 94%;
-
-    --border: 222 50% 20%;
-    --input: 222 50% 20%;
-    --ring: 222 89% 70%;
-
-    --gradient-hero: linear-gradient(140deg, hsl(222 89% 18% / 0.92) 0%, hsl(264 83% 32% / 0.9) 45%, hsl(194 88% 28% / 0.88) 100%);
-    --gradient-card: linear-gradient(155deg, hsl(220 70% 12% / 0.65) 0%, hsl(217 50% 15% / 0.6) 100%);
-    
-    --shadow-glow: 0 0 45px hsl(199 89% 50% / 0.55);
-  }
-}
 
 @layer base {
   * {
     @apply border-border;
   }
 
+  html {
+    font-family: var(--font-sans);
+    line-height: var(--line-height-base);
+    font-weight: var(--font-weight-regular);
+    font-feature-settings: "liga" 1, "kern" 1;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground antialiased;
-    animation: global-fade-in 0.6s ease-out;
+    min-height: 100vh;
+    background-image: var(--gradient-surface);
+    background-attachment: fixed;
+    animation: global-fade-in 0.6s ease-out both;
   }
 
   body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: radial-gradient(circle at top left, hsl(194 88% 55% / 0.22), transparent 45%),
-      radial-gradient(circle at bottom right, hsl(264 83% 60% / 0.18), transparent 50%);
+    background: radial-gradient(circle at top left, hsl(var(--primary) / 0.18), transparent 45%),
+      radial-gradient(circle at bottom right, hsl(var(--secondary) / 0.16), transparent 50%);
     pointer-events: none;
     z-index: -1;
   }
@@ -111,18 +40,33 @@ All colors MUST be HSL.
     content: "";
     position: fixed;
     inset: 0;
-    background: linear-gradient(120deg, hsl(222 89% 18% / 0.45) 0%, transparent 35%, transparent 65%, hsl(264 83% 32% / 0.35) 100%),
+    background: linear-gradient(120deg, hsl(var(--primary) / 0.35) 0%, transparent 35%, transparent 65%, hsl(var(--secondary) / 0.32) 100%),
       repeating-linear-gradient(
         -45deg,
-        hsla(222 63% 12% / 0.7) 0px,
-        hsla(222 63% 12% / 0.7) 2px,
-        hsla(222 63% 8% / 0.4) 2px,
-        hsla(222 63% 8% / 0.4) 12px
+        hsla(222 63% 12% / 0.6) 0px,
+        hsla(222 63% 12% / 0.6) 2px,
+        hsla(222 63% 8% / 0.35) 2px,
+        hsla(222 63% 8% / 0.35) 12px
       );
-    opacity: 0.35;
+    opacity: 0.32;
     mask-image: radial-gradient(circle at center, black, transparent 70%);
     pointer-events: none;
     z-index: -2;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--tracking-tight);
+    line-height: var(--line-height-snug);
+  }
+
+  p,
+  li,
+  span {
+    line-height: var(--line-height-relaxed);
   }
 }
 
@@ -140,50 +84,50 @@ All colors MUST be HSL.
 @keyframes glow-pulse {
   0%,
   100% {
-    box-shadow: 0 0 0px hsla(199 89% 60% / 0.25), 0 0 30px hsla(264 83% 52% / 0.35);
+    box-shadow: 0 0 0px hsl(var(--primary) / 0.22), 0 0 32px hsl(var(--secondary) / 0.32);
   }
   50% {
-    box-shadow: 0 0 25px hsla(199 89% 70% / 0.4), 0 0 60px hsla(264 83% 62% / 0.45);
+    box-shadow: 0 0 24px hsl(var(--primary) / 0.38), 0 0 58px hsl(var(--secondary) / 0.42);
   }
 }
 
 @keyframes float-tilt {
   0%,
   100% {
-    transform: translate3d(0, 0, 0) rotate(-1deg);
+    transform: translate3d(0, 0, 0) rotate(-1.5deg);
   }
   50% {
-    transform: translate3d(8px, -10px, 0) rotate(2deg);
+    transform: translate3d(10px, -12px, 0) rotate(2deg);
   }
 }
 
 @keyframes diagonal-drift {
   0% {
-    transform: translate3d(-10%, 10%, 0) scale(1.05);
-    opacity: 0.4;
+    transform: translate3d(-10%, 12%, 0) scale(1.05);
+    opacity: 0.35;
   }
   50% {
-    transform: translate3d(5%, -5%, 0) scale(1.08);
-    opacity: 0.65;
+    transform: translate3d(6%, -8%, 0) scale(1.08);
+    opacity: 0.6;
   }
   100% {
-    transform: translate3d(-10%, 10%, 0) scale(1.05);
-    opacity: 0.4;
+    transform: translate3d(-10%, 12%, 0) scale(1.05);
+    opacity: 0.35;
   }
 }
 
 @keyframes code-rain {
   0% {
     background-position: 0 0;
-    opacity: 0.25;
+    opacity: 0.22;
   }
   50% {
-    background-position: -200px 400px;
-    opacity: 0.45;
+    background-position: -220px 420px;
+    opacity: 0.4;
   }
   100% {
     background-position: 0 0;
-    opacity: 0.25;
+    opacity: 0.22;
   }
 }
 
@@ -197,7 +141,7 @@ All colors MUST be HSL.
   }
 
   .animate-diagonal-drift {
-    animation: diagonal-drift 14s ease-in-out infinite;
+    animation: diagonal-drift 16s ease-in-out infinite;
   }
 
   .bg-code-rain {
@@ -208,12 +152,52 @@ All colors MUST be HSL.
     content: "";
     position: absolute;
     inset: -40%;
-    background-image: radial-gradient(circle at 1px 1px, hsla(199 89% 66% / 0.18) 1px, transparent 0),
-      radial-gradient(circle at 4px 4px, hsla(264 83% 66% / 0.16) 1px, transparent 0);
+    background-image: radial-gradient(circle at 1px 1px, hsl(var(--primary) / 0.18) 1px, transparent 0),
+      radial-gradient(circle at 4px 4px, hsl(var(--secondary) / 0.16) 1px, transparent 0);
     background-size: 12px 12px, 16px 16px;
     animation: code-rain 18s linear infinite;
     opacity: 0.45;
     pointer-events: none;
     mix-blend-mode: screen;
+  }
+
+  .glass-panel {
+    background: var(--surface-glass);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+  }
+
+  .glass-panel-strong {
+    background: var(--surface-glass-strong);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    border-radius: 999px;
+    padding: var(--space-xxs) var(--space-sm);
+    background: hsl(var(--primary) / 0.12);
+    color: hsl(var(--primary));
+    border: 1px solid hsl(var(--primary) / 0.35);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    font-size: 0.65rem;
+    font-weight: var(--font-weight-medium);
+  }
+
+  .hero-grid {
+    display: grid;
+    gap: var(--space-xl);
+  }
+
+  @screen md {
+    .hero-grid {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+      align-items: stretch;
+    }
   }
 }

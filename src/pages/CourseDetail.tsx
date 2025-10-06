@@ -1,33 +1,21 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { useParams, Link, useLocation, useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import { courses } from "@/data/courses";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Clock, BarChart, PlayCircle, ArrowLeft, Award, ShieldCheck, Hourglass } from "lucide-react";
+import { Clock, BarChart, PlayCircle, ArrowLeft, Award, ShieldCheck, Hourglass, Layers, Sparkles, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/context/AuthContext";
+import { useProgress } from "@/context/ProgressContext";
 import { toast } from "@/hooks/use-toast";
-
-const COURSE_COMPLETIONS_KEY = "mlc-course-completions";
-
-const loadCompletionSet = () => {
-  try {
-    const raw = localStorage.getItem(COURSE_COMPLETIONS_KEY);
-    if (!raw) return new Set<string>();
-    return new Set(JSON.parse(raw) as string[]);
-  } catch (error) {
-    console.error("Failed to load completions", error);
-    return new Set<string>();
-  }
-};
 
 const CourseDetail = () => {
   const { courseId } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
   const { user, enrollCourse, enrollments, subscriptionStatus, maxFreeCourses, trialDaysRemaining, monthlyPriceKes } = useAuth();
-  const [completedCourses] = useState<Set<string>>(() => loadCompletionSet());
+  const { isCourseCompleted } = useProgress();
   const course = useMemo(() => courses.find((c) => c.id === courseId), [courseId]);
 
   if (!course) {
@@ -49,7 +37,7 @@ const CourseDetail = () => {
 
   const firstLesson = course.modules[0]?.sections[0]?.lessons[0];
   const isEnrolled = courseId ? enrollments.includes(courseId) : false;
-  const isCourseCompleted = courseId ? completedCourses.has(courseId) : false;
+  const courseCompleted = courseId ? isCourseCompleted(courseId) : false;
   const isTrialActive = subscriptionStatus === "trial";
   const hasUnlimitedAccess = subscriptionStatus === "premium" || isTrialActive;
   const hasFreeQuota = hasUnlimitedAccess || isEnrolled || enrollments.length < maxFreeCourses;
@@ -100,11 +88,11 @@ const CourseDetail = () => {
       <Header />
 
       <main className="container mx-auto px-4 py-12">
-        <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <Link to={`/category/${course.category}`}>
-            <Button variant="ghost" className="group">
-              <ArrowLeft className="h-4 w-4 mr-2 group-hover:-translate-x-1 transition-transform" />
-              Back to courses
+            <Button variant="ghost" className="group border border-border/45 text-muted-foreground hover:text-primary">
+              <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
+              Back to category
             </Button>
           </Link>
 
@@ -160,7 +148,7 @@ const CourseDetail = () => {
                 </Button>
               </div>
             ) : null}
-            {isCourseCompleted ? (
+            {courseCompleted ? (
               <Badge variant="secondary" className="bg-emerald-500/15 text-emerald-200">
                 <Award className="mr-1 h-3.5 w-3.5" /> Course completed
               </Badge>
@@ -168,82 +156,117 @@ const CourseDetail = () => {
           </div>
         </div>
 
-        <div className="mb-8 animate-fade-in rounded-3xl border border-border/40 bg-card/40 p-8 backdrop-blur-2xl shadow-glow">
-          <div className="flex items-start justify-between mb-4">
-            <h1 className="text-4xl font-bold">{course.title}</h1>
-            <Badge className={difficultyColors[course.difficulty]}>{course.difficulty}</Badge>
-          </div>
-
-          <p className="text-lg text-muted-foreground mb-6">{course.description}</p>
-
-          <div className="flex flex-wrap items-center gap-6 mb-6 text-muted-foreground">
-            <div className="flex items-center gap-2">
-              <Clock className="h-5 w-5" />
-              <span>{course.duration}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <BarChart className="h-5 w-5" />
-              <span>{course.modules.length} modules</span>
-            </div>
-          </div>
-
-          {course.prerequisites && course.prerequisites.length > 0 && (
-            <div>
-              <p className="text-sm font-medium mb-2">Prerequisites:</p>
-              <div className="flex flex-wrap gap-2">
-                {course.prerequisites.map((prereq, index) => (
-                  <Badge key={index} variant="outline">
-                    {prereq}
-                  </Badge>
-                ))}
+        <div className="glass-panel glass-panel-strong relative overflow-hidden border border-border/45 p-10">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/12 via-transparent to-secondary/18 opacity-80" />
+          <div className="relative z-10 space-y-8">
+            <div className="flex flex-wrap items-start justify-between gap-4">
+              <div className="space-y-4">
+                <Badge className={difficultyColors[course.difficulty]}>{course.difficulty}</Badge>
+                <h1 className="text-4xl font-bold md:text-5xl">{course.title}</h1>
+                <p className="text-lg text-muted-foreground md:max-w-3xl">{course.description}</p>
+              </div>
+              <div className="grid gap-3 text-sm text-muted-foreground">
+                <span className="inline-flex items-center gap-2 rounded-2xl border border-border/50 bg-card/60 px-3 py-2">
+                  <Clock className="h-4 w-4 text-primary" />
+                  {course.duration}
+                </span>
+                <span className="inline-flex items-center gap-2 rounded-2xl border border-border/50 bg-card/60 px-3 py-2">
+                  <BarChart className="h-4 w-4 text-primary" />
+                  {course.modules.length} modules
+                </span>
+                {course.projectBriefs && course.projectBriefs.length > 0 ? (
+                  <span className="inline-flex items-center gap-2 rounded-2xl border border-border/50 bg-card/60 px-3 py-2">
+                    <FileText className="h-4 w-4 text-primary" />
+                    {course.projectBriefs.length} project brief{course.projectBriefs.length > 1 ? "s" : ""}
+                  </span>
+                ) : null}
               </div>
             </div>
-          )}
+
+            <div className="grid gap-6 lg:grid-cols-2">
+              {course.prerequisites && course.prerequisites.length > 0 ? (
+                <div className="rounded-2xl border border-border/45 bg-card/60 p-6">
+                  <div className="mb-3 flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                    <Layers className="h-4 w-4 text-primary" /> prerequisites
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {course.prerequisites.map((prereq, index) => (
+                      <Badge key={index} variant="outline" className="text-xs">
+                        {prereq}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
+
+              {course.outcomes && course.outcomes.length > 0 ? (
+                <div className="rounded-2xl border border-border/45 bg-card/60 p-6">
+                  <div className="mb-3 flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                    <Sparkles className="h-4 w-4 text-primary" /> outcomes
+                  </div>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    {course.outcomes.slice(0, 4).map((outcome, index) => (
+                      <li key={index} className="leading-relaxed">• {outcome}</li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+            </div>
+          </div>
         </div>
 
-        <div className="animate-fade-in rounded-3xl border border-border/40 bg-card/40 p-6 backdrop-blur-2xl shadow-glow" style={{ animationDelay: "200ms" }}>
-          <h2 className="text-2xl font-bold mb-6">Course Curriculum</h2>
+        <div className="mt-10 space-y-6">
+          <div className="glass-panel border border-border/40 p-6">
+            <h2 className="text-2xl font-bold">Course Curriculum</h2>
+            <p className="text-sm text-muted-foreground">Expand each module to jump directly into the lessons.</p>
+          </div>
 
-          <Accordion type="single" collapsible className="space-y-4">
-            {course.modules.map((module, moduleIndex) => (
-              <AccordionItem
-                key={module.id}
-                value={module.id}
-                className="overflow-hidden rounded-2xl border border-border/40 bg-background/60 backdrop-blur-xl"
-              >
-                <AccordionTrigger className="px-4 py-3 text-left hover:no-underline hover:bg-muted/40">
-                  <div className="flex items-center gap-3">
-                    <span className="text-lg font-semibold text-primary">Module {moduleIndex + 1}</span>
-                    <span className="text-lg font-semibold">{module.title}</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-4 pb-4">
-                  {module.sections.map((section) => (
-                    <div key={section.id} className="mt-4">
-                      <h4 className="font-semibold text-md mb-3 text-foreground">{section.title}</h4>
-                      <div className="space-y-2 ml-4">
-                        {section.lessons.map((lesson) => (
-                          <Link
-                            key={lesson.id}
-                            to={`/course/${course.id}/lesson/${lesson.id}`}
-                            className="flex items-center justify-between rounded-md p-3 transition-colors hover:bg-muted/50 group"
-                          >
-                            <div className="flex items-center gap-3">
-                              <PlayCircle className="h-4 w-4 text-primary group-hover:text-primary-glow transition-colors" />
-                              <span className="text-sm">{lesson.title}</span>
-                            </div>
-                            {lesson.videoDuration ? (
-                              <span className="text-xs text-muted-foreground">{lesson.videoDuration}</span>
-                            ) : null}
-                          </Link>
-                        ))}
-                      </div>
+          <div className="glass-panel border border-border/40 p-6" style={{ animationDelay: "200ms" }}>
+            <Accordion type="single" collapsible className="space-y-4">
+              {course.modules.map((module, moduleIndex) => (
+                <AccordionItem
+                  key={module.id}
+                  value={module.id}
+                  className="overflow-hidden rounded-2xl border border-border/40 bg-background/60 backdrop-blur-xl"
+                >
+                  <AccordionTrigger className="px-4 py-3 text-left hover:no-underline hover:bg-muted/40">
+                    <div className="flex flex-col gap-1 text-left md:flex-row md:items-center md:gap-3">
+                      <span className="text-sm font-semibold uppercase tracking-[0.25em] text-primary">
+                        Module {moduleIndex + 1}
+                      </span>
+                      <span className="text-lg font-semibold text-foreground">{module.title}</span>
                     </div>
-                  ))}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-4 pb-4">
+                    {module.sections.map((section) => (
+                      <div key={section.id} className="mt-4 rounded-2xl border border-border/40 bg-card/60 p-4">
+                        <h4 className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-muted-foreground">
+                          {section.title}
+                        </h4>
+                        <div className="space-y-2">
+                          {section.lessons.map((lesson) => (
+                            <Link
+                              key={lesson.id}
+                              to={`/course/${course.id}/lesson/${lesson.id}`}
+                              className="group flex items-center justify-between rounded-xl border border-transparent bg-background/40 px-3 py-2 text-sm transition-colors hover:border-primary/40 hover:bg-muted/40"
+                            >
+                              <div className="flex items-center gap-3">
+                                <PlayCircle className="h-4 w-4 text-primary transition-colors group-hover:text-primary-glow" />
+                                <span>{lesson.title}</span>
+                              </div>
+                              {lesson.videoDuration ? (
+                                <span className="text-xs text-muted-foreground">{lesson.videoDuration}</span>
+                              ) : null}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
         </div>
       </main>
     </div>

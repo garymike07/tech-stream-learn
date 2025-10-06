@@ -7,24 +7,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight, CheckCircle, List } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useAuth } from "@/context/AuthContext";
+import { useProgress } from "@/context/ProgressContext";
 import { toast } from "@/hooks/use-toast";
-
-const COURSE_COMPLETIONS_KEY = "mlc-course-completions";
-const loadCompletionSet = () => {
-  try {
-    const raw = localStorage.getItem(COURSE_COMPLETIONS_KEY);
-    if (!raw) return new Set<string>();
-    const parsed = JSON.parse(raw) as string[];
-    return new Set(parsed);
-  } catch (error) {
-    console.error("Failed to read course completions", error);
-    return new Set<string>();
-  }
-};
-
-const persistCompletionSet = (values: Set<string>) => {
-  localStorage.setItem(COURSE_COMPLETIONS_KEY, JSON.stringify(Array.from(values)));
-};
 
 const LessonPlayer = () => {
   const { courseId, lessonId } = useParams();
@@ -34,10 +18,10 @@ const LessonPlayer = () => {
   const [prevLesson, setPrevLesson] = useState<{ id: string; title: string } | null>(null);
 
   const course = useMemo(() => courses.find((c) => c.id === courseId), [courseId]);
-  const [completedCourses, setCompletedCourses] = useState<Set<string>>(() => loadCompletionSet());
   const { user, enrollments } = useAuth();
+  const { markCourseCompleted, isCourseCompleted } = useProgress();
   const isEnrolled = courseId ? enrollments.includes(courseId) : false;
-  const isCourseCompleted = courseId ? completedCourses.has(courseId) : false;
+  const courseCompleted = courseId ? isCourseCompleted(courseId) : false;
 
   useEffect(() => {
     if (!course || !lessonId) return;
@@ -87,16 +71,6 @@ const LessonPlayer = () => {
     );
   }
 
-  const markCourseCompleted = () => {
-    if (!courseId || !course) return;
-    const next = new Set(completedCourses);
-    if (!next.has(courseId)) {
-      next.add(courseId);
-      setCompletedCourses(next);
-      persistCompletionSet(next);
-    }
-  };
-
   if (!user || !isEnrolled || !currentLesson) {
     const handleAccess = () => {
       if (!courseId) return;
@@ -125,7 +99,7 @@ const LessonPlayer = () => {
       <div className="min-h-screen bg-background text-foreground">
         <Header />
         <main className="container mx-auto px-4 py-16">
-          <Card className="mx-auto max-w-2xl border border-border/40 bg-card/40 backdrop-blur-2xl shadow-glow">
+          <Card className="mx-auto max-w-2xl glass-panel glass-panel-strong border border-border/45">
             <CardContent className="space-y-4 p-10 text-center">
               <h1 className="text-3xl font-bold text-primary">Unlock this lesson</h1>
               <p className="text-muted-foreground">
@@ -152,7 +126,9 @@ const LessonPlayer = () => {
 
   const handleExerciseRedirect = () => {
     if (!courseId) return;
-    markCourseCompleted();
+    if (courseId) {
+      markCourseCompleted(courseId);
+    }
     toast({
       title: "Course badge earned",
       description: "Great work! Head over to the exercise centre to put your skills into practice.",
@@ -161,7 +137,9 @@ const LessonPlayer = () => {
   };
 
   const handleMarkComplete = () => {
-    markCourseCompleted();
+    if (courseId) {
+      markCourseCompleted(courseId);
+    }
     toast({
       title: "Course marked complete",
       description: "You can rewatch lessons anytime or dive into the exercises to keep learning.",
@@ -172,10 +150,10 @@ const LessonPlayer = () => {
     <div className="min-h-screen bg-background text-foreground">
       <Header />
       
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-12">
         <Link to={`/course/${courseId}`}>
-          <Button variant="ghost" className="mb-6 group">
-            <ArrowLeft className="h-4 w-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+          <Button variant="ghost" className="mb-6 group border border-border/50 text-muted-foreground hover:text-primary">
+            <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
             Back to course
           </Button>
         </Link>
@@ -191,7 +169,7 @@ const LessonPlayer = () => {
                 </p>
               )}
               
-              <div className="relative w-full overflow-hidden rounded-3xl border border-border/40 bg-muted/20 shadow-glow backdrop-blur-xl aspect-video">
+              <div className="glass-panel glass-panel-strong relative aspect-video w-full overflow-hidden border border-border/45">
                 {currentLesson.videoUrl ? (
                   <iframe
                     src={currentLesson.videoUrl}
@@ -209,7 +187,7 @@ const LessonPlayer = () => {
             </div>
 
             {/* Navigation Buttons */}
-            <Card className="border border-border/40 bg-card/40 animate-fade-in backdrop-blur-xl shadow-glow" style={{ animationDelay: "100ms" }}>
+            <Card className="glass-panel border border-border/45 animate-fade-in" style={{ animationDelay: "100ms" }}>
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div className="flex-1">
@@ -230,7 +208,7 @@ const LessonPlayer = () => {
                   
                   <Button variant="default" className="mx-4" onClick={handleExerciseRedirect}>
                     <CheckCircle className="h-4 w-4 mr-2" />
-                    {isCourseCompleted ? "Go to exercises" : "Complete course & exercise"}
+                    {courseCompleted ? "Go to exercises" : "Complete course & exercise"}
                   </Button>
 
                   <div className="flex-1 flex justify-end">
@@ -250,7 +228,7 @@ const LessonPlayer = () => {
                 </div>
               </CardContent>
             </Card>
-            {!isCourseCompleted ? (
+            {!courseCompleted ? (
               <Button variant="ghost" className="text-sm text-muted-foreground" onClick={handleMarkComplete}>
                 I&apos;ll revisit exercises later
               </Button>
@@ -259,7 +237,7 @@ const LessonPlayer = () => {
 
           {/* Course Curriculum Sidebar */}
           <div className="lg:col-span-1">
-            <Card className="sticky top-24 border border-border/40 bg-card/40 animate-fade-in backdrop-blur-xl shadow-glow" style={{ animationDelay: "200ms" }}>
+            <Card className="glass-panel sticky top-24 border border-border/45 animate-fade-in" style={{ animationDelay: "200ms" }}>
               <CardContent className="p-6">
                 <div className="flex items-center gap-2 mb-4">
                   <List className="h-5 w-5 text-primary" />
