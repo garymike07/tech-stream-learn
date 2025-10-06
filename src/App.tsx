@@ -103,8 +103,8 @@ const App = () => (
               </RequireAuth>
             )}
           />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/login/*" element={<Login />} />
+          <Route path="/signup/*" element={<Signup />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
