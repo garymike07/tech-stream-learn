@@ -29,13 +29,21 @@ const Header = () => {
     }
   }, [subscriptionStatus, trialDaysRemaining]);
 
-  const handleLogout = () => {
-    logout();
-    toast({
-      title: "Signed out",
-      description: "Come back soon to continue learning.",
-    });
-    navigate("/");
+  const handleLogout = async () => {
+    try {
+      await logout();
+      toast({
+        title: "Signed out",
+        description: "Come back soon to continue learning.",
+      });
+      navigate("/");
+    } catch (error) {
+      toast({
+        title: "Sign out failed",
+        description: "Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (

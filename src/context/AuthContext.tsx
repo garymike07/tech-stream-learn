@@ -1,17 +1,9 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
+import { useAuth as useClerkAuth, useUser } from "@clerk/clerk-react";
 import { addDays, differenceInCalendarDays, isAfter, isValid, parseISO, startOfDay } from "date-fns";
 
 type AuthUser = {
   email: string;
-  fullName: string;
-};
-
-type AuthCredentials = {
-  email: string;
-  password: string;
-};
-
-type SignupPayload = AuthCredentials & {
   fullName: string;
 };
 
@@ -25,18 +17,10 @@ interface AuthContextValue {
   trialDaysRemaining: number | null;
   monthlyPriceKes: number;
   maxFreeCourses: number;
-  signup: (payload: SignupPayload) => Promise<void>;
-  login: (payload: AuthCredentials) => Promise<void>;
-  logout: () => void;
+  logout: () => Promise<void>;
   enrollCourse: (courseId: string) => void;
   requestSubscription: () => void;
 }
-
-type StoredUser = {
-  email: string;
-  password: string;
-  fullName: string;
-};
 
 type StoredSubscription = {
   status: SubscriptionStatus;
@@ -46,8 +30,6 @@ type StoredSubscription = {
 };
 
 const STORAGE_KEYS = {
-  USERS: "tech-stream-learn-users",
-  SESSION: "tech-stream-learn-session",
   ENROLLMENTS: "tech-stream-learn-enrollments",
   SUBSCRIPTION: "tech-stream-learn-subscription",
 } as const;
@@ -56,31 +38,6 @@ const TRIAL_DURATION_DAYS = 30;
 const MONTHLY_PRICE_KES = 500;
 
 const AuthContext = createContext<AuthContextValue | undefined>(undefined);
-
-const encodePassword = (value: string) => {
-  try {
-    return window.btoa(unescape(encodeURIComponent(value)));
-  } catch (error) {
-    console.warn("Password encoding failed, storing in plain text.");
-    return value;
-  }
-};
-
-const getStoredUsers = (): StoredUser[] => {
-  const raw = localStorage.getItem(STORAGE_KEYS.USERS);
-  if (!raw) return [];
-  try {
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? (parsed as StoredUser[]) : [];
-  } catch (error) {
-    console.error("Failed to parse stored users", error);
-    return [];
-  }
-};
-
-const persistUsers = (users: StoredUser[]) => {
-  localStorage.setItem(STORAGE_KEYS.USERS, JSON.stringify(users));
-};
 
 const getStoredEnrollments = (): Record<string, string[]> => {
   const raw = localStorage.getItem(STORAGE_KEYS.ENROLLMENTS);
@@ -211,13 +168,37 @@ const evaluateSubscription = (record: StoredSubscription, now: Date) => {
 };
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
-  const [user, setUser] = useState<AuthUser | null>(null);
+  const { user: clerkUser, isLoaded } = useUser();
+  const { isSignedIn, signOut } = useClerkAuth();
   const [enrollments, setEnrollments] = useState<string[]>([]);
   const [subscriptionStatus, setSubscriptionStatus] = useState<SubscriptionStatus>("free");
   const [trialEndsAt, setTrialEndsAt] = useState<string | null>(null);
   const [trialDaysRemaining, setTrialDaysRemaining] = useState<number | null>(null);
   const maxFreeCourses = 3;
   const monthlyPriceKes = MONTHLY_PRICE_KES;
+
+  const userEmail = useMemo(() => {
+    const emailAddress = clerkUser?.primaryEmailAddress?.emailAddress;
+    return emailAddress ? emailAddress.trim().toLowerCase() : null;
+  }, [clerkUser]);
+
+  const userFullName = useMemo(() => {
+    if (!clerkUser) return null;
+    if (clerkUser.fullName) return clerkUser.fullName;
+    const parts = [clerkUser.firstName, clerkUser.lastName].filter(Boolean) as string[];
+    if (parts.length > 0) {
+      return parts.join(" ");
+    }
+    return clerkUser.username ?? clerkUser.primaryEmailAddress?.emailAddress ?? null;
+  }, [clerkUser]);
+
+  const user = useMemo<AuthUser | null>(() => {
+    if (!isSignedIn || !userEmail) return null;
+    return {
+      email: userEmail,
+      fullName: userFullName ?? userEmail,
+    };
+  }, [isSignedIn, userEmail, userFullName]);
 
   const syncSubscription = useCallback(
     (email: string, existingRecord?: StoredSubscription) => {
@@ -243,90 +224,39 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   );
 
   useEffect(() => {
-    const raw = localStorage.getItem(STORAGE_KEYS.SESSION);
-    if (!raw) return;
-    try {
-      const parsed = JSON.parse(raw) as AuthUser;
-      setUser(parsed);
-    } catch (error) {
-      console.error("Failed to parse session", error);
+    if (!isLoaded) {
+      return;
     }
-  }, []);
 
-  useEffect(() => {
-    if (!user) {
+    if (!isSignedIn || !userEmail) {
       setEnrollments([]);
-      localStorage.removeItem(STORAGE_KEYS.SESSION);
       setSubscriptionStatus("free");
       setTrialEndsAt(null);
       setTrialDaysRemaining(null);
       return;
     }
 
-    localStorage.setItem(STORAGE_KEYS.SESSION, JSON.stringify(user));
     const existing = getStoredEnrollments();
-    setEnrollments(existing[user.email] ?? []);
-  }, [user]);
+    setEnrollments(existing[userEmail] ?? []);
+    syncSubscription(userEmail);
+  }, [isLoaded, isSignedIn, userEmail, syncSubscription]);
 
   useEffect(() => {
-    if (!user) return;
+    if (!isSignedIn || !userEmail) {
+      return;
+    }
     const existing = getStoredEnrollments();
-    existing[user.email] = enrollments;
+    existing[userEmail] = enrollments;
     persistEnrollments(existing);
-  }, [enrollments, user]);
+  }, [enrollments, isSignedIn, userEmail]);
 
-  useEffect(() => {
-    if (!user) return;
-    syncSubscription(user.email);
-  }, [user, syncSubscription]);
-
-  const signup = useCallback(async ({ email, password, fullName }: SignupPayload) => {
-    const trimmedEmail = email.trim().toLowerCase();
-    const users = getStoredUsers();
-    const alreadyExists = users.some((item) => item.email === trimmedEmail);
-    if (alreadyExists) {
-      throw new Error("An account with this email already exists.");
-    }
-
-    const encodedPassword = encodePassword(password);
-    const newUser: StoredUser = {
-      email: trimmedEmail,
-      password: encodedPassword,
-      fullName: fullName.trim(),
-    };
-
-    persistUsers([...users, newUser]);
-    setUser({ email: trimmedEmail, fullName: newUser.fullName });
+  const logout = useCallback(async () => {
+    await signOut();
     setEnrollments([]);
-    const now = new Date();
-    const trialRecord = createTrialSubscription(now);
-    persistSubscription(trimmedEmail, trialRecord);
-    const evaluation = evaluateSubscription(trialRecord, now);
-    setSubscriptionStatus(evaluation.status);
-    setTrialEndsAt(evaluation.trialEndsAt ?? null);
-    setTrialDaysRemaining(evaluation.trialDaysRemaining);
-  }, []);
-
-  const login = useCallback(async ({ email, password }: AuthCredentials) => {
-    const trimmedEmail = email.trim().toLowerCase();
-    const users = getStoredUsers();
-    const encodedPassword = encodePassword(password);
-    const match = users.find((item) => item.email === trimmedEmail);
-
-    if (!match || match.password !== encodedPassword) {
-      throw new Error("Invalid email or password.");
-    }
-
-    setUser({ email: trimmedEmail, fullName: match.fullName });
-    syncSubscription(trimmedEmail);
-  }, [syncSubscription]);
-
-  const logout = useCallback(() => {
-    setUser(null);
     setSubscriptionStatus("free");
     setTrialEndsAt(null);
     setTrialDaysRemaining(null);
-  }, []);
+  }, [signOut]);
 
   const enrollCourse = useCallback(
     (courseId: string) => {
@@ -373,13 +303,11 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       trialDaysRemaining,
       monthlyPriceKes,
       maxFreeCourses,
-      signup,
-      login,
       logout,
       enrollCourse,
       requestSubscription,
     }),
-    [user, enrollments, subscriptionStatus, trialEndsAt, trialDaysRemaining, monthlyPriceKes, maxFreeCourses, signup, login, logout, enrollCourse, requestSubscription],
+    [user, enrollments, subscriptionStatus, trialEndsAt, trialDaysRemaining, monthlyPriceKes, maxFreeCourses, logout, enrollCourse, requestSubscription],
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
