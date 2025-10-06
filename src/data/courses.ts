@@ -329,7 +329,7 @@ export const courses: Course[] = [
               {
                 id: "django-intermediate-2",
                 title: "JWT Auth with Django & DRF",
-                videoUrl: "https://www.youtube.com/embed/6d1mOZ5Nmn8",
+                videoUrl: "https://www.youtube.com/embed/Xp0-Yy5ow5k",
               },
             ],
           },
@@ -383,7 +383,7 @@ export const courses: Course[] = [
               {
                 id: "aws-beginner-2",
                 title: "AWS Console Tour",
-                videoUrl: "https://www.youtube.com/embed/3vnmZF79E1Y",
+                videoUrl: "https://www.youtube.com/embed/HwDlZsheaNg",
               },
             ],
           },
@@ -427,7 +427,7 @@ export const courses: Course[] = [
               {
                 id: "aws-advanced-2",
                 title: "Serverless Architectures on AWS",
-                videoUrl: "https://www.youtube.com/embed/ia-UEYYR44s",
+                videoUrl: "https://www.youtube.com/embed/qQk94CjRvIs",
               },
             ],
           },
@@ -888,7 +888,7 @@ export const courses: Course[] = [
               {
                 id: "rest-advanced-2",
                 title: "Rate Limiting & Throttling",
-                videoUrl: "https://www.youtube.com/embed/Ebq0H9mHkJw",
+                videoUrl: "https://www.youtube.com/embed/_qNHROq0pGk",
               },
             ],
           },
@@ -1240,7 +1240,7 @@ export const courses: Course[] = [
               {
                 id: "angular-architecture-2",
                 title: "Reactive Forms & State Isolation",
-                videoUrl: "https://www.youtube.com/embed/y1ZlWBZX7BM",
+                videoUrl: "https://www.youtube.com/embed/JeeUY6WaXiA",
               },
             ],
           },
@@ -1257,12 +1257,12 @@ export const courses: Course[] = [
               {
                 id: "angular-production-1",
                 title: "Angular Performance Optimization",
-                videoUrl: "https://www.youtube.com/embed/ABI3X72A0zY",
+                videoUrl: "https://www.youtube.com/embed/SRXuxMP8QLg",
               },
               {
                 id: "angular-production-2",
                 title: "Testing Angular with Jest",
-                videoUrl: "https://www.youtube.com/embed/5DqXNgfeYpY",
+                videoUrl: "https://www.youtube.com/embed/c57llB8QA2E",
               },
             ],
           },
@@ -1322,7 +1322,7 @@ export const courses: Course[] = [
               {
                 id: "design-system-2",
                 title: "Design Tokens in Practice",
-                videoUrl: "https://www.youtube.com/embed/Wb1ZO2sS3Gk",
+                videoUrl: "https://www.youtube.com/embed/OMGTP2QpfiY",
               },
             ],
           },
@@ -1339,12 +1339,12 @@ export const courses: Course[] = [
               {
                 id: "design-system-3",
                 title: "Storybook Tutorial",
-                videoUrl: "https://www.youtube.com/embed/6j6OY-1QUHc",
+                videoUrl: "https://www.youtube.com/embed/BySFuXgG-ow",
               },
               {
                 id: "design-system-4",
                 title: "Chromatic Visual QA",
-                videoUrl: "https://www.youtube.com/embed/DBfT3Kxv-HM",
+                videoUrl: "https://www.youtube.com/embed/AGyUh_ta3TU",
               },
             ],
           },
@@ -1361,12 +1361,12 @@ export const courses: Course[] = [
               {
                 id: "design-system-5",
                 title: "Scaling Design Systems",
-                videoUrl: "https://www.youtube.com/embed/T2t6FO4fC9o",
+                videoUrl: "https://www.youtube.com/embed/9w-BwzcuxYM",
               },
               {
                 id: "design-system-6",
                 title: "Accessibility in Design Systems",
-                videoUrl: "https://www.youtube.com/embed/huABkK74vGg",
+                videoUrl: "https://www.youtube.com/embed/SHIL8sVSakE",
               },
             ],
           },
@@ -1426,7 +1426,7 @@ export const courses: Course[] = [
               {
                 id: "performance-2",
                 title: "Web Performance 101",
-                videoUrl: "https://www.youtube.com/embed/4b7yvdNjLCc",
+                videoUrl: "https://www.youtube.com/embed/0fONene3OIA",
               },
             ],
           },
@@ -1443,12 +1443,12 @@ export const courses: Course[] = [
               {
                 id: "performance-3",
                 title: "Image Optimization Strategies",
-                videoUrl: "https://www.youtube.com/embed/0QXj35wP25U",
+                videoUrl: "https://www.youtube.com/embed/z6AoFvVCvg0",
               },
               {
                 id: "performance-4",
                 title: "JavaScript Performance Audits",
-                videoUrl: "https://www.youtube.com/embed/ih5u3no0Rmc",
+                videoUrl: "https://www.youtube.com/embed/EA9bRtw8slU",
               },
             ],
           },
@@ -1465,12 +1465,12 @@ export const courses: Course[] = [
               {
                 id: "performance-5",
                 title: "Next.js Performance Best Practices",
-                videoUrl: "https://www.youtube.com/embed/cUzW5oNTo0Y",
+                videoUrl: "https://www.youtube.com/embed/LkDelp5WWYU",
               },
               {
                 id: "performance-6",
                 title: "Automating Performance Budgets",
-                videoUrl: "https://www.youtube.com/embed/x8bzz449DQo",
+                videoUrl: "https://www.youtube.com/embed/KTkJ3FYdqFI",
               },
             ],
           },
@@ -1587,12 +1587,12 @@ export const courses: Course[] = [
               {
                 id: "nextjs-edge-1",
                 title: "Next.js Streaming Layouts",
-                videoUrl: "https://www.youtube.com/embed/whGwm0Lky2g",
+                videoUrl: "https://www.youtube.com/embed/9REGGiU8hck",
               },
               {
                 id: "nextjs-edge-2",
                 title: "Building at the Edge",
-                videoUrl: "https://www.youtube.com/embed/d6h8BzbSLx0",
+                videoUrl: "https://www.youtube.com/embed/97TlBd-Uhjw",
               },
             ],
           },
@@ -1609,12 +1609,12 @@ export const courses: Course[] = [
               {
                 id: "nextjs-edge-3",
                 title: "Edge Config Deep Dive",
-                videoUrl: "https://www.youtube.com/embed/TyJwbQNA7i4",
+                videoUrl: "https://www.youtube.com/embed/nHGi95l87UA",
               },
               {
                 id: "nextjs-edge-4",
                 title: "Experimentation & Analytics",
-                videoUrl: "https://www.youtube.com/embed/6hoNX0JZG7I",
+                videoUrl: "https://www.youtube.com/embed/zFMgpxG-chM",
               },
             ],
           },
@@ -1631,12 +1631,12 @@ export const courses: Course[] = [
               {
                 id: "nextjs-edge-5",
                 title: "Observability Patterns for Frontend Engineers",
-                videoUrl: "https://www.youtube.com/embed/fyU4Yk8ApnM",
+                videoUrl: "https://www.youtube.com/embed/YxvtH0_tJJY",
               },
               {
                 id: "nextjs-edge-6",
                 title: "Real User Monitoring in Next.js",
-                videoUrl: "https://www.youtube.com/embed/FS4oBEyWH_g",
+                videoUrl: "https://www.youtube.com/embed/MZoADO3cBGo",
               },
             ],
           },
@@ -1758,7 +1758,7 @@ export const courses: Course[] = [
               {
                 id: "rust-web-2",
                 title: "Rust for the Web",
-                videoUrl: "https://www.youtube.com/embed/2vqW6j-v-rQ",
+                videoUrl: "https://www.youtube.com/embed/5C_HPTJg5ek",
               },
             ],
           },
@@ -1775,12 +1775,12 @@ export const courses: Course[] = [
               {
                 id: "rust-web-3",
                 title: "Designing Rust APIs",
-                videoUrl: "https://www.youtube.com/embed/Grn4V3J0uh8",
+                videoUrl: "https://www.youtube.com/embed/_ccDqRTx-JU",
               },
               {
                 id: "rust-web-4",
                 title: "Database Integration with Diesel",
-                videoUrl: "https://www.youtube.com/embed/8sJqyCsE3cY",
+                videoUrl: "https://www.youtube.com/embed/tRC4EIKhMzw",
               },
             ],
           },
@@ -1797,12 +1797,12 @@ export const courses: Course[] = [
               {
                 id: "rust-web-5",
                 title: "Deploy Rust APIs with Docker",
-                videoUrl: "https://www.youtube.com/embed/8brzN5G3wGk",
+                videoUrl: "https://www.youtube.com/embed/ZF1WQGur_NA",
               },
               {
                 id: "rust-web-6",
                 title: "Instrumentation with OpenTelemetry",
-                videoUrl: "https://www.youtube.com/embed/wVF81l0F1bY",
+                videoUrl: "https://www.youtube.com/embed/hLvwoow3XTk",
               },
             ],
           },
@@ -1862,7 +1862,7 @@ export const courses: Course[] = [
               {
                 id: "laravel-2",
                 title: "Eloquent Deep Dive",
-                videoUrl: "https://www.youtube.com/embed/qzgWZ4Zz-8M",
+                videoUrl: "https://www.youtube.com/embed/aB8T-ErB0L4",
               },
             ],
           },
@@ -1879,12 +1879,12 @@ export const courses: Course[] = [
               {
                 id: "laravel-3",
                 title: "Advanced Routing Patterns",
-                videoUrl: "https://www.youtube.com/embed/mPGiCDVY34w",
+                videoUrl: "https://www.youtube.com/embed/wi8kF8UniUI",
               },
               {
                 id: "laravel-4",
                 title: "Request Validation Strategies",
-                videoUrl: "https://www.youtube.com/embed/Yt5f5fR5g7Q",
+                videoUrl: "https://www.youtube.com/embed/4tFcM7NcefU",
               },
             ],
           },
@@ -1901,12 +1901,12 @@ export const courses: Course[] = [
               {
                 id: "laravel-5",
                 title: "Testing Laravel APIs with Pest",
-                videoUrl: "https://www.youtube.com/embed/jHoXQXwQ7b4",
+                videoUrl: "https://www.youtube.com/embed/R3UydV_lYhs",
               },
               {
                 id: "laravel-6",
                 title: "API Documentation & OpenAPI",
-                videoUrl: "https://www.youtube.com/embed/i7SMhG4t0I8",
+                videoUrl: "https://www.youtube.com/embed/PenvYHJ9Koc",
               },
             ],
           },
@@ -1966,7 +1966,7 @@ export const courses: Course[] = [
               {
                 id: "dotnet-minimal-2",
                 title: "Minimal APIs vs Controllers",
-                videoUrl: "https://www.youtube.com/embed/vsB7X8t0gWs",
+                videoUrl: "https://www.youtube.com/embed/bpVN_plQm5E",
               },
             ],
           },
@@ -1983,12 +1983,12 @@ export const courses: Course[] = [
               {
                 id: "dotnet-minimal-3",
                 title: "EF Core with Minimal APIs",
-                videoUrl: "https://www.youtube.com/embed/pj0qv-AjY9w",
+                videoUrl: "https://www.youtube.com/embed/KpdyvEO1Ii0",
               },
               {
                 id: "dotnet-minimal-4",
                 title: "Securing Minimal APIs",
-                videoUrl: "https://www.youtube.com/embed/Bx3Woe0thCI",
+                videoUrl: "https://www.youtube.com/embed/gsAuFIhXz3g",
               },
             ],
           },
@@ -2005,12 +2005,12 @@ export const courses: Course[] = [
               {
                 id: "dotnet-minimal-5",
                 title: "Deploy Minimal APIs to Azure",
-                videoUrl: "https://www.youtube.com/embed/gm4GZ7_zXqU",
+                videoUrl: "https://www.youtube.com/embed/EKqXAMLsnKQ",
               },
               {
                 id: "dotnet-minimal-6",
                 title: "Adding Observability with OpenTelemetry",
-                videoUrl: "https://www.youtube.com/embed/9AbdBDEuDf0",
+                videoUrl: "https://www.youtube.com/embed/_OXYCzwFd1Y",
               },
             ],
           },
@@ -2070,7 +2070,7 @@ export const courses: Course[] = [
               {
                 id: "go-microservices-2",
                 title: "Designing Go Services",
-                videoUrl: "https://www.youtube.com/embed/KpRDuVW1TR8",
+                videoUrl: "https://www.youtube.com/embed/446E-r0rXHI",
               },
             ],
           },
@@ -2087,12 +2087,12 @@ export const courses: Course[] = [
               {
                 id: "go-microservices-3",
                 title: "Deploy Go Services on Kubernetes",
-                videoUrl: "https://www.youtube.com/embed/GMKow9KmfeU",
+                videoUrl: "https://www.youtube.com/embed/o5eWy-2SDtc",
               },
               {
                 id: "go-microservices-4",
                 title: "Service Mesh Essentials",
-                videoUrl: "https://www.youtube.com/embed/-yZJO7ejnKc",
+                videoUrl: "https://www.youtube.com/embed/16fgzklcF7Y",
               },
             ],
           },
@@ -2109,12 +2109,12 @@ export const courses: Course[] = [
               {
                 id: "go-microservices-5",
                 title: "Distributed Tracing with OpenTelemetry",
-                videoUrl: "https://www.youtube.com/embed/ykjJmV1R5sE",
+                videoUrl: "https://www.youtube.com/embed/idDu_jXqf4E",
               },
               {
                 id: "go-microservices-6",
                 title: "Chaos Engineering in Kubernetes",
-                videoUrl: "https://www.youtube.com/embed/BWgq9nxCVqM",
+                videoUrl: "https://www.youtube.com/embed/THzYL5G-ZvE",
               },
             ],
           },
@@ -2293,12 +2293,12 @@ export const courses: Course[] = [
               {
                 id: "azure-architect-1",
                 title: "Azure Landing Zones Deep Dive",
-                videoUrl: "https://www.youtube.com/embed/ppMx7lS99-I",
+                videoUrl: "https://www.youtube.com/embed/mluS8ovuBKg",
               },
               {
                 id: "azure-architect-2",
                 title: "Azure Policy & Blueprints",
-                videoUrl: "https://www.youtube.com/embed/0UO0jzAm8hU",
+                videoUrl: "https://www.youtube.com/embed/9WO4EBgUJXk",
               },
             ],
           },
@@ -2315,12 +2315,12 @@ export const courses: Course[] = [
               {
                 id: "azure-architect-3",
                 title: "Azure Networking Deep Dive",
-                videoUrl: "https://www.youtube.com/embed/ETfUbGKJtjk",
+                videoUrl: "https://www.youtube.com/embed/feQvnIUJ3Iw",
               },
               {
                 id: "azure-architect-4",
                 title: "ExpressRoute & VPN Architecture",
-                videoUrl: "https://www.youtube.com/embed/kQXfrHgmUwQ",
+                videoUrl: "https://www.youtube.com/embed/zDPAnN5GQCs",
               },
             ],
           },
@@ -2337,12 +2337,12 @@ export const courses: Course[] = [
               {
                 id: "azure-architect-5",
                 title: "Azure Monitor Deep Dive",
-                videoUrl: "https://www.youtube.com/embed/hE5vKJ10Z84",
+                videoUrl: "https://www.youtube.com/embed/gzBXFnfvoXo",
               },
               {
                 id: "azure-architect-6",
                 title: "FinOps on Azure",
-                videoUrl: "https://www.youtube.com/embed/Om8ApD0LpfQ",
+                videoUrl: "https://www.youtube.com/embed/YHUptdFtozQ",
               },
             ],
           },
@@ -2397,12 +2397,12 @@ export const courses: Course[] = [
               {
                 id: "multi-cloud-1",
                 title: "Multi-Cloud Networking Overview",
-                videoUrl: "https://www.youtube.com/embed/7cq33H0azl8",
+                videoUrl: "https://www.youtube.com/embed/tyiO_zG1mi0",
               },
               {
                 id: "multi-cloud-2",
                 title: "Transit Gateway Patterns",
-                videoUrl: "https://www.youtube.com/embed/2k6OSAmhp_M",
+                videoUrl: "https://www.youtube.com/embed/a55Iud-66q0",
               },
             ],
           },
@@ -2419,12 +2419,12 @@ export const courses: Course[] = [
               {
                 id: "multi-cloud-3",
                 title: "Zero Trust Networking Principles",
-                videoUrl: "https://www.youtube.com/embed/tg6sXkvv2Fg",
+                videoUrl: "https://www.youtube.com/embed/yn6CPQ9RioA",
               },
               {
                 id: "multi-cloud-4",
                 title: "Service Mesh for Multi-Cloud",
-                videoUrl: "https://www.youtube.com/embed/vE5fyYNPYHg",
+                videoUrl: "https://www.youtube.com/embed/16fgzklcF7Y",
               },
             ],
           },
@@ -2441,12 +2441,12 @@ export const courses: Course[] = [
               {
                 id: "multi-cloud-5",
                 title: "Observability Across Clouds",
-                videoUrl: "https://www.youtube.com/embed/Gutju0JTotQ",
+                videoUrl: "https://www.youtube.com/embed/lbhkwU9inoU",
               },
               {
                 id: "multi-cloud-6",
                 title: "FinOps Strategies for Multi-Cloud",
-                videoUrl: "https://www.youtube.com/embed/qfw0n8qTc24",
+                videoUrl: "https://www.youtube.com/embed/F-wzoCIJq6o",
               },
             ],
           },
@@ -2501,12 +2501,12 @@ export const courses: Course[] = [
               {
                 id: "serverless-automation-1",
                 title: "Serverless CI/CD Best Practices",
-                videoUrl: "https://www.youtube.com/embed/0fCWZ_Poj0A",
+                videoUrl: "https://www.youtube.com/embed/mB0owYlJgKs",
               },
               {
                 id: "serverless-automation-2",
                 title: "Policy-as-code for Serverless",
-                videoUrl: "https://www.youtube.com/embed/QNvFOAX-HtE",
+                videoUrl: "https://www.youtube.com/embed/7OSPPV2Iwoo",
               },
             ],
           },
@@ -2523,12 +2523,12 @@ export const courses: Course[] = [
               {
                 id: "serverless-automation-3",
                 title: "Testing Strategies for Serverless",
-                videoUrl: "https://www.youtube.com/embed/PoCTnJd3fmE",
+                videoUrl: "https://www.youtube.com/embed/OoHzaEkXFe0",
               },
               {
                 id: "serverless-automation-4",
                 title: "Observability for Functions",
-                videoUrl: "https://www.youtube.com/embed/5Y9NzJnhQ6w",
+                videoUrl: "https://www.youtube.com/embed/CAQ_a2-9UOI",
               },
             ],
           },
@@ -2545,12 +2545,12 @@ export const courses: Course[] = [
               {
                 id: "serverless-automation-5",
                 title: "Serverless Cost Optimization",
-                videoUrl: "https://www.youtube.com/embed/gNEQn2c6VrY",
+                videoUrl: "https://www.youtube.com/embed/OKYJCHHSWb4",
               },
               {
                 id: "serverless-automation-6",
                 title: "Resilience in Serverless Architectures",
-                videoUrl: "https://www.youtube.com/embed/QdR9ycPbmNA",
+                videoUrl: "https://www.youtube.com/embed/aXkdBoNipdg",
               },
             ],
           },
@@ -2605,12 +2605,12 @@ export const courses: Course[] = [
               {
                 id: "finops-1",
                 title: "FinOps Explained",
-                videoUrl: "https://www.youtube.com/embed/LuL5cjcI6wY",
+                videoUrl: "https://www.youtube.com/embed/gWDTRf_kGHI",
               },
               {
                 id: "finops-2",
                 title: "Building a FinOps Practice",
-                videoUrl: "https://www.youtube.com/embed/w48UUfZo0fo",
+                videoUrl: "https://www.youtube.com/embed/5hMjUEMjZoI",
               },
             ],
           },
@@ -2627,12 +2627,12 @@ export const courses: Course[] = [
               {
                 id: "finops-3",
                 title: "FinOps Dashboards in Practice",
-                videoUrl: "https://www.youtube.com/embed/aYgYp9S89Vg",
+                videoUrl: "https://www.youtube.com/embed/g5ngpyZSR5U",
               },
               {
                 id: "finops-4",
                 title: "Anomaly Detection Techniques",
-                videoUrl: "https://www.youtube.com/embed/NuW9SZdplIY",
+                videoUrl: "https://www.youtube.com/embed/mhSFyXbCaPM",
               },
             ],
           },
@@ -2649,12 +2649,12 @@ export const courses: Course[] = [
               {
                 id: "finops-5",
                 title: "FinOps Lifecycle Deep Dive",
-                videoUrl: "https://www.youtube.com/embed/J7zOPKz0OSY",
+                videoUrl: "https://www.youtube.com/embed/C3UGs98b8Kc",
               },
               {
                 id: "finops-6",
                 title: "Negotiating Cloud Savings",
-                videoUrl: "https://www.youtube.com/embed/dDkJManIeZQ",
+                videoUrl: "https://www.youtube.com/embed/ePnHvCva1_w",
               },
             ],
           },
@@ -2838,7 +2838,7 @@ export const courses: Course[] = [
               {
                 id: "vision-lesson-2",
                 title: "Data Augmentation Techniques",
-                videoUrl: "https://www.youtube.com/embed/dyxaF3jKJ7o",
+                videoUrl: "https://www.youtube.com/embed/mTVf7BN7S8w",
               },
             ],
           },
@@ -2855,12 +2855,12 @@ export const courses: Course[] = [
               {
                 id: "vision-lesson-3",
                 title: "Model Optimization with Torch-TensorRT",
-                videoUrl: "https://www.youtube.com/embed/4n5Z_cAXBlk",
+                videoUrl: "https://www.youtube.com/embed/TU5BMU6iYZ0",
               },
               {
                 id: "vision-lesson-4",
                 title: "Deploying PyTorch Models",
-                videoUrl: "https://www.youtube.com/embed/hhwwU1R7Zjw",
+                videoUrl: "https://www.youtube.com/embed/jdE4hPf9juk",
               },
             ],
           },
@@ -2877,12 +2877,12 @@ export const courses: Course[] = [
               {
                 id: "vision-lesson-5",
                 title: "Monitoring ML in Production",
-                videoUrl: "https://www.youtube.com/embed/RJif9w3Ivxg",
+                videoUrl: "https://www.youtube.com/embed/RcVVRmkBRJg",
               },
               {
                 id: "vision-lesson-6",
                 title: "Handling Data Drift",
-                videoUrl: "https://www.youtube.com/embed/CIaMCrGioZw",
+                videoUrl: "https://www.youtube.com/embed/kU9EFNyTIh8",
               },
             ],
           },
@@ -2937,12 +2937,12 @@ export const courses: Course[] = [
               {
                 id: "mlops-lesson-1",
                 title: "MLOps End-to-End",
-                videoUrl: "https://www.youtube.com/embed/VW8HYYlJBdQ",
+                videoUrl: "https://www.youtube.com/embed/OejCJL2EC3k",
               },
               {
                 id: "mlops-lesson-2",
                 title: "MLflow Tracking Tutorial",
-                videoUrl: "https://www.youtube.com/embed/-ZoRV0aR1wU",
+                videoUrl: "https://www.youtube.com/embed/6ngxBkx05Fs",
               },
             ],
           },
@@ -2959,12 +2959,12 @@ export const courses: Course[] = [
               {
                 id: "mlops-lesson-3",
                 title: "Kubeflow Pipelines Crash Course",
-                videoUrl: "https://www.youtube.com/embed/wj4aJ8t7Vw4",
+                videoUrl: "https://www.youtube.com/embed/rKfknA48FGk",
               },
               {
                 id: "mlops-lesson-4",
                 title: "Deploying Models on Kubernetes",
-                videoUrl: "https://www.youtube.com/embed/NCH7jlAYbNw",
+                videoUrl: "https://www.youtube.com/embed/DQRNt8Diyw4",
               },
             ],
           },
@@ -2981,12 +2981,12 @@ export const courses: Course[] = [
               {
                 id: "mlops-lesson-5",
                 title: "Model Monitoring Strategies",
-                videoUrl: "https://www.youtube.com/embed/4NQ0mF0aAz4",
+                videoUrl: "https://www.youtube.com/embed/RcVVRmkBRJg",
               },
               {
                 id: "mlops-lesson-6",
                 title: "Responsible AI & Compliance",
-                videoUrl: "https://www.youtube.com/embed/6Mb-HcAJviQ",
+                videoUrl: "https://www.youtube.com/embed/yh-3WU1FKrk",
               },
             ],
           },
@@ -3041,12 +3041,12 @@ export const courses: Course[] = [
               {
                 id: "forecasting-lesson-1",
                 title: "Time Series Analysis Crash Course",
-                videoUrl: "https://www.youtube.com/embed/72dD7La3IkU",
+                videoUrl: "https://www.youtube.com/embed/GE3JOFwTWVM",
               },
               {
                 id: "forecasting-lesson-2",
                 title: "ARIMA and Seasonal Models",
-                videoUrl: "https://www.youtube.com/embed/3t0yOD1l0VQ",
+                videoUrl: "https://www.youtube.com/embed/IK67f3IItfw",
               },
             ],
           },
@@ -3068,7 +3068,7 @@ export const courses: Course[] = [
               {
                 id: "forecasting-lesson-4",
                 title: "Transformer Forecasting",
-                videoUrl: "https://www.youtube.com/embed/u2MUZKa8KJ8",
+                videoUrl: "https://www.youtube.com/embed/_UJnMn-3NdM",
               },
             ],
           },
@@ -3085,12 +3085,12 @@ export const courses: Course[] = [
               {
                 id: "forecasting-lesson-5",
                 title: "Productionizing Forecasting Models",
-                videoUrl: "https://www.youtube.com/embed/VTN1W38Q2xE",
+                videoUrl: "https://www.youtube.com/embed/M8Kiwv9gDJU",
               },
               {
                 id: "forecasting-lesson-6",
                 title: "Monitoring Forecast Accuracy",
-                videoUrl: "https://www.youtube.com/embed/qXft8raFMd4",
+                videoUrl: "https://www.youtube.com/embed/0vtRKLVNhQ8",
               },
             ],
           },
@@ -3145,12 +3145,12 @@ export const courses: Course[] = [
               {
                 id: "data-viz-lesson-1",
                 title: "Data Visualization Fundamentals",
-                videoUrl: "https://www.youtube.com/embed/og3hOFgmg5U",
+                videoUrl: "https://www.youtube.com/embed/MiiANxRHSv4",
               },
               {
                 id: "data-viz-lesson-2",
                 title: "Storytelling with Data",
-                videoUrl: "https://www.youtube.com/embed/mDMnLPhFCE8",
+                videoUrl: "https://www.youtube.com/embed/r5_34YnCmMY",
               },
             ],
           },
@@ -3167,12 +3167,12 @@ export const courses: Course[] = [
               {
                 id: "data-viz-lesson-3",
                 title: "Tableau Storytelling Tutorial",
-                videoUrl: "https://www.youtube.com/embed/0q9n4eO_djU",
+                videoUrl: "https://www.youtube.com/embed/_jK0nIm349g",
               },
               {
                 id: "data-viz-lesson-4",
                 title: "Power BI Advanced Visuals",
-                videoUrl: "https://www.youtube.com/embed/3u1UlPY9rPg",
+                videoUrl: "https://www.youtube.com/embed/PnfrhEcwxdw",
               },
             ],
           },
@@ -3189,12 +3189,12 @@ export const courses: Course[] = [
               {
                 id: "data-viz-lesson-5",
                 title: "Data Governance for Analytics",
-                videoUrl: "https://www.youtube.com/embed/7uQ6txyxGWs",
+                videoUrl: "https://www.youtube.com/embed/uPsUjKLHLAg",
               },
               {
                 id: "data-viz-lesson-6",
                 title: "Accessibility in Dashboards",
-                videoUrl: "https://www.youtube.com/embed/ANh16onkM5A",
+                videoUrl: "https://www.youtube.com/embed/im45j373T20",
               },
             ],
           },
@@ -3373,12 +3373,12 @@ export const courses: Course[] = [
               {
                 id: "snowflake-lesson-1",
                 title: "Snowflake Basics",
-                videoUrl: "https://www.youtube.com/embed/2yX4FxA_U4A",
+                videoUrl: "https://www.youtube.com/embed/VIJH7TZXkaA",
               },
               {
                 id: "snowflake-lesson-2",
                 title: "Virtual Warehouses Explained",
-                videoUrl: "https://www.youtube.com/embed/9cUC9goP6aQ",
+                videoUrl: "https://www.youtube.com/embed/TeD5zshkdjY",
               },
             ],
           },
@@ -3395,12 +3395,12 @@ export const courses: Course[] = [
               {
                 id: "snowflake-lesson-3",
                 title: "Optimizing Snowflake Queries",
-                videoUrl: "https://www.youtube.com/embed/h_tF74WlJmM",
+                videoUrl: "https://www.youtube.com/embed/DInoHRmaAGA",
               },
               {
                 id: "snowflake-lesson-4",
                 title: "dbt in Snowflake",
-                videoUrl: "https://www.youtube.com/embed/22NRaX8LZ9g",
+                videoUrl: "https://www.youtube.com/embed/pzBf4KEvrUQ",
               },
             ],
           },
@@ -3417,12 +3417,12 @@ export const courses: Course[] = [
               {
                 id: "snowflake-lesson-5",
                 title: "Snowflake Security Best Practices",
-                videoUrl: "https://www.youtube.com/embed/82dManIeZ44",
+                videoUrl: "https://www.youtube.com/embed/jhWa7ANML5U",
               },
               {
                 id: "snowflake-lesson-6",
                 title: "Data Sharing & Marketplace",
-                videoUrl: "https://www.youtube.com/embed/wBn2RT6V6Y8",
+                videoUrl: "https://www.youtube.com/embed/3pRBLrjAL0s",
               },
             ],
           },
@@ -3477,12 +3477,12 @@ export const courses: Course[] = [
               {
                 id: "cassandra-lesson-1",
                 title: "Cassandra Architecture Explained",
-                videoUrl: "https://www.youtube.com/embed/AUj4c4h7jI8",
+                videoUrl: "https://www.youtube.com/embed/YjYWsN1vek8",
               },
               {
                 id: "cassandra-lesson-2",
                 title: "Consistency & Replication",
-                videoUrl: "https://www.youtube.com/embed/wAqS54s8XLE",
+                videoUrl: "https://www.youtube.com/embed/pdxGtahoqlY",
               },
             ],
           },
@@ -3499,12 +3499,12 @@ export const courses: Course[] = [
               {
                 id: "cassandra-lesson-3",
                 title: "Kubernetes Operators for Cassandra",
-                videoUrl: "https://www.youtube.com/embed/c9qPqoSgRC4",
+                videoUrl: "https://www.youtube.com/embed/N0vHJDGi5kY",
               },
               {
                 id: "cassandra-lesson-4",
                 title: "Monitoring Cassandra",
-                videoUrl: "https://www.youtube.com/embed/_Y_vnqW-1X4",
+                videoUrl: "https://www.youtube.com/embed/RDd35Lszpq4",
               },
             ],
           },
@@ -3521,12 +3521,12 @@ export const courses: Course[] = [
               {
                 id: "cassandra-lesson-5",
                 title: "Cassandra Performance Tuning",
-                videoUrl: "https://www.youtube.com/embed/t2GTcAb-D90",
+                videoUrl: "https://www.youtube.com/embed/M2Z0wk53GBU",
               },
               {
                 id: "cassandra-lesson-6",
                 title: "Disaster Recovery Playbooks",
-                videoUrl: "https://www.youtube.com/embed/Lmyy5YWy4xA",
+                videoUrl: "https://www.youtube.com/embed/rVOrIh9Q6o4",
               },
             ],
           },
@@ -3581,12 +3581,12 @@ export const courses: Course[] = [
               {
                 id: "neo4j-lesson-1",
                 title: "Neo4j Crash Course",
-                videoUrl: "https://www.youtube.com/embed/8jNPelugNho",
+                videoUrl: "https://www.youtube.com/embed/8jNPelugC2s",
               },
               {
                 id: "neo4j-lesson-2",
                 title: "Graph Modeling Techniques",
-                videoUrl: "https://www.youtube.com/embed/t707f8gZYSQ",
+                videoUrl: "https://www.youtube.com/embed/selD5F1ibag",
               },
             ],
           },
@@ -3603,12 +3603,12 @@ export const courses: Course[] = [
               {
                 id: "neo4j-lesson-3",
                 title: "Graph Algorithms in Neo4j",
-                videoUrl: "https://www.youtube.com/embed/wKM7Jg9W_pQ",
+                videoUrl: "https://www.youtube.com/embed/T6L9EoBy8Zk",
               },
               {
                 id: "neo4j-lesson-4",
                 title: "Recommendation Systems with Neo4j",
-                videoUrl: "https://www.youtube.com/embed/0lUBT8v7Z-c",
+                videoUrl: "https://www.youtube.com/embed/z3GuGTL7fHY",
               },
             ],
           },
@@ -3625,12 +3625,12 @@ export const courses: Course[] = [
               {
                 id: "neo4j-lesson-5",
                 title: "Build APIs with Neo4j & GraphQL",
-                videoUrl: "https://www.youtube.com/embed/6VJjlvma5xM",
+                videoUrl: "https://www.youtube.com/embed/Wal2ZUsvye4",
               },
               {
                 id: "neo4j-lesson-6",
                 title: "Deploy Neo4j in Production",
-                videoUrl: "https://www.youtube.com/embed/w1XPTzh0T5E",
+                videoUrl: "https://www.youtube.com/embed/T6L9EoBy8Zk",
               },
             ],
           },
@@ -3685,12 +3685,12 @@ export const courses: Course[] = [
               {
                 id: "cockroachdb-lesson-1",
                 title: "CockroachDB Architecture Explained",
-                videoUrl: "https://www.youtube.com/embed/_A9X8e9TRzg",
+                videoUrl: "https://www.youtube.com/embed/AeX5b89TJ2o",
               },
               {
                 id: "cockroachdb-lesson-2",
                 title: "Consistency & Replication",
-                videoUrl: "https://www.youtube.com/embed/yT6rTQ16le8",
+                videoUrl: "https://www.youtube.com/embed/pdxGtahoqlY",
               },
             ],
           },
@@ -3707,12 +3707,12 @@ export const courses: Course[] = [
               {
                 id: "cockroachdb-lesson-3",
                 title: "Deploy CockroachDB with Terraform",
-                videoUrl: "https://www.youtube.com/embed/IK5_ryzR-Pc",
+                videoUrl: "https://www.youtube.com/embed/LEytD1eld8M",
               },
               {
                 id: "cockroachdb-lesson-4",
                 title: "Monitoring CockroachDB",
-                videoUrl: "https://www.youtube.com/embed/6ykPZkf7cEI",
+                videoUrl: "https://www.youtube.com/embed/Z9kHuKeFKRg",
               },
             ],
           },
@@ -3729,12 +3729,12 @@ export const courses: Course[] = [
               {
                 id: "cockroachdb-lesson-5",
                 title: "Backup Strategies in CockroachDB",
-                videoUrl: "https://www.youtube.com/embed/8htYVOlJaww",
+                videoUrl: "https://www.youtube.com/embed/t_ocOi_iYQ8",
               },
               {
                 id: "cockroachdb-lesson-6",
                 title: "Security Best Practices",
-                videoUrl: "https://www.youtube.com/embed/XwE5u9bprnQ",
+                videoUrl: "https://www.youtube.com/embed/oBf5lrmquYI",
               },
             ],
           },
@@ -3918,7 +3918,7 @@ export const courses: Course[] = [
               {
                 id: "fastapi-lesson-2",
                 title: "Building Async APIs",
-                videoUrl: "https://www.youtube.com/embed/0LIOW8QZcvY",
+                videoUrl: "https://www.youtube.com/embed/3ij-rga08H4",
               },
             ],
           },
@@ -3940,7 +3940,7 @@ export const courses: Course[] = [
               {
                 id: "fastapi-lesson-4",
                 title: "Performance Tuning",
-                videoUrl: "https://www.youtube.com/embed/t656vJnYwRs",
+                videoUrl: "https://www.youtube.com/embed/dRwTssqqsPM",
               },
             ],
           },
@@ -3957,12 +3957,12 @@ export const courses: Course[] = [
               {
                 id: "fastapi-lesson-5",
                 title: "Deploy FastAPI with Docker & CI/CD",
-                videoUrl: "https://www.youtube.com/embed/Jxavf3sD0DQ",
+                videoUrl: "https://www.youtube.com/embed/4NHK88_GE9I",
               },
               {
                 id: "fastapi-lesson-6",
                 title: "Observability for FastAPI",
-                videoUrl: "https://www.youtube.com/embed/5v2FFyR04fs",
+                videoUrl: "https://www.youtube.com/embed/SWIuHBSvnuY",
               },
             ],
           },
@@ -4017,12 +4017,12 @@ export const courses: Course[] = [
               {
                 id: "asyncapi-lesson-1",
                 title: "Event-Driven Architecture Overview",
-                videoUrl: "https://www.youtube.com/embed/pYe7X-Q51x8",
+                videoUrl: "https://www.youtube.com/embed/gOuAqRaDdHA",
               },
               {
                 id: "asyncapi-lesson-2",
                 title: "AsyncAPI Introduction",
-                videoUrl: "https://www.youtube.com/embed/1dwjB_8E8Wk",
+                videoUrl: "https://www.youtube.com/embed/3ij-rga08H4",
               },
             ],
           },
@@ -4044,7 +4044,7 @@ export const courses: Course[] = [
               {
                 id: "asyncapi-lesson-4",
                 title: "Event Sourcing & CQRS",
-                videoUrl: "https://www.youtube.com/embed/ytYF0_jF5n4",
+                videoUrl: "https://www.youtube.com/embed/yFjzGRb8NOk",
               },
             ],
           },
@@ -4061,12 +4061,12 @@ export const courses: Course[] = [
               {
                 id: "asyncapi-lesson-5",
                 title: "Observability for Event Architectures",
-                videoUrl: "https://www.youtube.com/embed/m4pW50A9dS8",
+                videoUrl: "https://www.youtube.com/embed/kHCWH1kXmOs",
               },
               {
                 id: "asyncapi-lesson-6",
                 title: "Schema Governance & Versioning",
-                videoUrl: "https://www.youtube.com/embed/TdYz49WjXiY",
+                videoUrl: "https://www.youtube.com/embed/93IHBZH01L0",
               },
             ],
           },
@@ -4121,12 +4121,12 @@ export const courses: Course[] = [
               {
                 id: "api-security-lesson-1",
                 title: "OWASP API Security Top 10",
-                videoUrl: "https://www.youtube.com/embed/qWsvl_kokAs",
+                videoUrl: "https://www.youtube.com/embed/YYe0FdfdgDU",
               },
               {
                 id: "api-security-lesson-2",
                 title: "API Threat Modeling",
-                videoUrl: "https://www.youtube.com/embed/TvDqgW8sH9A",
+                videoUrl: "https://www.youtube.com/embed/0rOYzue2JrA",
               },
             ],
           },
@@ -4143,7 +4143,7 @@ export const courses: Course[] = [
               {
                 id: "api-security-lesson-3",
                 title: "Zero Trust API Gateways",
-                videoUrl: "https://www.youtube.com/embed/lbI-6XnSWJk",
+                videoUrl: "https://www.youtube.com/embed/dG655mQFyZ0",
               },
               {
                 id: "api-security-lesson-4",
@@ -4165,12 +4165,12 @@ export const courses: Course[] = [
               {
                 id: "api-security-lesson-5",
                 title: "Continuous API Security Testing",
-                videoUrl: "https://www.youtube.com/embed/aJYG82gT7YU",
+                videoUrl: "https://www.youtube.com/embed/wsZwhgGa5sE",
               },
               {
                 id: "api-security-lesson-6",
                 title: "Incident Response for APIs",
-                videoUrl: "https://www.youtube.com/embed/9FU0xJvLC9g",
+                videoUrl: "https://www.youtube.com/embed/2BOOl8_nwjQ",
               },
             ],
           },
@@ -4225,12 +4225,12 @@ export const courses: Course[] = [
               {
                 id: "openapi-lesson-1",
                 title: "API Product Management Fundamentals",
-                videoUrl: "https://www.youtube.com/embed/6w_5K5G_zlE",
+                videoUrl: "https://www.youtube.com/embed/T5y0WKmKenQ",
               },
               {
                 id: "openapi-lesson-2",
                 title: "Designing APIs with OpenAPI",
-                videoUrl: "https://www.youtube.com/embed/Cky6Oup45MQ",
+                videoUrl: "https://www.youtube.com/embed/PenvYHJ9Koc",
               },
             ],
           },
@@ -4247,12 +4247,12 @@ export const courses: Course[] = [
               {
                 id: "openapi-lesson-3",
                 title: "API Style Guide Best Practices",
-                videoUrl: "https://www.youtube.com/embed/mwZETnC6IJg",
+                videoUrl: "https://www.youtube.com/embed/Unq0ZJmRHCc",
               },
               {
                 id: "openapi-lesson-4",
                 title: "Developer Experience Metrics",
-                videoUrl: "https://www.youtube.com/embed/9UF2_s8BoGs",
+                videoUrl: "https://www.youtube.com/embed/BQC4dphiu5c",
               },
             ],
           },
@@ -4269,12 +4269,12 @@ export const courses: Course[] = [
               {
                 id: "openapi-lesson-5",
                 title: "Measuring API Success",
-                videoUrl: "https://www.youtube.com/embed/d02G2DBs7Ww",
+                videoUrl: "https://www.youtube.com/embed/1cBO_zA2nek",
               },
               {
                 id: "openapi-lesson-6",
                 title: "Building a Developer Portal",
-                videoUrl: "https://www.youtube.com/embed/nD2VuZ11kSM",
+                videoUrl: "https://www.youtube.com/embed/6E3aCv08nl8",
               },
             ],
           },
@@ -4329,12 +4329,12 @@ export const courses: Course[] = [
               {
                 id: "llm-systems-1",
                 title: "Productionizing LLM Applications",
-                videoUrl: "https://www.youtube.com/embed/JQI4K8Y9VfI",
+                videoUrl: "https://www.youtube.com/embed/31USVCSS0sI",
               },
               {
                 id: "llm-systems-2",
                 title: "Retrieval-Augmented Generation Patterns",
-                videoUrl: "https://www.youtube.com/embed/BEPTQgF9Pvs",
+                videoUrl: "https://www.youtube.com/embed/T-D1OfcDW1M",
               },
             ],
           },
@@ -4351,12 +4351,12 @@ export const courses: Course[] = [
               {
                 id: "llm-systems-3",
                 title: "Building Guardrails for LLMs",
-                videoUrl: "https://www.youtube.com/embed/avc3ZEM4KFM",
+                videoUrl: "https://www.youtube.com/embed/l5K4r_TJz_8",
               },
               {
                 id: "llm-systems-4",
                 title: "Evaluating LLM Responses",
-                videoUrl: "https://www.youtube.com/embed/BD8rH4NdyBM",
+                videoUrl: "https://www.youtube.com/embed/cRz0BWkuwHg",
               },
             ],
           },
@@ -4373,12 +4373,12 @@ export const courses: Course[] = [
               {
                 id: "llm-systems-5",
                 title: "Monitoring LLM Applications",
-                videoUrl: "https://www.youtube.com/embed/AlXDXMwK_Ew",
+                videoUrl: "https://www.youtube.com/embed/csmhkFHv_ww",
               },
               {
                 id: "llm-systems-6",
                 title: "Human Feedback Loops",
-                videoUrl: "https://www.youtube.com/embed/rDiFB74-IGE",
+                videoUrl: "https://www.youtube.com/embed/T_X4XFwKX8k",
               },
             ],
           },
@@ -4438,7 +4438,7 @@ export const courses: Course[] = [
               {
                 id: "prompt-lesson-2",
                 title: "System & Persona Prompts",
-                videoUrl: "https://www.youtube.com/embed/REw5bEO3GdY",
+                videoUrl: "https://www.youtube.com/embed/jC4v5AS4RIM",
               },
             ],
           },
@@ -4455,12 +4455,12 @@ export const courses: Course[] = [
               {
                 id: "prompt-lesson-3",
                 title: "Evaluating LLM Outputs",
-                videoUrl: "https://www.youtube.com/embed/4Z8MHG-0acY",
+                videoUrl: "https://www.youtube.com/embed/2kFjsacfiWY",
               },
               {
                 id: "prompt-lesson-4",
                 title: "Automated Prompt Testing",
-                videoUrl: "https://www.youtube.com/embed/dvQSIN4QL70",
+                videoUrl: "https://www.youtube.com/embed/KQTZE3Hnhws",
               },
             ],
           },
@@ -4477,12 +4477,12 @@ export const courses: Course[] = [
               {
                 id: "prompt-lesson-5",
                 title: "Managing Prompt Repositories",
-                videoUrl: "https://www.youtube.com/embed/gQdDNwvsI14",
+                videoUrl: "https://www.youtube.com/embed/fm3VreCt-5E",
               },
               {
                 id: "prompt-lesson-6",
                 title: "Collaborative Prompt Workflows",
-                videoUrl: "https://www.youtube.com/embed/H5qvYmq9S6Y",
+                videoUrl: "https://www.youtube.com/embed/X3XJeTApVMM",
               },
             ],
           },
@@ -4542,7 +4542,7 @@ export const courses: Course[] = [
               {
                 id: "rag-lesson-2",
                 title: "Vector Databases Explained",
-                videoUrl: "https://www.youtube.com/embed/jnqQylvPEbI",
+                videoUrl: "https://www.youtube.com/embed/dN0lsF2cvm4",
               },
             ],
           },
@@ -4559,12 +4559,12 @@ export const courses: Course[] = [
               {
                 id: "rag-lesson-3",
                 title: "Evaluating RAG Systems",
-                videoUrl: "https://www.youtube.com/embed/-aFkqM0Vamo",
+                videoUrl: "https://www.youtube.com/embed/5fp6e5nhJRk",
               },
               {
                 id: "rag-lesson-4",
                 title: "Guardrails & Safety",
-                videoUrl: "https://www.youtube.com/embed/DZ5nWZ2p86k",
+                videoUrl: "https://www.youtube.com/embed/KOvchTohd6A",
               },
             ],
           },
@@ -4581,12 +4581,12 @@ export const courses: Course[] = [
               {
                 id: "rag-lesson-5",
                 title: "Deploying RAG Apps",
-                videoUrl: "https://www.youtube.com/embed/rS3tC4Sl4W4",
+                videoUrl: "https://www.youtube.com/embed/C0HwZipOqXI",
               },
               {
                 id: "rag-lesson-6",
                 title: "Observability for RAG",
-                videoUrl: "https://www.youtube.com/embed/cvFvV3g1U6w",
+                videoUrl: "https://www.youtube.com/embed/5fp6e5nhJRk",
               },
             ],
           },
@@ -4641,12 +4641,12 @@ export const courses: Course[] = [
               {
                 id: "ai-ethics-lesson-1",
                 title: "Responsible AI in Practice",
-                videoUrl: "https://www.youtube.com/embed/4lT0c-vBtew",
+                videoUrl: "https://www.youtube.com/embed/2HUMFVAjlEA",
               },
               {
                 id: "ai-ethics-lesson-2",
                 title: "Ethical AI Frameworks",
-                videoUrl: "https://www.youtube.com/embed/Ey5EXuOtyf8",
+                videoUrl: "https://www.youtube.com/embed/nmX2qG8VWmU",
               },
             ],
           },
@@ -4663,12 +4663,12 @@ export const courses: Course[] = [
               {
                 id: "ai-ethics-lesson-3",
                 title: "Auditing AI Models",
-                videoUrl: "https://www.youtube.com/embed/Gp7mBsWh0xQ",
+                videoUrl: "https://www.youtube.com/embed/rwA67-McFWo",
               },
               {
                 id: "ai-ethics-lesson-4",
                 title: "Bias & Fairness Testing",
-                videoUrl: "https://www.youtube.com/embed/TkV_Ck0f8ZQ",
+                videoUrl: "https://www.youtube.com/embed/OogwtNLOtuc",
               },
             ],
           },
@@ -4685,12 +4685,12 @@ export const courses: Course[] = [
               {
                 id: "ai-ethics-lesson-5",
                 title: "Model Cards & Documentation",
-                videoUrl: "https://www.youtube.com/embed/GmFDAsgO2us",
+                videoUrl: "https://www.youtube.com/embed/i3J_e_ztQkw",
               },
               {
                 id: "ai-ethics-lesson-6",
                 title: "Communicating AI Risk",
-                videoUrl: "https://www.youtube.com/embed/lPYJoKB7JVM",
+                videoUrl: "https://www.youtube.com/embed/QgLoq4STOkk",
               },
             ],
           },
@@ -4745,12 +4745,12 @@ export const courses: Course[] = [
               {
                 id: "vit-lesson-1",
                 title: "Vision Transformers Explained",
-                videoUrl: "https://www.youtube.com/embed/L3wsBQX0JvI",
+                videoUrl: "https://www.youtube.com/embed/j3VNqtJUoz0",
               },
               {
                 id: "vit-lesson-2",
                 title: "Fine-tuning Vision Transformers",
-                videoUrl: "https://www.youtube.com/embed/pyfZ6x5jRJE",
+                videoUrl: "https://www.youtube.com/embed/qU7wO02urYU",
               },
             ],
           },
@@ -4767,12 +4767,12 @@ export const courses: Course[] = [
               {
                 id: "vit-lesson-3",
                 title: "Optimizing Vision Models",
-                videoUrl: "https://www.youtube.com/embed/7F5l0g12Awg",
+                videoUrl: "https://www.youtube.com/embed/j3VNqtJUoz0",
               },
               {
                 id: "vit-lesson-4",
                 title: "Deploying ViT Models",
-                videoUrl: "https://www.youtube.com/embed/pV3wl6wEW_0",
+                videoUrl: "https://www.youtube.com/embed/j3VNqtJUoz0",
               },
             ],
           },
@@ -4789,12 +4789,12 @@ export const courses: Course[] = [
               {
                 id: "vit-lesson-5",
                 title: "Monitoring Computer Vision Systems",
-                videoUrl: "https://www.youtube.com/embed/Zr4ie4xAS7c",
+                videoUrl: "https://www.youtube.com/embed/puB-4LuRNys",
               },
               {
                 id: "vit-lesson-6",
                 title: "Closing the Loop with Feedback",
-                videoUrl: "https://www.youtube.com/embed/PX0sF6kP0Mc",
+                videoUrl: "https://www.youtube.com/embed/eBpq78UqRmk",
               },
             ],
           },
@@ -4849,12 +4849,12 @@ export const courses: Course[] = [
               {
                 id: "edge-ai-lesson-1",
                 title: "Edge AI Overview",
-                videoUrl: "https://www.youtube.com/embed/v4z6VNJz7Hc",
+                videoUrl: "https://www.youtube.com/embed/z5lIrWTebOY",
               },
               {
                 id: "edge-ai-lesson-2",
                 title: "Designing Edge AI Systems",
-                videoUrl: "https://www.youtube.com/embed/Eyf2XGhrdXk",
+                videoUrl: "https://www.youtube.com/embed/hgFgoD0ii6E",
               },
             ],
           },
@@ -4871,12 +4871,12 @@ export const courses: Course[] = [
               {
                 id: "edge-ai-lesson-3",
                 title: "Model Optimization with TensorRT",
-                videoUrl: "https://www.youtube.com/embed/Yk6U1ZtIEAE",
+                videoUrl: "https://www.youtube.com/embed/r4KG3dehF48",
               },
               {
                 id: "edge-ai-lesson-4",
                 title: "ONNX Runtime on Edge",
-                videoUrl: "https://www.youtube.com/embed/y5bRvzUoMw4",
+                videoUrl: "https://www.youtube.com/embed/M4o4YRVba4o",
               },
             ],
           },
@@ -4893,12 +4893,12 @@ export const courses: Course[] = [
               {
                 id: "edge-ai-lesson-5",
                 title: "Deploying AI on Jetson",
-                videoUrl: "https://www.youtube.com/embed/3-UQK-dgVPY",
+                videoUrl: "https://www.youtube.com/embed/Fegmuh6_mEg",
               },
               {
                 id: "edge-ai-lesson-6",
                 title: "Telemetry for Edge AI",
-                videoUrl: "https://www.youtube.com/embed/cA3MH8Jw63I",
+                videoUrl: "https://www.youtube.com/embed/hLvwoow3XTk",
               },
             ],
           },
@@ -4958,7 +4958,7 @@ export const courses: Course[] = [
               {
                 id: "agentic-lesson-2",
                 title: "Memory Strategies for Agents",
-                videoUrl: "https://www.youtube.com/embed/f7VfOUo8Gzc",
+                videoUrl: "https://www.youtube.com/embed/JTL0yp85FsE",
               },
             ],
           },
@@ -4975,12 +4975,12 @@ export const courses: Course[] = [
               {
                 id: "agentic-lesson-3",
                 title: "Tool-using Agents",
-                videoUrl: "https://www.youtube.com/embed/kLdJXKD9iic",
+                videoUrl: "https://www.youtube.com/embed/hLJTcVHW8_I",
               },
               {
                 id: "agentic-lesson-4",
                 title: "Multi-Agent Collaboration",
-                videoUrl: "https://www.youtube.com/embed/GCg9G1-1xAE",
+                videoUrl: "https://www.youtube.com/embed/X3XJeTApVMM",
               },
             ],
           },
@@ -4997,12 +4997,12 @@ export const courses: Course[] = [
               {
                 id: "agentic-lesson-5",
                 title: "Evaluating Agent Systems",
-                videoUrl: "https://www.youtube.com/embed/rXxF76UM7n8",
+                videoUrl: "https://www.youtube.com/embed/_QozKR9eQE8",
               },
               {
                 id: "agentic-lesson-6",
                 title: "Guardrails for Agents",
-                videoUrl: "https://www.youtube.com/embed/UN6p0vCYNaY",
+                videoUrl: "https://www.youtube.com/embed/rMUycP_cp9g",
               },
             ],
           },
@@ -5062,7 +5062,7 @@ export const courses: Course[] = [
               {
                 id: "voice-ai-lesson-2",
                 title: "Using Whisper for ASR",
-                videoUrl: "https://www.youtube.com/embed/SqmQh0cDIj8",
+                videoUrl: "https://www.youtube.com/embed/p-zyNYZQLSk",
               },
             ],
           },
@@ -5079,12 +5079,12 @@ export const courses: Course[] = [
               {
                 id: "voice-ai-lesson-3",
                 title: "Building TTS Experiences",
-                videoUrl: "https://www.youtube.com/embed/jL8AO63D3JY",
+                videoUrl: "https://www.youtube.com/embed/n83lO14Jr1w",
               },
               {
                 id: "voice-ai-lesson-4",
                 title: "Voice Cloning Techniques",
-                videoUrl: "https://www.youtube.com/embed/5Hj4yA_NJXA",
+                videoUrl: "https://www.youtube.com/embed/aMKeRfhZkuU",
               },
             ],
           },
@@ -5101,12 +5101,12 @@ export const courses: Course[] = [
               {
                 id: "voice-ai-lesson-5",
                 title: "Measuring Voice Experiences",
-                videoUrl: "https://www.youtube.com/embed/IB6HuLlHotc",
+                videoUrl: "https://www.youtube.com/embed/C9VY-nQ8ubg",
               },
               {
                 id: "voice-ai-lesson-6",
                 title: "Conversation Analytics",
-                videoUrl: "https://www.youtube.com/embed/2mm1MyAHsCM",
+                videoUrl: "https://www.youtube.com/embed/g9cr7CYu0Tw",
               },
             ],
           },
@@ -5161,12 +5161,12 @@ export const courses: Course[] = [
               {
                 id: "red-team-lesson-1",
                 title: "Building a Red Team Program",
-                videoUrl: "https://www.youtube.com/embed/05Vd3-7PT2E",
+                videoUrl: "https://www.youtube.com/embed/xH5vIwtSJWg",
               },
               {
                 id: "red-team-lesson-2",
                 title: "Adversary Emulation Plans",
-                videoUrl: "https://www.youtube.com/embed/oAuuUeRu2nc",
+                videoUrl: "https://www.youtube.com/embed/X4VuzccCDTU",
               },
             ],
           },
@@ -5183,12 +5183,12 @@ export const courses: Course[] = [
               {
                 id: "red-team-lesson-3",
                 title: "Phishing & Initial Access",
-                videoUrl: "https://www.youtube.com/embed/qsVOmjHc_wk",
+                videoUrl: "https://www.youtube.com/embed/u9dBGWVwMMA",
               },
               {
                 id: "red-team-lesson-4",
                 title: "Post-Exploitation Techniques",
-                videoUrl: "https://www.youtube.com/embed/BI_AmdW7JBo",
+                videoUrl: "https://www.youtube.com/embed/3COTqQF568g",
               },
             ],
           },
@@ -5205,12 +5205,12 @@ export const courses: Course[] = [
               {
                 id: "red-team-lesson-5",
                 title: "Purple Team Collaboration",
-                videoUrl: "https://www.youtube.com/embed/A8xHb1Ry6jE",
+                videoUrl: "https://www.youtube.com/embed/GRTa7HfJC6w",
               },
               {
                 id: "red-team-lesson-6",
                 title: "Reporting to Executives",
-                videoUrl: "https://www.youtube.com/embed/dyth8nEiiXk",
+                videoUrl: "https://www.youtube.com/embed/Fzi4T94QCjw",
               },
             ],
           },
@@ -5265,12 +5265,12 @@ export const courses: Course[] = [
               {
                 id: "cloud-security-lesson-1",
                 title: "Cloud Security Fundamentals",
-                videoUrl: "https://www.youtube.com/embed/afU_RDrY11I",
+                videoUrl: "https://www.youtube.com/embed/M_9hRPVH5SA",
               },
               {
                 id: "cloud-security-lesson-2",
                 title: "IAM Best Practices",
-                videoUrl: "https://www.youtube.com/embed/5pT9ZxdYPXE",
+                videoUrl: "https://www.youtube.com/embed/ZhvXW-ILyPs",
               },
             ],
           },
@@ -5287,12 +5287,12 @@ export const courses: Course[] = [
               {
                 id: "cloud-security-lesson-3",
                 title: "Zero Trust Networking in the Cloud",
-                videoUrl: "https://www.youtube.com/embed/1GMpEL45lXc",
+                videoUrl: "https://www.youtube.com/embed/yn6CPQ9RioA",
               },
               {
                 id: "cloud-security-lesson-4",
                 title: "Data Protection & Encryption",
-                videoUrl: "https://www.youtube.com/embed/3gqLTASJP1c",
+                videoUrl: "https://www.youtube.com/embed/jpsc4c7lntw",
               },
             ],
           },
@@ -5309,12 +5309,12 @@ export const courses: Course[] = [
               {
                 id: "cloud-security-lesson-5",
                 title: "Automating Cloud Security",
-                videoUrl: "https://www.youtube.com/embed/EIJFCl1Yqqc",
+                videoUrl: "https://www.youtube.com/embed/Iwxr4xQ-yqY",
               },
               {
                 id: "cloud-security-lesson-6",
                 title: "Continuous Compliance",
-                videoUrl: "https://www.youtube.com/embed/8IajdPHt0LE",
+                videoUrl: "https://www.youtube.com/embed/hywrc0Fwp8A",
               },
             ],
           },
@@ -5369,12 +5369,12 @@ export const courses: Course[] = [
               {
                 id: "detection-lesson-1",
                 title: "Introduction to Detection Engineering",
-                videoUrl: "https://www.youtube.com/embed/jpKOiFxlnJ4",
+                videoUrl: "https://www.youtube.com/embed/LGkSRlhnf-s",
               },
               {
                 id: "detection-lesson-2",
                 title: "Mapping to ATT&CK",
-                videoUrl: "https://www.youtube.com/embed/Z0uN0nZHXss",
+                videoUrl: "https://www.youtube.com/embed/WmQPtk3Ybxs",
               },
             ],
           },
@@ -5391,12 +5391,12 @@ export const courses: Course[] = [
               {
                 id: "detection-lesson-3",
                 title: "Threat Hunting Playbooks",
-                videoUrl: "https://www.youtube.com/embed/ewC0BpvyOuk",
+                videoUrl: "https://www.youtube.com/embed/Ux_7HMwqTdU",
               },
               {
                 id: "detection-lesson-4",
                 title: "Automation for SOC",
-                videoUrl: "https://www.youtube.com/embed/O6ulLSS-Wxc",
+                videoUrl: "https://www.youtube.com/embed/Xh9AP-x06jU",
               },
             ],
           },
@@ -5413,12 +5413,12 @@ export const courses: Course[] = [
               {
                 id: "detection-lesson-5",
                 title: "Measuring Detection Quality",
-                videoUrl: "https://www.youtube.com/embed/t5QGRqJSOVk",
+                videoUrl: "https://www.youtube.com/embed/rVPGL-aqKO4",
               },
               {
                 id: "detection-lesson-6",
                 title: "Continuous Improvement",
-                videoUrl: "https://www.youtube.com/embed/3-51-fBSBI4",
+                videoUrl: "https://www.youtube.com/embed/anA_TiUfmbM",
               },
             ],
           },
@@ -5473,12 +5473,12 @@ export const courses: Course[] = [
               {
                 id: "appsec-lesson-1",
                 title: "Secure SDLC Explained",
-                videoUrl: "https://www.youtube.com/embed/m6xCgGrmqAs",
+                videoUrl: "https://www.youtube.com/embed/mmVXL0LzLks",
               },
               {
                 id: "appsec-lesson-2",
                 title: "Integrating Security into DevOps",
-                videoUrl: "https://www.youtube.com/embed/uhxBG8G7sWg",
+                videoUrl: "https://www.youtube.com/embed/svnFyXvDDOE",
               },
             ],
           },
@@ -5495,12 +5495,12 @@ export const courses: Course[] = [
               {
                 id: "appsec-lesson-3",
                 title: "Threat Modeling Workshop",
-                videoUrl: "https://www.youtube.com/embed/o0yZ0u1MoPk",
+                videoUrl: "https://www.youtube.com/embed/rEnJYNkUde0",
               },
               {
                 id: "appsec-lesson-4",
                 title: "Automation & Security Testing",
-                videoUrl: "https://www.youtube.com/embed/hmSL0Y5y7wE",
+                videoUrl: "https://www.youtube.com/embed/B7tTQ272OHE",
               },
             ],
           },
@@ -5517,12 +5517,12 @@ export const courses: Course[] = [
               {
                 id: "appsec-lesson-5",
                 title: "Developer Security Enablement",
-                videoUrl: "https://www.youtube.com/embed/VYTh0Suxx3c",
+                videoUrl: "https://www.youtube.com/embed/_tUGcSy3uBk",
               },
               {
                 id: "appsec-lesson-6",
                 title: "Metrics that Matter",
-                videoUrl: "https://www.youtube.com/embed/iEWcq5iDSuk",
+                videoUrl: "https://www.youtube.com/embed/e-Brdho1kYs",
               },
             ],
           },
@@ -5577,12 +5577,12 @@ export const courses: Course[] = [
               {
                 id: "zero-trust-lesson-1",
                 title: "Zero Trust Explained",
-                videoUrl: "https://www.youtube.com/embed/tQ5bvbKxHnU",
+                videoUrl: "https://www.youtube.com/embed/yn6CPQ9RioA",
               },
               {
                 id: "zero-trust-lesson-2",
                 title: "Designing Zero Trust Architectures",
-                videoUrl: "https://www.youtube.com/embed/5Lxg9JhqpK4",
+                videoUrl: "https://www.youtube.com/embed/yn6CPQ9RioA",
               },
             ],
           },
@@ -5599,12 +5599,12 @@ export const courses: Course[] = [
               {
                 id: "zero-trust-lesson-3",
                 title: "Identity as the Perimeter",
-                videoUrl: "https://www.youtube.com/embed/0WXNoKGdzBs",
+                videoUrl: "https://www.youtube.com/embed/AAY1bsazcgM",
               },
               {
                 id: "zero-trust-lesson-4",
                 title: "Microsegmentation Strategies",
-                videoUrl: "https://www.youtube.com/embed/i9dc7_Brjis",
+                videoUrl: "https://www.youtube.com/embed/8m3pFJEeGh8",
               },
             ],
           },
@@ -5621,12 +5621,12 @@ export const courses: Course[] = [
               {
                 id: "zero-trust-lesson-5",
                 title: "Zero Trust Telemetry",
-                videoUrl: "https://www.youtube.com/embed/f4f_U0Y4N7E",
+                videoUrl: "https://www.youtube.com/embed/E3F-f_F8zj0",
               },
               {
                 id: "zero-trust-lesson-6",
                 title: "Maturity Assessments",
-                videoUrl: "https://www.youtube.com/embed/6zqyYxQAn5o",
+                videoUrl: "https://www.youtube.com/embed/uGNiNzGkSSE",
               },
             ],
           },
@@ -5681,12 +5681,12 @@ export const courses: Course[] = [
               {
                 id: "ir-lesson-1",
                 title: "Incident Response Lifecycle",
-                videoUrl: "https://www.youtube.com/embed/JTPY7YmhZRU",
+                videoUrl: "https://www.youtube.com/embed/ToVVhMyU3dQ",
               },
               {
                 id: "ir-lesson-2",
                 title: "Roles & Responsibilities",
-                videoUrl: "https://www.youtube.com/embed/xy8I7m9mxCY",
+                videoUrl: "https://www.youtube.com/embed/fAYXMaY0Qlk",
               },
             ],
           },
@@ -5703,12 +5703,12 @@ export const courses: Course[] = [
               {
                 id: "ir-lesson-3",
                 title: "Digital Forensics Tools",
-                videoUrl: "https://www.youtube.com/embed/nwWziUXVXXU",
+                videoUrl: "https://www.youtube.com/embed/DE0C5-dk5SU",
               },
               {
                 id: "ir-lesson-4",
                 title: "Containment Strategies",
-                videoUrl: "https://www.youtube.com/embed/-O6exdSt1Ow",
+                videoUrl: "https://www.youtube.com/embed/oZHPxyrCSmw",
               },
             ],
           },
@@ -5725,12 +5725,12 @@ export const courses: Course[] = [
               {
                 id: "ir-lesson-5",
                 title: "Communicating During Incidents",
-                videoUrl: "https://www.youtube.com/embed/Eqz_z2No8xo",
+                videoUrl: "https://www.youtube.com/embed/zf4HvkF7Ocw",
               },
               {
                 id: "ir-lesson-6",
                 title: "Post-Incident Reviews",
-                videoUrl: "https://www.youtube.com/embed/a3a6Y3wrrz4",
+                videoUrl: "https://www.youtube.com/embed/UcEXyT6TneU",
               },
             ],
           },
@@ -5785,12 +5785,12 @@ export const courses: Course[] = [
               {
                 id: "soar-lesson-1",
                 title: "Security Automation Fundamentals",
-                videoUrl: "https://www.youtube.com/embed/4PH3ryJ09eA",
+                videoUrl: "https://www.youtube.com/embed/k7ju95jDxFA",
               },
               {
                 id: "soar-lesson-2",
                 title: "Designing SOAR Playbooks",
-                videoUrl: "https://www.youtube.com/embed/9bXcAlUz7x8",
+                videoUrl: "https://www.youtube.com/embed/6_LCiHOsNdw",
               },
             ],
           },
@@ -5807,12 +5807,12 @@ export const courses: Course[] = [
               {
                 id: "soar-lesson-3",
                 title: "Integrating Threat Intelligence",
-                videoUrl: "https://www.youtube.com/embed/b6y3ALensSY",
+                videoUrl: "https://www.youtube.com/embed/NO8Zn3K3ifc",
               },
               {
                 id: "soar-lesson-4",
                 title: "Automating Case Management",
-                videoUrl: "https://www.youtube.com/embed/qTf6h_6m8oc",
+                videoUrl: "https://www.youtube.com/embed/2ZJbtnW2n5I",
               },
             ],
           },
@@ -5829,12 +5829,12 @@ export const courses: Course[] = [
               {
                 id: "soar-lesson-5",
                 title: "Measuring Automation Success",
-                videoUrl: "https://www.youtube.com/embed/lYTIQX58F3c",
+                videoUrl: "https://www.youtube.com/embed/W6L2hIPt9mg",
               },
               {
                 id: "soar-lesson-6",
                 title: "Continuous Improvement",
-                videoUrl: "https://www.youtube.com/embed/4I-TvQdPFgY",
+                videoUrl: "https://www.youtube.com/embed/anA_TiUfmbM",
               },
             ],
           },
@@ -5889,12 +5889,12 @@ export const courses: Course[] = [
               {
                 id: "grc-lesson-1",
                 title: "Risk Management Fundamentals",
-                videoUrl: "https://www.youtube.com/embed/aAsMSapGzxI",
+                videoUrl: "https://www.youtube.com/embed/BLAEuVSAlVM",
               },
               {
                 id: "grc-lesson-2",
                 title: "Building a Risk Register",
-                videoUrl: "https://www.youtube.com/embed/Jf4tshCdnkI",
+                videoUrl: "https://www.youtube.com/embed/X8ctOX2mEw4",
               },
             ],
           },
@@ -5911,12 +5911,12 @@ export const courses: Course[] = [
               {
                 id: "grc-lesson-3",
                 title: "SOC 2 & ISO 27001 Explained",
-                videoUrl: "https://www.youtube.com/embed/aBYwygJyIeg",
+                videoUrl: "https://www.youtube.com/embed/mpxaZIUSOmc",
               },
               {
                 id: "grc-lesson-4",
                 title: "Automating Compliance",
-                videoUrl: "https://www.youtube.com/embed/p8nH3UX0_dp",
+                videoUrl: "https://www.youtube.com/embed/fWF0rtEPaE4",
               },
             ],
           },
@@ -5933,12 +5933,12 @@ export const courses: Course[] = [
               {
                 id: "grc-lesson-5",
                 title: "Security Metrics & Reporting",
-                videoUrl: "https://www.youtube.com/embed/Sk1KH_Qlw5c",
+                videoUrl: "https://www.youtube.com/embed/NHnjJ34crlU",
               },
               {
                 id: "grc-lesson-6",
                 title: "Governance Councils",
-                videoUrl: "https://www.youtube.com/embed/7HnI6G9zn6Q",
+                videoUrl: "https://www.youtube.com/embed/iIgqR56QM5c",
               },
             ],
           },
@@ -5993,12 +5993,12 @@ export const courses: Course[] = [
               {
                 id: "platform-lesson-1",
                 title: "What is Platform Engineering?",
-                videoUrl: "https://www.youtube.com/embed/OCh3PJe1c4U",
+                videoUrl: "https://www.youtube.com/embed/ghzsBm8vOms",
               },
               {
                 id: "platform-lesson-2",
                 title: "Designing Golden Paths",
-                videoUrl: "https://www.youtube.com/embed/3c3nMMs3bW4",
+                videoUrl: "https://www.youtube.com/embed/Pk8doFXXjjI",
               },
             ],
           },
@@ -6015,12 +6015,12 @@ export const courses: Course[] = [
               {
                 id: "platform-lesson-3",
                 title: "Crossplane for Platform Engineering",
-                videoUrl: "https://www.youtube.com/embed/23mijOhjyto",
+                videoUrl: "https://www.youtube.com/embed/AaIeNStnuew",
               },
               {
                 id: "platform-lesson-4",
                 title: "Backstage Golden Paths",
-                videoUrl: "https://www.youtube.com/embed/6wT1TDL0FHw",
+                videoUrl: "https://www.youtube.com/embed/QCG_Fkt-Zzc",
               },
             ],
           },
@@ -6037,12 +6037,12 @@ export const courses: Course[] = [
               {
                 id: "platform-lesson-5",
                 title: "Measuring Platform Impact",
-                videoUrl: "https://www.youtube.com/embed/TjE7UZ5EONo",
+                videoUrl: "https://www.youtube.com/embed/gd-PQ80-lXU",
               },
               {
                 id: "platform-lesson-6",
                 title: "Operating an IDP",
-                videoUrl: "https://www.youtube.com/embed/5Oy-nn6Zo9A",
+                videoUrl: "https://www.youtube.com/embed/RPdtPM5I6Go",
               },
             ],
           },
@@ -6097,12 +6097,12 @@ export const courses: Course[] = [
               {
                 id: "sre-lesson-1",
                 title: "SRE Fundamentals",
-                videoUrl: "https://www.youtube.com/embed/2yW4YMgN0CA",
+                videoUrl: "https://www.youtube.com/embed/ztIIcXNzMN4",
               },
               {
                 id: "sre-lesson-2",
                 title: "Designing SLOs",
-                videoUrl: "https://www.youtube.com/embed/yI7LGdK2Kc4",
+                videoUrl: "https://www.youtube.com/embed/U53wC2A75Is",
               },
             ],
           },
@@ -6119,12 +6119,12 @@ export const courses: Course[] = [
               {
                 id: "sre-lesson-3",
                 title: "Automating Reliability",
-                videoUrl: "https://www.youtube.com/embed/7qlBYiYaWFk",
+                videoUrl: "https://www.youtube.com/embed/a66aQ6ikqUk",
               },
               {
                 id: "sre-lesson-4",
                 title: "Toil Reduction Techniques",
-                videoUrl: "https://www.youtube.com/embed/5CsthIswptI",
+                videoUrl: "https://www.youtube.com/embed/HMTPzMpMt9s",
               },
             ],
           },
@@ -6141,12 +6141,12 @@ export const courses: Course[] = [
               {
                 id: "sre-lesson-5",
                 title: "Running Blameless Postmortems",
-                videoUrl: "https://www.youtube.com/embed/c8pQh4Krqiw",
+                videoUrl: "https://www.youtube.com/embed/Q_ScdoBy2qk",
               },
               {
                 id: "sre-lesson-6",
                 title: "Reliability Review Cadence",
-                videoUrl: "https://www.youtube.com/embed/ScwW5Wn66y0",
+                videoUrl: "https://www.youtube.com/embed/PeWBS5hfTb4",
               },
             ],
           },
@@ -6201,12 +6201,12 @@ export const courses: Course[] = [
               {
                 id: "gitops-lesson-1",
                 title: "GitOps Principles",
-                videoUrl: "https://www.youtube.com/embed/T7P3X0qO3Uo",
+                videoUrl: "https://www.youtube.com/embed/f5EpcWp0THw",
               },
               {
                 id: "gitops-lesson-2",
                 title: "Repository Design",
-                videoUrl: "https://www.youtube.com/embed/c3BtHl0qFmU",
+                videoUrl: "https://www.youtube.com/embed/Wiy54682d1w",
               },
             ],
           },
@@ -6223,12 +6223,12 @@ export const courses: Course[] = [
               {
                 id: "gitops-lesson-3",
                 title: "Policy as Code with Kyverno",
-                videoUrl: "https://www.youtube.com/embed/m6NIXL-uxkM",
+                videoUrl: "https://www.youtube.com/embed/4cgzzMSCUAE",
               },
               {
                 id: "gitops-lesson-4",
                 title: "Managing Secrets in GitOps",
-                videoUrl: "https://www.youtube.com/embed/t1MNyHCfg-4",
+                videoUrl: "https://www.youtube.com/embed/OaZ41cpEaZg",
               },
             ],
           },
@@ -6245,12 +6245,12 @@ export const courses: Course[] = [
               {
                 id: "gitops-lesson-5",
                 title: "Detecting Drift in GitOps",
-                videoUrl: "https://www.youtube.com/embed/s9X3Vv7GMUQ",
+                videoUrl: "https://www.youtube.com/embed/_RI5QNBZmeU",
               },
               {
                 id: "gitops-lesson-6",
                 title: "Scaling GitOps",
-                videoUrl: "https://www.youtube.com/embed/f5C4PF4Z6Pc",
+                videoUrl: "https://www.youtube.com/embed/f5EpcWp0THw",
               },
             ],
           },
@@ -6305,12 +6305,12 @@ export const courses: Course[] = [
               {
                 id: "observability-lesson-1",
                 title: "Observability Engineering",
-                videoUrl: "https://www.youtube.com/embed/ZKBYw32hY7I",
+                videoUrl: "https://www.youtube.com/embed/CAQ_a2-9UOI",
               },
               {
                 id: "observability-lesson-2",
                 title: "OpenTelemetry Deep Dive",
-                videoUrl: "https://www.youtube.com/embed/D1SuV0sVQa4",
+                videoUrl: "https://www.youtube.com/embed/hLvwoow3XTk",
               },
             ],
           },
@@ -6327,12 +6327,12 @@ export const courses: Course[] = [
               {
                 id: "observability-lesson-3",
                 title: "Dashboard Design Principles",
-                videoUrl: "https://www.youtube.com/embed/7K12Wb-K9wU",
+                videoUrl: "https://www.youtube.com/embed/t3cAUt7sOQg",
               },
               {
                 id: "observability-lesson-4",
                 title: "Alerting & SLO Dashboards",
-                videoUrl: "https://www.youtube.com/embed/boDbCT4NrF4",
+                videoUrl: "https://www.youtube.com/embed/C4lasI0Svss",
               },
             ],
           },
@@ -6349,12 +6349,12 @@ export const courses: Course[] = [
               {
                 id: "observability-lesson-5",
                 title: "Service Level Objectives Practical",
-                videoUrl: "https://www.youtube.com/embed/6N8noyT0N0E",
+                videoUrl: "https://www.youtube.com/embed/E3ReKuJ8ewA",
               },
               {
                 id: "observability-lesson-6",
                 title: "Establishing Observability Programs",
-                videoUrl: "https://www.youtube.com/embed/y7V2b7xYIic",
+                videoUrl: "https://www.youtube.com/embed/CAQ_a2-9UOI",
               },
             ],
           },
@@ -6409,12 +6409,12 @@ export const courses: Course[] = [
               {
                 id: "cicd-lesson-1",
                 title: "Designing Enterprise CI/CD",
-                videoUrl: "https://www.youtube.com/embed/cyM6sukxmks",
+                videoUrl: "https://www.youtube.com/embed/KnSBNd3b0qI",
               },
               {
                 id: "cicd-lesson-2",
                 title: "Quality Gates & Compliance",
-                videoUrl: "https://www.youtube.com/embed/bDRpSqGCgH4",
+                videoUrl: "https://www.youtube.com/embed/qaNOPQmd_MY",
               },
             ],
           },
@@ -6431,12 +6431,12 @@ export const courses: Course[] = [
               {
                 id: "cicd-lesson-3",
                 title: "Progressive Delivery Explained",
-                videoUrl: "https://www.youtube.com/embed/wx9f6F99PdI",
+                videoUrl: "https://www.youtube.com/embed/HKkhD6nokC8",
               },
               {
                 id: "cicd-lesson-4",
                 title: "Observability for Releases",
-                videoUrl: "https://www.youtube.com/embed/yw3bTjsWl0g",
+                videoUrl: "https://www.youtube.com/embed/CAQ_a2-9UOI",
               },
             ],
           },
@@ -6453,12 +6453,12 @@ export const courses: Course[] = [
               {
                 id: "cicd-lesson-5",
                 title: "DORA Metrics Deep Dive",
-                videoUrl: "https://www.youtube.com/embed/JVZ7szrC6CY",
+                videoUrl: "https://www.youtube.com/embed/YOvEIFLWz3I",
               },
               {
                 id: "cicd-lesson-6",
                 title: "Continuous Improvement",
-                videoUrl: "https://www.youtube.com/embed/1SDfq9aXH-U",
+                videoUrl: "https://www.youtube.com/embed/anA_TiUfmbM",
               },
             ],
           },
@@ -6513,12 +6513,12 @@ export const courses: Course[] = [
               {
                 id: "iac-lesson-1",
                 title: "Infrastructure as Code Principles",
-                videoUrl: "https://www.youtube.com/embed/JyfzuS0s9G0",
+                videoUrl: "https://www.youtube.com/embed/zWw2wuiKd5o",
               },
               {
                 id: "iac-lesson-2",
                 title: "Terraform Module Design",
-                videoUrl: "https://www.youtube.com/embed/I0zE8wBSMI4",
+                videoUrl: "https://www.youtube.com/embed/GSXx8AZjKK4",
               },
             ],
           },
@@ -6535,12 +6535,12 @@ export const courses: Course[] = [
               {
                 id: "iac-lesson-3",
                 title: "OPA & Terraform",
-                videoUrl: "https://www.youtube.com/embed/iy3W2mYIBxg",
+                videoUrl: "https://www.youtube.com/embed/DpUDYbFK4IE",
               },
               {
                 id: "iac-lesson-4",
                 title: "Testing IaC",
-                videoUrl: "https://www.youtube.com/embed/2tZz4iMbA7s",
+                videoUrl: "https://www.youtube.com/embed/2UZni0mCQ-g",
               },
             ],
           },
@@ -6557,12 +6557,12 @@ export const courses: Course[] = [
               {
                 id: "iac-lesson-5",
                 title: "Managing Drift",
-                videoUrl: "https://www.youtube.com/embed/6ptLQ3E_pxY",
+                videoUrl: "https://www.youtube.com/embed/RtCfqohMhl0",
               },
               {
                 id: "iac-lesson-6",
                 title: "Scaling IaC Platforms",
-                videoUrl: "https://www.youtube.com/embed/w24f2lMJn7w",
+                videoUrl: "https://www.youtube.com/embed/eaD-tGMOKe8",
               },
             ],
           },
@@ -6617,12 +6617,12 @@ export const courses: Course[] = [
               {
                 id: "chaos-lesson-1",
                 title: "Chaos Engineering Explained",
-                videoUrl: "https://www.youtube.com/embed/wpIb9IhD68M",
+                videoUrl: "https://www.youtube.com/embed/3CNNhK9JTDk",
               },
               {
                 id: "chaos-lesson-2",
                 title: "Designing Safe Experiments",
-                videoUrl: "https://www.youtube.com/embed/ZEb4bNownz0",
+                videoUrl: "https://www.youtube.com/embed/1-wc7CNeIz8",
               },
             ],
           },
@@ -6639,12 +6639,12 @@ export const courses: Course[] = [
               {
                 id: "chaos-lesson-3",
                 title: "Running Chaos with Litmus",
-                videoUrl: "https://www.youtube.com/embed/sUXwxLBzMEI",
+                videoUrl: "https://www.youtube.com/embed/6oOz2-Hh9GQ",
               },
               {
                 id: "chaos-lesson-4",
                 title: "Automating Chaos Experiments",
-                videoUrl: "https://www.youtube.com/embed/0K8-QqDzsrs",
+                videoUrl: "https://www.youtube.com/embed/618rXhCp03Y",
               },
             ],
           },
@@ -6661,12 +6661,12 @@ export const courses: Course[] = [
               {
                 id: "chaos-lesson-5",
                 title: "Measuring Chaos Experiments",
-                videoUrl: "https://www.youtube.com/embed/p6R8W1k4ro4",
+                videoUrl: "https://www.youtube.com/embed/gJUSKqQZZBU",
               },
               {
                 id: "chaos-lesson-6",
                 title: "Prioritizing Resilience Work",
-                videoUrl: "https://www.youtube.com/embed/nnBYnOVrla8",
+                videoUrl: "https://www.youtube.com/embed/SFwSOlQ4liI",
               },
             ],
           },
@@ -6721,12 +6721,12 @@ export const courses: Course[] = [
               {
                 id: "cost-lesson-1",
                 title: "Engineering Efficiency Metrics",
-                videoUrl: "https://www.youtube.com/embed/ksu1poOFtnQ",
+                videoUrl: "https://www.youtube.com/embed/Te9mYmonVjE",
               },
               {
                 id: "cost-lesson-2",
                 title: "Cost Monitoring Dashboards",
-                videoUrl: "https://www.youtube.com/embed/YifCwr6jci8",
+                videoUrl: "https://www.youtube.com/embed/wnS4XRLgXNI",
               },
             ],
           },
@@ -6743,12 +6743,12 @@ export const courses: Course[] = [
               {
                 id: "cost-lesson-3",
                 title: "Automating Cost Controls",
-                videoUrl: "https://www.youtube.com/embed/ZcivAiPhogo",
+                videoUrl: "https://www.youtube.com/embed/7I3e1dvlRQo",
               },
               {
                 id: "cost-lesson-4",
                 title: "Optimizing Kubernetes Spend",
-                videoUrl: "https://www.youtube.com/embed/f6YwY0Xtn4c",
+                videoUrl: "https://www.youtube.com/embed/CLVDF_bxVdM",
               },
             ],
           },
@@ -6765,12 +6765,12 @@ export const courses: Course[] = [
               {
                 id: "cost-lesson-5",
                 title: "Running FinOps Reviews",
-                videoUrl: "https://www.youtube.com/embed/3l2WEYLRh3g",
+                videoUrl: "https://www.youtube.com/embed/YHUptdFtozQ",
               },
               {
                 id: "cost-lesson-6",
                 title: "Creating a Cost-Aware Culture",
-                videoUrl: "https://www.youtube.com/embed/7rIYSGPTWJE",
+                videoUrl: "https://www.youtube.com/embed/KaMYF017qlQ",
               },
             ],
           },
@@ -6825,12 +6825,12 @@ export const courses: Course[] = [
               {
                 id: "rn-lesson-1",
                 title: "React Native Architecture in 2025",
-                videoUrl: "https://www.youtube.com/embed/hrYkB0HZNRs",
+                videoUrl: "https://www.youtube.com/embed/BdPkVl4Y8TQ",
               },
               {
                 id: "rn-lesson-2",
                 title: "State Management Strategies",
-                videoUrl: "https://www.youtube.com/embed/e-9w5-q1Uo0",
+                videoUrl: "https://www.youtube.com/embed/DK9HOY93p0k",
               },
             ],
           },
@@ -6847,12 +6847,12 @@ export const courses: Course[] = [
               {
                 id: "rn-lesson-3",
                 title: "Using Native Modules",
-                videoUrl: "https://www.youtube.com/embed/xYjyKJdWyRs",
+                videoUrl: "https://www.youtube.com/embed/CdaQSlyGik8",
               },
               {
                 id: "rn-lesson-4",
                 title: "Performance Optimization",
-                videoUrl: "https://www.youtube.com/embed/OJplhEx8gNs",
+                videoUrl: "https://www.youtube.com/embed/0fONene3OIA",
               },
             ],
           },
@@ -6869,12 +6869,12 @@ export const courses: Course[] = [
               {
                 id: "rn-lesson-5",
                 title: "Mobile CI/CD with Fastlane",
-                videoUrl: "https://www.youtube.com/embed/PIWk-UY0pzg",
+                videoUrl: "https://www.youtube.com/embed/yNqCpMLmJqE",
               },
               {
                 id: "rn-lesson-6",
                 title: "Monitoring React Native Apps",
-                videoUrl: "https://www.youtube.com/embed/4cH4z7O8gH4",
+                videoUrl: "https://www.youtube.com/embed/4s8BlzwWiIA",
               },
             ],
           },
@@ -6929,12 +6929,12 @@ export const courses: Course[] = [
               {
                 id: "swiftui-lesson-1",
                 title: "SwiftUI Layout Essentials",
-                videoUrl: "https://www.youtube.com/embed/Rvv-YN0I8jE",
+                videoUrl: "https://www.youtube.com/embed/04fzFk367Dg",
               },
               {
                 id: "swiftui-lesson-2",
                 title: "Reusable Components",
-                videoUrl: "https://www.youtube.com/embed/DT8C3XwZQP0",
+                videoUrl: "https://www.youtube.com/embed/V-RwRsHYXDM",
               },
             ],
           },
@@ -6951,12 +6951,12 @@ export const courses: Course[] = [
               {
                 id: "swiftui-lesson-3",
                 title: "SwiftUI Animations Deep Dive",
-                videoUrl: "https://www.youtube.com/embed/6XgQbrBs0Dw",
+                videoUrl: "https://www.youtube.com/embed/AfhUHEkS7Ew",
               },
               {
                 id: "swiftui-lesson-4",
                 title: "Design Tokens in SwiftUI",
-                videoUrl: "https://www.youtube.com/embed/4J6b_9HjvK0",
+                videoUrl: "https://www.youtube.com/embed/Ul661gN2_Gg",
               },
             ],
           },
@@ -6973,12 +6973,12 @@ export const courses: Course[] = [
               {
                 id: "swiftui-lesson-5",
                 title: "Accessibility in SwiftUI",
-                videoUrl: "https://www.youtube.com/embed/_4QFFhLdLNo",
+                videoUrl: "https://www.youtube.com/embed/SlCBMdPfWNc",
               },
               {
                 id: "swiftui-lesson-6",
                 title: "Snapshot Testing",
-                videoUrl: "https://www.youtube.com/embed/2FUKpqTdbbg",
+                videoUrl: "https://www.youtube.com/embed/bH2DQEPvkcI",
               },
             ],
           },
@@ -7033,12 +7033,12 @@ export const courses: Course[] = [
               {
                 id: "kmp-lesson-1",
                 title: "Kotlin Multiplatform Crash Course",
-                videoUrl: "https://www.youtube.com/embed/4RL9wGmQmio",
+                videoUrl: "https://www.youtube.com/embed/RSBO1C_Du2U",
               },
               {
                 id: "kmp-lesson-2",
                 title: "Project Setup & Structure",
-                videoUrl: "https://www.youtube.com/embed/4bQPV4_wEDM",
+                videoUrl: "https://www.youtube.com/embed/CAeWjoP525M",
               },
             ],
           },
@@ -7055,12 +7055,12 @@ export const courses: Course[] = [
               {
                 id: "kmp-lesson-3",
                 title: "Compose Multiplatform Basics",
-                videoUrl: "https://www.youtube.com/embed/ZgJ4Y2V2p8U",
+                videoUrl: "https://www.youtube.com/embed/vvP5vnmzY84",
               },
               {
                 id: "kmp-lesson-4",
                 title: "Integrating with SwiftUI",
-                videoUrl: "https://www.youtube.com/embed/ya_zZ8kvyd8",
+                videoUrl: "https://www.youtube.com/embed/k4h9i6KVvi8",
               },
             ],
           },
@@ -7077,12 +7077,12 @@ export const courses: Course[] = [
               {
                 id: "kmp-lesson-5",
                 title: "Testing Kotlin Multiplatform",
-                videoUrl: "https://www.youtube.com/embed/lmE9SWZ9Z_g",
+                videoUrl: "https://www.youtube.com/embed/N4h3K73TyZI",
               },
               {
                 id: "kmp-lesson-6",
                 title: "CI/CD for KMP",
-                videoUrl: "https://www.youtube.com/embed/9L-9n_jN4Ws",
+                videoUrl: "https://www.youtube.com/embed/uMBepxdTb9g",
               },
             ],
           },
@@ -7137,12 +7137,12 @@ export const courses: Course[] = [
               {
                 id: "flutter-lesson-1",
                 title: "Flutter Performance Essentials",
-                videoUrl: "https://www.youtube.com/embed/D7xYZWeXKBk",
+                videoUrl: "https://www.youtube.com/embed/PKGguGUwSYE",
               },
               {
                 id: "flutter-lesson-2",
                 title: "Profiling Flutter Apps",
-                videoUrl: "https://www.youtube.com/embed/_THTInULsZU",
+                videoUrl: "https://www.youtube.com/embed/_EYk-E29edo",
               },
             ],
           },
@@ -7159,12 +7159,12 @@ export const courses: Course[] = [
               {
                 id: "flutter-lesson-3",
                 title: "Advanced Flutter Animations",
-                videoUrl: "https://www.youtube.com/embed/0fLyrbNES9c",
+                videoUrl: "https://www.youtube.com/embed/7UQgAC1kvxI",
               },
               {
                 id: "flutter-lesson-4",
                 title: "Building Delightful Interactions",
-                videoUrl: "https://www.youtube.com/embed/S_f7nW2nUzs",
+                videoUrl: "https://www.youtube.com/embed/UoajnqWaq_4",
               },
             ],
           },
@@ -7181,12 +7181,12 @@ export const courses: Course[] = [
               {
                 id: "flutter-lesson-5",
                 title: "Platform Channels in Flutter",
-                videoUrl: "https://www.youtube.com/embed/eX0zLY_Jzy0",
+                videoUrl: "https://www.youtube.com/embed/vfh2KCFEuDo",
               },
               {
                 id: "flutter-lesson-6",
                 title: "Automating Flutter Delivery",
-                videoUrl: "https://www.youtube.com/embed/zpaz1IG_SRg",
+                videoUrl: "https://www.youtube.com/embed/857X79cfP1g",
               },
             ],
           },
@@ -7241,12 +7241,12 @@ export const courses: Course[] = [
               {
                 id: "mobile-cicd-lesson-1",
                 title: "Mobile CI/CD Overview",
-                videoUrl: "https://www.youtube.com/embed/s9IerTn6G_Q",
+                videoUrl: "https://www.youtube.com/embed/scEDHsr3APg",
               },
               {
                 id: "mobile-cicd-lesson-2",
                 title: "Configuring Fastlane",
-                videoUrl: "https://www.youtube.com/embed/umTzpeTnHGU",
+                videoUrl: "https://www.youtube.com/embed/zYBYegeTNwY",
               },
             ],
           },
@@ -7263,12 +7263,12 @@ export const courses: Course[] = [
               {
                 id: "mobile-cicd-lesson-3",
                 title: "Running Tests in Firebase Test Lab",
-                videoUrl: "https://www.youtube.com/embed/3zZm3awcA98",
+                videoUrl: "https://www.youtube.com/embed/4_ZEEX1x17k",
               },
               {
                 id: "mobile-cicd-lesson-4",
                 title: "Setting Quality Gates",
-                videoUrl: "https://www.youtube.com/embed/IsN_Xsjl2uo",
+                videoUrl: "https://www.youtube.com/embed/MmDVND6w_Ag",
               },
             ],
           },
@@ -7285,12 +7285,12 @@ export const courses: Course[] = [
               {
                 id: "mobile-cicd-lesson-5",
                 title: "Automating App Store Deployments",
-                videoUrl: "https://www.youtube.com/embed/1vHcNZNHsLU",
+                videoUrl: "https://www.youtube.com/embed/9vkkJ4tC4SQ",
               },
               {
                 id: "mobile-cicd-lesson-6",
                 title: "Release Train Strategies",
-                videoUrl: "https://www.youtube.com/embed/FCw9Sbi3b6I",
+                videoUrl: "https://www.youtube.com/embed/llTNNqpPFto",
               },
             ],
           },
@@ -7345,12 +7345,12 @@ export const courses: Course[] = [
               {
                 id: "mobile-security-lesson-1",
                 title: "Mobile Threat Landscape",
-                videoUrl: "https://www.youtube.com/embed/q-o6BJG8x2g",
+                videoUrl: "https://www.youtube.com/embed/yfszc9yJsnU",
               },
               {
                 id: "mobile-security-lesson-2",
                 title: "OWASP MASVS Overview",
-                videoUrl: "https://www.youtube.com/embed/qUy1cFYJELk",
+                videoUrl: "https://www.youtube.com/embed/fuLo64WH3SU",
               },
             ],
           },
@@ -7367,12 +7367,12 @@ export const courses: Course[] = [
               {
                 id: "mobile-security-lesson-3",
                 title: "Securing Mobile Storage",
-                videoUrl: "https://www.youtube.com/embed/X4tNXB_KiMY",
+                videoUrl: "https://www.youtube.com/embed/8QP7AxkWPlE",
               },
               {
                 id: "mobile-security-lesson-4",
                 title: "Runtime Protections",
-                videoUrl: "https://www.youtube.com/embed/zY0Ax7AnxrE",
+                videoUrl: "https://www.youtube.com/embed/Yo9-DBl8nWM",
               },
             ],
           },
@@ -7389,12 +7389,12 @@ export const courses: Course[] = [
               {
                 id: "mobile-security-lesson-5",
                 title: "Automated Mobile Security Testing",
-                videoUrl: "https://www.youtube.com/embed/Y8zQsehTCEY",
+                videoUrl: "https://www.youtube.com/embed/TV7904ZvrxE",
               },
               {
                 id: "mobile-security-lesson-6",
                 title: "Monitoring Mobile Threats",
-                videoUrl: "https://www.youtube.com/embed/Qd4Ekd4dblk",
+                videoUrl: "https://www.youtube.com/embed/oPO6OVhLaSs",
               },
             ],
           },
@@ -7449,12 +7449,12 @@ export const courses: Course[] = [
               {
                 id: "compose-lesson-1",
                 title: "Jetpack Compose Architecture",
-                videoUrl: "https://www.youtube.com/embed/LuhaNznPh5w",
+                videoUrl: "https://www.youtube.com/embed/9eIhMFTs1Q8",
               },
               {
                 id: "compose-lesson-2",
                 title: "State Management in Compose",
-                videoUrl: "https://www.youtube.com/embed/5sSIoIBhdf0",
+                videoUrl: "https://www.youtube.com/embed/ekB0w7tkG7k",
               },
             ],
           },
@@ -7471,12 +7471,12 @@ export const courses: Course[] = [
               {
                 id: "compose-lesson-3",
                 title: "Compose Performance Tips",
-                videoUrl: "https://www.youtube.com/embed/kGuHEiSD-kc",
+                videoUrl: "https://www.youtube.com/embed/ahXLwg2JYpc",
               },
               {
                 id: "compose-lesson-4",
                 title: "Advanced Compose Animations",
-                videoUrl: "https://www.youtube.com/embed/CXGzBEg-qsw",
+                videoUrl: "https://www.youtube.com/embed/6ZZDPILtYlA",
               },
             ],
           },
@@ -7493,12 +7493,12 @@ export const courses: Course[] = [
               {
                 id: "compose-lesson-5",
                 title: "Testing Jetpack Compose",
-                videoUrl: "https://www.youtube.com/embed/xW_VCbwZTx8",
+                videoUrl: "https://www.youtube.com/embed/kxOwAIdTT9A",
               },
               {
                 id: "compose-lesson-6",
                 title: "Release Automation",
-                videoUrl: "https://www.youtube.com/embed/Ix-uHKjgPxU",
+                videoUrl: "https://www.youtube.com/embed/Utt7vU3jk9s",
               },
             ],
           },
@@ -7553,12 +7553,12 @@ export const courses: Course[] = [
               {
                 id: "mobile-analytics-lesson-1",
                 title: "Mobile Analytics Fundamentals",
-                videoUrl: "https://www.youtube.com/embed/l5hqfUI_yNE",
+                videoUrl: "https://www.youtube.com/embed/rPM9W8_uuzQ",
               },
               {
                 id: "mobile-analytics-lesson-2",
                 title: "Implementing Amplitude",
-                videoUrl: "https://www.youtube.com/embed/wdsdQGxMKac",
+                videoUrl: "https://www.youtube.com/embed/wnJyhbsibu0",
               },
             ],
           },
@@ -7575,12 +7575,12 @@ export const courses: Course[] = [
               {
                 id: "mobile-analytics-lesson-3",
                 title: "Running Mobile Experiments",
-                videoUrl: "https://www.youtube.com/embed/FYL7P0kXUa8",
+                videoUrl: "https://www.youtube.com/embed/uTbsM5wNLGY",
               },
               {
                 id: "mobile-analytics-lesson-4",
                 title: "Designing Growth Loops",
-                videoUrl: "https://www.youtube.com/embed/IDN7VpSrLFM",
+                videoUrl: "https://www.youtube.com/embed/TwOeP9HM7fU",
               },
             ],
           },
@@ -7597,12 +7597,12 @@ export const courses: Course[] = [
               {
                 id: "mobile-analytics-lesson-5",
                 title: "Lifecycle Marketing Fundamentals",
-                videoUrl: "https://www.youtube.com/embed/dIq0Jx8PX-c",
+                videoUrl: "https://www.youtube.com/embed/u6B744B5apo",
               },
               {
                 id: "mobile-analytics-lesson-6",
                 title: "Building Retention Programs",
-                videoUrl: "https://www.youtube.com/embed/7NxPa2Hxo4o",
+                videoUrl: "https://www.youtube.com/embed/1J4p59s75XQ",
               },
             ],
           },
@@ -7657,12 +7657,12 @@ export const courses: Course[] = [
               {
                 id: "discovery-lesson-1",
                 title: "Continuous Discovery Habits",
-                videoUrl: "https://www.youtube.com/embed/0Kz0QpIgMw0",
+                videoUrl: "https://www.youtube.com/embed/ZPvG2WQDCqU",
               },
               {
                 id: "discovery-lesson-2",
                 title: "Jobs to Be Done Interviews",
-                videoUrl: "https://www.youtube.com/embed/hgdvYbWQnlE",
+                videoUrl: "https://www.youtube.com/embed/dbVN6EYql6k",
               },
             ],
           },
@@ -7679,12 +7679,12 @@ export const courses: Course[] = [
               {
                 id: "discovery-lesson-3",
                 title: "Opportunity Solution Trees",
-                videoUrl: "https://www.youtube.com/embed/Jn3SAb8mZfI",
+                videoUrl: "https://www.youtube.com/embed/LFARGDCR_C4",
               },
               {
                 id: "discovery-lesson-4",
                 title: "Insight Synthesis Techniques",
-                videoUrl: "https://www.youtube.com/embed/6gXHdG6p95U",
+                videoUrl: "https://www.youtube.com/embed/_azBW6nBrBM",
               },
             ],
           },
@@ -7701,12 +7701,12 @@ export const courses: Course[] = [
               {
                 id: "discovery-lesson-5",
                 title: "Communicating Research Insights",
-                videoUrl: "https://www.youtube.com/embed/3vCwMdpBWX4",
+                videoUrl: "https://www.youtube.com/embed/SxAKGVERkJs",
               },
               {
                 id: "discovery-lesson-6",
                 title: "Prioritizing Opportunities",
-                videoUrl: "https://www.youtube.com/embed/2gC20oDKLec",
+                videoUrl: "https://www.youtube.com/embed/s0rL0jzdgxo",
               },
             ],
           },
@@ -7761,12 +7761,12 @@ export const courses: Course[] = [
               {
                 id: "design-ops-lesson-1",
                 title: "What is Design Ops?",
-                videoUrl: "https://www.youtube.com/embed/iz7B4rABc6E",
+                videoUrl: "https://www.youtube.com/embed/I-z1NCbQQ38",
               },
               {
                 id: "design-ops-lesson-2",
                 title: "Design Ops Rituals",
-                videoUrl: "https://www.youtube.com/embed/jP7hvWSozmE",
+                videoUrl: "https://www.youtube.com/embed/BGAsGRlWO2A",
               },
             ],
           },
@@ -7783,12 +7783,12 @@ export const courses: Course[] = [
               {
                 id: "design-ops-lesson-3",
                 title: "Scaling Design Systems",
-                videoUrl: "https://www.youtube.com/embed/7Y7Hmghowdg",
+                videoUrl: "https://www.youtube.com/embed/9w-BwzcuxYM",
               },
               {
                 id: "design-ops-lesson-4",
                 title: "Design to Code Workflows",
-                videoUrl: "https://www.youtube.com/embed/UDF4Go6aymE",
+                videoUrl: "https://www.youtube.com/embed/N1w07dTC3Ww",
               },
             ],
           },
@@ -7805,12 +7805,12 @@ export const courses: Course[] = [
               {
                 id: "design-ops-lesson-5",
                 title: "Measuring Design Systems",
-                videoUrl: "https://www.youtube.com/embed/NdRKrPcS8QI",
+                videoUrl: "https://www.youtube.com/embed/AOCyGKxCsvg",
               },
               {
                 id: "design-ops-lesson-6",
                 title: "Design Ops Case Studies",
-                videoUrl: "https://www.youtube.com/embed/4bWMnxfNapw",
+                videoUrl: "https://www.youtube.com/embed/CNnqSL97aLE",
               },
             ],
           },
@@ -7865,12 +7865,12 @@ export const courses: Course[] = [
               {
                 id: "ux-writing-lesson-1",
                 title: "UX Writing Fundamentals",
-                videoUrl: "https://www.youtube.com/embed/SPErwHIjBHs",
+                videoUrl: "https://www.youtube.com/embed/1Yvu-i9H6lI",
               },
               {
                 id: "ux-writing-lesson-2",
                 title: "Voice & Tone Systems",
-                videoUrl: "https://www.youtube.com/embed/xoSgGJE0E7c",
+                videoUrl: "https://www.youtube.com/embed/OIpb3FSWXK0",
               },
             ],
           },
@@ -7887,12 +7887,12 @@ export const courses: Course[] = [
               {
                 id: "ux-writing-lesson-3",
                 title: "Testing Content Design",
-                videoUrl: "https://www.youtube.com/embed/Ek36VE1oxVQ",
+                videoUrl: "https://www.youtube.com/embed/PsL5zHLiwWQ",
               },
               {
                 id: "ux-writing-lesson-4",
                 title: "Localization Strategy",
-                videoUrl: "https://www.youtube.com/embed/OCcN3Wf9MUw",
+                videoUrl: "https://www.youtube.com/embed/ubAhLDPYSco",
               },
             ],
           },
@@ -7909,12 +7909,12 @@ export const courses: Course[] = [
               {
                 id: "ux-writing-lesson-5",
                 title: "Working with Designers & PMs",
-                videoUrl: "https://www.youtube.com/embed/zm4c3AofRwA",
+                videoUrl: "https://www.youtube.com/embed/AlJ36WmXsmQ",
               },
               {
                 id: "ux-writing-lesson-6",
                 title: "Content Governance",
-                videoUrl: "https://www.youtube.com/embed/xF_3tb0os0U",
+                videoUrl: "https://www.youtube.com/embed/dqEl280a0Zc",
               },
             ],
           },
@@ -7969,12 +7969,12 @@ export const courses: Course[] = [
               {
                 id: "design-analytics-lesson-1",
                 title: "Product Analytics for Designers",
-                videoUrl: "https://www.youtube.com/embed/0vEEgR1ored",
+                videoUrl: "https://www.youtube.com/embed/t_4cVPXb2SQ",
               },
               {
                 id: "design-analytics-lesson-2",
                 title: "Designing KPI Frameworks",
-                videoUrl: "https://www.youtube.com/embed/RBctVcxw7Hk",
+                videoUrl: "https://www.youtube.com/embed/2tuWjtc2Ifk",
               },
             ],
           },
@@ -7991,12 +7991,12 @@ export const courses: Course[] = [
               {
                 id: "design-analytics-lesson-3",
                 title: "Running Product Experiments",
-                videoUrl: "https://www.youtube.com/embed/WXEmtbyibns",
+                videoUrl: "https://www.youtube.com/embed/6kdZoDy7D4Q",
               },
               {
                 id: "design-analytics-lesson-4",
                 title: "Synthesizing Quant & Qual",
-                videoUrl: "https://www.youtube.com/embed/Mu2JtwkKDuc",
+                videoUrl: "https://www.youtube.com/embed/S3k9ZMiTQ_w",
               },
             ],
           },
@@ -8013,12 +8013,12 @@ export const courses: Course[] = [
               {
                 id: "design-analytics-lesson-5",
                 title: "Storytelling with Data",
-                videoUrl: "https://www.youtube.com/embed/WPkEQwqKLY8",
+                videoUrl: "https://www.youtube.com/embed/r5_34YnCmMY",
               },
               {
                 id: "design-analytics-lesson-6",
                 title: "Design Influence",
-                videoUrl: "https://www.youtube.com/embed/BxowecLUpqM",
+                videoUrl: "https://www.youtube.com/embed/n5u0SlG-RsM",
               },
             ],
           },
@@ -8073,12 +8073,12 @@ export const courses: Course[] = [
               {
                 id: "design-leadership-lesson-1",
                 title: "Design Org Strategy",
-                videoUrl: "https://www.youtube.com/embed/bXaqM42CcsE",
+                videoUrl: "https://www.youtube.com/embed/41v3PENTEXw",
               },
               {
                 id: "design-leadership-lesson-2",
                 title: "Design Vision Narratives",
-                videoUrl: "https://www.youtube.com/embed/6QJqKf9qTlo",
+                videoUrl: "https://www.youtube.com/embed/Qn5I6F9Wqkk",
               },
             ],
           },
@@ -8095,12 +8095,12 @@ export const courses: Course[] = [
               {
                 id: "design-leadership-lesson-3",
                 title: "Design Operations for Leaders",
-                videoUrl: "https://www.youtube.com/embed/hz0_0SgZPCw",
+                videoUrl: "https://www.youtube.com/embed/2xbiKIMRg4I",
               },
               {
                 id: "design-leadership-lesson-4",
                 title: "Culture & Craft Excellence",
-                videoUrl: "https://www.youtube.com/embed/3dKk6k7tk8I",
+                videoUrl: "https://www.youtube.com/embed/JomsJ6MPx_g",
               },
             ],
           },
@@ -8117,12 +8117,12 @@ export const courses: Course[] = [
               {
                 id: "design-leadership-lesson-5",
                 title: "Partnering with Product & Engineering",
-                videoUrl: "https://www.youtube.com/embed/ICz_c1oW9Bg",
+                videoUrl: "https://www.youtube.com/embed/8bliweLN8C4",
               },
               {
                 id: "design-leadership-lesson-6",
                 title: "Executive Communication",
-                videoUrl: "https://www.youtube.com/embed/E0MvtFxQziE",
+                videoUrl: "https://www.youtube.com/embed/Fzi4T94QCjw",
               },
             ],
           },
@@ -8177,12 +8177,12 @@ export const courses: Course[] = [
               {
                 id: "service-design-lesson-1",
                 title: "Service Design Fundamentals",
-                videoUrl: "https://www.youtube.com/embed/RlP1KsmnNhI",
+                videoUrl: "https://www.youtube.com/embed/ojqN3tZqcew",
               },
               {
                 id: "service-design-lesson-2",
                 title: "Journey Mapping Techniques",
-                videoUrl: "https://www.youtube.com/embed/nluj9s-6x_o",
+                videoUrl: "https://www.youtube.com/embed/2W13ext26kQ",
               },
             ],
           },
@@ -8199,12 +8199,12 @@ export const courses: Course[] = [
               {
                 id: "service-design-lesson-3",
                 title: "Building Service Blueprints",
-                videoUrl: "https://www.youtube.com/embed/rBbMuNoMNF0",
+                videoUrl: "https://www.youtube.com/embed/-glgJ9U_Fsk",
               },
               {
                 id: "service-design-lesson-4",
                 title: "Operational Layers",
-                videoUrl: "https://www.youtube.com/embed/A9kWJqyPAFY",
+                videoUrl: "https://www.youtube.com/embed/34lWQwoYddw",
               },
             ],
           },
@@ -8221,12 +8221,12 @@ export const courses: Course[] = [
               {
                 id: "service-design-lesson-5",
                 title: "Aligning Teams Around Blueprints",
-                videoUrl: "https://www.youtube.com/embed/QbZ1y7Up0h4",
+                videoUrl: "https://www.youtube.com/embed/G44jtKmbz-0",
               },
               {
                 id: "service-design-lesson-6",
                 title: "Measuring Service Experiences",
-                videoUrl: "https://www.youtube.com/embed/vFbw-N5jUTC",
+                videoUrl: "https://www.youtube.com/embed/mr-6gTlRXU0",
               },
             ],
           },
@@ -8281,12 +8281,12 @@ export const courses: Course[] = [
               {
                 id: "motion-principles-lesson-1",
                 title: "Motion Design Fundamentals",
-                videoUrl: "https://www.youtube.com/embed/fQd2cAs3Xo4",
+                videoUrl: "https://www.youtube.com/embed/bKxuon6iGhg",
               },
               {
                 id: "motion-principles-lesson-2",
                 title: "Principles in Product Design",
-                videoUrl: "https://www.youtube.com/embed/zQ5e0siJmqI",
+                videoUrl: "https://www.youtube.com/embed/9EPTM91TBDU",
               },
             ],
           },
@@ -8303,12 +8303,12 @@ export const courses: Course[] = [
               {
                 id: "motion-principles-lesson-3",
                 title: "Prototyping Motion with Figma",
-                videoUrl: "https://www.youtube.com/embed/3fmd7plgT0w",
+                videoUrl: "https://www.youtube.com/embed/-d6zNGeF59M",
               },
               {
                 id: "motion-principles-lesson-4",
                 title: "Advanced Motion Tools",
-                videoUrl: "https://www.youtube.com/embed/KPS0xvc8vxY",
+                videoUrl: "https://www.youtube.com/embed/XDy_Q6Elmlc",
               },
             ],
           },
@@ -8325,12 +8325,12 @@ export const courses: Course[] = [
               {
                 id: "motion-principles-lesson-5",
                 title: "Motion in Design Systems",
-                videoUrl: "https://www.youtube.com/embed/IVHfVQGw7yg",
+                videoUrl: "https://www.youtube.com/embed/Itsg48crOjM",
               },
               {
                 id: "motion-principles-lesson-6",
                 title: "Partnering with Engineering",
-                videoUrl: "https://www.youtube.com/embed/m9SCLF4hItw",
+                videoUrl: "https://www.youtube.com/embed/gQfWR-USO5c",
               },
             ],
           },
@@ -8385,12 +8385,12 @@ export const courses: Course[] = [
               {
                 id: "critique-lesson-1",
                 title: "Running Effective Critiques",
-                videoUrl: "https://www.youtube.com/embed/1F_4oyR4RSY",
+                videoUrl: "https://www.youtube.com/embed/_kGESn8ArrU",
               },
               {
                 id: "critique-lesson-2",
                 title: "Feedback Models",
-                videoUrl: "https://www.youtube.com/embed/vJ0-WZ6hO9Y",
+                videoUrl: "https://www.youtube.com/embed/wtl5UrrgU8c",
               },
             ],
           },
@@ -8407,12 +8407,12 @@ export const courses: Course[] = [
               {
                 id: "critique-lesson-3",
                 title: "Inclusive Facilitation",
-                videoUrl: "https://www.youtube.com/embed/9ZC-fmJ0OjQ",
+                videoUrl: "https://www.youtube.com/embed/So8aseCO3hY",
               },
               {
                 id: "critique-lesson-4",
                 title: "Remote Critiques",
-                videoUrl: "https://www.youtube.com/embed/kKQPFn6w8ac",
+                videoUrl: "https://www.youtube.com/embed/4WUXwhfKtck",
               },
             ],
           },
@@ -8429,12 +8429,12 @@ export const courses: Course[] = [
               {
                 id: "critique-lesson-5",
                 title: "Scaling Critique Rituals",
-                videoUrl: "https://www.youtube.com/embed/6sK4wg2EDUU",
+                videoUrl: "https://www.youtube.com/embed/P1qp9xEhawI",
               },
               {
                 id: "critique-lesson-6",
                 title: "Measuring Critique Impact",
-                videoUrl: "https://www.youtube.com/embed/0MTK4AM4NXU",
+                videoUrl: "https://www.youtube.com/embed/_Bd17Szxs4s",
               },
             ],
           },

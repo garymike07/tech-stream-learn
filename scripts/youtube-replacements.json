@@ -1,0 +1,2588 @@
+{
+  "replacements": [
+    {
+      "oldId": "6d1mOZ5Nmn8",
+      "newId": "Xp0-Yy5ow5k",
+      "lessonTitle": "JWT Auth with Django & DRF",
+      "replacementTitle": "Django REST Framework - JWT Authentication with djangorestframework-simplejwt",
+      "query": "JWT Auth with Django & DRF tutorial"
+    },
+    {
+      "oldId": "3vnmZF79E1Y",
+      "newId": "HwDlZsheaNg",
+      "lessonTitle": "AWS Console Tour",
+      "replacementTitle": "AWS Console Tour | AWS Certified Cloud Practitioner Certification Course",
+      "query": "AWS Console Tour tutorial"
+    },
+    {
+      "oldId": "ia-UEYYR44s",
+      "newId": "qQk94CjRvIs",
+      "lessonTitle": "Serverless Architectures on AWS",
+      "replacementTitle": "Serverless was a big mistake... says Amazon",
+      "query": "Serverless Architectures on AWS tutorial"
+    },
+    {
+      "oldId": "Ebq0H9mHkJw",
+      "newId": "_qNHROq0pGk",
+      "lessonTitle": "Rate Limiting & Throttling",
+      "replacementTitle": "🔥 How Rate Limiting and Throttling Saves Your API Server From CRASHING!",
+      "query": "Rate Limiting & Throttling tutorial"
+    },
+    {
+      "oldId": "y1ZlWBZX7BM",
+      "newId": "JeeUY6WaXiA",
+      "lessonTitle": "Reactive Forms & State Isolation",
+      "replacementTitle": "Reactive Forms  - The Basics",
+      "query": "Reactive Forms & State Isolation tutorial"
+    },
+    {
+      "oldId": "ABI3X72A0zY",
+      "newId": "SRXuxMP8QLg",
+      "lessonTitle": "Angular Performance Optimization",
+      "replacementTitle": "How to Optimize the Performance of an Angular Application?",
+      "query": "Angular Performance Optimization tutorial"
+    },
+    {
+      "oldId": "5DqXNgfeYpY",
+      "newId": "c57llB8QA2E",
+      "lessonTitle": "Testing Angular with Jest",
+      "replacementTitle": "I bet you can write an Angular UNIT TEST after this video",
+      "query": "Testing Angular with Jest tutorial"
+    },
+    {
+      "oldId": "Wb1ZO2sS3Gk",
+      "newId": "OMGTP2QpfiY",
+      "lessonTitle": "Design Tokens in Practice",
+      "replacementTitle": "Master Design Tokens - From Basics to Advanced",
+      "query": "Design Tokens in Practice tutorial"
+    },
+    {
+      "oldId": "6j6OY-1QUHc",
+      "newId": "BySFuXgG-ow",
+      "lessonTitle": "Storybook Tutorial",
+      "replacementTitle": "React Storybook Tutorial - 1 - Introduction",
+      "query": "Storybook Tutorial tutorial"
+    },
+    {
+      "oldId": "DBfT3Kxv-HM",
+      "newId": "AGyUh_ta3TU",
+      "lessonTitle": "Chromatic Visual QA",
+      "replacementTitle": "Visual regression testing with Chromatic for Storybook | Friday Tips #9",
+      "query": "Chromatic Visual QA tutorial"
+    },
+    {
+      "oldId": "T2t6FO4fC9o",
+      "newId": "9w-BwzcuxYM",
+      "lessonTitle": "Scaling Design Systems",
+      "replacementTitle": "Typography - Ultimate Design System Breakdown (Font Sizes, Text Style Naming, Responsive Scaling)",
+      "query": "Scaling Design Systems tutorial"
+    },
+    {
+      "oldId": "huABkK74vGg",
+      "newId": "SHIL8sVSakE",
+      "lessonTitle": "Accessibility in Design Systems",
+      "replacementTitle": "Accessibility in Design Systems by Allison Shaw",
+      "query": "Accessibility in Design Systems tutorial"
+    },
+    {
+      "oldId": "4b7yvdNjLCc",
+      "newId": "0fONene3OIA",
+      "lessonTitle": "Web Performance 101",
+      "replacementTitle": "The ultimate guide to web performance",
+      "query": "Web Performance 101 tutorial"
+    },
+    {
+      "oldId": "0QXj35wP25U",
+      "newId": "z6AoFvVCvg0",
+      "lessonTitle": "Image Optimization Strategies",
+      "replacementTitle": "🚀How to Optimize Images for SEO: Unveiling the Power of Image Optimization! 🔥",
+      "query": "Image Optimization Strategies tutorial"
+    },
+    {
+      "oldId": "ih5u3no0Rmc",
+      "newId": "EA9bRtw8slU",
+      "lessonTitle": "JavaScript Performance Audits",
+      "replacementTitle": "How to Improve JavaScript Performance with Google Chrome",
+      "query": "JavaScript Performance Audits tutorial"
+    },
+    {
+      "oldId": "cUzW5oNTo0Y",
+      "newId": "LkDelp5WWYU",
+      "lessonTitle": "Next.js Performance Best Practices",
+      "replacementTitle": "the most important Next.js features to learn (in 8 minutes)",
+      "query": "Next.js Performance Best Practices tutorial"
+    },
+    {
+      "oldId": "x8bzz449DQo",
+      "newId": "KTkJ3FYdqFI",
+      "lessonTitle": "Automating Performance Budgets",
+      "replacementTitle": "Maximize Automation: Your Budgeting Guide to Success!",
+      "query": "Automating Performance Budgets tutorial"
+    },
+    {
+      "oldId": "whGwm0Lky2g",
+      "newId": "9REGGiU8hck",
+      "lessonTitle": "Next.js Streaming Layouts",
+      "replacementTitle": "Next.js 14 Tutorial - 54 - Streaming",
+      "query": "Next.js Streaming Layouts tutorial"
+    },
+    {
+      "oldId": "d6h8BzbSLx0",
+      "newId": "97TlBd-Uhjw",
+      "lessonTitle": "Building at the Edge",
+      "replacementTitle": "Edges - How to Do Edges on Black Hair Tutorial",
+      "query": "Building at the Edge tutorial"
+    },
+    {
+      "oldId": "TyJwbQNA7i4",
+      "newId": "nHGi95l87UA",
+      "lessonTitle": "Edge Config Deep Dive",
+      "replacementTitle": "The Behringer EDGE synthesizer complete Deep Dive guide tutorial",
+      "query": "Edge Config Deep Dive tutorial"
+    },
+    {
+      "oldId": "6hoNX0JZG7I",
+      "newId": "zFMgpxG-chM",
+      "lessonTitle": "Experimentation & Analytics",
+      "replacementTitle": "What is A/B Testing? | Data Science in Minutes",
+      "query": "Experimentation & Analytics tutorial"
+    },
+    {
+      "oldId": "fyU4Yk8ApnM",
+      "newId": "YxvtH0_tJJY",
+      "lessonTitle": "Observability Patterns for Frontend Engineers",
+      "replacementTitle": "front-end developer vs backend developer| #developer #frontenddeveloper #backenddeveloper #backend",
+      "query": "Observability Patterns for Frontend Engineers tutorial"
+    },
+    {
+      "oldId": "FS4oBEyWH_g",
+      "newId": "MZoADO3cBGo",
+      "lessonTitle": "Real User Monitoring in Next.js",
+      "replacementTitle": "Real User Monitoring - Nextjs Applications - Agent Installation",
+      "query": "Real User Monitoring in Next.js tutorial"
+    },
+    {
+      "oldId": "2vqW6j-v-rQ",
+      "newId": "5C_HPTJg5ek",
+      "lessonTitle": "Rust for the Web",
+      "replacementTitle": "Rust in 100 Seconds",
+      "query": "Rust for the Web tutorial"
+    },
+    {
+      "oldId": "Grn4V3J0uh8",
+      "newId": "_ccDqRTx-JU",
+      "lessonTitle": "Designing Rust APIs",
+      "replacementTitle": "Improve your Rust APIs with the type state pattern",
+      "query": "Designing Rust APIs tutorial"
+    },
+    {
+      "oldId": "8sJqyCsE3cY",
+      "newId": "tRC4EIKhMzw",
+      "lessonTitle": "Database Integration with Diesel",
+      "replacementTitle": "Rust & SQL Databases (With Diesel)",
+      "query": "Database Integration with Diesel tutorial"
+    },
+    {
+      "oldId": "8brzN5G3wGk",
+      "newId": "ZF1WQGur_NA",
+      "lessonTitle": "Deploy Rust APIs with Docker",
+      "replacementTitle": "How to deploy a Rust Axum Web Server to Heroku using Docker and Github Actions",
+      "query": "Deploy Rust APIs with Docker tutorial"
+    },
+    {
+      "oldId": "wVF81l0F1bY",
+      "newId": "hLvwoow3XTk",
+      "lessonTitle": "Instrumentation with OpenTelemetry",
+      "replacementTitle": "OpenTelemetry: Simplifying Hybrid Cloud Monitoring",
+      "query": "Instrumentation with OpenTelemetry tutorial"
+    },
+    {
+      "oldId": "qzgWZ4Zz-8M",
+      "newId": "aB8T-ErB0L4",
+      "lessonTitle": "Eloquent Deep Dive",
+      "replacementTitle": "Two Crucial Eloquent Mistakes #laravel",
+      "query": "Eloquent Deep Dive tutorial"
+    },
+    {
+      "oldId": "mPGiCDVY34w",
+      "newId": "wi8kF8UniUI",
+      "lessonTitle": "Advanced Routing Patterns",
+      "replacementTitle": "Learn Next.js Parallel Routes In 16 Minutes",
+      "query": "Advanced Routing Patterns tutorial"
+    },
+    {
+      "oldId": "Yt5f5fR5g7Q",
+      "newId": "4tFcM7NcefU",
+      "lessonTitle": "Request Validation Strategies",
+      "replacementTitle": "Entry Confirmation",
+      "query": "Request Validation Strategies tutorial"
+    },
+    {
+      "oldId": "jHoXQXwQ7b4",
+      "newId": "R3UydV_lYhs",
+      "lessonTitle": "Testing Laravel APIs with Pest",
+      "replacementTitle": "PHP For Beginners, Ep 49 - testing approach tdd and pest 2160p",
+      "query": "Testing Laravel APIs with Pest tutorial"
+    },
+    {
+      "oldId": "i7SMhG4t0I8",
+      "newId": "PenvYHJ9Koc",
+      "lessonTitle": "API Documentation & OpenAPI",
+      "replacementTitle": "Understand OpenAPI in 5 Minutes With Examples",
+      "query": "API Documentation & OpenAPI tutorial"
+    },
+    {
+      "oldId": "vsB7X8t0gWs",
+      "newId": "bpVN_plQm5E",
+      "lessonTitle": "Minimal APIs vs Controllers",
+      "replacementTitle": "Should You Use Controllers or Minimal APIs in .NET?",
+      "query": "Minimal APIs vs Controllers tutorial"
+    },
+    {
+      "oldId": "pj0qv-AjY9w",
+      "newId": "KpdyvEO1Ii0",
+      "lessonTitle": "EF Core with Minimal APIs",
+      "replacementTitle": ".NET 7 Minimal API for Beginners 🚀 Full CRUD in 10 Minutes!",
+      "query": "EF Core with Minimal APIs tutorial"
+    },
+    {
+      "oldId": "Bx3Woe0thCI",
+      "newId": "gsAuFIhXz3g",
+      "lessonTitle": "Securing Minimal APIs",
+      "replacementTitle": "Fix Your Controllers By Refactoring To Minimal APIs",
+      "query": "Securing Minimal APIs tutorial"
+    },
+    {
+      "oldId": "gm4GZ7_zXqU",
+      "newId": "EKqXAMLsnKQ",
+      "lessonTitle": "Deploy Minimal APIs to Azure",
+      "replacementTitle": "Easily Deploy a .NET 7 API to Azure! [2023 Tutorial]",
+      "query": "Deploy Minimal APIs to Azure tutorial"
+    },
+    {
+      "oldId": "9AbdBDEuDf0",
+      "newId": "_OXYCzwFd1Y",
+      "lessonTitle": "Adding Observability with OpenTelemetry",
+      "replacementTitle": "Modern Observability with OpenTelemetry",
+      "query": "Adding Observability with OpenTelemetry tutorial"
+    },
+    {
+      "oldId": "KpRDuVW1TR8",
+      "newId": "446E-r0rXHI",
+      "lessonTitle": "Designing Go Services",
+      "replacementTitle": "Go in 100 Seconds",
+      "query": "Designing Go Services tutorial"
+    },
+    {
+      "oldId": "GMKow9KmfeU",
+      "newId": "o5eWy-2SDtc",
+      "lessonTitle": "Deploy Go Services on Kubernetes",
+      "replacementTitle": "Build and deploy Go applications on K8s with \"ko\" | Ep 51",
+      "query": "Deploy Go Services on Kubernetes tutorial"
+    },
+    {
+      "oldId": "-yZJO7ejnKc",
+      "newId": "16fgzklcF7Y",
+      "lessonTitle": "Service Mesh Essentials",
+      "replacementTitle": "Istio & Service Mesh - simply explained in 15 mins",
+      "query": "Service Mesh Essentials tutorial"
+    },
+    {
+      "oldId": "ykjJmV1R5sE",
+      "newId": "idDu_jXqf4E",
+      "lessonTitle": "Distributed Tracing with OpenTelemetry",
+      "replacementTitle": "Introduction to Tracing : OpenTelemetry & Opentracing",
+      "query": "Distributed Tracing with OpenTelemetry tutorial"
+    },
+    {
+      "oldId": "BWgq9nxCVqM",
+      "newId": "THzYL5G-ZvE",
+      "lessonTitle": "Chaos Engineering in Kubernetes",
+      "replacementTitle": "Chaos Engineering on Kubernetes",
+      "query": "Chaos Engineering in Kubernetes tutorial"
+    },
+    {
+      "oldId": "ppMx7lS99-I",
+      "newId": "mluS8ovuBKg",
+      "lessonTitle": "Azure Landing Zones Deep Dive",
+      "replacementTitle": "Azure Landing Zones Overview",
+      "query": "Azure Landing Zones Deep Dive tutorial"
+    },
+    {
+      "oldId": "0UO0jzAm8hU",
+      "newId": "9WO4EBgUJXk",
+      "lessonTitle": "Azure Policy & Blueprints",
+      "replacementTitle": "AZ-900 Episode 31 | Azure Policy",
+      "query": "Azure Policy & Blueprints tutorial"
+    },
+    {
+      "oldId": "ETfUbGKJtjk",
+      "newId": "feQvnIUJ3Iw",
+      "lessonTitle": "Azure Networking Deep Dive",
+      "replacementTitle": "Azure Networking For Beginners | Learn Azure Networking Basics | K21Academy",
+      "query": "Azure Networking Deep Dive tutorial"
+    },
+    {
+      "oldId": "kQXfrHgmUwQ",
+      "newId": "zDPAnN5GQCs",
+      "lessonTitle": "ExpressRoute & VPN Architecture",
+      "replacementTitle": "Azure VPN Gateway And Azure Express Route",
+      "query": "ExpressRoute & VPN Architecture tutorial"
+    },
+    {
+      "oldId": "hE5vKJ10Z84",
+      "newId": "gzBXFnfvoXo",
+      "lessonTitle": "Azure Monitor Deep Dive",
+      "replacementTitle": "Azure Master Class v2 - Module 10 - Monitoring & Security",
+      "query": "Azure Monitor Deep Dive tutorial"
+    },
+    {
+      "oldId": "Om8ApD0LpfQ",
+      "newId": "YHUptdFtozQ",
+      "lessonTitle": "FinOps on Azure",
+      "replacementTitle": "FinOps and Azure! Understanding what FinOps is and why we care.",
+      "query": "FinOps on Azure tutorial"
+    },
+    {
+      "oldId": "7cq33H0azl8",
+      "newId": "tyiO_zG1mi0",
+      "lessonTitle": "Multi-Cloud Networking Overview",
+      "replacementTitle": "TechTalk | How to Architect Multi-Cloud Networking for Your AWS, Azure, & GCP Infrastructure",
+      "query": "Multi-Cloud Networking Overview tutorial"
+    },
+    {
+      "oldId": "2k6OSAmhp_M",
+      "newId": "a55Iud-66q0",
+      "lessonTitle": "Transit Gateway Patterns",
+      "replacementTitle": "A Deep Dive into AWS Transit Gateway",
+      "query": "Transit Gateway Patterns tutorial"
+    },
+    {
+      "oldId": "tg6sXkvv2Fg",
+      "newId": "yn6CPQ9RioA",
+      "lessonTitle": "Zero Trust Networking Principles",
+      "replacementTitle": "Zero Trust Explained in 4 mins",
+      "query": "Zero Trust Networking Principles tutorial"
+    },
+    {
+      "oldId": "vE5fyYNPYHg",
+      "newId": "16fgzklcF7Y",
+      "lessonTitle": "Service Mesh for Multi-Cloud",
+      "replacementTitle": "Istio & Service Mesh - simply explained in 15 mins",
+      "query": "Service Mesh for Multi-Cloud tutorial"
+    },
+    {
+      "oldId": "Gutju0JTotQ",
+      "newId": "lbhkwU9inoU",
+      "lessonTitle": "Observability Across Clouds",
+      "replacementTitle": "🔍Observability in Cloud – See Everything, Fix Fast! (CloudWatch, Azure Monitor, Prometheus)",
+      "query": "Observability Across Clouds tutorial"
+    },
+    {
+      "oldId": "qfw0n8qTc24",
+      "newId": "F-wzoCIJq6o",
+      "lessonTitle": "FinOps Strategies for Multi-Cloud",
+      "replacementTitle": "Multi-Cloud, New Features… FinOps Is a Moving Target!",
+      "query": "FinOps Strategies for Multi-Cloud tutorial"
+    },
+    {
+      "oldId": "0fCWZ_Poj0A",
+      "newId": "mB0owYlJgKs",
+      "lessonTitle": "Serverless CI/CD Best Practices",
+      "replacementTitle": "CI/CD with Serverless Framework",
+      "query": "Serverless CI/CD Best Practices tutorial"
+    },
+    {
+      "oldId": "QNvFOAX-HtE",
+      "newId": "7OSPPV2Iwoo",
+      "lessonTitle": "Policy-as-code for Serverless",
+      "replacementTitle": "Shipa Policy as Code",
+      "query": "Policy-as-code for Serverless tutorial"
+    },
+    {
+      "oldId": "PoCTnJd3fmE",
+      "newId": "OoHzaEkXFe0",
+      "lessonTitle": "Testing Strategies for Serverless",
+      "replacementTitle": "What's so hard about testing serverless applications?",
+      "query": "Testing Strategies for Serverless tutorial"
+    },
+    {
+      "oldId": "5Y9NzJnhQ6w",
+      "newId": "CAQ_a2-9UOI",
+      "lessonTitle": "Observability for Functions",
+      "replacementTitle": "Observability vs. APM vs. Monitoring",
+      "query": "Observability for Functions tutorial"
+    },
+    {
+      "oldId": "gNEQn2c6VrY",
+      "newId": "OKYJCHHSWb4",
+      "lessonTitle": "Serverless Cost Optimization",
+      "replacementTitle": "Day-18 | AWS Cost Optimization | Most Popular Cloud and DevOps project| Event Driven Serverless #aws",
+      "query": "Serverless Cost Optimization tutorial"
+    },
+    {
+      "oldId": "QdR9ycPbmNA",
+      "newId": "aXkdBoNipdg",
+      "lessonTitle": "Resilience in Serverless Architectures",
+      "replacementTitle": "Architect a Resilient Cloud Environment with Guidance from AWS",
+      "query": "Resilience in Serverless Architectures tutorial"
+    },
+    {
+      "oldId": "LuL5cjcI6wY",
+      "newId": "gWDTRf_kGHI",
+      "lessonTitle": "FinOps Explained",
+      "replacementTitle": "FinOps Explained in 5 Minutes | What is FinOps?",
+      "query": "FinOps Explained tutorial"
+    },
+    {
+      "oldId": "w48UUfZo0fo",
+      "newId": "5hMjUEMjZoI",
+      "lessonTitle": "Building a FinOps Practice",
+      "replacementTitle": "The FinOps Journey: 4 Stages to Build a Scalable FinOps Practice",
+      "query": "Building a FinOps Practice tutorial"
+    },
+    {
+      "oldId": "aYgYp9S89Vg",
+      "newId": "g5ngpyZSR5U",
+      "lessonTitle": "FinOps Dashboards in Practice",
+      "replacementTitle": "100 Days of Cloud FinOps with Hybr® - Day 8 Dashboards Overview",
+      "query": "FinOps Dashboards in Practice tutorial"
+    },
+    {
+      "oldId": "NuW9SZdplIY",
+      "newId": "mhSFyXbCaPM",
+      "lessonTitle": "Anomaly Detection Techniques",
+      "replacementTitle": "Anomaly detection 101",
+      "query": "Anomaly Detection Techniques tutorial"
+    },
+    {
+      "oldId": "J7zOPKz0OSY",
+      "newId": "C3UGs98b8Kc",
+      "lessonTitle": "FinOps Lifecycle Deep Dive",
+      "replacementTitle": "Learn FinOps - Discover the goal of the Inform Phase of the FinOps lifecycle",
+      "query": "FinOps Lifecycle Deep Dive tutorial"
+    },
+    {
+      "oldId": "dDkJManIeZQ",
+      "newId": "ePnHvCva1_w",
+      "lessonTitle": "Negotiating Cloud Savings",
+      "replacementTitle": "Negotiating a Higher Salary To BOOST Your Savings Power",
+      "query": "Negotiating Cloud Savings tutorial"
+    },
+    {
+      "oldId": "dyxaF3jKJ7o",
+      "newId": "mTVf7BN7S8w",
+      "lessonTitle": "Data Augmentation Techniques",
+      "replacementTitle": "Data augmentation to address overfitting | Deep Learning Tutorial 26 (Tensorflow, Keras & Python)",
+      "query": "Data Augmentation Techniques tutorial"
+    },
+    {
+      "oldId": "4n5Z_cAXBlk",
+      "newId": "TU5BMU6iYZ0",
+      "lessonTitle": "Model Optimization with Torch-TensorRT",
+      "replacementTitle": "Getting Started with NVIDIA Torch-TensorRT",
+      "query": "Model Optimization with Torch-TensorRT tutorial"
+    },
+    {
+      "oldId": "hhwwU1R7Zjw",
+      "newId": "jdE4hPf9juk",
+      "lessonTitle": "Deploying PyTorch Models",
+      "replacementTitle": "Deploying your ML Model with TorchServe",
+      "query": "Deploying PyTorch Models tutorial"
+    },
+    {
+      "oldId": "RJif9w3Ivxg",
+      "newId": "RcVVRmkBRJg",
+      "lessonTitle": "Monitoring ML in Production",
+      "replacementTitle": "Build model monitoring in minutes using FREE tools🔥 Learn how businesses use model monitoring 🤯 #ml",
+      "query": "Monitoring ML in Production tutorial"
+    },
+    {
+      "oldId": "CIaMCrGioZw",
+      "newId": "kU9EFNyTIh8",
+      "lessonTitle": "Handling Data Drift",
+      "replacementTitle": "Managing Data Drift in Production | Exclusive Lesson",
+      "query": "Handling Data Drift tutorial"
+    },
+    {
+      "oldId": "VW8HYYlJBdQ",
+      "newId": "OejCJL2EC3k",
+      "lessonTitle": "MLOps End-to-End",
+      "replacementTitle": "What is MLOps?",
+      "query": "MLOps End-to-End tutorial"
+    },
+    {
+      "oldId": "-ZoRV0aR1wU",
+      "newId": "6ngxBkx05Fs",
+      "lessonTitle": "MLflow Tracking Tutorial",
+      "replacementTitle": "MLFlow Tutorial | ML Ops Tutorial",
+      "query": "MLflow Tracking Tutorial tutorial"
+    },
+    {
+      "oldId": "wj4aJ8t7Vw4",
+      "newId": "rKfknA48FGk",
+      "lessonTitle": "Kubeflow Pipelines Crash Course",
+      "replacementTitle": "🚀 Kubeflow Pipeline for End-to-End Machine Learning Workflow | Tutorial | For Beginners",
+      "query": "Kubeflow Pipelines Crash Course tutorial"
+    },
+    {
+      "oldId": "NCH7jlAYbNw",
+      "newId": "DQRNt8Diyw4",
+      "lessonTitle": "Deploying Models on Kubernetes",
+      "replacementTitle": "Deploying machine learning models on Kubernetes",
+      "query": "Deploying Models on Kubernetes tutorial"
+    },
+    {
+      "oldId": "4NQ0mF0aAz4",
+      "newId": "RcVVRmkBRJg",
+      "lessonTitle": "Model Monitoring Strategies",
+      "replacementTitle": "Build model monitoring in minutes using FREE tools🔥 Learn how businesses use model monitoring 🤯 #ml",
+      "query": "Model Monitoring Strategies tutorial"
+    },
+    {
+      "oldId": "6Mb-HcAJviQ",
+      "newId": "yh-3WU1FKrk",
+      "lessonTitle": "Responsible AI & Compliance",
+      "replacementTitle": "What is Responsible AI? A Guide to AI Governance",
+      "query": "Responsible AI & Compliance tutorial"
+    },
+    {
+      "oldId": "72dD7La3IkU",
+      "newId": "GE3JOFwTWVM",
+      "lessonTitle": "Time Series Analysis Crash Course",
+      "replacementTitle": "What is Time Series Analysis?",
+      "query": "Time Series Analysis Crash Course tutorial"
+    },
+    {
+      "oldId": "3t0yOD1l0VQ",
+      "newId": "IK67f3IItfw",
+      "lessonTitle": "ARIMA and Seasonal Models",
+      "replacementTitle": "What are Seasonal ARIMA Models",
+      "query": "ARIMA and Seasonal Models tutorial"
+    },
+    {
+      "oldId": "u2MUZKa8KJ8",
+      "newId": "_UJnMn-3NdM",
+      "lessonTitle": "Transformer Forecasting",
+      "replacementTitle": "Transformers for a New Age Forecasting | Rakuten SixthSense Webinar",
+      "query": "Transformer Forecasting tutorial"
+    },
+    {
+      "oldId": "VTN1W38Q2xE",
+      "newId": "M8Kiwv9gDJU",
+      "lessonTitle": "Productionizing Forecasting Models",
+      "replacementTitle": "What is Forecasting? | Process & Benefits of Forecasting",
+      "query": "Productionizing Forecasting Models tutorial"
+    },
+    {
+      "oldId": "qXft8raFMd4",
+      "newId": "0vtRKLVNhQ8",
+      "lessonTitle": "Monitoring Forecast Accuracy",
+      "replacementTitle": "Forecasting (7): Forecast accuracy measures (MSE, RMSE, MAD & MAPE)",
+      "query": "Monitoring Forecast Accuracy tutorial"
+    },
+    {
+      "oldId": "og3hOFgmg5U",
+      "newId": "MiiANxRHSv4",
+      "lessonTitle": "Data Visualization Fundamentals",
+      "replacementTitle": "Data Visualization Tutorial For Beginners | Big Data Analytics Tutorial | Simplilearn",
+      "query": "Data Visualization Fundamentals tutorial"
+    },
+    {
+      "oldId": "mDMnLPhFCE8",
+      "newId": "r5_34YnCmMY",
+      "lessonTitle": "Storytelling with Data",
+      "replacementTitle": "Telling Stories with Data in 3 Steps (Quick Study)",
+      "query": "Storytelling with Data tutorial"
+    },
+    {
+      "oldId": "0q9n4eO_djU",
+      "newId": "_jK0nIm349g",
+      "lessonTitle": "Tableau Storytelling Tutorial",
+      "replacementTitle": "How to Create a Story and Add Story Points in Tableau",
+      "query": "Tableau Storytelling Tutorial tutorial"
+    },
+    {
+      "oldId": "3u1UlPY9rPg",
+      "newId": "PnfrhEcwxdw",
+      "lessonTitle": "Power BI Advanced Visuals",
+      "replacementTitle": "Power BI Tips and Tricks",
+      "query": "Power BI Advanced Visuals tutorial"
+    },
+    {
+      "oldId": "7uQ6txyxGWs",
+      "newId": "uPsUjKLHLAg",
+      "lessonTitle": "Data Governance for Analytics",
+      "replacementTitle": "Data Governance Explained in 5 Minutes",
+      "query": "Data Governance for Analytics tutorial"
+    },
+    {
+      "oldId": "ANh16onkM5A",
+      "newId": "im45j373T20",
+      "lessonTitle": "Accessibility in Dashboards",
+      "replacementTitle": "Create and publish accessible dashboards in Tableau",
+      "query": "Accessibility in Dashboards tutorial"
+    },
+    {
+      "oldId": "2yX4FxA_U4A",
+      "newId": "VIJH7TZXkaA",
+      "lessonTitle": "Snowflake Basics",
+      "replacementTitle": "Learn Snowflake in 10 Minutes| High Paying Skills | Step by Step Hands-On Guide",
+      "query": "Snowflake Basics tutorial"
+    },
+    {
+      "oldId": "9cUC9goP6aQ",
+      "newId": "TeD5zshkdjY",
+      "lessonTitle": "Virtual Warehouses Explained",
+      "replacementTitle": "Getting Started: Introduction To Snowflake Virtual Warehouses",
+      "query": "Virtual Warehouses Explained tutorial"
+    },
+    {
+      "oldId": "h_tF74WlJmM",
+      "newId": "DInoHRmaAGA",
+      "lessonTitle": "Optimizing Snowflake Queries",
+      "replacementTitle": "Snowflake Query Performance Optimization",
+      "query": "Optimizing Snowflake Queries tutorial"
+    },
+    {
+      "oldId": "22NRaX8LZ9g",
+      "newId": "pzBf4KEvrUQ",
+      "lessonTitle": "dbt in Snowflake",
+      "replacementTitle": "How to set up dbt for Snowflake | Tutorial for beginners",
+      "query": "dbt in Snowflake tutorial"
+    },
+    {
+      "oldId": "82dManIeZ44",
+      "newId": "jhWa7ANML5U",
+      "lessonTitle": "Snowflake Security Best Practices",
+      "replacementTitle": "Security Best Practices For Building Data Applications With Snowflake",
+      "query": "Snowflake Security Best Practices tutorial"
+    },
+    {
+      "oldId": "wBn2RT6V6Y8",
+      "newId": "3pRBLrjAL0s",
+      "lessonTitle": "Data Sharing & Marketplace",
+      "replacementTitle": "Data Sharing & Marketplace",
+      "query": "Data Sharing & Marketplace tutorial"
+    },
+    {
+      "oldId": "AUj4c4h7jI8",
+      "newId": "YjYWsN1vek8",
+      "lessonTitle": "Cassandra Architecture Explained",
+      "replacementTitle": "01 | Intro to Cassandra - Cassandra Fundamentals",
+      "query": "Cassandra Architecture Explained tutorial"
+    },
+    {
+      "oldId": "wAqS54s8XLE",
+      "newId": "pdxGtahoqlY",
+      "lessonTitle": "Consistency & Replication",
+      "replacementTitle": "7.1 Consistency & Replication",
+      "query": "Consistency & Replication tutorial"
+    },
+    {
+      "oldId": "c9qPqoSgRC4",
+      "newId": "N0vHJDGi5kY",
+      "lessonTitle": "Kubernetes Operators for Cassandra",
+      "replacementTitle": "Apache Cassandra Chaos on Kubernetes",
+      "query": "Kubernetes Operators for Cassandra tutorial"
+    },
+    {
+      "oldId": "_Y_vnqW-1X4",
+      "newId": "RDd35Lszpq4",
+      "lessonTitle": "Monitoring Cassandra",
+      "replacementTitle": "Cassandra Administration Tutorial: The GUI Monitoring Tool - JConsole | packtpub.com",
+      "query": "Monitoring Cassandra tutorial"
+    },
+    {
+      "oldId": "t2GTcAb-D90",
+      "newId": "M2Z0wk53GBU",
+      "lessonTitle": "Cassandra Performance Tuning",
+      "replacementTitle": "Cassandra Performance Tuning Like You've Been Doing It For Ten Years | Apache Cassandra® Town Hall",
+      "query": "Cassandra Performance Tuning tutorial"
+    },
+    {
+      "oldId": "Lmyy5YWy4xA",
+      "newId": "rVOrIh9Q6o4",
+      "lessonTitle": "Disaster Recovery Playbooks",
+      "replacementTitle": "Mastering Cloud Disaster Recovery: Your Ultimate Playbook!",
+      "query": "Disaster Recovery Playbooks tutorial"
+    },
+    {
+      "oldId": "8jNPelugNho",
+      "newId": "8jNPelugC2s",
+      "lessonTitle": "Neo4j Crash Course",
+      "replacementTitle": "Neo4j (Graph Database) Crash Course",
+      "query": "Neo4j Crash Course tutorial"
+    },
+    {
+      "oldId": "t707f8gZYSQ",
+      "newId": "selD5F1ibag",
+      "lessonTitle": "Graph Modeling Techniques",
+      "replacementTitle": "Graph 📈 ( Linear, Exponential, Quadratic , Logarithm , sine)|| Trick for competitive exam",
+      "query": "Graph Modeling Techniques tutorial"
+    },
+    {
+      "oldId": "wKM7Jg9W_pQ",
+      "newId": "T6L9EoBy8Zk",
+      "lessonTitle": "Graph Algorithms in Neo4j",
+      "replacementTitle": "Neo4j in 100 Seconds",
+      "query": "Graph Algorithms in Neo4j tutorial"
+    },
+    {
+      "oldId": "0lUBT8v7Z-c",
+      "newId": "z3GuGTL7fHY",
+      "lessonTitle": "Recommendation Systems with Neo4j",
+      "replacementTitle": "Graphs for Recommendation Engines: Looking Beyond Retail Social and Media",
+      "query": "Recommendation Systems with Neo4j tutorial"
+    },
+    {
+      "oldId": "6VJjlvma5xM",
+      "newId": "Wal2ZUsvye4",
+      "lessonTitle": "Build APIs with Neo4j & GraphQL",
+      "replacementTitle": "Training Series: Build APIs with Neo4j GraphQL Library",
+      "query": "Build APIs with Neo4j & GraphQL tutorial"
+    },
+    {
+      "oldId": "w1XPTzh0T5E",
+      "newId": "T6L9EoBy8Zk",
+      "lessonTitle": "Deploy Neo4j in Production",
+      "replacementTitle": "Neo4j in 100 Seconds",
+      "query": "Deploy Neo4j in Production tutorial"
+    },
+    {
+      "oldId": "_A9X8e9TRzg",
+      "newId": "AeX5b89TJ2o",
+      "lessonTitle": "CockroachDB Architecture Explained",
+      "replacementTitle": "CockroachDB: A True Distributed SQL Database",
+      "query": "CockroachDB Architecture Explained tutorial"
+    },
+    {
+      "oldId": "yT6rTQ16le8",
+      "newId": "pdxGtahoqlY",
+      "lessonTitle": "Consistency & Replication",
+      "replacementTitle": "7.1 Consistency & Replication",
+      "query": "Consistency & Replication tutorial"
+    },
+    {
+      "oldId": "IK5_ryzR-Pc",
+      "newId": "LEytD1eld8M",
+      "lessonTitle": "Deploy CockroachDB with Terraform",
+      "replacementTitle": "How to install #CockroachDB Serverless via #Terraform",
+      "query": "Deploy CockroachDB with Terraform tutorial"
+    },
+    {
+      "oldId": "6ykPZkf7cEI",
+      "newId": "Z9kHuKeFKRg",
+      "lessonTitle": "Monitoring CockroachDB",
+      "replacementTitle": "How to monitor CockroachDB using DBmarlin | Monitoring CockroachDB",
+      "query": "Monitoring CockroachDB tutorial"
+    },
+    {
+      "oldId": "8htYVOlJaww",
+      "newId": "t_ocOi_iYQ8",
+      "lessonTitle": "Backup Strategies in CockroachDB",
+      "replacementTitle": "How to Backup Your CockroachDB Clusters",
+      "query": "Backup Strategies in CockroachDB tutorial"
+    },
+    {
+      "oldId": "XwE5u9bprnQ",
+      "newId": "oBf5lrmquYI",
+      "lessonTitle": "Security Best Practices",
+      "replacementTitle": "Kubernetes Security Best Practices you need to know | THE Guide for securing your K8s cluster!",
+      "query": "Security Best Practices tutorial"
+    },
+    {
+      "oldId": "0LIOW8QZcvY",
+      "newId": "3ij-rga08H4",
+      "lessonTitle": "Building Async APIs",
+      "replacementTitle": "What is AsyncAPI?",
+      "query": "Building Async APIs tutorial"
+    },
+    {
+      "oldId": "t656vJnYwRs",
+      "newId": "dRwTssqqsPM",
+      "lessonTitle": "Performance Tuning",
+      "replacementTitle": "A Very Silly Performance Tuning Trick In SQL Server",
+      "query": "Performance Tuning tutorial"
+    },
+    {
+      "oldId": "Jxavf3sD0DQ",
+      "newId": "4NHK88_GE9I",
+      "lessonTitle": "Deploy FastAPI with Docker & CI/CD",
+      "replacementTitle": "Build & Deploy FastAPI App with Docker & GCP  CI/CD with GitHub Actions  Secure & Scalable Cloud API",
+      "query": "Deploy FastAPI with Docker & CI/CD tutorial"
+    },
+    {
+      "oldId": "5v2FFyR04fs",
+      "newId": "SWIuHBSvnuY",
+      "lessonTitle": "Observability for FastAPI",
+      "replacementTitle": "fastapi-observability assignment",
+      "query": "Observability for FastAPI tutorial"
+    },
+    {
+      "oldId": "pYe7X-Q51x8",
+      "newId": "gOuAqRaDdHA",
+      "lessonTitle": "Event-Driven Architecture Overview",
+      "replacementTitle": "Event-Driven Architecture: Explained in 7 Minutes!",
+      "query": "Event-Driven Architecture Overview tutorial"
+    },
+    {
+      "oldId": "1dwjB_8E8Wk",
+      "newId": "3ij-rga08H4",
+      "lessonTitle": "AsyncAPI Introduction",
+      "replacementTitle": "What is AsyncAPI?",
+      "query": "AsyncAPI Introduction tutorial"
+    },
+    {
+      "oldId": "ytYF0_jF5n4",
+      "newId": "yFjzGRb8NOk",
+      "lessonTitle": "Event Sourcing & CQRS",
+      "replacementTitle": "Event Sourcing Explained",
+      "query": "Event Sourcing & CQRS tutorial"
+    },
+    {
+      "oldId": "m4pW50A9dS8",
+      "newId": "kHCWH1kXmOs",
+      "lessonTitle": "Observability for Event Architectures",
+      "replacementTitle": "Understand Observability for Event-Driven Systems",
+      "query": "Observability for Event Architectures tutorial"
+    },
+    {
+      "oldId": "TdYz49WjXiY",
+      "newId": "93IHBZH01L0",
+      "lessonTitle": "Schema Governance & Versioning",
+      "replacementTitle": "Schema Versioning",
+      "query": "Schema Governance & Versioning tutorial"
+    },
+    {
+      "oldId": "qWsvl_kokAs",
+      "newId": "YYe0FdfdgDU",
+      "lessonTitle": "OWASP API Security Top 10",
+      "replacementTitle": "OWASP API Security Top 10 Course – Secure Your Web Apps",
+      "query": "OWASP API Security Top 10 tutorial"
+    },
+    {
+      "oldId": "TvDqgW8sH9A",
+      "newId": "0rOYzue2JrA",
+      "lessonTitle": "API Threat Modeling",
+      "replacementTitle": "Instant Threat Modeling - #19 API Security",
+      "query": "API Threat Modeling tutorial"
+    },
+    {
+      "oldId": "lbI-6XnSWJk",
+      "newId": "dG655mQFyZ0",
+      "lessonTitle": "Zero Trust API Gateways",
+      "replacementTitle": "Implementing Zero Trust Security in API Gateway with Cilium",
+      "query": "Zero Trust API Gateways tutorial"
+    },
+    {
+      "oldId": "aJYG82gT7YU",
+      "newId": "wsZwhgGa5sE",
+      "lessonTitle": "Continuous API Security Testing",
+      "replacementTitle": "Continuous OpenAPI security tests on K8s with Testkube and ZAP - Mario Leander Reimer",
+      "query": "Continuous API Security Testing tutorial"
+    },
+    {
+      "oldId": "9FU0xJvLC9g",
+      "newId": "2BOOl8_nwjQ",
+      "lessonTitle": "Incident Response for APIs",
+      "replacementTitle": "SOC 101: Real-time Incident Response Walkthrough",
+      "query": "Incident Response for APIs tutorial"
+    },
+    {
+      "oldId": "6w_5K5G_zlE",
+      "newId": "T5y0WKmKenQ",
+      "lessonTitle": "API Product Management Fundamentals",
+      "replacementTitle": "All you need to know about APIs | Product Management | PM School",
+      "query": "API Product Management Fundamentals tutorial"
+    },
+    {
+      "oldId": "Cky6Oup45MQ",
+      "newId": "PenvYHJ9Koc",
+      "lessonTitle": "Designing APIs with OpenAPI",
+      "replacementTitle": "Understand OpenAPI in 5 Minutes With Examples",
+      "query": "Designing APIs with OpenAPI tutorial"
+    },
+    {
+      "oldId": "mwZETnC6IJg",
+      "newId": "Unq0ZJmRHCc",
+      "lessonTitle": "API Style Guide Best Practices",
+      "replacementTitle": "Ep 12 | The Ultimate Guide to Style Guides & Design Reviews w/ Arnaud Lauret, the API Handyman",
+      "query": "API Style Guide Best Practices tutorial"
+    },
+    {
+      "oldId": "9UF2_s8BoGs",
+      "newId": "BQC4dphiu5c",
+      "lessonTitle": "Developer Experience Metrics",
+      "replacementTitle": "Understanding your Developer Experience (DX) Metrics on Haxor",
+      "query": "Developer Experience Metrics tutorial"
+    },
+    {
+      "oldId": "d02G2DBs7Ww",
+      "newId": "1cBO_zA2nek",
+      "lessonTitle": "Measuring API Success",
+      "replacementTitle": "Measure What Matters: 14 Key API Success Metrics Explained!",
+      "query": "Measuring API Success tutorial"
+    },
+    {
+      "oldId": "nD2VuZ11kSM",
+      "newId": "6E3aCv08nl8",
+      "lessonTitle": "Building a Developer Portal",
+      "replacementTitle": "Building a Developer Portal",
+      "query": "Building a Developer Portal tutorial"
+    },
+    {
+      "oldId": "JQI4K8Y9VfI",
+      "newId": "31USVCSS0sI",
+      "lessonTitle": "Productionizing LLM Applications",
+      "replacementTitle": "Build and Deploy Production Grade Gen-AI LLM Applications",
+      "query": "Productionizing LLM Applications tutorial"
+    },
+    {
+      "oldId": "BEPTQgF9Pvs",
+      "newId": "T-D1OfcDW1M",
+      "lessonTitle": "Retrieval-Augmented Generation Patterns",
+      "replacementTitle": "What is Retrieval-Augmented Generation (RAG)?",
+      "query": "Retrieval-Augmented Generation Patterns tutorial"
+    },
+    {
+      "oldId": "avc3ZEM4KFM",
+      "newId": "l5K4r_TJz_8",
+      "lessonTitle": "Building Guardrails for LLMs",
+      "replacementTitle": "How to implement LLM guardrails for RAG applications",
+      "query": "Building Guardrails for LLMs tutorial"
+    },
+    {
+      "oldId": "BD8rH4NdyBM",
+      "newId": "cRz0BWkuwHg",
+      "lessonTitle": "Evaluating LLM Responses",
+      "replacementTitle": "Key Metrics and Evaluation Methods for RAG",
+      "query": "Evaluating LLM Responses tutorial"
+    },
+    {
+      "oldId": "AlXDXMwK_Ew",
+      "newId": "csmhkFHv_ww",
+      "lessonTitle": "Monitoring LLM Applications",
+      "replacementTitle": "How to monitor, evaluate, and improve LLM applications. #opensource #selfhosted #llms #observability",
+      "query": "Monitoring LLM Applications tutorial"
+    },
+    {
+      "oldId": "rDiFB74-IGE",
+      "newId": "T_X4XFwKX8k",
+      "lessonTitle": "Human Feedback Loops",
+      "replacementTitle": "Reinforcement Learning from Human Feedback (RLHF) Explained",
+      "query": "Human Feedback Loops tutorial"
+    },
+    {
+      "oldId": "REw5bEO3GdY",
+      "newId": "jC4v5AS4RIM",
+      "lessonTitle": "System & Persona Prompts",
+      "replacementTitle": "Master the Perfect ChatGPT Prompt Formula (in just 8 minutes)!",
+      "query": "System & Persona Prompts tutorial"
+    },
+    {
+      "oldId": "4Z8MHG-0acY",
+      "newId": "2kFjsacfiWY",
+      "lessonTitle": "Evaluating LLM Outputs",
+      "replacementTitle": "How to evaluate and choose a Large Language Model (LLM)",
+      "query": "Evaluating LLM Outputs tutorial"
+    },
+    {
+      "oldId": "dvQSIN4QL70",
+      "newId": "KQTZE3Hnhws",
+      "lessonTitle": "Automated Prompt Testing",
+      "replacementTitle": "Prompt Testing Matrix -",
+      "query": "Automated Prompt Testing tutorial"
+    },
+    {
+      "oldId": "gQdDNwvsI14",
+      "newId": "fm3VreCt-5E",
+      "lessonTitle": "Managing Prompt Repositories",
+      "replacementTitle": "Getting started with Repo Prompt",
+      "query": "Managing Prompt Repositories tutorial"
+    },
+    {
+      "oldId": "H5qvYmq9S6Y",
+      "newId": "X3XJeTApVMM",
+      "lessonTitle": "Collaborative Prompt Workflows",
+      "replacementTitle": "What Are Orchestrator Agents? AI Tools Working Smarter Together",
+      "query": "Collaborative Prompt Workflows tutorial"
+    },
+    {
+      "oldId": "jnqQylvPEbI",
+      "newId": "dN0lsF2cvm4",
+      "lessonTitle": "Vector Databases Explained",
+      "replacementTitle": "Vector Databases simply explained! (Embeddings & Indexes)",
+      "query": "Vector Databases Explained tutorial"
+    },
+    {
+      "oldId": "-aFkqM0Vamo",
+      "newId": "5fp6e5nhJRk",
+      "lessonTitle": "Evaluating RAG Systems",
+      "replacementTitle": "RAGAS: How to Evaluate a RAG Application Like a Pro for Beginners",
+      "query": "Evaluating RAG Systems tutorial"
+    },
+    {
+      "oldId": "DZ5nWZ2p86k",
+      "newId": "KOvchTohd6A",
+      "lessonTitle": "Guardrails & Safety",
+      "replacementTitle": "Guardrail Safety",
+      "query": "Guardrails & Safety tutorial"
+    },
+    {
+      "oldId": "rS3tC4Sl4W4",
+      "newId": "C0HwZipOqXI",
+      "lessonTitle": "Deploying RAG Apps",
+      "replacementTitle": "Building a RAG Based LLM App And Deploying It In 20 Minutes",
+      "query": "Deploying RAG Apps tutorial"
+    },
+    {
+      "oldId": "cvFvV3g1U6w",
+      "newId": "5fp6e5nhJRk",
+      "lessonTitle": "Observability for RAG",
+      "replacementTitle": "RAGAS: How to Evaluate a RAG Application Like a Pro for Beginners",
+      "query": "Observability for RAG tutorial"
+    },
+    {
+      "oldId": "4lT0c-vBtew",
+      "newId": "2HUMFVAjlEA",
+      "lessonTitle": "Responsible AI in Practice",
+      "replacementTitle": "Implementing Responsible AI in your projects",
+      "query": "Responsible AI in Practice tutorial"
+    },
+    {
+      "oldId": "Ey5EXuOtyf8",
+      "newId": "nmX2qG8VWmU",
+      "lessonTitle": "Ethical AI Frameworks",
+      "replacementTitle": "How Do Ethical AI Frameworks Work In Practice? - Emerging Tech Insider",
+      "query": "Ethical AI Frameworks tutorial"
+    },
+    {
+      "oldId": "Gp7mBsWh0xQ",
+      "newId": "rwA67-McFWo",
+      "lessonTitle": "Auditing AI Models",
+      "replacementTitle": "Methods and Tools for Conducting AI Audits | Exclusive Lesson",
+      "query": "Auditing AI Models tutorial"
+    },
+    {
+      "oldId": "TkV_Ck0f8ZQ",
+      "newId": "OogwtNLOtuc",
+      "lessonTitle": "Bias & Fairness Testing",
+      "replacementTitle": "How to Test AI Model (Hidden Bias & Fairness 🧠⚖️)",
+      "query": "Bias & Fairness Testing tutorial"
+    },
+    {
+      "oldId": "GmFDAsgO2us",
+      "newId": "i3J_e_ztQkw",
+      "lessonTitle": "Model Cards & Documentation",
+      "replacementTitle": "Continuous ML documentation with model cards",
+      "query": "Model Cards & Documentation tutorial"
+    },
+    {
+      "oldId": "lPYJoKB7JVM",
+      "newId": "QgLoq4STOkk",
+      "lessonTitle": "Communicating AI Risk",
+      "replacementTitle": "India's first AI Robot Teacher #ai #artificialintelligence",
+      "query": "Communicating AI Risk tutorial"
+    },
+    {
+      "oldId": "L3wsBQX0JvI",
+      "newId": "j3VNqtJUoz0",
+      "lessonTitle": "Vision Transformers Explained",
+      "replacementTitle": "Vision Transformer Quick Guide - Theory and Code in (almost) 15 min",
+      "query": "Vision Transformers Explained tutorial"
+    },
+    {
+      "oldId": "pyfZ6x5jRJE",
+      "newId": "qU7wO02urYU",
+      "lessonTitle": "Fine-tuning Vision Transformers",
+      "replacementTitle": "Vision Transformers (ViT) Explained + Fine-tuning in Python",
+      "query": "Fine-tuning Vision Transformers tutorial"
+    },
+    {
+      "oldId": "7F5l0g12Awg",
+      "newId": "j3VNqtJUoz0",
+      "lessonTitle": "Optimizing Vision Models",
+      "replacementTitle": "Vision Transformer Quick Guide - Theory and Code in (almost) 15 min",
+      "query": "Optimizing Vision Models tutorial"
+    },
+    {
+      "oldId": "pV3wl6wEW_0",
+      "newId": "j3VNqtJUoz0",
+      "lessonTitle": "Deploying ViT Models",
+      "replacementTitle": "Vision Transformer Quick Guide - Theory and Code in (almost) 15 min",
+      "query": "Deploying ViT Models tutorial"
+    },
+    {
+      "oldId": "Zr4ie4xAS7c",
+      "newId": "puB-4LuRNys",
+      "lessonTitle": "Monitoring Computer Vision Systems",
+      "replacementTitle": "Computer Vision Explained in 5 Minutes | AI Explained",
+      "query": "Monitoring Computer Vision Systems tutorial"
+    },
+    {
+      "oldId": "PX0sF6kP0Mc",
+      "newId": "eBpq78UqRmk",
+      "lessonTitle": "Closing the Loop with Feedback",
+      "replacementTitle": "Closing the Loop on Feedback | M Daniel Suwyn | TEDxCreativeCoast",
+      "query": "Closing the Loop with Feedback tutorial"
+    },
+    {
+      "oldId": "v4z6VNJz7Hc",
+      "newId": "z5lIrWTebOY",
+      "lessonTitle": "Edge AI Overview",
+      "replacementTitle": "Introduction to Edge AI",
+      "query": "Edge AI Overview tutorial"
+    },
+    {
+      "oldId": "Eyf2XGhrdXk",
+      "newId": "hgFgoD0ii6E",
+      "lessonTitle": "Designing Edge AI Systems",
+      "replacementTitle": "How to get a job in Edge AI #ShawnHymel",
+      "query": "Designing Edge AI Systems tutorial"
+    },
+    {
+      "oldId": "Yk6U1ZtIEAE",
+      "newId": "r4KG3dehF48",
+      "lessonTitle": "Model Optimization with TensorRT",
+      "replacementTitle": "NVIDIA Developer How To Series: Accelerating Recommendation Systems with TensorRT",
+      "query": "Model Optimization with TensorRT tutorial"
+    },
+    {
+      "oldId": "y5bRvzUoMw4",
+      "newId": "M4o4YRVba4o",
+      "lessonTitle": "ONNX Runtime on Edge",
+      "replacementTitle": "What is ONNX Runtime (ORT)?",
+      "query": "ONNX Runtime on Edge tutorial"
+    },
+    {
+      "oldId": "3-UQK-dgVPY",
+      "newId": "Fegmuh6_mEg",
+      "lessonTitle": "Deploying AI on Jetson",
+      "replacementTitle": "AI on the Jetson Nano LESSON 8: Installing a Good Python IDE Environment, Visual Studio Code",
+      "query": "Deploying AI on Jetson tutorial"
+    },
+    {
+      "oldId": "cA3MH8Jw63I",
+      "newId": "hLvwoow3XTk",
+      "lessonTitle": "Telemetry for Edge AI",
+      "replacementTitle": "OpenTelemetry: Simplifying Hybrid Cloud Monitoring",
+      "query": "Telemetry for Edge AI tutorial"
+    },
+    {
+      "oldId": "f7VfOUo8Gzc",
+      "newId": "JTL0yp85FsE",
+      "lessonTitle": "Memory Strategies for Agents",
+      "replacementTitle": "Memory for agents (conceptual video)",
+      "query": "Memory Strategies for Agents tutorial"
+    },
+    {
+      "oldId": "kLdJXKD9iic",
+      "newId": "hLJTcVHW8_I",
+      "lessonTitle": "Tool-using Agents",
+      "replacementTitle": "AI Agents Explained: A Comprehensive Guide for Beginners",
+      "query": "Tool-using Agents tutorial"
+    },
+    {
+      "oldId": "GCg9G1-1xAE",
+      "newId": "X3XJeTApVMM",
+      "lessonTitle": "Multi-Agent Collaboration",
+      "replacementTitle": "What Are Orchestrator Agents? AI Tools Working Smarter Together",
+      "query": "Multi-Agent Collaboration tutorial"
+    },
+    {
+      "oldId": "rXxF76UM7n8",
+      "newId": "_QozKR9eQE8",
+      "lessonTitle": "Evaluating Agent Systems",
+      "replacementTitle": "Beginner's Guide to Agent Evaluations",
+      "query": "Evaluating Agent Systems tutorial"
+    },
+    {
+      "oldId": "UN6p0vCYNaY",
+      "newId": "rMUycP_cp9g",
+      "lessonTitle": "Guardrails for Agents",
+      "replacementTitle": "Advanced Guardrails for AI Agents | Full Tutorial",
+      "query": "Guardrails for Agents tutorial"
+    },
+    {
+      "oldId": "SqmQh0cDIj8",
+      "newId": "p-zyNYZQLSk",
+      "lessonTitle": "Using Whisper for ASR",
+      "replacementTitle": "Whisper ASR demo",
+      "query": "Using Whisper for ASR tutorial"
+    },
+    {
+      "oldId": "jL8AO63D3JY",
+      "newId": "n83lO14Jr1w",
+      "lessonTitle": "Building TTS Experiences",
+      "replacementTitle": "Best Free AI Voice Generator | Free Text To Speech Generator AI #ai #aitools #aivoice #texttospeech",
+      "query": "Building TTS Experiences tutorial"
+    },
+    {
+      "oldId": "5Hj4yA_NJXA",
+      "newId": "aMKeRfhZkuU",
+      "lessonTitle": "Voice Cloning Techniques",
+      "replacementTitle": "Clone Your Voice For AI Voice Overs!! (ElevenLabs Tutorial)",
+      "query": "Voice Cloning Techniques tutorial"
+    },
+    {
+      "oldId": "IB6HuLlHotc",
+      "newId": "C9VY-nQ8ubg",
+      "lessonTitle": "Measuring Voice Experiences",
+      "replacementTitle": "Digital Multimeter Explained: How it Works for Beginners\"",
+      "query": "Measuring Voice Experiences tutorial"
+    },
+    {
+      "oldId": "2mm1MyAHsCM",
+      "newId": "g9cr7CYu0Tw",
+      "lessonTitle": "Conversation Analytics",
+      "replacementTitle": "What is Conversation Analytics? The Massive Amount of Data You've Been Ignoring",
+      "query": "Conversation Analytics tutorial"
+    },
+    {
+      "oldId": "05Vd3-7PT2E",
+      "newId": "xH5vIwtSJWg",
+      "lessonTitle": "Building a Red Team Program",
+      "replacementTitle": "RedTeam Software Demo Overview",
+      "query": "Building a Red Team Program tutorial"
+    },
+    {
+      "oldId": "oAuuUeRu2nc",
+      "newId": "X4VuzccCDTU",
+      "lessonTitle": "Adversary Emulation Plans",
+      "replacementTitle": "Micro Emulation Plans: Making Adversary Emulation Accessible",
+      "query": "Adversary Emulation Plans tutorial"
+    },
+    {
+      "oldId": "qsVOmjHc_wk",
+      "newId": "u9dBGWVwMMA",
+      "lessonTitle": "Phishing & Initial Access",
+      "replacementTitle": "Phishing attacks are SCARY easy to do!! (let me show you!) // FREE Security+ // EP 2",
+      "query": "Phishing & Initial Access tutorial"
+    },
+    {
+      "oldId": "BI_AmdW7JBo",
+      "newId": "3COTqQF568g",
+      "lessonTitle": "Post-Exploitation Techniques",
+      "replacementTitle": "Understanding Post Exploitation: Techniques",
+      "query": "Post-Exploitation Techniques tutorial"
+    },
+    {
+      "oldId": "A8xHb1Ry6jE",
+      "newId": "GRTa7HfJC6w",
+      "lessonTitle": "Purple Team Collaboration",
+      "replacementTitle": "What's a Purple Team and Skills Needed to be a Purple Teamer",
+      "query": "Purple Team Collaboration tutorial"
+    },
+    {
+      "oldId": "dyth8nEiiXk",
+      "newId": "Fzi4T94QCjw",
+      "lessonTitle": "Reporting to Executives",
+      "replacementTitle": "5 Rules for Communicating Effectively with Executives",
+      "query": "Reporting to Executives tutorial"
+    },
+    {
+      "oldId": "afU_RDrY11I",
+      "newId": "M_9hRPVH5SA",
+      "lessonTitle": "Cloud Security Fundamentals",
+      "replacementTitle": "Cloud Security Fundamentals | Cloud Computing Tutorial | Simplilearn",
+      "query": "Cloud Security Fundamentals tutorial"
+    },
+    {
+      "oldId": "5pT9ZxdYPXE",
+      "newId": "ZhvXW-ILyPs",
+      "lessonTitle": "IAM Best Practices",
+      "replacementTitle": "AWS re:Invent 2014 | (SEC305) IAM Best Practices",
+      "query": "IAM Best Practices tutorial"
+    },
+    {
+      "oldId": "1GMpEL45lXc",
+      "newId": "yn6CPQ9RioA",
+      "lessonTitle": "Zero Trust Networking in the Cloud",
+      "replacementTitle": "Zero Trust Explained in 4 mins",
+      "query": "Zero Trust Networking in the Cloud tutorial"
+    },
+    {
+      "oldId": "3gqLTASJP1c",
+      "newId": "jpsc4c7lntw",
+      "lessonTitle": "Data Protection & Encryption",
+      "replacementTitle": "Encrypting Data - CompTIA Security+ SY0-701 - 1.4",
+      "query": "Data Protection & Encryption tutorial"
+    },
+    {
+      "oldId": "EIJFCl1Yqqc",
+      "newId": "Iwxr4xQ-yqY",
+      "lessonTitle": "Automating Cloud Security",
+      "replacementTitle": "Automated Cloud Security with ONE CLICK",
+      "query": "Automating Cloud Security tutorial"
+    },
+    {
+      "oldId": "8IajdPHt0LE",
+      "newId": "hywrc0Fwp8A",
+      "lessonTitle": "Continuous Compliance",
+      "replacementTitle": "Continuous Compliance Monitoring | Exclusive Lesson",
+      "query": "Continuous Compliance tutorial"
+    },
+    {
+      "oldId": "jpKOiFxlnJ4",
+      "newId": "LGkSRlhnf-s",
+      "lessonTitle": "Introduction to Detection Engineering",
+      "replacementTitle": "Introduction to Detection Engineering",
+      "query": "Introduction to Detection Engineering tutorial"
+    },
+    {
+      "oldId": "Z0uN0nZHXss",
+      "newId": "WmQPtk3Ybxs",
+      "lessonTitle": "Mapping to ATT&CK",
+      "replacementTitle": "How MITRE ATT&CK works",
+      "query": "Mapping to ATT&CK tutorial"
+    },
+    {
+      "oldId": "ewC0BpvyOuk",
+      "newId": "Ux_7HMwqTdU",
+      "lessonTitle": "Threat Hunting Playbooks",
+      "replacementTitle": "Threat Hunting in 3 Easy Steps!",
+      "query": "Threat Hunting Playbooks tutorial"
+    },
+    {
+      "oldId": "O6ulLSS-Wxc",
+      "newId": "Xh9AP-x06jU",
+      "lessonTitle": "Automation for SOC",
+      "replacementTitle": "SOC Automation Project 2.0: How To Use AI in Your SOC Workflow",
+      "query": "Automation for SOC tutorial"
+    },
+    {
+      "oldId": "t5QGRqJSOVk",
+      "newId": "rVPGL-aqKO4",
+      "lessonTitle": "Measuring Detection Quality",
+      "replacementTitle": "Production line quality control: straightness and lenght measurement, mark detection, PLC comm",
+      "query": "Measuring Detection Quality tutorial"
+    },
+    {
+      "oldId": "3-51-fBSBI4",
+      "newId": "anA_TiUfmbM",
+      "lessonTitle": "Continuous Improvement",
+      "replacementTitle": "Continuous Improvement Explained: Whiteboard Animation",
+      "query": "Continuous Improvement tutorial"
+    },
+    {
+      "oldId": "m6xCgGrmqAs",
+      "newId": "mmVXL0LzLks",
+      "lessonTitle": "Secure SDLC Explained",
+      "replacementTitle": "The Most Comprehensive Explanation of the Software Development Life Cycle (SDLC) in 7 Minutes!",
+      "query": "Secure SDLC Explained tutorial"
+    },
+    {
+      "oldId": "uhxBG8G7sWg",
+      "newId": "svnFyXvDDOE",
+      "lessonTitle": "Integrating Security into DevOps",
+      "replacementTitle": "DevSecOps 101: Integrating Security into Devops | Payatu Webinar",
+      "query": "Integrating Security into DevOps tutorial"
+    },
+    {
+      "oldId": "o0yZ0u1MoPk",
+      "newId": "rEnJYNkUde0",
+      "lessonTitle": "Threat Modeling Workshop",
+      "replacementTitle": "STRIDE Threat Modeling for Beginners - In 20 Minutes",
+      "query": "Threat Modeling Workshop tutorial"
+    },
+    {
+      "oldId": "hmSL0Y5y7wE",
+      "newId": "B7tTQ272OHE",
+      "lessonTitle": "Automation & Security Testing",
+      "replacementTitle": "Simple Penetration Testing Tutorial for Beginners!",
+      "query": "Automation & Security Testing tutorial"
+    },
+    {
+      "oldId": "VYTh0Suxx3c",
+      "newId": "_tUGcSy3uBk",
+      "lessonTitle": "Developer Security Enablement",
+      "replacementTitle": "How To Enable Disable Developer options #developer #options #android",
+      "query": "Developer Security Enablement tutorial"
+    },
+    {
+      "oldId": "iEWcq5iDSuk",
+      "newId": "e-Brdho1kYs",
+      "lessonTitle": "Metrics that Matter",
+      "replacementTitle": "An Introduction to Metrics that Matter®",
+      "query": "Metrics that Matter tutorial"
+    },
+    {
+      "oldId": "tQ5bvbKxHnU",
+      "newId": "yn6CPQ9RioA",
+      "lessonTitle": "Zero Trust Explained",
+      "replacementTitle": "Zero Trust Explained in 4 mins",
+      "query": "Zero Trust Explained tutorial"
+    },
+    {
+      "oldId": "5Lxg9JhqpK4",
+      "newId": "yn6CPQ9RioA",
+      "lessonTitle": "Designing Zero Trust Architectures",
+      "replacementTitle": "Zero Trust Explained in 4 mins",
+      "query": "Designing Zero Trust Architectures tutorial"
+    },
+    {
+      "oldId": "0WXNoKGdzBs",
+      "newId": "AAY1bsazcgM",
+      "lessonTitle": "Identity as the Perimeter",
+      "replacementTitle": "Math Antics - Perimeter",
+      "query": "Identity as the Perimeter tutorial"
+    },
+    {
+      "oldId": "i9dc7_Brjis",
+      "newId": "8m3pFJEeGh8",
+      "lessonTitle": "Microsegmentation Strategies",
+      "replacementTitle": "How to Effectively Use Segmentation and Microsegmentation",
+      "query": "Microsegmentation Strategies tutorial"
+    },
+    {
+      "oldId": "f4f_U0Y4N7E",
+      "newId": "E3F-f_F8zj0",
+      "lessonTitle": "Zero Trust Telemetry",
+      "replacementTitle": "Set Up FortiClient EMS Zero Trust Telemetry for Remote Users Using Port Forwarding",
+      "query": "Zero Trust Telemetry tutorial"
+    },
+    {
+      "oldId": "6zqyYxQAn5o",
+      "newId": "uGNiNzGkSSE",
+      "lessonTitle": "Maturity Assessments",
+      "replacementTitle": "Data Maturity Assessment Tool by NAZARI",
+      "query": "Maturity Assessments tutorial"
+    },
+    {
+      "oldId": "JTPY7YmhZRU",
+      "newId": "ToVVhMyU3dQ",
+      "lessonTitle": "Incident Response Lifecycle",
+      "replacementTitle": "The 6 Steps of the Incident Response Life Cycle and What Is a Security Incident?",
+      "query": "Incident Response Lifecycle tutorial"
+    },
+    {
+      "oldId": "xy8I7m9mxCY",
+      "newId": "fAYXMaY0Qlk",
+      "lessonTitle": "Roles & Responsibilities",
+      "replacementTitle": "Roles and Responsibilities in Business Administration - Lesson 1 - Plato Training",
+      "query": "Roles & Responsibilities tutorial"
+    },
+    {
+      "oldId": "nwWziUXVXXU",
+      "newId": "DE0C5-dk5SU",
+      "lessonTitle": "Digital Forensics Tools",
+      "replacementTitle": "Top 5 Cyber Forensic Tools of 2025 : A Deep Dive ! Educational Purpose Only",
+      "query": "Digital Forensics Tools tutorial"
+    },
+    {
+      "oldId": "-O6exdSt1Ow",
+      "newId": "oZHPxyrCSmw",
+      "lessonTitle": "Containment Strategies",
+      "replacementTitle": "Mastering Cybersecurity: Containment Strategies Unveiled!",
+      "query": "Containment Strategies tutorial"
+    },
+    {
+      "oldId": "Eqz_z2No8xo",
+      "newId": "zf4HvkF7Ocw",
+      "lessonTitle": "Communicating During Incidents",
+      "replacementTitle": "Communicating Major Incidents",
+      "query": "Communicating During Incidents tutorial"
+    },
+    {
+      "oldId": "a3a6Y3wrrz4",
+      "newId": "UcEXyT6TneU",
+      "lessonTitle": "Post-Incident Reviews",
+      "replacementTitle": "Simplified Post Incident Reviews - xMatters Demo",
+      "query": "Post-Incident Reviews tutorial"
+    },
+    {
+      "oldId": "4PH3ryJ09eA",
+      "newId": "k7ju95jDxFA",
+      "lessonTitle": "Security Automation Fundamentals",
+      "replacementTitle": "What is SOAR (Security, Orchestration, Automation & Response)",
+      "query": "Security Automation Fundamentals tutorial"
+    },
+    {
+      "oldId": "9bXcAlUz7x8",
+      "newId": "6_LCiHOsNdw",
+      "lessonTitle": "Designing SOAR Playbooks",
+      "replacementTitle": "How to Build Playbooks with SOAR's Visual Playbook Editor — Splunk SOAR Explained Tutorial Series",
+      "query": "Designing SOAR Playbooks tutorial"
+    },
+    {
+      "oldId": "b6y3ALensSY",
+      "newId": "NO8Zn3K3ifc",
+      "lessonTitle": "Integrating Threat Intelligence",
+      "replacementTitle": "Integrating Threat Intelligence Sources | Exclusive Lesson",
+      "query": "Integrating Threat Intelligence tutorial"
+    },
+    {
+      "oldId": "qTf6h_6m8oc",
+      "newId": "2ZJbtnW2n5I",
+      "lessonTitle": "Automating Case Management",
+      "replacementTitle": "Salesforce Trailhead | Automate Case Management",
+      "query": "Automating Case Management tutorial"
+    },
+    {
+      "oldId": "lYTIQX58F3c",
+      "newId": "W6L2hIPt9mg",
+      "lessonTitle": "Measuring Automation Success",
+      "replacementTitle": "How to Measure Automation Success (And Make It Even Better)",
+      "query": "Measuring Automation Success tutorial"
+    },
+    {
+      "oldId": "4I-TvQdPFgY",
+      "newId": "anA_TiUfmbM",
+      "lessonTitle": "Continuous Improvement",
+      "replacementTitle": "Continuous Improvement Explained: Whiteboard Animation",
+      "query": "Continuous Improvement tutorial"
+    },
+    {
+      "oldId": "aAsMSapGzxI",
+      "newId": "BLAEuVSAlVM",
+      "lessonTitle": "Risk Management Fundamentals",
+      "replacementTitle": "Risk management basics: What exactly is it?",
+      "query": "Risk Management Fundamentals tutorial"
+    },
+    {
+      "oldId": "Jf4tshCdnkI",
+      "newId": "X8ctOX2mEw4",
+      "lessonTitle": "Building a Risk Register",
+      "replacementTitle": "A Project Manager's Guide to Creating a Risk Register",
+      "query": "Building a Risk Register tutorial"
+    },
+    {
+      "oldId": "aBYwygJyIeg",
+      "newId": "mpxaZIUSOmc",
+      "lessonTitle": "SOC 2 & ISO 27001 Explained",
+      "replacementTitle": "SOC 2 Compliance: Everything You Need to Know | Secureframe",
+      "query": "SOC 2 & ISO 27001 Explained tutorial"
+    },
+    {
+      "oldId": "p8nH3UX0_dp",
+      "newId": "fWF0rtEPaE4",
+      "lessonTitle": "Automating Compliance",
+      "replacementTitle": "Compliance Automation Tools Explained | Protecting Data and Customers",
+      "query": "Automating Compliance tutorial"
+    },
+    {
+      "oldId": "Sk1KH_Qlw5c",
+      "newId": "NHnjJ34crlU",
+      "lessonTitle": "Security Metrics & Reporting",
+      "replacementTitle": "Build Your Cybersecurity Metrics Dashboard! #PatchManagement #EmployeeTraining #SecurityMetrics",
+      "query": "Security Metrics & Reporting tutorial"
+    },
+    {
+      "oldId": "7HnI6G9zn6Q",
+      "newId": "iIgqR56QM5c",
+      "lessonTitle": "Governance Councils",
+      "replacementTitle": "The Complete Guide to The Annual Governance And Accountability Return AGAR 2023",
+      "query": "Governance Councils tutorial"
+    },
+    {
+      "oldId": "OCh3PJe1c4U",
+      "newId": "ghzsBm8vOms",
+      "lessonTitle": "What is Platform Engineering?",
+      "replacementTitle": "What is Platform Engineering and how it fits into DevOps and Cloud world",
+      "query": "What is Platform Engineering? tutorial"
+    },
+    {
+      "oldId": "3c3nMMs3bW4",
+      "newId": "Pk8doFXXjjI",
+      "lessonTitle": "Designing Golden Paths",
+      "replacementTitle": "Create Amazing Gradient Line Effect In Illustrator With Blend Tool #graphicdesign #illustrator #3d",
+      "query": "Designing Golden Paths tutorial"
+    },
+    {
+      "oldId": "23mijOhjyto",
+      "newId": "AaIeNStnuew",
+      "lessonTitle": "Crossplane for Platform Engineering",
+      "replacementTitle": "Multi-cloud Platform Engineering with Crossplane",
+      "query": "Crossplane for Platform Engineering tutorial"
+    },
+    {
+      "oldId": "6wT1TDL0FHw",
+      "newId": "QCG_Fkt-Zzc",
+      "lessonTitle": "Backstage Golden Paths",
+      "replacementTitle": "Golden Path Template with Janus",
+      "query": "Backstage Golden Paths tutorial"
+    },
+    {
+      "oldId": "TjE7UZ5EONo",
+      "newId": "gd-PQ80-lXU",
+      "lessonTitle": "Measuring Platform Impact",
+      "replacementTitle": "Meridiam’s Sustainability Impact Measurement Platform, Simpl.®",
+      "query": "Measuring Platform Impact tutorial"
+    },
+    {
+      "oldId": "5Oy-nn6Zo9A",
+      "newId": "RPdtPM5I6Go",
+      "lessonTitle": "Operating an IDP",
+      "replacementTitle": "How an IDP Ensures Smooth Interaction with Local Authorities  | International Driving Permit",
+      "query": "Operating an IDP tutorial"
+    },
+    {
+      "oldId": "2yW4YMgN0CA",
+      "newId": "ztIIcXNzMN4",
+      "lessonTitle": "SRE Fundamentals",
+      "replacementTitle": "What is Site Reliability Engineering (SRE)?",
+      "query": "SRE Fundamentals tutorial"
+    },
+    {
+      "oldId": "yI7LGdK2Kc4",
+      "newId": "U53wC2A75Is",
+      "lessonTitle": "Designing SLOs",
+      "replacementTitle": "Getting started with SLOs",
+      "query": "Designing SLOs tutorial"
+    },
+    {
+      "oldId": "7qlBYiYaWFk",
+      "newId": "a66aQ6ikqUk",
+      "lessonTitle": "Automating Reliability",
+      "replacementTitle": "Automation reliability and trust",
+      "query": "Automating Reliability tutorial"
+    },
+    {
+      "oldId": "5CsthIswptI",
+      "newId": "HMTPzMpMt9s",
+      "lessonTitle": "Toil Reduction Techniques",
+      "replacementTitle": "SRE Demystified - 05 - Eliminate Toil",
+      "query": "Toil Reduction Techniques tutorial"
+    },
+    {
+      "oldId": "c8pQh4Krqiw",
+      "newId": "Q_ScdoBy2qk",
+      "lessonTitle": "Running Blameless Postmortems",
+      "replacementTitle": "How to run a Blameless Postmortem? | QnA Series with Suresh GP,  Episode 11",
+      "query": "Running Blameless Postmortems tutorial"
+    },
+    {
+      "oldId": "ScwW5Wn66y0",
+      "newId": "PeWBS5hfTb4",
+      "lessonTitle": "Reliability Review Cadence",
+      "replacementTitle": "Design Reliability | OrCAD PCB Designer",
+      "query": "Reliability Review Cadence tutorial"
+    },
+    {
+      "oldId": "T7P3X0qO3Uo",
+      "newId": "f5EpcWp0THw",
+      "lessonTitle": "GitOps Principles",
+      "replacementTitle": "What is GitOps, How GitOps works and Why it's so useful",
+      "query": "GitOps Principles tutorial"
+    },
+    {
+      "oldId": "c3BtHl0qFmU",
+      "newId": "Wiy54682d1w",
+      "lessonTitle": "Repository Design",
+      "replacementTitle": "The Repository Pattern explained for EVERYONE (with Code Examples) 🚀",
+      "query": "Repository Design tutorial"
+    },
+    {
+      "oldId": "m6NIXL-uxkM",
+      "newId": "4cgzzMSCUAE",
+      "lessonTitle": "Policy as Code with Kyverno",
+      "replacementTitle": "Cloud Governance with Infrastructure as Code (IaC) with Kyverno and Crossplane - Dolis Sharma",
+      "query": "Policy as Code with Kyverno tutorial"
+    },
+    {
+      "oldId": "t1MNyHCfg-4",
+      "newId": "OaZ41cpEaZg",
+      "lessonTitle": "Managing Secrets in GitOps",
+      "replacementTitle": "Keeping a Secret - The GitOps Way with Omer Levi Hevroni",
+      "query": "Managing Secrets in GitOps tutorial"
+    },
+    {
+      "oldId": "s9X3Vv7GMUQ",
+      "newId": "_RI5QNBZmeU",
+      "lessonTitle": "Detecting Drift in GitOps",
+      "replacementTitle": "GitOps: Configuration Drift and Sync",
+      "query": "Detecting Drift in GitOps tutorial"
+    },
+    {
+      "oldId": "f5C4PF4Z6Pc",
+      "newId": "f5EpcWp0THw",
+      "lessonTitle": "Scaling GitOps",
+      "replacementTitle": "What is GitOps, How GitOps works and Why it's so useful",
+      "query": "Scaling GitOps tutorial"
+    },
+    {
+      "oldId": "ZKBYw32hY7I",
+      "newId": "CAQ_a2-9UOI",
+      "lessonTitle": "Observability Engineering",
+      "replacementTitle": "Observability vs. APM vs. Monitoring",
+      "query": "Observability Engineering tutorial"
+    },
+    {
+      "oldId": "D1SuV0sVQa4",
+      "newId": "hLvwoow3XTk",
+      "lessonTitle": "OpenTelemetry Deep Dive",
+      "replacementTitle": "OpenTelemetry: Simplifying Hybrid Cloud Monitoring",
+      "query": "OpenTelemetry Deep Dive tutorial"
+    },
+    {
+      "oldId": "7K12Wb-K9wU",
+      "newId": "t3cAUt7sOQg",
+      "lessonTitle": "Dashboard Design Principles",
+      "replacementTitle": "12 Dashboard design tips for better data visualization",
+      "query": "Dashboard Design Principles tutorial"
+    },
+    {
+      "oldId": "boDbCT4NrF4",
+      "newId": "C4lasI0Svss",
+      "lessonTitle": "Alerting & SLO Dashboards",
+      "replacementTitle": "SLO walkthrough",
+      "query": "Alerting & SLO Dashboards tutorial"
+    },
+    {
+      "oldId": "6N8noyT0N0E",
+      "newId": "E3ReKuJ8ewA",
+      "lessonTitle": "Service Level Objectives Practical",
+      "replacementTitle": "The Art of SLOs (Service Level Objectives)",
+      "query": "Service Level Objectives Practical tutorial"
+    },
+    {
+      "oldId": "y7V2b7xYIic",
+      "newId": "CAQ_a2-9UOI",
+      "lessonTitle": "Establishing Observability Programs",
+      "replacementTitle": "Observability vs. APM vs. Monitoring",
+      "query": "Establishing Observability Programs tutorial"
+    },
+    {
+      "oldId": "cyM6sukxmks",
+      "newId": "KnSBNd3b0qI",
+      "lessonTitle": "Designing Enterprise CI/CD",
+      "replacementTitle": "How to design a modern CI/CD Pipeline",
+      "query": "Designing Enterprise CI/CD tutorial"
+    },
+    {
+      "oldId": "bDRpSqGCgH4",
+      "newId": "qaNOPQmd_MY",
+      "lessonTitle": "Quality Gates & Compliance",
+      "replacementTitle": "A Comprehensive Tutorial on Setting Up Quality Gates | Monika Sharma | #softwaretesting",
+      "query": "Quality Gates & Compliance tutorial"
+    },
+    {
+      "oldId": "wx9f6F99PdI",
+      "newId": "HKkhD6nokC8",
+      "lessonTitle": "Progressive Delivery Explained",
+      "replacementTitle": "Progressive Delivery Explained - Big Bang (Recreate), Blue-Green, Rolling Updates, Canaries",
+      "query": "Progressive Delivery Explained tutorial"
+    },
+    {
+      "oldId": "yw3bTjsWl0g",
+      "newId": "CAQ_a2-9UOI",
+      "lessonTitle": "Observability for Releases",
+      "replacementTitle": "Observability vs. APM vs. Monitoring",
+      "query": "Observability for Releases tutorial"
+    },
+    {
+      "oldId": "JVZ7szrC6CY",
+      "newId": "YOvEIFLWz3I",
+      "lessonTitle": "DORA Metrics Deep Dive",
+      "replacementTitle": "DORA Metrics Explained",
+      "query": "DORA Metrics Deep Dive tutorial"
+    },
+    {
+      "oldId": "1SDfq9aXH-U",
+      "newId": "anA_TiUfmbM",
+      "lessonTitle": "Continuous Improvement",
+      "replacementTitle": "Continuous Improvement Explained: Whiteboard Animation",
+      "query": "Continuous Improvement tutorial"
+    },
+    {
+      "oldId": "JyfzuS0s9G0",
+      "newId": "zWw2wuiKd5o",
+      "lessonTitle": "Infrastructure as Code Principles",
+      "replacementTitle": "What is Infrastructure as Code?",
+      "query": "Infrastructure as Code Principles tutorial"
+    },
+    {
+      "oldId": "I0zE8wBSMI4",
+      "newId": "GSXx8AZjKK4",
+      "lessonTitle": "Terraform Module Design",
+      "replacementTitle": "Terraform Basics: Modules",
+      "query": "Terraform Module Design tutorial"
+    },
+    {
+      "oldId": "iy3W2mYIBxg",
+      "newId": "DpUDYbFK4IE",
+      "lessonTitle": "OPA & Terraform",
+      "replacementTitle": "Using OPA with Terraform - Rego Basics",
+      "query": "OPA & Terraform tutorial"
+    },
+    {
+      "oldId": "2tZz4iMbA7s",
+      "newId": "2UZni0mCQ-g",
+      "lessonTitle": "Testing IaC",
+      "replacementTitle": "IAC Valve Resistance Testing Using Ohmmeter",
+      "query": "Testing IaC tutorial"
+    },
+    {
+      "oldId": "6ptLQ3E_pxY",
+      "newId": "RtCfqohMhl0",
+      "lessonTitle": "Managing Drift",
+      "replacementTitle": "Drifting Tutorial for Beginners - Learn How to Drift",
+      "query": "Managing Drift tutorial"
+    },
+    {
+      "oldId": "w24f2lMJn7w",
+      "newId": "eaD-tGMOKe8",
+      "lessonTitle": "Scaling IaC Platforms",
+      "replacementTitle": "Avoiding IaC misconfiguration (on mutiple platforms)",
+      "query": "Scaling IaC Platforms tutorial"
+    },
+    {
+      "oldId": "wpIb9IhD68M",
+      "newId": "3CNNhK9JTDk",
+      "lessonTitle": "Chaos Engineering Explained",
+      "replacementTitle": "What is Chaos Engineering? | Principles of Chaos | Tech Primers",
+      "query": "Chaos Engineering Explained tutorial"
+    },
+    {
+      "oldId": "ZEb4bNownz0",
+      "newId": "1-wc7CNeIz8",
+      "lessonTitle": "Designing Safe Experiments",
+      "replacementTitle": "Designing an Experiment: Step-by-step Guide | Scribbr 🎓",
+      "query": "Designing Safe Experiments tutorial"
+    },
+    {
+      "oldId": "sUXwxLBzMEI",
+      "newId": "6oOz2-Hh9GQ",
+      "lessonTitle": "Running Chaos with Litmus",
+      "replacementTitle": "Kubernetes Chaos Engineering: A Litmus Test",
+      "query": "Running Chaos with Litmus tutorial"
+    },
+    {
+      "oldId": "0K8-QqDzsrs",
+      "newId": "618rXhCp03Y",
+      "lessonTitle": "Automating Chaos Experiments",
+      "replacementTitle": "Automating Chaos with LitmusChaos to ensure Kubernetes Application Resiliency",
+      "query": "Automating Chaos Experiments tutorial"
+    },
+    {
+      "oldId": "p6R8W1k4ro4",
+      "newId": "gJUSKqQZZBU",
+      "lessonTitle": "Measuring Chaos Experiments",
+      "replacementTitle": "Chaos Experiment",
+      "query": "Measuring Chaos Experiments tutorial"
+    },
+    {
+      "oldId": "nnBYnOVrla8",
+      "newId": "SFwSOlQ4liI",
+      "lessonTitle": "Prioritizing Resilience Work",
+      "replacementTitle": "Resiliency Tutorial -- Project Prioritization Tool for Resiliency",
+      "query": "Prioritizing Resilience Work tutorial"
+    },
+    {
+      "oldId": "ksu1poOFtnQ",
+      "newId": "Te9mYmonVjE",
+      "lessonTitle": "Engineering Efficiency Metrics",
+      "replacementTitle": "8 Essential KPI Metrics for Teams - Project Management Training",
+      "query": "Engineering Efficiency Metrics tutorial"
+    },
+    {
+      "oldId": "YifCwr6jci8",
+      "newId": "wnS4XRLgXNI",
+      "lessonTitle": "Cost Monitoring Dashboards",
+      "replacementTitle": "Databricks Cost Monitoring With System Tables and Dashboards",
+      "query": "Cost Monitoring Dashboards tutorial"
+    },
+    {
+      "oldId": "ZcivAiPhogo",
+      "newId": "7I3e1dvlRQo",
+      "lessonTitle": "Automating Cost Controls",
+      "replacementTitle": "How to Monitor Usage and Automate Cost Controls to Facilitate Chargeback",
+      "query": "Automating Cost Controls tutorial"
+    },
+    {
+      "oldId": "f6YwY0Xtn4c",
+      "newId": "CLVDF_bxVdM",
+      "lessonTitle": "Optimizing Kubernetes Spend",
+      "replacementTitle": "Optimize AWS Kubernetes costs with Kubecost",
+      "query": "Optimizing Kubernetes Spend tutorial"
+    },
+    {
+      "oldId": "3l2WEYLRh3g",
+      "newId": "YHUptdFtozQ",
+      "lessonTitle": "Running FinOps Reviews",
+      "replacementTitle": "FinOps and Azure! Understanding what FinOps is and why we care.",
+      "query": "Running FinOps Reviews tutorial"
+    },
+    {
+      "oldId": "7rIYSGPTWJE",
+      "newId": "KaMYF017qlQ",
+      "lessonTitle": "Creating a Cost-Aware Culture",
+      "replacementTitle": "Cloud Engineering Summit 2020: Creating a Cost Aware Culture to Drive Cloud Optimization",
+      "query": "Creating a Cost-Aware Culture tutorial"
+    },
+    {
+      "oldId": "hrYkB0HZNRs",
+      "newId": "BdPkVl4Y8TQ",
+      "lessonTitle": "React Native Architecture in 2025",
+      "replacementTitle": "The New React Native Architecture",
+      "query": "React Native Architecture in 2025 tutorial"
+    },
+    {
+      "oldId": "e-9w5-q1Uo0",
+      "newId": "DK9HOY93p0k",
+      "lessonTitle": "State Management Strategies",
+      "replacementTitle": "State Management in 40 Seconds – Make Your Apps Smarter | Academia Magazine",
+      "query": "State Management Strategies tutorial"
+    },
+    {
+      "oldId": "xYjyKJdWyRs",
+      "newId": "CdaQSlyGik8",
+      "lessonTitle": "Using Native Modules",
+      "replacementTitle": "How to create a native module with the Expo modules API",
+      "query": "Using Native Modules tutorial"
+    },
+    {
+      "oldId": "OJplhEx8gNs",
+      "newId": "0fONene3OIA",
+      "lessonTitle": "Performance Optimization",
+      "replacementTitle": "The ultimate guide to web performance",
+      "query": "Performance Optimization tutorial"
+    },
+    {
+      "oldId": "PIWk-UY0pzg",
+      "newId": "yNqCpMLmJqE",
+      "lessonTitle": "Mobile CI/CD with Fastlane",
+      "replacementTitle": "SETUP CI/CD for iOS UNDER 10 MINS with Github Actions and Fastlane",
+      "query": "Mobile CI/CD with Fastlane tutorial"
+    },
+    {
+      "oldId": "4cH4z7O8gH4",
+      "newId": "4s8BlzwWiIA",
+      "lessonTitle": "Monitoring React Native Apps",
+      "replacementTitle": "Monitoring Critical User Experiences In React Native Mobile Apps",
+      "query": "Monitoring React Native Apps tutorial"
+    },
+    {
+      "oldId": "Rvv-YN0I8jE",
+      "newId": "04fzFk367Dg",
+      "lessonTitle": "SwiftUI Layout Essentials",
+      "replacementTitle": "How layout works in SwiftUI – Layout and Geometry SwiftUI Tutorial 1/8",
+      "query": "SwiftUI Layout Essentials tutorial"
+    },
+    {
+      "oldId": "DT8C3XwZQP0",
+      "newId": "V-RwRsHYXDM",
+      "lessonTitle": "Reusable Components",
+      "replacementTitle": "How To Build Reusable Components",
+      "query": "Reusable Components tutorial"
+    },
+    {
+      "oldId": "6XgQbrBs0Dw",
+      "newId": "AfhUHEkS7Ew",
+      "lessonTitle": "SwiftUI Animations Deep Dive",
+      "replacementTitle": "SwiftUI Animations: A Deep Dive with Chris Eidhof and Florian Kugler from objc.io",
+      "query": "SwiftUI Animations Deep Dive tutorial"
+    },
+    {
+      "oldId": "4J6b_9HjvK0",
+      "newId": "Ul661gN2_Gg",
+      "lessonTitle": "Design Tokens in SwiftUI",
+      "replacementTitle": "SwiftUI Design System: A Complete Guide to Building Consistent UI Components (2025) & Design Tokens",
+      "query": "Design Tokens in SwiftUI tutorial"
+    },
+    {
+      "oldId": "_4QFFhLdLNo",
+      "newId": "SlCBMdPfWNc",
+      "lessonTitle": "Accessibility in SwiftUI",
+      "replacementTitle": "Reading the value of controls – Accessibility SwiftUI Tutorial 3/7",
+      "query": "Accessibility in SwiftUI tutorial"
+    },
+    {
+      "oldId": "2FUKpqTdbbg",
+      "newId": "bH2DQEPvkcI",
+      "lessonTitle": "Snapshot Testing",
+      "replacementTitle": "Tutorial. Snapshot Testing",
+      "query": "Snapshot Testing tutorial"
+    },
+    {
+      "oldId": "4RL9wGmQmio",
+      "newId": "RSBO1C_Du2U",
+      "lessonTitle": "Kotlin Multiplatform Crash Course",
+      "replacementTitle": "What Is Kotlin Multiplatform And How Does It Work? - KMP for Beginners",
+      "query": "Kotlin Multiplatform Crash Course tutorial"
+    },
+    {
+      "oldId": "4bQPV4_wEDM",
+      "newId": "CAeWjoP525M",
+      "lessonTitle": "Project Setup & Structure",
+      "replacementTitle": "How To Structure A Programming Project…",
+      "query": "Project Setup & Structure tutorial"
+    },
+    {
+      "oldId": "ZgJ4Y2V2p8U",
+      "newId": "vvP5vnmzY84",
+      "lessonTitle": "Compose Multiplatform Basics",
+      "replacementTitle": "Building Your First Compose Multiplatform Hello World App - KMP for Beginners",
+      "query": "Compose Multiplatform Basics tutorial"
+    },
+    {
+      "oldId": "ya_zZ8kvyd8",
+      "newId": "k4h9i6KVvi8",
+      "lessonTitle": "Integrating with SwiftUI",
+      "replacementTitle": "UIKit Integration with SwiftUI",
+      "query": "Integrating with SwiftUI tutorial"
+    },
+    {
+      "oldId": "lmE9SWZ9Z_g",
+      "newId": "N4h3K73TyZI",
+      "lessonTitle": "Testing Kotlin Multiplatform",
+      "replacementTitle": "Is Kotlin Multiplatform Right for Your App?",
+      "query": "Testing Kotlin Multiplatform tutorial"
+    },
+    {
+      "oldId": "9L-9n_jN4Ws",
+      "newId": "uMBepxdTb9g",
+      "lessonTitle": "CI/CD for KMP",
+      "replacementTitle": "Building a CI/CD pipeline for your mobile app - Peter-John Welcome",
+      "query": "CI/CD for KMP tutorial"
+    },
+    {
+      "oldId": "D7xYZWeXKBk",
+      "newId": "PKGguGUwSYE",
+      "lessonTitle": "Flutter Performance Essentials",
+      "replacementTitle": "Flutter performance tips - Flutter in Focus",
+      "query": "Flutter Performance Essentials tutorial"
+    },
+    {
+      "oldId": "_THTInULsZU",
+      "newId": "_EYk-E29edo",
+      "lessonTitle": "Profiling Flutter Apps",
+      "replacementTitle": "Dive into DevTools",
+      "query": "Profiling Flutter Apps tutorial"
+    },
+    {
+      "oldId": "0fLyrbNES9c",
+      "newId": "7UQgAC1kvxI",
+      "lessonTitle": "Advanced Flutter Animations",
+      "replacementTitle": "Master Flutter Animations: From Simple to Advanced!",
+      "query": "Advanced Flutter Animations tutorial"
+    },
+    {
+      "oldId": "S_f7nW2nUzs",
+      "newId": "UoajnqWaq_4",
+      "lessonTitle": "Building Delightful Interactions",
+      "replacementTitle": "6 Ways To Be More Charismatic (Yet Still Be YOU)",
+      "query": "Building Delightful Interactions tutorial"
+    },
+    {
+      "oldId": "eX0zLY_Jzy0",
+      "newId": "vfh2KCFEuDo",
+      "lessonTitle": "Platform Channels in Flutter",
+      "replacementTitle": "Platform Channels in Flutter // MethodChannel and EventChannel in Android Java with example",
+      "query": "Platform Channels in Flutter tutorial"
+    },
+    {
+      "oldId": "zpaz1IG_SRg",
+      "newId": "857X79cfP1g",
+      "lessonTitle": "Automating Flutter Delivery",
+      "replacementTitle": "Parcel Delivery App Flutter UI Kit | Courier & Package Tracking | Now on Codecanyon",
+      "query": "Automating Flutter Delivery tutorial"
+    },
+    {
+      "oldId": "s9IerTn6G_Q",
+      "newId": "scEDHsr3APg",
+      "lessonTitle": "Mobile CI/CD Overview",
+      "replacementTitle": "DevOps CI/CD Explained in 100 Seconds",
+      "query": "Mobile CI/CD Overview tutorial"
+    },
+    {
+      "oldId": "umTzpeTnHGU",
+      "newId": "zYBYegeTNwY",
+      "lessonTitle": "Configuring Fastlane",
+      "replacementTitle": "How to setup Fastlane on Windows for Android development",
+      "query": "Configuring Fastlane tutorial"
+    },
+    {
+      "oldId": "3zZm3awcA98",
+      "newId": "4_ZEEX1x17k",
+      "lessonTitle": "Running Tests in Firebase Test Lab",
+      "replacementTitle": "Introducing Firebase Test Lab",
+      "query": "Running Tests in Firebase Test Lab tutorial"
+    },
+    {
+      "oldId": "IsN_Xsjl2uo",
+      "newId": "MmDVND6w_Ag",
+      "lessonTitle": "Setting Quality Gates",
+      "replacementTitle": "\"Create and Customize Quality Gates in SonarQube | DevOps Must-Know!\"",
+      "query": "Setting Quality Gates tutorial"
+    },
+    {
+      "oldId": "1vHcNZNHsLU",
+      "newId": "9vkkJ4tC4SQ",
+      "lessonTitle": "Automating App Store Deployments",
+      "replacementTitle": "iOS App Store Submission Tutorial",
+      "query": "Automating App Store Deployments tutorial"
+    },
+    {
+      "oldId": "FCw9Sbi3b6I",
+      "newId": "llTNNqpPFto",
+      "lessonTitle": "Release Train Strategies",
+      "replacementTitle": "What makes a great Agile Release Train Engineer?",
+      "query": "Release Train Strategies tutorial"
+    },
+    {
+      "oldId": "q-o6BJG8x2g",
+      "newId": "yfszc9yJsnU",
+      "lessonTitle": "Mobile Threat Landscape",
+      "replacementTitle": "Unmatched Insight: Navigating the Mobile Threat Landscape with Lookout Mobile Endpoint Security",
+      "query": "Mobile Threat Landscape tutorial"
+    },
+    {
+      "oldId": "qUy1cFYJELk",
+      "newId": "fuLo64WH3SU",
+      "lessonTitle": "OWASP MASVS Overview",
+      "replacementTitle": "Insiders Guide to Mobile AppSec with OWASP MASVS",
+      "query": "OWASP MASVS Overview tutorial"
+    },
+    {
+      "oldId": "X4tNXB_KiMY",
+      "newId": "8QP7AxkWPlE",
+      "lessonTitle": "Securing Mobile Storage",
+      "replacementTitle": "how to solve storage space running out problem",
+      "query": "Securing Mobile Storage tutorial"
+    },
+    {
+      "oldId": "zY0Ax7AnxrE",
+      "newId": "Yo9-DBl8nWM",
+      "lessonTitle": "Runtime Protections",
+      "replacementTitle": "What Is Runtime Protection? - SecurityFirstCorp.com",
+      "query": "Runtime Protections tutorial"
+    },
+    {
+      "oldId": "Y8zQsehTCEY",
+      "newId": "TV7904ZvrxE",
+      "lessonTitle": "Automated Mobile Security Testing",
+      "replacementTitle": "Mobile security: how to implement and test it",
+      "query": "Automated Mobile Security Testing tutorial"
+    },
+    {
+      "oldId": "Qd4Ekd4dblk",
+      "newId": "oPO6OVhLaSs",
+      "lessonTitle": "Monitoring Mobile Threats",
+      "replacementTitle": "How To Stay Updated On Mobile Security Threats? - Next LVL Programming",
+      "query": "Monitoring Mobile Threats tutorial"
+    },
+    {
+      "oldId": "LuhaNznPh5w",
+      "newId": "9eIhMFTs1Q8",
+      "lessonTitle": "Jetpack Compose Architecture",
+      "replacementTitle": "Simple MVVM App 🔥 | Android | Jetpack Compose",
+      "query": "Jetpack Compose Architecture tutorial"
+    },
+    {
+      "oldId": "5sSIoIBhdf0",
+      "newId": "ekB0w7tkG7k",
+      "lessonTitle": "State Management in Compose",
+      "replacementTitle": "How to manage State in Jetpack Compose 🚀 | Android Studio | 2024",
+      "query": "State Management in Compose tutorial"
+    },
+    {
+      "oldId": "kGuHEiSD-kc",
+      "newId": "ahXLwg2JYpc",
+      "lessonTitle": "Compose Performance Tips",
+      "replacementTitle": "More performance tips for Jetpack Compose",
+      "query": "Compose Performance Tips tutorial"
+    },
+    {
+      "oldId": "CXGzBEg-qsw",
+      "newId": "6ZZDPILtYlA",
+      "lessonTitle": "Advanced Compose Animations",
+      "replacementTitle": "Full Guide to Jetpack Compose Animations - Android Studio Tutorial",
+      "query": "Advanced Compose Animations tutorial"
+    },
+    {
+      "oldId": "xW_VCbwZTx8",
+      "newId": "kxOwAIdTT9A",
+      "lessonTitle": "Testing Jetpack Compose",
+      "replacementTitle": "How to Write your First Jetpack Compose Test (Step-By-Step)",
+      "query": "Testing Jetpack Compose tutorial"
+    },
+    {
+      "oldId": "Ix-uHKjgPxU",
+      "newId": "Utt7vU3jk9s",
+      "lessonTitle": "Release Automation",
+      "replacementTitle": "Release Management for Jira Cloud. Quick overview",
+      "query": "Release Automation tutorial"
+    },
+    {
+      "oldId": "l5hqfUI_yNE",
+      "newId": "rPM9W8_uuzQ",
+      "lessonTitle": "Mobile Analytics Fundamentals",
+      "replacementTitle": "Mobile App Analytics Fundamentals   Lesson 1 1 Welcome to the course",
+      "query": "Mobile Analytics Fundamentals tutorial"
+    },
+    {
+      "oldId": "wdsdQGxMKac",
+      "newId": "wnJyhbsibu0",
+      "lessonTitle": "Implementing Amplitude",
+      "replacementTitle": "Amplitude Tutorial: Everything You Need to Know in 2025",
+      "query": "Implementing Amplitude tutorial"
+    },
+    {
+      "oldId": "FYL7P0kXUa8",
+      "newId": "uTbsM5wNLGY",
+      "lessonTitle": "Running Mobile Experiments",
+      "replacementTitle": "Developing Experiments for Mobile Devices",
+      "query": "Running Mobile Experiments tutorial"
+    },
+    {
+      "oldId": "IDN7VpSrLFM",
+      "newId": "TwOeP9HM7fU",
+      "lessonTitle": "Designing Growth Loops",
+      "replacementTitle": "Designing Your Growth Loops with Leah Tharin - Notion Capital Resources",
+      "query": "Designing Growth Loops tutorial"
+    },
+    {
+      "oldId": "dIq0Jx8PX-c",
+      "newId": "u6B744B5apo",
+      "lessonTitle": "Lifecycle Marketing Fundamentals",
+      "replacementTitle": "Lifecycle Marketing: From Getting Started to Scaling Up",
+      "query": "Lifecycle Marketing Fundamentals tutorial"
+    },
+    {
+      "oldId": "7NxPa2Hxo4o",
+      "newId": "1J4p59s75XQ",
+      "lessonTitle": "Building Retention Programs",
+      "replacementTitle": "7 Proven Employee Retention Strategies to Implement in 2025",
+      "query": "Building Retention Programs tutorial"
+    },
+    {
+      "oldId": "0Kz0QpIgMw0",
+      "newId": "ZPvG2WQDCqU",
+      "lessonTitle": "Continuous Discovery Habits",
+      "replacementTitle": "Continuous Discovery Habits by Teresa Torres: 17 Minute Summary",
+      "query": "Continuous Discovery Habits tutorial"
+    },
+    {
+      "oldId": "hgdvYbWQnlE",
+      "newId": "dbVN6EYql6k",
+      "lessonTitle": "Jobs to Be Done Interviews",
+      "replacementTitle": "Jobs to be Done with Examples",
+      "query": "Jobs to Be Done Interviews tutorial"
+    },
+    {
+      "oldId": "Jn3SAb8mZfI",
+      "newId": "LFARGDCR_C4",
+      "lessonTitle": "Opportunity Solution Trees",
+      "replacementTitle": "Opportunity Solution Tree  - Iyasu Ghirmai",
+      "query": "Opportunity Solution Trees tutorial"
+    },
+    {
+      "oldId": "6gXHdG6p95U",
+      "newId": "_azBW6nBrBM",
+      "lessonTitle": "Insight Synthesis Techniques",
+      "replacementTitle": "Design Synthesis:  How to move from insight to innovation",
+      "query": "Insight Synthesis Techniques tutorial"
+    },
+    {
+      "oldId": "3vCwMdpBWX4",
+      "newId": "SxAKGVERkJs",
+      "lessonTitle": "Communicating Research Insights",
+      "replacementTitle": "How to Communicate Complex Research Insights",
+      "query": "Communicating Research Insights tutorial"
+    },
+    {
+      "oldId": "2gC20oDKLec",
+      "newId": "s0rL0jzdgxo",
+      "lessonTitle": "Prioritizing Opportunities",
+      "replacementTitle": "How to Prioritize Tasks",
+      "query": "Prioritizing Opportunities tutorial"
+    },
+    {
+      "oldId": "iz7B4rABc6E",
+      "newId": "I-z1NCbQQ38",
+      "lessonTitle": "What is Design Ops?",
+      "replacementTitle": "DesignOps 101",
+      "query": "What is Design Ops? tutorial"
+    },
+    {
+      "oldId": "jP7hvWSozmE",
+      "newId": "BGAsGRlWO2A",
+      "lessonTitle": "Design Ops Rituals",
+      "replacementTitle": "Design with EU - Design Ops and Systems with Marvis Ighedosa",
+      "query": "Design Ops Rituals tutorial"
+    },
+    {
+      "oldId": "7Y7Hmghowdg",
+      "newId": "9w-BwzcuxYM",
+      "lessonTitle": "Scaling Design Systems",
+      "replacementTitle": "Typography - Ultimate Design System Breakdown (Font Sizes, Text Style Naming, Responsive Scaling)",
+      "query": "Scaling Design Systems tutorial"
+    },
+    {
+      "oldId": "UDF4Go6aymE",
+      "newId": "N1w07dTC3Ww",
+      "lessonTitle": "Design to Code Workflows",
+      "replacementTitle": "✏️ Integrate Figma in your editor #shorts #vscode #coding #extensions #programming #2099 #tips  #js",
+      "query": "Design to Code Workflows tutorial"
+    },
+    {
+      "oldId": "NdRKrPcS8QI",
+      "newId": "AOCyGKxCsvg",
+      "lessonTitle": "Measuring Design Systems",
+      "replacementTitle": "Measuring A Design System's Success - Chaitanya Deorukhkar | Design System Hybrid Meetup | GeekyAnts",
+      "query": "Measuring Design Systems tutorial"
+    },
+    {
+      "oldId": "4bWMnxfNapw",
+      "newId": "CNnqSL97aLE",
+      "lessonTitle": "Design Ops Case Studies",
+      "replacementTitle": "In the file: The case for DesignOps—how to identify when you need it",
+      "query": "Design Ops Case Studies tutorial"
+    },
+    {
+      "oldId": "SPErwHIjBHs",
+      "newId": "1Yvu-i9H6lI",
+      "lessonTitle": "UX Writing Fundamentals",
+      "replacementTitle": "How to Get Into UX Writing",
+      "query": "UX Writing Fundamentals tutorial"
+    },
+    {
+      "oldId": "xoSgGJE0E7c",
+      "newId": "OIpb3FSWXK0",
+      "lessonTitle": "Voice & Tone Systems",
+      "replacementTitle": "How to add TONE to your voice",
+      "query": "Voice & Tone Systems tutorial"
+    },
+    {
+      "oldId": "Ek36VE1oxVQ",
+      "newId": "PsL5zHLiwWQ",
+      "lessonTitle": "Testing Content Design",
+      "replacementTitle": "What is Content Design?",
+      "query": "Testing Content Design tutorial"
+    },
+    {
+      "oldId": "OCcN3Wf9MUw",
+      "newId": "ubAhLDPYSco",
+      "lessonTitle": "Localization Strategy",
+      "replacementTitle": "What Is a Content Localization Strategy and How to Build One in 5 Simple Steps",
+      "query": "Localization Strategy tutorial"
+    },
+    {
+      "oldId": "zm4c3AofRwA",
+      "newId": "AlJ36WmXsmQ",
+      "lessonTitle": "Working with Designers & PMs",
+      "replacementTitle": "Working together as PMs and Designers",
+      "query": "Working with Designers & PMs tutorial"
+    },
+    {
+      "oldId": "xF_3tb0os0U",
+      "newId": "dqEl280a0Zc",
+      "lessonTitle": "Content Governance",
+      "replacementTitle": "Content Governance: How to Manage Your Digital Content for Success",
+      "query": "Content Governance tutorial"
+    },
+    {
+      "oldId": "0vEEgR1ored",
+      "newId": "t_4cVPXb2SQ",
+      "lessonTitle": "Product Analytics for Designers",
+      "replacementTitle": "Introduction to Data and Metrics for Product Designers | Becoming a Data Driven UX Designer",
+      "query": "Product Analytics for Designers tutorial"
+    },
+    {
+      "oldId": "RBctVcxw7Hk",
+      "newId": "2tuWjtc2Ifk",
+      "lessonTitle": "Designing KPI Frameworks",
+      "replacementTitle": "How to Develop Key Performance Indicators",
+      "query": "Designing KPI Frameworks tutorial"
+    },
+    {
+      "oldId": "WXEmtbyibns",
+      "newId": "6kdZoDy7D4Q",
+      "lessonTitle": "Running Product Experiments",
+      "replacementTitle": "How to Effectively Incorporate Experimentation in Product Development",
+      "query": "Running Product Experiments tutorial"
+    },
+    {
+      "oldId": "Mu2JtwkKDuc",
+      "newId": "S3k9ZMiTQ_w",
+      "lessonTitle": "Synthesizing Quant & Qual",
+      "replacementTitle": "How to Synthesise - Just Follow These Key Steps",
+      "query": "Synthesizing Quant & Qual tutorial"
+    },
+    {
+      "oldId": "WPkEQwqKLY8",
+      "newId": "r5_34YnCmMY",
+      "lessonTitle": "Storytelling with Data",
+      "replacementTitle": "Telling Stories with Data in 3 Steps (Quick Study)",
+      "query": "Storytelling with Data tutorial"
+    },
+    {
+      "oldId": "BxowecLUpqM",
+      "newId": "n5u0SlG-RsM",
+      "lessonTitle": "Design Influence",
+      "replacementTitle": "Adobe illustrator tutorial for graphic designers #graphicdesign #adobeillustrator",
+      "query": "Design Influence tutorial"
+    },
+    {
+      "oldId": "bXaqM42CcsE",
+      "newId": "41v3PENTEXw",
+      "lessonTitle": "Design Org Strategy",
+      "replacementTitle": "What is Organization Design?",
+      "query": "Design Org Strategy tutorial"
+    },
+    {
+      "oldId": "6QJqKf9qTlo",
+      "newId": "Qn5I6F9Wqkk",
+      "lessonTitle": "Design Vision Narratives",
+      "replacementTitle": "Designing Your Vision  Creating a Game Plan for Success#design#vision#success#opusclip",
+      "query": "Design Vision Narratives tutorial"
+    },
+    {
+      "oldId": "hz0_0SgZPCw",
+      "newId": "2xbiKIMRg4I",
+      "lessonTitle": "Design Operations for Leaders",
+      "replacementTitle": "Process Design",
+      "query": "Design Operations for Leaders tutorial"
+    },
+    {
+      "oldId": "3dKk6k7tk8I",
+      "newId": "JomsJ6MPx_g",
+      "lessonTitle": "Culture & Craft Excellence",
+      "replacementTitle": "Baby frock design 227 #shorts #frockdesigns",
+      "query": "Culture & Craft Excellence tutorial"
+    },
+    {
+      "oldId": "ICz_c1oW9Bg",
+      "newId": "8bliweLN8C4",
+      "lessonTitle": "Partnering with Product & Engineering",
+      "replacementTitle": "Making Design, Product & Engineering Collaboration work",
+      "query": "Partnering with Product & Engineering tutorial"
+    },
+    {
+      "oldId": "E0MvtFxQziE",
+      "newId": "Fzi4T94QCjw",
+      "lessonTitle": "Executive Communication",
+      "replacementTitle": "5 Rules for Communicating Effectively with Executives",
+      "query": "Executive Communication tutorial"
+    },
+    {
+      "oldId": "RlP1KsmnNhI",
+      "newId": "ojqN3tZqcew",
+      "lessonTitle": "Service Design Fundamentals",
+      "replacementTitle": "Service Design 101",
+      "query": "Service Design Fundamentals tutorial"
+    },
+    {
+      "oldId": "rBbMuNoMNF0",
+      "newId": "-glgJ9U_Fsk",
+      "lessonTitle": "Building Service Blueprints",
+      "replacementTitle": "What is a Service Blueprint?",
+      "query": "Building Service Blueprints tutorial"
+    },
+    {
+      "oldId": "A9kWJqyPAFY",
+      "newId": "34lWQwoYddw",
+      "lessonTitle": "Operational Layers",
+      "replacementTitle": "C-Section Anatomy {7 Layers!} #csection #childbirtheducation #laboranddelivery #pregnancyjourney",
+      "query": "Operational Layers tutorial"
+    },
+    {
+      "oldId": "QbZ1y7Up0h4",
+      "newId": "G44jtKmbz-0",
+      "lessonTitle": "Aligning Teams Around Blueprints",
+      "replacementTitle": "Aligning your team to your vision",
+      "query": "Aligning Teams Around Blueprints tutorial"
+    },
+    {
+      "oldId": "vFbw-N5jUTC",
+      "newId": "mr-6gTlRXU0",
+      "lessonTitle": "Measuring Service Experiences",
+      "replacementTitle": "Start from 0 at any point on the T1 Digital Tape Measure",
+      "query": "Measuring Service Experiences tutorial"
+    },
+    {
+      "oldId": "fQd2cAs3Xo4",
+      "newId": "bKxuon6iGhg",
+      "lessonTitle": "Motion Design Fundamentals",
+      "replacementTitle": "The Ultimate Guide to Motion Design (Where to Start)",
+      "query": "Motion Design Fundamentals tutorial"
+    },
+    {
+      "oldId": "zQ5e0siJmqI",
+      "newId": "9EPTM91TBDU",
+      "lessonTitle": "Principles in Product Design",
+      "replacementTitle": "The Principles of Design | FREE COURSE",
+      "query": "Principles in Product Design tutorial"
+    },
+    {
+      "oldId": "3fmd7plgT0w",
+      "newId": "-d6zNGeF59M",
+      "lessonTitle": "Prototyping Motion with Figma",
+      "replacementTitle": "Figma Tutorial: Prototyping & Transitions",
+      "query": "Prototyping Motion with Figma tutorial"
+    },
+    {
+      "oldId": "KPS0xvc8vxY",
+      "newId": "XDy_Q6Elmlc",
+      "lessonTitle": "Advanced Motion Tools",
+      "replacementTitle": "Motion Tools Pro Tutorial",
+      "query": "Advanced Motion Tools tutorial"
+    },
+    {
+      "oldId": "IVHfVQGw7yg",
+      "newId": "Itsg48crOjM",
+      "lessonTitle": "Motion in Design Systems",
+      "replacementTitle": "Motion In Design Systems – Val Head / Front-Trends 2017",
+      "query": "Motion in Design Systems tutorial"
+    },
+    {
+      "oldId": "m9SCLF4hItw",
+      "newId": "gQfWR-USO5c",
+      "lessonTitle": "Partnering with Engineering",
+      "replacementTitle": "Engineering the Human-Machine Partnership",
+      "query": "Partnering with Engineering tutorial"
+    },
+    {
+      "oldId": "1F_4oyR4RSY",
+      "newId": "_kGESn8ArrU",
+      "lessonTitle": "Running Effective Critiques",
+      "replacementTitle": "How To Run Properly | Running Technique Explained",
+      "query": "Running Effective Critiques tutorial"
+    },
+    {
+      "oldId": "vJ0-WZ6hO9Y",
+      "newId": "wtl5UrrgU8c",
+      "lessonTitle": "Feedback Models",
+      "replacementTitle": "The secret to giving great feedback | The Way We Work, a TED series",
+      "query": "Feedback Models tutorial"
+    },
+    {
+      "oldId": "9ZC-fmJ0OjQ",
+      "newId": "So8aseCO3hY",
+      "lessonTitle": "Inclusive Facilitation",
+      "replacementTitle": "Become A Better Workshop FACILITATOR In 8 Minutes (Facilitation Technique)",
+      "query": "Inclusive Facilitation tutorial"
+    },
+    {
+      "oldId": "kKQPFn6w8ac",
+      "newId": "4WUXwhfKtck",
+      "lessonTitle": "Remote Critiques",
+      "replacementTitle": "How to Fix Any TV Remote Not Working Power Button or other Buttons, Not Responsive, Ghosting",
+      "query": "Remote Critiques tutorial"
+    },
+    {
+      "oldId": "6sK4wg2EDUU",
+      "newId": "P1qp9xEhawI",
+      "lessonTitle": "Scaling Critique Rituals",
+      "replacementTitle": "How African Tribes Practice Face Scarification?",
+      "query": "Scaling Critique Rituals tutorial"
+    },
+    {
+      "oldId": "0MTK4AM4NXU",
+      "newId": "_Bd17Szxs4s",
+      "lessonTitle": "Measuring Critique Impact",
+      "replacementTitle": "How to Measure Brand Impact Over Time?",
+      "query": "Measuring Critique Impact tutorial"
+    },
+    {
+      "oldId": "nluj9s-6x_o",
+      "newId": "2W13ext26kQ",
+      "lessonTitle": "Journey Mapping Techniques",
+      "replacementTitle": "Customer Journey Mapping 101",
+      "query": "Journey Mapping Techniques tutorial"
+    }
+  ],
+  "failures": []
+}
