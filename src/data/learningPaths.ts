@@ -13,11 +13,32 @@ export type LearningPath = {
   focus: string;
   duration: string;
   idealFor: string[];
+  tier: "Pro" | "Elite";
+  recommendedCadence: string;
   badge: {
     id: string;
     name: string;
     icon: string;
   };
+  concierge?: {
+    lead: string;
+    title: string;
+    bio: string;
+    contact: string;
+  };
+  cohortWindows?: Array<{
+    id: string;
+    label: string;
+    format: string;
+    starts: string;
+    focus: string;
+  }>;
+  spotlightProjects?: Array<{
+    id: string;
+    title: string;
+    description: string;
+    outcome: string;
+  }>;
   stages: LearningPathStage[];
   successMetrics: string[];
   capstone: {
@@ -39,11 +60,49 @@ export const learningPaths: LearningPath[] = [
     focus: "Frontend excellence, performance, and design systems",
     duration: "8-12 weeks",
     idealFor: ["Senior Frontend Engineers", "UI Architects", "Design System Leads"],
+    tier: "Pro",
+    recommendedCadence: "2 deep work sessions per week + Friday playback",
     badge: {
       id: "badge-frontend-platform",
       name: "Frontend Platform Architect",
       icon: "🛠️",
     },
+    concierge: {
+      lead: "Nisha Patel",
+      title: "Principal Frontend Architect",
+      bio: "Leads experience platforms at scale with focus on performance, accessibility, and design ops.",
+      contact: "nisha@mlcconcierge.com",
+    },
+    cohortWindows: [
+      {
+        id: "frontend-q3",
+        label: "July 8 kickoff",
+        format: "Hybrid • Weekly live design critiques",
+        starts: "2024-07-08",
+        focus: "Performance budgets & design tokens",
+      },
+      {
+        id: "frontend-q4",
+        label: "October 14 kickoff",
+        format: "Virtual • Platform governance cohort",
+        starts: "2024-10-14",
+        focus: "Design system adoption surveys",
+      },
+    ],
+    spotlightProjects: [
+      {
+        id: "frontend-blueprint",
+        title: "Experience platform audit",
+        description: "Benchmark core web vitals across flagship journeys and build remediation plan.",
+        outcome: "Executive-ready performance scorecard",
+      },
+      {
+        id: "frontend-governance",
+        title: "Design system governance",
+        description: "Define adoption metrics, contribution models, and rollout communications.",
+        outcome: "Design system governance brief",
+      },
+    ],
     stages: [
       {
         id: "foundation",
@@ -101,11 +160,49 @@ export const learningPaths: LearningPath[] = [
     focus: "Service design, API delivery, and platform operations",
     duration: "10-14 weeks",
     idealFor: ["Backend Tech Leads", "Platform Engineers", "Staff API Engineers"],
+    tier: "Pro",
+    recommendedCadence: "3 focus sprints with bi-weekly architecture reviews",
     badge: {
       id: "badge-backend-platform",
       name: "Backend Platform Strategist",
       icon: "🔗",
     },
+    concierge: {
+      lead: "David Ochieng",
+      title: "Staff Platform Engineer",
+      bio: "Specialises in multi-runtime platforms, SLO programs, and incident management playbooks.",
+      contact: "david@mlcconcierge.com",
+    },
+    cohortWindows: [
+      {
+        id: "backend-q3",
+        label: "August 5 kickoff",
+        format: "Virtual • Architecture councils",
+        starts: "2024-08-05",
+        focus: "SLO instrumentation & service templates",
+      },
+      {
+        id: "backend-q1",
+        label: "January 13 kickoff",
+        format: "Hybrid • Observability labs",
+        starts: "2025-01-13",
+        focus: "Incident response runbooks",
+      },
+    ],
+    spotlightProjects: [
+      {
+        id: "backend-adr",
+        title: "Multi-runtime decision record",
+        description: "Document the strategy for supporting Go and .NET services within one platform.",
+        outcome: "Architecture decision record reviewed by platform council",
+      },
+      {
+        id: "backend-slo",
+        title: "SLO rollout pilot",
+        description: "Implement service-level objectives for two critical services and run the first error budget review.",
+        outcome: "SLO scoreboard and review cadence",
+      },
+    ],
     stages: [
       {
         id: "api-delivery",
@@ -152,11 +249,49 @@ export const learningPaths: LearningPath[] = [
     focus: "Responsible AI delivery and product operations",
     duration: "8-10 weeks",
     idealFor: ["AI Product Managers", "AI Tech Leads", "Founding AI Engineers"],
+    tier: "Elite",
+    recommendedCadence: "Weekly lab + executive synthesis clinic",
     badge: {
       id: "badge-ai-product",
       name: "AI Product Leader",
       icon: "🤖",
     },
+    concierge: {
+      lead: "Amelia Chen",
+      title: "Head of Responsible AI",
+      bio: "Guides global teams on LLM governance, evaluation frameworks, and ethical launch reviews.",
+      contact: "amelia@mlcconcierge.com",
+    },
+    cohortWindows: [
+      {
+        id: "ai-q3",
+        label: "July 22 kickoff",
+        format: "Virtual • Responsible AI councils",
+        starts: "2024-07-22",
+        focus: "Evaluation frameworks & governance",
+      },
+      {
+        id: "ai-q4",
+        label: "November 4 kickoff",
+        format: "Virtual • Product leadership studio",
+        starts: "2024-11-04",
+        focus: "AI impact storytelling",
+      },
+    ],
+    spotlightProjects: [
+      {
+        id: "ai-eval",
+        title: "LLM evaluation dashboard",
+        description: "Design evaluation metrics, regression tracking, and qualitative review loops for a flagship LLM use case.",
+        outcome: "Executive-ready evaluation scorecard",
+      },
+      {
+        id: "ai-governance",
+        title: "AI governance charter",
+        description: "Define responsible launch gates, issue review templates, and compliance handoffs.",
+        outcome: "Governance charter endorsed by cross-functional partners",
+      },
+    ],
     stages: [
       {
         id: "systems",
@@ -203,11 +338,49 @@ export const learningPaths: LearningPath[] = [
     focus: "Multi-cloud architecture and observability",
     duration: "10-12 weeks",
     idealFor: ["Cloud Architects", "SRE Managers", "Platform Engineers"],
+    tier: "Pro",
+    recommendedCadence: "Bi-weekly reliability labs + asynchronous office hours",
     badge: {
       id: "badge-cloud-reliability",
       name: "Cloud Reliability Lead",
       icon: "☁️",
     },
+    concierge: {
+      lead: "Jonah Mwangi",
+      title: "Principal SRE",
+      bio: "Focuses on multi-cloud resiliency, observability, and FinOps guardrails for global teams.",
+      contact: "jonah@mlcconcierge.com",
+    },
+    cohortWindows: [
+      {
+        id: "cloud-q3",
+        label: "September 9 kickoff",
+        format: "Hybrid • Reliability game days",
+        starts: "2024-09-09",
+        focus: "Serverless resiliency & FinOps",
+      },
+      {
+        id: "cloud-q1",
+        label: "February 3 kickoff",
+        format: "Virtual • Multi-cloud architecture sessions",
+        starts: "2025-02-03",
+        focus: "Landing zones & telemetry",
+      },
+    ],
+    spotlightProjects: [
+      {
+        id: "cloud-telemetry",
+        title: "Telemetry architecture",
+        description: "Design an observability pipeline covering traces, metrics, and logs with service-level dashboards.",
+        outcome: "Unified telemetry blueprint",
+      },
+      {
+        id: "cloud-gameday",
+        title: "Reliability game day",
+        description: "Run a simulated failure event with cross-team responders and document lessons learned.",
+        outcome: "Game day debrief & action backlog",
+      },
+    ],
     stages: [
       {
         id: "architecture",
@@ -254,11 +427,49 @@ export const learningPaths: LearningPath[] = [
     focus: "Design leadership, operations, and storytelling",
     duration: "6-9 weeks",
     idealFor: ["Design Leads", "Product Designers", "Content Designers"],
+    tier: "Pro",
+    recommendedCadence: "Weekly studio critique + storytelling showcase",
     badge: {
       id: "badge-design-lead",
       name: "Design Leadership Catalyst",
       icon: "🎨",
     },
+    concierge: {
+      lead: "Harper Quinn",
+      title: "Director of Product Design",
+      bio: "Helps design leaders align storytelling, discovery, and operational excellence across orgs.",
+      contact: "harper@mlcconcierge.com",
+    },
+    cohortWindows: [
+      {
+        id: "design-q3",
+        label: "July 29 kickoff",
+        format: "Virtual • Storytelling studios",
+        starts: "2024-07-29",
+        focus: "Narrative-driven stakeholder decks",
+      },
+      {
+        id: "design-q4",
+        label: "November 18 kickoff",
+        format: "Hybrid • Discovery cafes",
+        starts: "2024-11-18",
+        focus: "Continuous discovery rituals",
+      },
+    ],
+    spotlightProjects: [
+      {
+        id: "design-playback",
+        title: "Storytelling playback",
+        description: "Craft an executive narrative that connects research insights to product investments.",
+        outcome: "Narrative deck with action roadmap",
+      },
+      {
+        id: "design-ops",
+        title: "Design ops blueprint",
+        description: "Define rituals, tooling, and adoption metrics for a high-performing design org.",
+        outcome: "Design ops operating manual",
+      },
+    ],
     stages: [
       {
         id: "discovery",

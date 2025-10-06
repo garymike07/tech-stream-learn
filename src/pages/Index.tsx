@@ -4,14 +4,24 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { categories } from "@/data/courses";
-import { ArrowRight, BookOpen, Users, Award, Code2, ShieldCheck, MonitorPlay, Sparkles } from "lucide-react";
+import { ArrowRight, BookOpen, Users, Award, Code2, ShieldCheck, MonitorPlay, Sparkles, Crown, Star, Diamond } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
 import { useTranslation } from "@/context/LocaleContext";
 
 const Index = () => {
-  const { monthlyPriceKes } = useAuth();
-  const formattedPrice = `KES ${monthlyPriceKes}/month`;
+  const { monthlyPriceKes, yearlyPriceKes } = useAuth();
+  const formattedMonthly = `KES ${monthlyPriceKes.toLocaleString()}`;
+  const formattedYearly = `KES ${yearlyPriceKes.toLocaleString()}`;
   const { t } = useTranslation();
+
+  const marqueeItems = [
+    "AI mentor prompts",
+    "Executive-ready reports",
+    "Cohort velocity dashboards",
+    "Concierge onboarding",
+    "Partner masterclasses",
+    "Project blueprints",
+  ];
 
   const heroHighlights = [
     {
@@ -79,28 +89,105 @@ const Index = () => {
     },
   ];
 
+  const pricingTiers = [
+    {
+      id: "free",
+      icon: Star,
+      badge: null,
+      title: t("landing.pricing.freeTitle"),
+      subtitle: t("landing.pricing.freeDescription"),
+      accent: "border-border/40",
+      highlight: false,
+      features: [
+        "Access any 3 full-length courses",
+        "30-day unlimited trial on sign-up",
+        "Exercise previews & local progress tracking",
+        "Learning streak analytics & achievements",
+      ],
+      button: {
+        label: t("landing.pricing.browseCourses"),
+        variant: "outline" as const,
+        link: "/categories",
+        disabled: false,
+      },
+    },
+    {
+      id: "pro",
+      icon: Crown,
+      badge: t("landing.pricing.proBadge"),
+      title: t("landing.pricing.proTitle", { args: [formattedMonthly] }),
+      subtitle: t("landing.pricing.proDescription"),
+      accent: "border-primary/50",
+      highlight: true,
+      features: [
+        "Unlimited courses, learning paths, and exercises",
+        "Full access to AI mentor prompts and coaching",
+        "Priority roadmap voting with same-day support",
+        "Downloadable briefs and certification reports",
+      ],
+      button: {
+        label: t("landing.pricing.comingSoonCta"),
+        variant: "secondary" as const,
+        link: null,
+        disabled: true,
+      },
+    },
+    {
+      id: "elite",
+      icon: Diamond,
+      badge: t("landing.pricing.eliteBadge"),
+      title: t("landing.pricing.eliteTitle", { args: [formattedYearly] }),
+      subtitle: t("landing.pricing.eliteDescription"),
+      accent: "border-secondary/45",
+      highlight: false,
+      features: [
+        "Concierge onboarding with personalised goal design",
+        "Private cohort scheduling & live strategy sessions",
+        "Quarterly executive skill-gap reviews",
+        "Invites to partner-led masterclasses & labs",
+      ],
+      button: {
+        label: t("landing.pricing.comingSoonCta"),
+        variant: "ghost" as const,
+        link: null,
+        disabled: true,
+      },
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
       <section className="relative overflow-hidden py-24 md:py-36">
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-[url('/mike-hero.png')] bg-cover bg-center opacity-[0.18] mix-blend-screen" />
-          <div className="absolute inset-0 bg-gradient-to-tr from-background via-background/80 to-transparent" />
+          <div className="absolute inset-0" style={{ background: "var(--gradient-radial-lux)" }} />
         </div>
         <div className="absolute right-[-12%] top-[-18%] h-[30rem] w-[30rem] rounded-full bg-primary/25 blur-3xl opacity-70 animate-diagonal-drift" />
         <div className="absolute left-[-20%] bottom-[-24%] h-[34rem] w-[34rem] rounded-full bg-secondary/22 blur-3xl opacity-65 animate-float-tilt" />
         <div className="container relative z-10 mx-auto px-4">
           <div className="hero-grid items-center">
             <div className="space-y-8">
-              <span className="hero-badge">
-                <Code2 className="h-3.5 w-3.5" />
-                {t("landing.hero.badge")}
-              </span>
+              <div className="space-y-4">
+                <span className="hero-badge">
+                  <Code2 className="h-3.5 w-3.5" />
+                  {t("landing.hero.badge")}
+                </span>
+                <div className="lux-marquee">
+                  <div className="lux-marquee-track">
+                    {[...marqueeItems, ...marqueeItems].map((item, index) => (
+                      <span key={`${item}-${index}`} className="lux-marquee-item">
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
               <h1 className="text-4xl font-bold md:text-6xl">
                 {t("landing.hero.title")}
               </h1>
               <p className="text-lg text-muted-foreground md:text-xl">
-                {t("landing.hero.subtitle", { values: { price: formattedPrice } })}
+                {t("landing.hero.subtitle", { values: { monthly: `${formattedMonthly}/month`, yearly: `${formattedYearly}/year` } })}
               </p>
               <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <Link to="/categories">
@@ -126,7 +213,7 @@ const Index = () => {
                 {heroHighlights.map((highlight) => (
                   <div
                     key={highlight.id}
-                    className="relative overflow-hidden rounded-2xl border border-border/40 bg-card/55 p-5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/45 hover:shadow-glow"
+                    className="relative overflow-hidden rounded-2xl border border-border/35 bg-card/55 p-5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-primary/45 hover:shadow-glow"
                   >
                     <Badge variant="outline" className="mb-3 border-border/50 bg-card/70 text-[0.68rem] uppercase tracking-[0.32em] text-muted-foreground">
                       {highlight.label}
@@ -137,7 +224,7 @@ const Index = () => {
               </div>
             </div>
             <div className="glass-panel glass-panel-strong relative overflow-hidden p-6 md:p-8">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/12 via-transparent to-secondary/18 opacity-80" />
+              <div className="absolute inset-0" style={{ background: "var(--gradient-premium)" }} />
               <div className="absolute -right-16 top-8 h-44 w-44 rounded-full bg-primary/22 blur-3xl" />
               <div className="absolute -bottom-16 left-14 h-52 w-52 rounded-full bg-secondary/18 blur-3xl" />
               <div className="relative z-10 space-y-6">
@@ -147,7 +234,7 @@ const Index = () => {
                     return (
                       <div
                         key={callout.id}
-                        className="group rounded-2xl border border-border/40 bg-card/65 p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-glow"
+                        className="group rounded-2xl border border-border/30 bg-card/70 p-4 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-primary/50 hover:shadow-glow"
                         style={{ animationDelay: `${index * 120}ms` }}
                       >
                         <div className="flex items-start gap-4">
@@ -167,7 +254,7 @@ const Index = () => {
                   {heroStats.map((stat) => (
                     <div
                       key={stat.id}
-                      className="rounded-2xl border border-border/45 bg-card/60 py-4 backdrop-blur transition-all hover:-translate-y-0.5 hover:border-primary/45"
+                      className="rounded-2xl border border-border/30 bg-card/70 py-4 backdrop-blur transition-all hover:-translate-y-0.5 hover:border-primary/45"
                     >
                       <p className="text-2xl font-semibold text-primary">{stat.value}</p>
                       <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">{stat.label}</p>
@@ -260,42 +347,53 @@ const Index = () => {
             <h2 className="mt-5 text-3xl font-bold md:text-4xl">{t("landing.pricing.title")}</h2>
             <p className="mt-2 text-lg text-muted-foreground">{t("landing.pricing.description")}</p>
           </div>
-          <div className="grid gap-6 md:grid-cols-2">
-            <Card className="relative overflow-hidden border border-border/40 glass-panel shadow-none">
-              <div className="absolute inset-0 bg-gradient-to-br from-card/40 via-transparent to-primary/5 opacity-60" />
-              <CardHeader className="relative z-10">
-                <CardTitle>{t("landing.pricing.freeTitle")}</CardTitle>
-                <CardDescription>{t("landing.pricing.freeDescription")}</CardDescription>
-              </CardHeader>
-              <CardContent className="relative z-10">
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li>✅ Full access to 3 complete courses</li>
-                  <li>✅ Dynamic exercise centre previews</li>
-                  <li>✅ Progress tracking on every lesson</li>
-                </ul>
-              </CardContent>
-            </Card>
-            <Card className="relative overflow-hidden border border-primary/45 glass-panel-strong shadow-glow">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-transparent to-secondary/20 opacity-80" />
-              <CardHeader className="relative z-10">
-                <CardTitle className="text-primary">{t("landing.pricing.premiumTitle", { args: [formattedPrice] })}</CardTitle>
-                <CardDescription className="text-primary/80">
-                  Enjoy a 30-day unlimited trial, then unlock advanced exercises, new tracks, and learning perks.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="relative z-10 space-y-4">
-                <ul className="space-y-2 text-sm text-primary/85">
-                  <li>✨ Unlimited courses & exercise walkthroughs</li>
-                  <li>✨ Early access to new tracks & badges</li>
-                  <li>✨ Priority influence on the roadmap</li>
-                </ul>
-                <Button asChild variant="secondary" disabled className="w-full shadow-glow">
-                  <span>{t("landing.pricing.premiumCta")}</span>
-                </Button>
-                <p className="text-xs text-primary/75">{t("landing.pricing.premiumNote")}</p>
-              </CardContent>
-            </Card>
+          <div className="grid gap-6 md:grid-cols-3">
+            {pricingTiers.map((tier) => {
+              const Icon = tier.icon;
+              const cardClasses = tier.highlight
+                ? "relative overflow-hidden border glass-panel-strong shadow-glow"
+                : "relative overflow-hidden border glass-panel";
+              return (
+                <Card key={tier.id} className={`${cardClasses} ${tier.accent}`}>
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/12 opacity-70" />
+                  <CardHeader className="relative z-10 space-y-4">
+                    <div className="flex items-center justify-between">
+                      <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/12 text-primary">
+                        <Icon className="h-5 w-5" />
+                      </span>
+                      {tier.badge ? (
+                        <Badge variant="outline" className="border-primary/40 text-primary">
+                          {tier.badge}
+                        </Badge>
+                      ) : null}
+                    </div>
+                    <CardTitle className={tier.highlight ? "text-primary" : undefined}>{tier.title}</CardTitle>
+                    <CardDescription className={tier.highlight ? "text-primary/80" : undefined}>{tier.subtitle}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="relative z-10 space-y-4">
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      {tier.features.map((feature) => (
+                        <li key={feature} className="flex items-start gap-2">
+                          <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-primary" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    {tier.button.link ? (
+                      <Button asChild variant={tier.button.variant} className="w-full shadow-glow" disabled={tier.button.disabled}>
+                        <Link to={tier.button.link}>{tier.button.label}</Link>
+                      </Button>
+                    ) : (
+                      <Button variant={tier.button.variant} className="w-full shadow-glow" disabled={tier.button.disabled}>
+                        {tier.button.label}
+                      </Button>
+                    )}
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
+          <p className="mt-6 text-center text-xs text-muted-foreground">{t("landing.pricing.comingSoonNote")}</p>
         </div>
       </section>
       <section className="py-16 md:py-24">
@@ -312,7 +410,7 @@ const Index = () => {
                   </Button>
                 </Link>
                 <Link to="/subscribe" className="text-sm text-primary underline-offset-4 hover:underline">
-                  {t("landing.pricing.unlockPricing", { args: [formattedPrice] })}
+                  {t("landing.pricing.unlockPricing", { args: [`${formattedMonthly}/month`, `${formattedYearly}/year`] })}
                 </Link>
               </div>
             </div>

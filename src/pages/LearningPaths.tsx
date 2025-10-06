@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import { learningPaths } from "@/data/learningPaths";
@@ -9,17 +9,59 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, Compass, Flag, Sparkles, Trophy } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import {
+  ArrowRight,
+  Calendar,
+  CheckCircle2,
+  ClipboardList,
+  Clock,
+  Compass,
+  Crown,
+  Flag,
+  Globe2,
+  MessageCircle,
+  PhoneCall,
+  Share2,
+  Sparkles,
+  Trophy,
+  Users,
+} from "lucide-react";
 
 const courseTitleMap = new Map(courses.map((course) => [course.id, course.title]));
 
 const LearningPaths = () => {
   const navigate = useNavigate();
   const { enrollments, user } = useAuth();
-  const { pathProgress, getPathProgress, achievements, isCourseCompleted } = useProgress();
+  const { pathProgress, getPathProgress, achievements, isCourseCompleted, completionRecords } = useProgress();
   const [activePathId, setActivePathId] = useState<string>(learningPaths[0]?.id ?? "");
+  const [selectedCohortId, setSelectedCohortId] = useState<string | null>(learningPaths[0]?.cohortWindows?.[0]?.id ?? null);
+  const [shareState, setShareState] = useState<"idle" | "copied" | "error">("idle");
+  const [isConciergeOpen, setIsConciergeOpen] = useState(false);
   const activePath = useMemo(() => learningPaths.find((path) => path.id === activePathId) ?? learningPaths[0], [activePathId]);
   const activePathProgress = getPathProgress(activePath?.id ?? "");
+  const activeCohort = useMemo(() => activePath?.cohortWindows?.find((cohort) => cohort.id === selectedCohortId) ?? activePath?.cohortWindows?.[0], [activePath, selectedCohortId]);
+
+  useEffect(() => {
+    if (!activePath) return;
+    const nextCohortId = activePath.cohortWindows?.[0]?.id ?? null;
+    setSelectedCohortId(nextCohortId);
+    setIsConciergeOpen(false);
+  }, [activePath]);
+
+  useEffect(() => {
+    if (shareState === "idle") return;
+    const timeout = setTimeout(() => setShareState("idle"), 2500);
+    return () => clearTimeout(timeout);
+  }, [shareState]);
 
   const stageSummaries = useMemo(() => {
     if (!activePath) return [] as Array<{
@@ -41,6 +83,47 @@ const LearningPaths = () => {
     });
   }, [activePath, isCourseCompleted]);
 
+  const completionsLast30Days = useMemo(() => {
+    const now = Date.now();
+    const thirtyDaysMs = 30 * 24 * 60 * 60 * 1000;
+    return completionRecords.filter((record) => now - new Date(record.completedAt).getTime() <= thirtyDaysMs).length;
+  }, [completionRecords]);
+
+  const daysSinceLastCompletion = useMemo(() => {
+    const lastCompletion = completionRecords[0];
+    if (!lastCompletion) return null;
+    const diff = Date.now() - new Date(lastCompletion.completedAt).getTime();
+    return Math.max(0, Math.floor(diff / (1000 * 60 * 60 * 24)));
+  }, [completionRecords]);
+
+  const formatDate = useCallback((value: string) => {
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return value;
+    return new Intl.DateTimeFormat(undefined, {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    }).format(date);
+  }, []);
+
+  const handleSharePlan = useCallback(async () => {
+    if (!activePath) return;
+    const nextCourseId = activePathProgress?.nextCourseId;
+    const nextCourseTitle = nextCourseId ? courseTitleMap.get(nextCourseId) ?? nextCourseId : "capstone milestone";
+    const summary = `I'm doubling down on the ${activePath.title} path (${activePath.tier}) — next up ${nextCourseTitle}. Join my cohort?`;
+    try {
+      if (typeof navigator !== "undefined" && navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(summary);
+        setShareState("copied");
+      } else {
+        setShareState("error");
+      }
+    } catch (error) {
+      console.error("Failed to copy plan", error);
+      setShareState("error");
+    }
+  }, [activePath, activePathProgress]);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
@@ -58,18 +141,33 @@ const LearningPaths = () => {
                 Advance with structured sequences, milestone check-ins, and achievements that celebrate consistent execution.
                 {user ? ` Welcome back, ${user.fullName.split(" ")[0]} — resume where you left off.` : " Sign in to sync your progress."}
               </p>
-              <div className="grid gap-3 sm:grid-cols-3">
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 <div className="rounded-2xl border border-border/50 bg-card/60 p-4 text-sm">
                   <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Paths available</p>
                   <p className="mt-2 text-2xl font-semibold">{learningPaths.length}</p>
                 </div>
                 <div className="rounded-2xl border border-border/50 bg-card/60 p-4 text-sm">
-                  <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Courses completed</p>
-                  <p className="mt-2 text-2xl font-semibold">{pathProgress.reduce((sum, progress) => sum + progress.completed, 0)}</p>
+                  <p className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                    <Crown className="h-3.5 w-3.5 text-primary" /> Active tier
+                  </p>
+                  <p className="mt-2 text-2xl font-semibold">{activePath?.tier ?? "Select a path"}</p>
+                  <p className="mt-1 text-xs text-muted-foreground/80">
+                    {activePath?.recommendedCadence ?? "Pick a path to unlock cadence coaching."}
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-border/50 bg-card/60 p-4 text-sm">
+                  <p className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                    <Clock className="h-3.5 w-3.5 text-primary" /> 30-day completions
+                  </p>
+                  <p className="mt-2 text-2xl font-semibold">{completionsLast30Days}</p>
+                  <p className="mt-1 text-xs text-muted-foreground/80">
+                    {daysSinceLastCompletion === null ? "No completions yet — start your first course." : `Last milestone ${daysSinceLastCompletion === 0 ? "today" : `${daysSinceLastCompletion}d ago`}.`}
+                  </p>
                 </div>
                 <div className="rounded-2xl border border-border/50 bg-card/60 p-4 text-sm">
                   <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Achievements</p>
                   <p className="mt-2 text-2xl font-semibold">{achievements.filter((achievement) => achievement.earned).length}</p>
+                  <p className="mt-1 text-xs text-muted-foreground/80">Keep momentum to unlock elite badges.</p>
                 </div>
               </div>
             </div>
@@ -113,10 +211,16 @@ const LearningPaths = () => {
                     <span className="text-3xl" role="img" aria-label={path.badge.name}>
                       {path.badge.icon}
                     </span>
-                    <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">{path.duration}</span>
+                    <div className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                      <span className="rounded-full border border-border/40 px-2 py-0.5 font-semibold text-foreground/80">
+                        {path.tier}
+                      </span>
+                      <span>{path.duration}</span>
+                    </div>
                   </div>
                   <h3 className="mt-4 text-lg font-semibold">{path.title}</h3>
                   <p className="text-sm text-muted-foreground mt-2">{path.description}</p>
+                  <p className="mt-3 text-xs text-muted-foreground/80">Cadence: {path.recommendedCadence}</p>
                   <div className="mt-6 space-y-2">
                     <div className="flex items-center justify-between text-xs text-muted-foreground">
                       <span>{progress?.completed ?? 0} of {progress?.total ?? path.stages.reduce((sum, stage) => sum + stage.courseIds.length, 0)} completed</span>
@@ -163,6 +267,131 @@ const LearningPaths = () => {
                   </div>
                 ))}
               </div>
+
+              {(activePath.concierge || activePath.cohortWindows?.length || activePath.spotlightProjects?.length) ? (
+                <div className="mt-8 grid gap-4 lg:grid-cols-3">
+                  {activePath.concierge ? (
+                    <div className="rounded-3xl border border-border/40 bg-background/60 p-6">
+                      <p className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                        <PhoneCall className="h-3.5 w-3.5 text-primary" /> Concierge onboarding
+                      </p>
+                      <h3 className="mt-3 text-lg font-semibold">{activePath.concierge.lead}</h3>
+                      <p className="text-sm text-muted-foreground">{activePath.concierge.title}</p>
+                      <p className="mt-3 text-sm text-muted-foreground/80">{activePath.concierge.bio}</p>
+                      <Dialog open={isConciergeOpen} onOpenChange={setIsConciergeOpen}>
+                        <DialogTrigger asChild>
+                          <Button variant="outline" className="mt-4 w-full justify-center border-primary/40 text-primary">
+                            Preview onboarding
+                          </Button>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-lg border border-border/60 bg-background/95 text-foreground">
+                          <DialogHeader>
+                            <DialogTitle>Concierge kickoff sequence</DialogTitle>
+                            <DialogDescription>
+                              A 14-day accelerator to align your goals, cadence, and executive outcomes.
+                            </DialogDescription>
+                          </DialogHeader>
+                          <div className="space-y-4 text-sm text-muted-foreground">
+                            <div className="rounded-2xl border border-border/40 bg-background/60 p-4">
+                              <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground/70">Day 1</p>
+                              <p className="mt-2 font-semibold">Concierge intake & goal shaping</p>
+                              <p className="mt-1 text-muted-foreground/80">Share current priorities, risks, and executive expectations.</p>
+                            </div>
+                            <div className="rounded-2xl border border-border/40 bg-background/60 p-4">
+                              <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground/70">Day 5</p>
+                              <p className="mt-2 font-semibold">Cadence calibration workshop</p>
+                              <p className="mt-1 text-muted-foreground/80">Map deep work blocks, async rituals, and accountability prompts.</p>
+                            </div>
+                            <div className="rounded-2xl border border-border/40 bg-background/60 p-4">
+                              <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground/70">Day 14</p>
+                              <p className="mt-2 font-semibold">Executive playback review</p>
+                              <p className="mt-1 text-muted-foreground/80">Rehearse your first spotlight deliverable with concierge feedback.</p>
+                            </div>
+                          </div>
+                          <DialogFooter className="flex flex-col gap-2 sm:flex-row sm:justify-between">
+                            <Button variant="ghost" className="justify-start px-0 text-muted-foreground" onClick={() => setIsConciergeOpen(false)}>
+                              Close preview
+                            </Button>
+                            <Button asChild>
+                              <a href={`mailto:${activePath.concierge.contact}?subject=Concierge kickoff scheduling`}>
+                                Book kickoff
+                              </a>
+                            </Button>
+                          </DialogFooter>
+                        </DialogContent>
+                      </Dialog>
+                      <Button asChild variant="link" className="px-0 text-sm text-primary">
+                        <a href={`mailto:${activePath.concierge.contact}`}>
+                          Connect with concierge
+                          <ArrowRight className="ml-2 h-3.5 w-3.5" />
+                        </a>
+                      </Button>
+                    </div>
+                  ) : null}
+
+                  {activePath.cohortWindows?.length ? (
+                    <div className="rounded-3xl border border-border/40 bg-background/60 p-6">
+                      <p className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                        <Calendar className="h-3.5 w-3.5 text-primary" /> Upcoming cohorts
+                      </p>
+                      <div className="mt-4 space-y-2">
+                        {activePath.cohortWindows.map((cohort) => {
+                          const isSelected = cohort.id === activeCohort?.id;
+                          return (
+                            <button
+                              key={cohort.id}
+                              onClick={() => setSelectedCohortId(cohort.id)}
+                              className={`w-full rounded-2xl border px-4 py-3 text-left transition-all ${
+                                isSelected ? "border-primary/50 bg-primary/10 text-primary" : "border-border/40 bg-background/40"
+                              }`}
+                            >
+                              <p className="text-sm font-semibold">{cohort.label}</p>
+                              <p className="text-xs text-muted-foreground/80">{cohort.format}</p>
+                              <p className="mt-1 text-xs text-muted-foreground/60">{formatDate(cohort.starts)} • {cohort.focus}</p>
+                            </button>
+                          );
+                        })}
+                      </div>
+                      {activeCohort ? (
+                        <div className="mt-4 rounded-2xl border border-primary/30 bg-primary/10 p-4 text-xs text-primary">
+                          <p className="uppercase tracking-[0.3em]">Selected cohort</p>
+                          <p className="mt-1 text-sm font-semibold">{activeCohort.label}</p>
+                          <p className="mt-1 text-primary/80">Focus: {activeCohort.focus}</p>
+                          <Button variant="secondary" className="mt-3 w-full justify-center">
+                            Reserve my seat
+                          </Button>
+                        </div>
+                      ) : null}
+                    </div>
+                  ) : null}
+
+                  <div className="rounded-3xl border border-border/40 bg-background/60 p-6">
+                    <p className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                      <Users className="h-3.5 w-3.5 text-primary" /> Collaborative studio
+                    </p>
+                    <p className="mt-3 text-sm text-muted-foreground/80">
+                      Rally peers, spin up study rooms, and share your plan with leaders for accountability.
+                    </p>
+                    <div className="mt-4 space-y-2 text-sm text-muted-foreground/80">
+                      <p className="flex items-center gap-2">
+                        <MessageCircle className="h-4 w-4 text-primary" /> Weekly mastermind prompts unlocked for elite cohorts.
+                      </p>
+                      <p className="flex items-center gap-2">
+                        <Globe2 className="h-4 w-4 text-primary" /> Auto-match to regional accountability partners.
+                      </p>
+                    </div>
+                    <div className="mt-5 flex flex-col gap-2">
+                      <Button variant="outline" className="w-full justify-center border-primary/40 text-primary">
+                        Launch live study room
+                      </Button>
+                      <Button onClick={handleSharePlan} variant="secondary" className="w-full justify-center">
+                        <Share2 className="mr-2 h-4 w-4" />
+                        {shareState === "copied" ? "Plan copied!" : shareState === "error" ? "Copy unavailable" : "Share my roadmap"}
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              ) : null}
             </div>
 
             <div className="glass-panel border border-border/45 p-8 space-y-8">
@@ -215,6 +444,40 @@ const LearningPaths = () => {
                 </div>
               ))}
             </div>
+
+            {activePath.spotlightProjects?.length ? (
+              <div className="glass-panel border border-border/45 p-8">
+                <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                  <div className="space-y-2 md:max-w-xl">
+                    <Badge variant="outline" className="border-primary/40 text-primary">
+                      <ClipboardList className="mr-2 h-3.5 w-3.5" /> Spotlight projects
+                    </Badge>
+                    <h3 className="text-2xl font-semibold">Flagship deliverables for the {activePath.tier} experience</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Showcase mastery with projects designed to stand out during executive reviews.
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-start gap-3">
+                    <Button variant="outline" className="border-primary/40 text-primary">
+                      Download playbook
+                    </Button>
+                    <Button variant="ghost" className="px-0 text-sm text-muted-foreground">
+                      View past cohorts
+                      <ArrowRight className="ml-2 h-3.5 w-3.5" />
+                    </Button>
+                  </div>
+                </div>
+                <div className="mt-6 grid gap-4 md:grid-cols-2">
+                  {activePath.spotlightProjects.map((project) => (
+                    <div key={project.id} className="rounded-3xl border border-border/40 bg-background/50 p-6">
+                      <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">{project.outcome}</p>
+                      <h4 className="mt-3 text-lg font-semibold">{project.title}</h4>
+                      <p className="mt-2 text-sm text-muted-foreground">{project.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : null}
 
             <div className="glass-panel border border-border/45 p-8">
               <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">

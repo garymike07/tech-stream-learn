@@ -6,12 +6,13 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { categories, courses } from "@/data/courses";
+import { learningPaths } from "@/data/learningPaths";
 import { useAuth } from "@/context/AuthContext";
 import { useProgress } from "@/context/ProgressContext";
 import { buildCourseRecommendations, buildPathRecommendations } from "@/utils/recommendations";
 import { toast } from "@/hooks/use-toast";
 import { format, differenceInCalendarDays, isSameDay } from "date-fns";
-import { Activity, Compass, Flame, Share2, Sparkles, TrendingUp } from "lucide-react";
+import { Activity, Bell, Bot, Calendar, Compass, Flame, Share2, Sparkles, Target, TrendingUp } from "lucide-react";
 import { useTranslation } from "@/context/LocaleContext";
 
 const categoryLabelMap = new Map(categories.map((category) => [category.id, category.name]));
@@ -35,7 +36,7 @@ const computeStreak = (timestamps: Date[]) => {
 
 const Insights = () => {
   const { user, enrollments } = useAuth();
-  const { completedCourses, completionRecords, pathProgress } = useProgress();
+  const { completedCourses, completionRecords, pathProgress, achievements } = useProgress();
   const { t } = useTranslation();
 
   const completionDates = useMemo(() => completionRecords.map((record) => new Date(record.completedAt)), [completionRecords]);
@@ -93,6 +94,109 @@ const Insights = () => {
   );
 
   const pathRecommendations = useMemo(() => buildPathRecommendations(pathProgress), [pathProgress]);
+
+  const leadingPathProgress = useMemo(() => {
+    if (pathProgress.length === 0) return null;
+    return [...pathProgress].sort((a, b) => b.percentage - a.percentage)[0];
+  }, [pathProgress]);
+
+  const leadingPathDefinition = useMemo(() => {
+    if (!leadingPathProgress) return null;
+    return learningPaths.find((path) => path.id === leadingPathProgress.pathId) ?? null;
+  }, [leadingPathProgress]);
+
+  const eliteProgressDetails = useMemo(
+    () =>
+      learningPaths
+        .filter((path) => path.tier === "Elite")
+        .map((path) => ({
+          path,
+          progress: pathProgress.find((entry) => entry.pathId === path.id) ?? null,
+        })),
+    [pathProgress],
+  );
+
+  const upcomingCohorts = useMemo(() => {
+    return learningPaths
+      .flatMap((path) =>
+        (path.cohortWindows ?? []).map((window) => ({
+          ...window,
+          pathTitle: path.title,
+          tier: path.tier,
+        })),
+      )
+      .sort((a, b) => new Date(a.starts).getTime() - new Date(b.starts).getTime())
+      .slice(0, 3);
+  }, []);
+
+  const aiMentorPrompts = useMemo(() => {
+    const prompts = [] as Array<{ id: string; title: string; description: string; action: string }>;
+
+    if (completionsLast7Days === 0) {
+      prompts.push({
+        id: "cadence-reset",
+        title: "Refocus your cadence",
+        description: "No completions logged this week. Protect a 90-minute deep work block to rebuild momentum.",
+        action: "Block deep work",
+      });
+    }
+
+    const activeElite = eliteProgressDetails.find((entry) => entry.progress && entry.progress.percentage > 0);
+    if (activeElite?.progress) {
+      const { path, progress } = activeElite;
+      const remaining = Math.max(0, 100 - progress.percentage);
+      prompts.push({
+        id: "elite-check-in",
+        title: `${path.title} concierge checkpoint`,
+        description: `You are ${progress.percentage}% through this elite track. Share blockers with your concierge to accelerate the remaining ${remaining}% milestone.`,
+        action: "Message concierge",
+      });
+    }
+
+    if (leadingPathDefinition?.spotlightProjects?.length) {
+      const nextSpotlight = leadingPathDefinition.spotlightProjects[0];
+      prompts.push({
+        id: "spotlight-readiness",
+        title: `${nextSpotlight.title} rehearsal`,
+        description: `Draft the narrative for “${nextSpotlight.outcome}” and gather proof points before your next executive playback.`,
+        action: "Open spotlight brief",
+      });
+    }
+
+    return prompts;
+  }, [completionsLast7Days, eliteProgressDetails, leadingPathDefinition]);
+
+  const upcomingAchievement = useMemo(() => achievements.find((achievement) => !achievement.earned && achievement.progress > 0)?.title ?? null, [achievements]);
+
+  const notificationFeed = useMemo(() => {
+    const feed = [] as Array<{ id: string; title: string; description: string; meta: string }>;
+    const cohort = upcomingCohorts[0];
+    if (cohort) {
+      feed.push({
+        id: `cohort-${cohort.id}`,
+        title: `${cohort.pathTitle} cohort starting ${format(new Date(cohort.starts), "PP")}`,
+        description: cohort.focus,
+        meta: `${cohort.format} • ${cohort.tier}`,
+      });
+    }
+    if (upcomingAchievement) {
+      feed.push({
+        id: "achievement",
+        title: `${upcomingAchievement} is within reach`,
+        description: "Stay on cadence to unlock your next badge and concierge celebration call.",
+        meta: "Achievement milestone",
+      });
+    }
+    if (streak > 0) {
+      feed.push({
+        id: "streak",
+        title: `Streak: ${streak} day${streak === 1 ? "" : "s"}`,
+        description: "Keep your momentum with a quick lesson recap today.",
+        meta: "Momentum",
+      });
+    }
+    return feed;
+  }, [upcomingCohorts, upcomingAchievement, streak]);
 
   const handleShare = async () => {
     const snapshot = [
@@ -207,6 +311,85 @@ const Insights = () => {
               <p className="mt-2 text-sm text-muted-foreground">{categoryCoverage}%</p>
             </CardContent>
           </Card>
+        </section>
+
+        <section className="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
+          <Card className="glass-panel border border-border/45 lg:col-span-2">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-base">
+                <Bot className="h-4 w-4 text-primary" /> AI mentor prompts
+              </CardTitle>
+              <CardDescription>Adaptive nudges crafted from your recent progress.</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              {aiMentorPrompts.length === 0 ? (
+                <p className="text-sm text-muted-foreground">All clear! Keep shipping and we&apos;ll surface new prompts after your next milestone.</p>
+              ) : (
+                aiMentorPrompts.map((prompt) => (
+                  <div key={prompt.id} className="rounded-2xl border border-border/40 bg-card/60 p-4">
+                    <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                      <div>
+                        <h3 className="text-sm font-semibold">{prompt.title}</h3>
+                        <p className="text-sm text-muted-foreground/80">{prompt.description}</p>
+                      </div>
+                      <Button variant="ghost" className="px-0 text-primary">
+                        {prompt.action}
+                        <ArrowRight className="ml-2 h-3.5 w-3.5" />
+                      </Button>
+                    </div>
+                  </div>
+                ))
+              )}
+            </CardContent>
+          </Card>
+
+          <Card className="glass-panel border border-border/45">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-base">
+                <Bell className="h-4 w-4 text-primary" /> Notifications center
+              </CardTitle>
+              <CardDescription>Key events curated for your tier.</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              {notificationFeed.length === 0 ? (
+                <p className="text-sm text-muted-foreground">You&apos;re caught up. We&apos;ll ping you when new cohorts or milestones unlock.</p>
+              ) : (
+                notificationFeed.map((item) => (
+                  <div key={item.id} className="rounded-2xl border border-border/40 bg-card/60 p-4">
+                    <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground/70">{item.meta}</p>
+                    <h3 className="mt-2 text-sm font-semibold">{item.title}</h3>
+                    <p className="mt-1 text-sm text-muted-foreground/80">{item.description}</p>
+                  </div>
+                ))
+              )}
+            </CardContent>
+          </Card>
+
+          {leadingPathDefinition && leadingPathProgress ? (
+            <Card className="glass-panel border border-border/45">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-base">
+                  <Target className="h-4 w-4 text-primary" /> Spotlight readiness
+                </CardTitle>
+                <CardDescription>{leadingPathDefinition.title}</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <Progress value={leadingPathProgress.percentage} className="h-2" />
+                  <p className="mt-2 text-sm text-muted-foreground">{leadingPathProgress.percentage}% complete</p>
+                </div>
+                {leadingPathDefinition.spotlightProjects?.slice(0, 2).map((project) => (
+                  <div key={project.id} className="rounded-2xl border border-border/40 bg-card/60 p-3">
+                    <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">{project.outcome}</p>
+                    <p className="mt-1 text-sm font-semibold">{project.title}</p>
+                  </div>
+                ))}
+                <Button asChild variant="secondary" className="w-full justify-center">
+                  <Link to="/paths">Review path dashboard</Link>
+                </Button>
+              </CardContent>
+            </Card>
+          ) : null}
         </section>
 
         <section className="space-y-4">

@@ -131,6 +131,15 @@
   }
 }
 
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 @layer components {
   .animate-glow-pulse {
     animation: glow-pulse 6s ease-in-out infinite;
@@ -163,15 +172,20 @@
 
   .glass-panel {
     background: var(--surface-glass);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(var(--blur-soft));
+    -webkit-backdrop-filter: blur(var(--blur-soft));
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
+    border: var(--border-glass);
+    transition: var(--transition-lux);
   }
 
   .glass-panel-strong {
     background: var(--surface-glass-strong);
-    box-shadow: var(--shadow-lg);
+    backdrop-filter: blur(var(--blur-strong));
+    -webkit-backdrop-filter: blur(var(--blur-strong));
+    box-shadow: var(--shadow-lux);
+    border: var(--border-glass-strong);
   }
 
   .hero-badge {
@@ -199,5 +213,66 @@
       grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
       align-items: stretch;
     }
+  }
+
+  .lux-divider {
+    position: relative;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsla(var(--primary) / 0.35), transparent);
+  }
+
+  .lux-marquee {
+    position: relative;
+    overflow: hidden;
+    border-radius: 999px;
+    border: 1px solid hsla(var(--primary) / 0.22);
+    background: hsla(var(--primary) / 0.08);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+
+  .lux-marquee::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, hsla(var(--primary) / 0.35), transparent);
+    opacity: 0.35;
+  }
+
+  .lux-marquee-track {
+    display: flex;
+    width: max-content;
+    gap: var(--space-lg);
+    animation: marquee-scroll 24s linear infinite;
+  }
+
+  .lux-marquee:hover .lux-marquee-track {
+    animation-play-state: paused;
+  }
+
+  .lux-marquee-item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-xxs) var(--space-sm);
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: hsl(var(--primary));
+    background: hsla(var(--primary) / 0.12);
+    border-radius: 999px;
+  }
+
+  .lux-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xxs);
+    padding: var(--space-xxs) var(--space-sm);
+    border-radius: 999px;
+    background: var(--gradient-premium);
+    color: hsl(var(--primary-foreground));
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
   }
 }

@@ -16,6 +16,7 @@ interface AuthContextValue {
   trialEndsAt: string | null;
   trialDaysRemaining: number | null;
   monthlyPriceKes: number;
+  yearlyPriceKes: number;
   maxFreeCourses: number;
   logout: () => Promise<void>;
   enrollCourse: (courseId: string) => void;
@@ -35,7 +36,8 @@ const STORAGE_KEYS = {
 } as const;
 
 const TRIAL_DURATION_DAYS = 30;
-const MONTHLY_PRICE_KES = 500;
+const MONTHLY_PRICE_KES = 2000;
+const YEARLY_PRICE_KES = 20000;
 
 const AuthContext = createContext<AuthContextValue | undefined>(undefined);
 
@@ -176,6 +178,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [trialDaysRemaining, setTrialDaysRemaining] = useState<number | null>(null);
   const maxFreeCourses = 3;
   const monthlyPriceKes = MONTHLY_PRICE_KES;
+  const yearlyPriceKes = YEARLY_PRICE_KES;
 
   const userEmail = useMemo(() => {
     const emailAddress = clerkUser?.primaryEmailAddress?.emailAddress;
@@ -268,7 +271,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         const currentCount = enrollments.length;
         const isExisting = enrollments.includes(courseId);
         if (!isExisting && currentCount >= maxFreeCourses) {
-          throw new Error(`Free plan limit reached. Subscribe for unlimited course access at KES ${MONTHLY_PRICE_KES}/month once checkout opens.`);
+          throw new Error(
+            `Free plan limit reached. Subscribe for unlimited course access at KES ${MONTHLY_PRICE_KES}/month or KES ${YEARLY_PRICE_KES}/year once checkout opens.`,
+          );
         }
       }
 
@@ -302,12 +307,25 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       trialEndsAt,
       trialDaysRemaining,
       monthlyPriceKes,
+      yearlyPriceKes,
       maxFreeCourses,
       logout,
       enrollCourse,
       requestSubscription,
     }),
-    [user, enrollments, subscriptionStatus, trialEndsAt, trialDaysRemaining, monthlyPriceKes, maxFreeCourses, logout, enrollCourse, requestSubscription],
+    [
+      user,
+      enrollments,
+      subscriptionStatus,
+      trialEndsAt,
+      trialDaysRemaining,
+      monthlyPriceKes,
+      yearlyPriceKes,
+      maxFreeCourses,
+      logout,
+      enrollCourse,
+      requestSubscription,
+    ],
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

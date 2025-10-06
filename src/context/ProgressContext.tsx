@@ -230,6 +230,16 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
       courses.filter((course) => course.difficulty === "Advanced").map((course) => course.id),
     );
     const advancedCompleted = completedCourses.filter((courseId) => advancedCourseIds.has(courseId)).length;
+    const elitePathIds = learningPaths.filter((path) => path.tier === "Elite").map((path) => path.id);
+    const eliteProgress = pathProgress
+      .filter((progress) => elitePathIds.includes(progress.pathId))
+      .reduce((max, progress) => Math.max(max, progress.percentage), 0);
+
+    const now = Date.now();
+    const sevenDaysMs = 7 * 24 * 60 * 60 * 1000;
+    const thirtyDaysMs = 30 * 24 * 60 * 60 * 1000;
+    const completionsLast7Days = completionRecords.filter((record) => now - new Date(record.completedAt).getTime() <= sevenDaysMs).length;
+    const completionsLast30Days = completionRecords.filter((record) => now - new Date(record.completedAt).getTime() <= thirtyDaysMs).length;
 
     const definitions: Achievement[] = [
       {
@@ -282,10 +292,40 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
         earned: advancedCompleted >= 3,
         progress: Math.min(1, advancedCompleted / 3) || 0,
       },
+      {
+        id: "elite-contender",
+        title: "Elite Contender",
+        description: "Progress halfway through an elite path to unlock concierge intensives.",
+        requirementLabel: "50% elite path progress",
+        current: eliteProgress,
+        target: 50,
+        earned: eliteProgress >= 50,
+        progress: Math.min(1, eliteProgress / 50) || 0,
+      },
+      {
+        id: "momentum-keeper",
+        title: "Momentum Keeper",
+        description: "Complete three courses in a 30-day window to maintain your cadence.",
+        requirementLabel: "3 completions in 30 days",
+        current: completionsLast30Days,
+        target: 3,
+        earned: completionsLast30Days >= 3,
+        progress: Math.min(1, completionsLast30Days / 3) || 0,
+      },
+      {
+        id: "weekly-rhythm",
+        title: "Weekly Rhythm",
+        description: "Log a completion every week to stay aligned with coaching prompts.",
+        requirementLabel: "1 completion this week",
+        current: completionsLast7Days,
+        target: 1,
+        earned: completionsLast7Days >= 1,
+        progress: Math.min(1, completionsLast7Days / 1) || 0,
+      },
     ];
 
     return definitions.map((definition) => ({ ...definition }));
-  }, [completedCourses, pathProgress]);
+  }, [completedCourses, completionRecords, pathProgress]);
 
   const value = useMemo<ProgressContextValue>(
     () => ({
