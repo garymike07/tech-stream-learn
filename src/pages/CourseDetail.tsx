@@ -21,6 +21,8 @@ import {
   CheckCircle2,
   ClipboardList,
   Bot,
+  FileDown,
+  Download,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/context/AuthContext";
@@ -28,15 +30,35 @@ import { useProgress } from "@/context/ProgressContext";
 import { toast } from "@/hooks/use-toast";
 import { Separator } from "@/components/ui/separator";
 import { buildCourseIntel } from "@/utils/contentIntelligence";
+import CertificateTemplate from "@/components/certificates/CertificateTemplate";
+import { downloadCertificate } from "@/utils/certificates";
 
 const CourseDetail = () => {
   const { courseId } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
   const { user, enrollCourse, enrollments, subscriptionStatus, maxFreeCourses, trialDaysRemaining, monthlyPriceKes } = useAuth();
-  const { isCourseCompleted, completedCourses } = useProgress();
+  const { isCourseCompleted, completedCourses, certificates, issueCertificate } = useProgress();
   const course = useMemo(() => courses.find((c) => c.id === courseId), [courseId]);
   const courseIntel = useMemo(() => (course ? buildCourseIntel(course, completedCourses) : null), [course, completedCourses]);
+
+  const courseCertificate = useMemo(
+    () =>
+      certificates.find(
+        (certificate) => certificate.scope === "course" && certificate.courseId === course?.id && certificate.moduleId === null,
+      ) ?? null,
+    [certificates, course?.id],
+  );
+
+  const moduleCertificateMap = useMemo(() => {
+    const map = new Map<string, typeof certificates[number]>();
+    certificates.forEach((certificate) => {
+      if (certificate.scope === "module" && certificate.moduleId) {
+        map.set(certificate.moduleId, certificate);
+      }
+    });
+    return map;
+  }, [certificates]);
 
   if (!course || !courseIntel) {
     return (
@@ -62,6 +84,91 @@ const CourseDetail = () => {
   const hasUnlimitedAccess = subscriptionStatus === "premium" || isTrialActive;
   const hasFreeQuota = hasUnlimitedAccess || isEnrolled || enrollments.length < maxFreeCourses;
   const formattedPrice = `KES ${monthlyPriceKes}/month`;
+
+  const handleCourseCertificateDownload = async (format: "png" | "svg") => {
+    if (!courseCompleted) {
+      toast({
+        title: "Complete the course",
+        description: "Finish all modules to unlock your certificate.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    try {
+      const certificate =
+        courseCertificate ??
+        issueCertificate({
+          scope: "course",
+          courseId: course.id,
+          highlights: [
+            `Mastered the executive curriculum for ${course.title}.`,
+            course.duration ? `Completed ${course.duration} of guided sessions.` : "Completed guided experience.",
+            `Recognised at tier ${courseCertificate?.tier ?? "Executive"}.`,
+          ],
+        });
+      if (!certificate) {
+        toast({
+          title: "Certificate unavailable",
+          description: "We could not prepare your certificate. Please retry shortly.",
+          variant: "destructive",
+        });
+        return;
+      }
+      await downloadCertificate(certificate, { format });
+      toast({ title: "Certificate ready", description: `${format.toUpperCase()} saved successfully.` });
+    } catch (error) {
+      console.error("Course certificate download failed", error);
+      toast({
+        title: "Export failed",
+        description: "We could not export the certificate. Try again soon.",
+        variant: "destructive",
+      });
+    }
+  };
+
+  const buildModuleHighlights = (moduleTitle: string, sectionTitles: string[]) => {
+    const primary = sectionTitles[0] ? `Key focus: ${sectionTitles[0]}` : `Specialised mastery in ${moduleTitle}`;
+    const secondary = sectionTitles[1] ? `Extended practice: ${sectionTitles[1]}` : `Executive application of ${moduleTitle}`;
+    const tertiary = sectionTitles[2] ? `Concierge outcome: ${sectionTitles[2]}` : `Embedded concierge rituals from ${moduleTitle}`;
+    return [primary, secondary, tertiary];
+  };
+
+  const handleModuleCertificateDownload = async (module: (typeof course.modules)[number], format: "png" | "svg") => {
+    try {
+      const existing = moduleCertificateMap.get(module.id);
+      const highlights = buildModuleHighlights(
+        module.title,
+        module.sections.map((section) => section.title).slice(0, 3),
+      );
+      const certificate =
+        existing ??
+        issueCertificate({
+          scope: "module",
+          courseId: course.id,
+          moduleId: module.id,
+          title: `${course.title} • ${module.title}`,
+          highlights,
+        });
+      if (!certificate) {
+        toast({
+          title: "Certificate unavailable",
+          description: "We could not prepare this module certificate.",
+          variant: "destructive",
+        });
+        return;
+      }
+      await downloadCertificate(certificate, { format });
+      toast({ title: "Module certificate ready", description: `${format.toUpperCase()} saved for ${module.title}.` });
+    } catch (error) {
+      console.error("Module certificate download failed", error);
+      toast({
+        title: "Export failed",
+        description: "We could not export the module certificate. Try again soon.",
+        variant: "destructive",
+      });
+    }
+  };
 
   const handleEnroll = () => {
     if (!courseId) return;
@@ -235,6 +342,103 @@ const CourseDetail = () => {
           </div>
         </div>
 
+        <section className="mt-10 glass-panel border border-border/45 p-6 lg:p-8">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-start">
+            <div className="flex-1 space-y-4">
+              <Badge variant="outline" className="border-primary/45 text-primary">
+                <Award className="mr-2 h-3.5 w-3.5" /> Executive certificate
+              </Badge>
+              <h2 className="text-2xl font-semibold">Credential preview</h2>
+              <p className="text-sm text-muted-foreground md:max-w-2xl">
+                {courseCompleted
+                  ? "Download your concierge-grade course credential in high fidelity or share the verification link with employers."
+                  : "Complete every module to unlock an executive certificate ready for employer verification."}
+              </p>
+              <div className="rounded-3xl border border-border/40 bg-card/40 p-4 shadow-lg">
+                <CertificateTemplate
+                  certificate={
+                    courseCertificate ?? {
+                      id: "preview",
+                      scope: "course",
+                      courseId: course.id,
+                      moduleId: null,
+                      title: `${course.title} Executive Certification`,
+                      issuedAt: new Date().toISOString(),
+                      recipientName: user?.fullName ?? "Executive Learner",
+                      recipientEmail: user?.email ?? null,
+                      tier: "Free",
+                      verificationCode: "PREVIEW-CODE",
+                      signature: {
+                        name: "Concierge Board",
+                        title: "Mike Learning Centre",
+                        personaId: "preview",
+                      },
+                      issuedBy: "Tech Stream Concierge Board",
+                      highlights: [
+                        `Complete all modules to unlock your credential for ${course.title}.`,
+                        "Courses completed automatically issue a certificate.",
+                        "Higher tiers receive exclusive signature blocks.",
+                      ],
+                    }
+                  }
+                  width={720}
+                  height={510}
+                  className="w-full"
+                />
+              </div>
+            </div>
+
+            <div className="w-full max-w-sm space-y-5">
+              <div className="rounded-2xl border border-border/40 bg-background/60 p-4">
+                <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Verification code</span>
+                <p className="mt-2 text-lg font-semibold text-foreground">
+                  {courseCertificate?.verificationCode ?? "Available after completion"}
+                </p>
+                {courseCertificate ? (
+                  <Link
+                    to={`/certificates/verify?code=${courseCertificate.verificationCode}`}
+                    className="mt-3 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-primary"
+                  >
+                    Verify credential
+                    <ArrowRight className="h-3 w-3" />
+                  </Link>
+                ) : null}
+              </div>
+
+              <div className="space-y-3">
+                <Button
+                  className="w-full shadow-glow"
+                  onClick={() => handleCourseCertificateDownload("png")}
+                  disabled={!courseCompleted}
+                >
+                  <Download className="mr-2 h-4 w-4" /> Download PNG
+                </Button>
+                <Button
+                  variant="outline"
+                  className="w-full border-border/40"
+                  onClick={() => handleCourseCertificateDownload("svg")}
+                  disabled={!courseCompleted}
+                >
+                  <FileDown className="mr-2 h-4 w-4" /> Download SVG
+                </Button>
+                <Button variant="ghost" className="w-full" asChild>
+                  <Link to="/certificates">Open certificate vault</Link>
+                </Button>
+              </div>
+
+              <div className="rounded-2xl border border-border/40 bg-background/60 p-4">
+                <h3 className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">Highlights</h3>
+                <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+                  {(courseCertificate?.highlights ?? []).slice(0, 3).map((highlight, index) => (
+                    <li key={`course-highlight-${index}`}>• {highlight}</li>
+                  ))}
+                  {!courseCertificate ? <li>• Complete all modules to unlock your executive credential.</li> : null}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="mt-10 grid gap-6 lg:grid-cols-[1.4fr_minmax(0,1fr)]">
           <div className="glass-panel border border-border/40 p-6 lg:p-8">
             <div className="flex flex-col gap-6">
@@ -381,21 +585,54 @@ const CourseDetail = () => {
 
           <div className="glass-panel border border-border/40 p-6" style={{ animationDelay: "200ms" }}>
             <Accordion type="single" collapsible className="space-y-4">
-              {course.modules.map((module, moduleIndex) => (
-                <AccordionItem
-                  key={module.id}
-                  value={module.id}
-                  className="overflow-hidden rounded-2xl border border-border/40 bg-background/60 backdrop-blur-xl"
-                >
-                  <AccordionTrigger className="px-4 py-3 text-left hover:no-underline hover:bg-muted/40">
-                    <div className="flex flex-col gap-1 text-left md:flex-row md:items-center md:gap-3">
-                      <span className="text-sm font-semibold uppercase tracking-[0.25em] text-primary">
-                        Module {moduleIndex + 1}
-                      </span>
-                      <span className="text-lg font-semibold text-foreground">{module.title}</span>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="px-4 pb-4">
+              {course.modules.map((module, moduleIndex) => {
+                const certificate = moduleCertificateMap.get(module.id);
+                return (
+                  <AccordionItem
+                    key={module.id}
+                    value={module.id}
+                    className="overflow-hidden rounded-2xl border border-border/40 bg-background/60 backdrop-blur-xl"
+                  >
+                    <AccordionTrigger className="px-4 py-3 text-left hover:no-underline hover:bg-muted/40">
+                      <div className="flex flex-col gap-1 text-left md:flex-row md:items-center md:gap-3">
+                        <span className="text-sm font-semibold uppercase tracking-[0.25em] text-primary">
+                          Module {moduleIndex + 1}
+                        </span>
+                        <span className="text-lg font-semibold text-foreground">{module.title}</span>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="px-4 pb-4">
+                      <div className="rounded-2xl border border-border/35 bg-card/50 p-4">
+                        <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+                          <div>
+                            <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                              <Award className="h-3.5 w-3.5 text-primary" /> Module credential
+                            </span>
+                            <p className="mt-2 text-sm text-muted-foreground">
+                              {certificate
+                                ? `Verification code ${certificate.verificationCode}. Download or resend your concierge module credential.`
+                                : "Issue a concierge certificate for this module once you have completed the lessons."}
+                            </p>
+                          </div>
+                          <div className="flex flex-wrap gap-2">
+                            <Button
+                              size="sm"
+                              className="shadow-glow"
+                              onClick={() => handleModuleCertificateDownload(module, "png")}
+                            >
+                              <Download className="mr-2 h-4 w-4" /> PNG
+                            </Button>
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              className="border-border/40"
+                              onClick={() => handleModuleCertificateDownload(module, "svg")}
+                            >
+                              <FileDown className="mr-2 h-4 w-4" /> SVG
+                            </Button>
+                          </div>
+                        </div>
+                      </div>
                     {module.sections.map((section) => (
                       <div key={section.id} className="mt-4 rounded-2xl border border-border/40 bg-card/60 p-4">
                         <h4 className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-muted-foreground">
@@ -420,9 +657,10 @@ const CourseDetail = () => {
                         </div>
                       </div>
                     ))}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
+                    </AccordionContent>
+                  </AccordionItem>
+                );
+              })}
             </Accordion>
           </div>
         </div>

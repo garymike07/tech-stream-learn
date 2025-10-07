@@ -4,6 +4,7 @@ const en = {
     categories: "Categories",
     paths: "Paths",
     immersive: "Immersive Studio",
+    certificates: "Certificates",
     exercises: "Exercises",
     pricing: "Pricing",
     insights: "Insights",

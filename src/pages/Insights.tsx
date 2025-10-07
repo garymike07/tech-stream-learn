@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import CommunityLeaderboard from "@/components/community/Leaderboard";
 import SpotlightCard from "@/components/community/SpotlightCard";
+import CertificateTemplate from "@/components/certificates/CertificateTemplate";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -22,6 +23,7 @@ import { useAuth } from "@/context/AuthContext";
 import { useProgress } from "@/context/ProgressContext";
 import type { MentorActionItem, MentorMessageRecord, MentorSessionRecord } from "@/context/ProgressContext";
 import { buildCourseRecommendations, buildPathRecommendations } from "@/utils/recommendations";
+import { downloadCertificate } from "@/utils/certificates";
 import { requestMentorExchange } from "@/utils/mentorClient";
 import { toast } from "@/hooks/use-toast";
 import { format } from "date-fns";
@@ -29,11 +31,14 @@ import { cn } from "@/lib/utils";
 import {
   Activity,
   ArrowRight,
+  Award,
   Bell,
   Bot,
   Calendar,
   Compass,
+  Copy,
   Download,
+  FileDown,
   Flame,
   Loader2,
   Lock,
@@ -42,6 +47,7 @@ import {
   Paperclip,
   Send,
   Share2,
+  ShieldCheck,
   Sparkles,
   Trophy,
   Users,
@@ -82,6 +88,8 @@ const Insights = () => {
     toggleMentorActionItem,
     communityStreak,
     communityQuests,
+    certificates,
+    certificateLedger,
   } = useProgress();
   const { t } = useTranslation();
 
@@ -509,6 +517,67 @@ const Insights = () => {
     user,
   ]);
 
+  const certificateCount = certificates.length;
+  const latestCertificate = useMemo(() => (certificates.length > 0 ? certificates[0] : null), [certificates]);
+  const latestCertificateIssuedLabel = latestCertificate ? format(new Date(latestCertificate.issuedAt), "PP") : null;
+  const certificateLedgerPreview = useMemo(() => certificateLedger.slice(0, 5), [certificateLedger]);
+
+  const handleDownloadLatestCertificate = useCallback(
+    async (format: "png" | "svg") => {
+      if (!latestCertificate) {
+        toast({
+          title: "No certificate available",
+          description: "Complete a concierge course to unlock credential downloads.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      try {
+        await downloadCertificate(latestCertificate, { format });
+        toast({
+          title: `Certificate exported`,
+          description: `${format.toUpperCase()} saved for ${latestCertificate.title}.`,
+        });
+      } catch (error) {
+        console.error("Failed to export latest certificate", error);
+        toast({
+          title: "Export unavailable",
+          description: "We could not render the certificate. Please retry shortly.",
+          variant: "destructive",
+        });
+      }
+    },
+    [latestCertificate],
+  );
+
+  const handleCopyLatestCertificateLink = useCallback(async () => {
+    if (!latestCertificate) {
+      toast({
+        title: "No certificate to share",
+        description: "Earn a credential to unlock verification sharing.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    try {
+      if (typeof window === "undefined" || !navigator.clipboard) {
+        throw new Error("Clipboard unavailable");
+      }
+      const url = `${window.location.origin}/certificates/verify?code=${latestCertificate.verificationCode}`;
+      await navigator.clipboard.writeText(url);
+      toast({ title: "Verification link copied", description: latestCertificate.verificationCode });
+    } catch (error) {
+      console.error("Failed to copy certificate verification link", error);
+      toast({
+        title: "Copy unavailable",
+        description: "Your browser blocked clipboard access.",
+        variant: "destructive",
+      });
+    }
+  }, [latestCertificate]);
+
   const cohortSuggestions = useMemo(() => {
     const suggestions = [] as Array<{ id: string; labelKey: string; description: string }>;
     if (categoryStats.get("frontend")) {
@@ -570,6 +639,115 @@ const Insights = () => {
               {user ? <p className="text-sm text-muted-foreground">{user.fullName}</p> : null}
             </div>
           </div>
+        </section>
+
+        <section className="grid gap-6 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
+          <Card className="glass-panel border border-border/45">
+            <CardHeader className="space-y-3">
+              <Badge variant="outline" className="border-primary/40 text-primary">
+                <ShieldCheck className="mr-2 h-3.5 w-3.5" /> Executive credentials
+              </Badge>
+              <CardTitle className="text-2xl font-semibold">Certification status</CardTitle>
+              <CardDescription>Preview your latest concierge credential and unlock high-fidelity downloads.</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              {latestCertificate ? (
+                <>
+                  <div className="rounded-3xl border border-border/40 bg-card/40 p-4 shadow-lg">
+                    <CertificateTemplate certificate={latestCertificate} width={640} height={452} className="w-full" />
+                  </div>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div className="rounded-2xl border border-border/35 bg-background/60 p-4">
+                      <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Credential</p>
+                      <p className="mt-2 text-sm font-semibold text-foreground">{latestCertificate.title}</p>
+                      <p className="mt-1 text-xs text-muted-foreground">Issued {latestCertificateIssuedLabel}</p>
+                    </div>
+                    <div className="rounded-2xl border border-border/35 bg-background/60 p-4">
+                      <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Verification code</p>
+                      <p className="mt-2 text-sm font-semibold text-foreground">{latestCertificate.verificationCode}</p>
+                      <Badge variant="outline" className="mt-3 border-secondary/40 text-secondary">
+                        Tier {latestCertificate.tier}
+                      </Badge>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-3">
+                    <Button className="shadow-glow" onClick={() => handleDownloadLatestCertificate("png")}>
+                      <Download className="mr-2 h-4 w-4" /> Download PNG
+                    </Button>
+                    <Button variant="outline" className="border-border/40" onClick={() => handleDownloadLatestCertificate("svg")}>
+                      <FileDown className="mr-2 h-4 w-4" /> Download SVG
+                    </Button>
+                    <Button variant="outline" className="border-border/40" onClick={handleCopyLatestCertificateLink}>
+                      <Copy className="mr-2 h-4 w-4" /> Copy verification link
+                    </Button>
+                    <Button variant="ghost" asChild>
+                      <Link to="/certificates" className="inline-flex items-center gap-2">
+                        <Award className="h-4 w-4" /> Open certificate vault
+                      </Link>
+                    </Button>
+                  </div>
+                </>
+              ) : (
+                <div className="rounded-2xl border border-dashed border-border/50 bg-background/40 p-6 text-sm text-muted-foreground">
+                  <p className="font-semibold text-foreground">No concierge certificates yet</p>
+                  <p className="mt-2">
+                    Complete your next guided course to mint an executive certificate with shareable verification.
+                  </p>
+                  <Button asChild className="mt-4 shadow-glow">
+                    <Link to="/paths">Browse guided paths</Link>
+                  </Button>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+
+          <Card className="glass-panel border border-border/45">
+            <CardHeader className="space-y-3">
+              <Badge variant="outline" className="border-secondary/40 text-secondary">
+                <Award className="mr-2 h-3.5 w-3.5" /> Verification ledger
+              </Badge>
+              <CardTitle className="text-2xl font-semibold">Ledger insights</CardTitle>
+              <CardDescription>Latest credentials recorded for external validation across your account.</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="rounded-2xl border border-border/35 bg-background/60 p-4">
+                <div className="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                  <span>Issued credentials</span>
+                  <span>Ledger records</span>
+                </div>
+                <div className="mt-3 flex items-end justify-between">
+                  <p className="text-3xl font-semibold text-foreground">{certificateCount}</p>
+                  <p className="text-sm text-muted-foreground">{certificateLedger.length}</p>
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                {certificateLedgerPreview.length > 0 ? (
+                  certificateLedgerPreview.map((entry) => (
+                    <div key={`${entry.verificationCode}-${entry.id}`} className="rounded-2xl border border-border/35 bg-background/55 p-4">
+                      <div className="flex items-center justify-between gap-3 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                        <span>{entry.verificationCode}</span>
+                        <span>{format(new Date(entry.issuedAt), "PP")}</span>
+                      </div>
+                      <p className="mt-2 text-sm font-semibold text-foreground">{entry.title}</p>
+                      <p className="text-xs text-muted-foreground">{entry.recipientName}</p>
+                    </div>
+                  ))
+                ) : (
+                  <p className="text-sm text-muted-foreground">Ledger entries appear here once certificates are issued.</p>
+                )}
+              </div>
+
+              <div className="flex flex-wrap gap-3">
+                <Button asChild variant="outline" className="border-border/40">
+                  <Link to="/certificates">View certificate vault</Link>
+                </Button>
+                <Button asChild variant="ghost">
+                  <Link to="/certificates/verify">Open verification portal</Link>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
         </section>
 
         <section className="grid gap-6 lg:grid-cols-[1.4fr_minmax(0,1fr)]">

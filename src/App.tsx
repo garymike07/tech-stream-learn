@@ -15,6 +15,8 @@ const LessonPlayer = lazy(() => import("./pages/LessonPlayer"));
 const LearningPaths = lazy(() => import("./pages/LearningPaths"));
 const ImmersiveStudio = lazy(() => import("./pages/ImmersiveStudio"));
 const Insights = lazy(() => import("./pages/Insights"));
+const Certificates = lazy(() => import("./pages/Certificates"));
+const VerifyCertificate = lazy(() => import("./pages/VerifyCertificate"));
 const Login = lazy(() => import("./pages/Login"));
 const Signup = lazy(() => import("./pages/Signup"));
 const Exercises = lazy(() => import("./pages/Exercises"));
@@ -79,6 +81,14 @@ const App = () => (
             )}
           />
           <Route
+            path="/certificates"
+            element={(
+              <RequireAuth>
+                <Certificates />
+              </RequireAuth>
+            )}
+          />
+          <Route
             path="/insights"
             element={(
               <RequireAuth>
@@ -134,6 +144,7 @@ const App = () => (
               </RequireAuth>
             )}
           />
+          <Route path="/certificates/verify" element={<VerifyCertificate />} />
           <Route path="/login/*" element={<Login />} />
           <Route path="/signup/*" element={<Signup />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

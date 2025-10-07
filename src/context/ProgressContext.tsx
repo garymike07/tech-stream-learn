@@ -10,6 +10,8 @@ import { useAuth } from "@/context/AuthContext";
 const STORAGE_KEY = "tech-stream-learn-course-completions";
 const MENTOR_STORAGE_KEY = "tech-stream-learn-mentor-sessions";
 const STUDIO_STORAGE_KEY = "tech-stream-learn-studio-sessions";
+const CERTIFICATE_STORAGE_KEY = "tech-stream-learn-certificates";
+const CERTIFICATE_LEDGER_KEY = "tech-stream-learn-certificate-ledger";
 const ANONYMOUS_KEY = "anonymous";
 
 const generateId = () => {
@@ -17,6 +19,13 @@ const generateId = () => {
     return crypto.randomUUID();
   }
   return Math.random().toString(36).slice(2, 10);
+};
+
+const generateVerificationCode = () => {
+  if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
+    return crypto.randomUUID().replace(/-/g, "").slice(0, 12).toUpperCase();
+  }
+  return Math.random().toString(36).slice(2, 14).toUpperCase();
 };
 
 export type CompletionRecord = {
@@ -89,6 +98,62 @@ export type StudioSessionRecord = {
   artifacts: StudioArtifactRecord[];
 };
 
+export type CertificateScope = "course" | "module";
+
+export type CertificateTier = "Free" | "Pro" | "Elite";
+
+export type CertificateSignature = {
+  name: string;
+  title: string;
+  personaId?: string;
+};
+
+export type CertificateRecord = {
+  id: string;
+  scope: CertificateScope;
+  courseId: string;
+  moduleId: string | null;
+  title: string;
+  issuedAt: string;
+  recipientName: string;
+  recipientEmail: string | null;
+  tier: CertificateTier;
+  verificationCode: string;
+  signature: CertificateSignature;
+  issuedBy: string;
+  highlights: string[];
+};
+
+export type CertificateLedgerEntry = CertificateRecord & {
+  accountKey: string;
+};
+
+export type IssueCertificateInput = {
+  scope: CertificateScope;
+  courseId: string;
+  moduleId?: string | null;
+  title?: string;
+  highlights?: string[];
+};
+
+const SIGNATURE_BLOCKS: Record<CertificateTier, CertificateSignature> = {
+  Free: {
+    name: "Layla Wanjiku",
+    title: "Director of Learning Pathways",
+    personaId: "signature-free",
+  },
+  Pro: {
+    name: "Jamal Rivera",
+    title: "Head of Concierge Enablement",
+    personaId: "signature-pro",
+  },
+  Elite: {
+    name: "Amara Ravel",
+    title: "Chief Experience Officer",
+    personaId: "signature-elite",
+  },
+};
+
 export type CommunityStreakSnapshot = {
   current: number;
   longest: number;
@@ -108,6 +173,8 @@ type CompletionMap = Record<string, CompletionRecord[]>;
 type MentorSessionMap = Record<string, MentorSessionRecord[]>;
 
 type StudioSessionMap = Record<string, StudioSessionRecord[]>;
+
+type CertificateMap = Record<string, CertificateRecord[]>;
 
 type PathProgress = {
   pathId: string;
@@ -160,6 +227,11 @@ interface ProgressContextValue {
   ) => void;
   communityStreak: CommunityStreakSnapshot;
   communityQuests: CommunityQuestProgress[];
+  certificates: CertificateRecord[];
+  certificateLedger: CertificateLedgerEntry[];
+  issueCertificate: (input: IssueCertificateInput) => CertificateRecord | null;
+  getCertificateById: (certificateId: string) => CertificateRecord | undefined;
+  getCertificateByVerificationCode: (code: string) => CertificateLedgerEntry | undefined;
 }
 
 const ProgressContext = createContext<ProgressContextValue | undefined>(undefined);
@@ -183,6 +255,61 @@ const normalizeRecords = (records: unknown): CompletionRecord[] => {
     .filter((item): item is CompletionRecord => Boolean(item));
 };
 
+const normalizeCertificates = (records: unknown): CertificateRecord[] => {
+  if (!Array.isArray(records)) return [];
+  return records
+    .map((entry) => {
+      if (typeof entry !== "object" || entry === null) return null;
+      const record = entry as Partial<CertificateRecord> & {
+        scope?: string;
+        courseId?: unknown;
+        moduleId?: unknown;
+      };
+      const scope = record.scope === "course" || record.scope === "module" ? record.scope : "course";
+      const courseId = typeof record.courseId === "string" ? record.courseId : null;
+      if (!courseId) return null;
+      const moduleId = typeof record.moduleId === "string" ? record.moduleId : null;
+      const id = typeof record.id === "string" ? record.id : generateId();
+      const issuedAt = typeof record.issuedAt === "string" ? record.issuedAt : new Date().toISOString();
+      const recipientName = typeof record.recipientName === "string" ? record.recipientName : "Learner";
+      const recipientEmail = typeof record.recipientEmail === "string" ? record.recipientEmail : null;
+      const tier: CertificateTier = record.tier === "Elite" || record.tier === "Pro" ? record.tier : "Free";
+      const verificationCode = typeof record.verificationCode === "string" ? record.verificationCode : generateVerificationCode();
+      const signature: CertificateSignature = record.signature
+        ? {
+            name: typeof record.signature.name === "string" ? record.signature.name : "Concierge Program Director",
+            title: typeof record.signature.title === "string" ? record.signature.title : "Concierge Program Director",
+            personaId: typeof record.signature.personaId === "string" ? record.signature.personaId : undefined,
+          }
+        : {
+            name: "Concierge Program Director",
+            title: "Executive Learning Office",
+          };
+      const issuedBy = typeof record.issuedBy === "string" ? record.issuedBy : "Tech Stream Learn";
+      const title = typeof record.title === "string" ? record.title : "Certificate of Mastery";
+      const highlights = Array.isArray(record.highlights)
+        ? record.highlights.filter((highlight): highlight is string => typeof highlight === "string")
+        : [];
+      return {
+        id,
+        scope,
+        courseId,
+        moduleId,
+        title,
+        issuedAt,
+        recipientName,
+        recipientEmail,
+        tier,
+        verificationCode,
+        signature,
+        issuedBy,
+        highlights,
+      } satisfies CertificateRecord;
+    })
+    .filter((item): item is CertificateRecord => Boolean(item))
+    .sort((a, b) => new Date(b.issuedAt).getTime() - new Date(a.issuedAt).getTime());
+};
+
 const loadCompletionMap = (): CompletionMap => {
   const raw = typeof window !== "undefined" ? localStorage.getItem(STORAGE_KEY) : null;
   if (!raw) return {};
@@ -204,6 +331,51 @@ const loadCompletionMap = (): CompletionMap => {
   } catch (error) {
     console.error("Failed to parse stored completions", error);
     return {};
+  }
+};
+
+const loadCertificateMap = (): CertificateMap => {
+  const raw = typeof window !== "undefined" ? localStorage.getItem(CERTIFICATE_STORAGE_KEY) : null;
+  if (!raw) return {};
+  try {
+    const parsed = JSON.parse(raw);
+    if (Array.isArray(parsed)) {
+      return {
+        [ANONYMOUS_KEY]: normalizeCertificates(parsed),
+      } satisfies CertificateMap;
+    }
+    if (typeof parsed !== "object" || parsed === null) return {};
+    return Object.entries(parsed as Record<string, unknown>).reduce<CertificateMap>((acc, [key, value]) => {
+      acc[key] = normalizeCertificates(value);
+      return acc;
+    }, {});
+  } catch (error) {
+    console.error("Failed to parse stored certificates", error);
+    return {};
+  }
+};
+
+const loadCertificateLedger = (): CertificateLedgerEntry[] => {
+  const raw = typeof window !== "undefined" ? localStorage.getItem(CERTIFICATE_LEDGER_KEY) : null;
+  if (!raw) return [];
+  try {
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return [];
+    const entries = parsed
+      .map((entry) => {
+        if (typeof entry !== "object" || entry === null) return null;
+        const record = entry as Partial<CertificateLedgerEntry> & { accountKey?: unknown };
+        const accountKey = typeof record.accountKey === "string" ? record.accountKey : ANONYMOUS_KEY;
+        const base = normalizeCertificates([record]).at(0);
+        if (!base) return null;
+        return { ...base, accountKey } satisfies CertificateLedgerEntry;
+      })
+      .filter((item): item is CertificateLedgerEntry => Boolean(item))
+      .sort((a, b) => new Date(b.issuedAt).getTime() - new Date(a.issuedAt).getTime());
+    return entries;
+  } catch (error) {
+    console.error("Failed to parse certificate ledger", error);
+    return [];
   }
 };
 
@@ -537,6 +709,22 @@ const dedupeRecords = (records: CompletionRecord[]) => {
   return Array.from(map.values()).sort((a, b) => new Date(b.completedAt).getTime() - new Date(a.completedAt).getTime());
 };
 
+const persistCertificateMap = (map: CertificateMap) => {
+  try {
+    localStorage.setItem(CERTIFICATE_STORAGE_KEY, JSON.stringify(map));
+  } catch (error) {
+    console.error("Failed to persist certificate map", error);
+  }
+};
+
+const persistCertificateLedger = (ledger: CertificateLedgerEntry[]) => {
+  try {
+    localStorage.setItem(CERTIFICATE_LEDGER_KEY, JSON.stringify(ledger));
+  } catch (error) {
+    console.error("Failed to persist certificate ledger", error);
+  }
+};
+
 const buildCourseMeta = () => {
   const entries = courses.map((course) => [course.id, { category: course.category }]);
   return new Map<string, { category: string }>(entries);
@@ -551,11 +739,13 @@ const flattenPathCourses = (pathId: string) => {
 };
 
 export const ProgressProvider = ({ children }: { children: React.ReactNode }) => {
-  const { user } = useAuth();
+  const { user, subscriptionStatus } = useAuth();
   const accountKey = user?.email ?? ANONYMOUS_KEY;
   const [completionMap, setCompletionMap] = useState<CompletionMap>({});
   const [mentorSessionMap, setMentorSessionMap] = useState<MentorSessionMap>({});
   const [studioSessionMap, setStudioSessionMap] = useState<StudioSessionMap>({});
+  const [certificateMap, setCertificateMap] = useState<CertificateMap>({});
+  const [certificateLedgerState, setCertificateLedgerState] = useState<CertificateLedgerEntry[]>([]);
 
   useEffect(() => {
     setCompletionMap(loadCompletionMap());
@@ -569,11 +759,21 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
     setStudioSessionMap(loadStudioSessionMap());
   }, []);
 
+  useEffect(() => {
+    setCertificateMap(loadCertificateMap());
+  }, []);
+
+  useEffect(() => {
+    setCertificateLedgerState(loadCertificateLedger());
+  }, []);
+
   const completionRecords = useMemo(() => completionMap[accountKey] ?? [], [completionMap, accountKey]);
   const completedCourses = useMemo(() => completionRecords.map((record) => record.courseId), [completionRecords]);
   const completedSet = useMemo(() => new Set(completedCourses), [completedCourses]);
   const mentorSessions = useMemo(() => mentorSessionMap[accountKey] ?? [], [mentorSessionMap, accountKey]);
   const studioSessions = useMemo(() => studioSessionMap[accountKey] ?? [], [studioSessionMap, accountKey]);
+  const certificates = useMemo(() => certificateMap[accountKey] ?? [], [certificateMap, accountKey]);
+  const certificateLedger = useMemo(() => certificateLedgerState, [certificateLedgerState]);
   const communityStreak = useMemo(() => computeCommunityStreak(completionRecords), [completionRecords]);
   const executiveRecapProgress = useMemo(() => {
     const horizon = subDays(new Date(), 7).getTime();
@@ -654,6 +854,154 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
       });
     },
     [accountKey],
+  );
+
+  const updateCertificates = useCallback(
+    (updater: (current: CertificateRecord[]) => CertificateRecord[]) => {
+      setCertificateMap((currentMap) => {
+        const existing = currentMap[accountKey] ?? [];
+        const updatedList = updater(existing);
+        if (updatedList === existing) {
+          return currentMap;
+        }
+        const sorted = [...updatedList].sort((a, b) => new Date(b.issuedAt).getTime() - new Date(a.issuedAt).getTime());
+        const updatedMap: CertificateMap = {
+          ...currentMap,
+          [accountKey]: sorted,
+        };
+        persistCertificateMap(updatedMap);
+        return updatedMap;
+      });
+    },
+    [accountKey],
+  );
+
+  const updateCertificateLedger = useCallback(
+    (updater: (current: CertificateLedgerEntry[]) => CertificateLedgerEntry[]) => {
+      setCertificateLedgerState((current) => {
+        const updated = updater(current);
+        if (updated === current) {
+          return current;
+        }
+        const sorted = [...updated].sort((a, b) => new Date(b.issuedAt).getTime() - new Date(a.issuedAt).getTime());
+        persistCertificateLedger(sorted);
+        return sorted;
+      });
+    },
+    [],
+  );
+
+  const certificateTier = useMemo<CertificateTier>(() => {
+    if (subscriptionStatus === "premium") return "Elite";
+    if (subscriptionStatus === "trial") return "Pro";
+    if (subscriptionStatus === "trial_expired") return "Free";
+    return "Free";
+  }, [subscriptionStatus]);
+
+  const issueCertificate = useCallback(
+    (input: IssueCertificateInput): CertificateRecord | null => {
+      const normalizedModuleId = input.scope === "module" ? input.moduleId ?? null : null;
+      let issued: CertificateRecord | null = null;
+      updateCertificates((current) => {
+        const existing = current.find(
+          (record) =>
+            record.scope === input.scope &&
+            record.courseId === input.courseId &&
+            (record.moduleId ?? null) === normalizedModuleId,
+        );
+        if (existing) {
+          issued = existing;
+          return current;
+        }
+
+        const course = courses.find((candidate) => candidate.id === input.courseId) ?? null;
+        const moduleTitle =
+          input.scope === "module" && normalizedModuleId
+            ? course?.modules.find((module) => module.id === normalizedModuleId)?.title ?? null
+            : null;
+        const courseTitle = course?.title ?? input.title ?? input.courseId;
+        const certificateTitle =
+          input.title ??
+          (moduleTitle ? `${courseTitle} • ${moduleTitle}` : `${courseTitle} Executive Certification`);
+        const highlights =
+          input.highlights && input.highlights.length > 0
+            ? input.highlights
+            : [
+                moduleTitle ? `Module mastery: ${moduleTitle}` : `Course mastery: ${courseTitle}`,
+                course?.duration ? `Completed ${course.duration} of guided practice.` : "Completed concierge-guided curriculum.",
+                `Tier recognition: ${certificateTier}`,
+              ];
+        const issuedAt = new Date().toISOString();
+        const record: CertificateRecord = {
+          id: generateId(),
+          scope: input.scope,
+          courseId: input.courseId,
+          moduleId: normalizedModuleId,
+          title: certificateTitle,
+          issuedAt,
+          recipientName: user?.fullName ?? "Tech Stream Learner",
+          recipientEmail: user?.email ?? null,
+          tier: certificateTier,
+          verificationCode: generateVerificationCode(),
+          signature: SIGNATURE_BLOCKS[certificateTier] ?? SIGNATURE_BLOCKS.Free,
+          issuedBy: "Tech Stream Concierge Board",
+          highlights,
+        };
+        issued = record;
+        return [record, ...current];
+      });
+
+      if (issued) {
+        updateCertificateLedger((current) => {
+          const withoutExisting = current.filter((entry) => entry.verificationCode !== issued!.verificationCode);
+          return [{ ...issued!, accountKey }, ...withoutExisting];
+        });
+      }
+
+      return issued;
+    },
+    [accountKey, certificateTier, updateCertificateLedger, updateCertificates, user],
+  );
+
+  useEffect(() => {
+    if (!completionRecords.length) return;
+    const missing = completionRecords.filter(
+      (record) =>
+        !certificates.some(
+          (certificate) => certificate.scope === "course" && certificate.courseId === record.courseId && certificate.moduleId === null,
+        ),
+    );
+    if (missing.length === 0) return;
+    missing.forEach((record) => {
+      issueCertificate({ scope: "course", courseId: record.courseId });
+    });
+  }, [certificates, completionRecords, issueCertificate]);
+
+  useEffect(() => {
+    if (!certificates.length) return;
+    updateCertificateLedger((current) => {
+      const existingCodes = new Set(current.map((entry) => entry.verificationCode));
+      const additions = certificates
+        .filter((record) => !existingCodes.has(record.verificationCode))
+        .map((record) => ({ ...record, accountKey } satisfies CertificateLedgerEntry));
+      if (additions.length === 0) {
+        return current;
+      }
+      return [...current, ...additions];
+    });
+  }, [accountKey, certificates, updateCertificateLedger]);
+
+  const getCertificateById = useCallback(
+    (certificateId: string) => certificates.find((record) => record.id === certificateId),
+    [certificates],
+  );
+
+  const getCertificateByVerificationCode = useCallback(
+    (code: string) => {
+      const normalized = code.trim().toUpperCase();
+      return certificateLedger.find((entry) => entry.verificationCode.toUpperCase() === normalized);
+    },
+    [certificateLedger],
   );
 
   const startMentorSession = useCallback(
@@ -906,15 +1254,20 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
 
   const markCourseCompleted = useCallback(
     (courseId: string) => {
+      let created = false;
       updateMap((current) => {
         const now = new Date().toISOString();
         if (current.some((record) => record.courseId === courseId)) {
           return current.map((record) => (record.courseId === courseId ? { ...record, completedAt: now } : record));
         }
+        created = true;
         return [...current, { courseId, completedAt: now }];
       });
+      if (created) {
+        issueCertificate({ scope: "course", courseId });
+      }
     },
-    [updateMap],
+    [issueCertificate, updateMap],
   );
 
   const unmarkCourseCompleted = useCallback(
@@ -926,15 +1279,20 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
 
   const toggleCourseCompleted = useCallback(
     (courseId: string) => {
+      let created = false;
       updateMap((current) => {
         const exists = current.some((record) => record.courseId === courseId);
         if (exists) {
           return current.filter((record) => record.courseId !== courseId);
         }
+        created = true;
         return [...current, { courseId, completedAt: new Date().toISOString() }];
       });
+      if (created) {
+        issueCertificate({ scope: "course", courseId });
+      }
     },
-    [updateMap],
+    [issueCertificate, updateMap],
   );
 
   const isCourseCompleted = useCallback((courseId: string) => completedSet.has(courseId), [completedSet]);
@@ -1097,6 +1455,11 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
       addStudioArtifact,
       communityStreak,
       communityQuests,
+      certificates,
+      certificateLedger,
+      issueCertificate,
+      getCertificateById,
+      getCertificateByVerificationCode,
     }),
     [
       achievements,
@@ -1119,6 +1482,11 @@ export const ProgressProvider = ({ children }: { children: React.ReactNode }) =>
       startStudioSession,
       updateStudioTimelineStatus,
       addStudioArtifact,
+      certificates,
+      certificateLedger,
+      issueCertificate,
+      getCertificateById,
+      getCertificateByVerificationCode,
     ],
   );
 
