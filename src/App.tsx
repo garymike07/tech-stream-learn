@@ -13,6 +13,7 @@ const CategoryCourses = lazy(() => import("./pages/CategoryCourses"));
 const CourseDetail = lazy(() => import("./pages/CourseDetail"));
 const LessonPlayer = lazy(() => import("./pages/LessonPlayer"));
 const LearningPaths = lazy(() => import("./pages/LearningPaths"));
+const ImmersiveStudio = lazy(() => import("./pages/ImmersiveStudio"));
 const Insights = lazy(() => import("./pages/Insights"));
 const Login = lazy(() => import("./pages/Login"));
 const Signup = lazy(() => import("./pages/Signup"));
@@ -66,6 +67,14 @@ const App = () => (
             element={(
               <RequireAuth>
                 <LearningPaths />
+              </RequireAuth>
+            )}
+          />
+          <Route
+            path="/immersive-studio"
+            element={(
+              <RequireAuth>
+                <ImmersiveStudio />
               </RequireAuth>
             )}
           />

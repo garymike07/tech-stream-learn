@@ -4,21 +4,41 @@ import Header from "@/components/Header";
 import { courses } from "@/data/courses";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Clock, BarChart, PlayCircle, ArrowLeft, Award, ShieldCheck, Hourglass, Layers, Sparkles, FileText } from "lucide-react";
+import {
+  Clock,
+  BarChart,
+  PlayCircle,
+  ArrowLeft,
+  Award,
+  ShieldCheck,
+  Hourglass,
+  Layers,
+  Sparkles,
+  FileText,
+  Gauge,
+  Target,
+  ArrowRight,
+  CheckCircle2,
+  ClipboardList,
+  Bot,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/context/AuthContext";
 import { useProgress } from "@/context/ProgressContext";
 import { toast } from "@/hooks/use-toast";
+import { Separator } from "@/components/ui/separator";
+import { buildCourseIntel } from "@/utils/contentIntelligence";
 
 const CourseDetail = () => {
   const { courseId } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
   const { user, enrollCourse, enrollments, subscriptionStatus, maxFreeCourses, trialDaysRemaining, monthlyPriceKes } = useAuth();
-  const { isCourseCompleted } = useProgress();
+  const { isCourseCompleted, completedCourses } = useProgress();
   const course = useMemo(() => courses.find((c) => c.id === courseId), [courseId]);
+  const courseIntel = useMemo(() => (course ? buildCourseIntel(course, completedCourses) : null), [course, completedCourses]);
 
-  if (!course) {
+  if (!course || !courseIntel) {
     return (
       <div className="min-h-screen bg-background">
         <Header />
@@ -214,6 +234,144 @@ const CourseDetail = () => {
             </div>
           </div>
         </div>
+
+        <section className="mt-10 grid gap-6 lg:grid-cols-[1.4fr_minmax(0,1fr)]">
+          <div className="glass-panel border border-border/40 p-6 lg:p-8">
+            <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                <div className="space-y-3">
+                  <Badge variant="outline" className="border-primary/45 text-primary">
+                    <Sparkles className="mr-2 h-3.5 w-3.5" /> Concierge content intelligence
+                  </Badge>
+                  <h2 className="text-2xl font-semibold">Executive brief</h2>
+                  <p className="text-sm text-muted-foreground md:max-w-2xl">{courseIntel.executiveSummary}</p>
+                </div>
+                <div className="rounded-2xl border border-primary/30 bg-primary/10 px-4 py-3 text-right">
+                  <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.35em] text-primary">
+                    <Gauge className="h-3.5 w-3.5" /> Signal score
+                  </span>
+                  <div className="mt-2 text-4xl font-semibold text-primary">{courseIntel.signalScore}</div>
+                  <p className="text-xs text-muted-foreground">{courseIntel.signalLabel}</p>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-border/40 bg-card/60 p-5">
+                <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+                  <div>
+                    <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                      <Target className="h-4 w-4 text-primary" /> {courseIntel.spotlightMetric.label}
+                    </span>
+                    <p className="mt-2 text-sm text-muted-foreground md:max-w-xl">{courseIntel.signalNarrative}</p>
+                  </div>
+                  <p className="text-xs text-muted-foreground md:max-w-xs">{courseIntel.spotlightMetric.description}</p>
+                </div>
+                {courseIntel.signatureMoments.length > 0 ? (
+                  <>
+                    <Separator className="my-4" />
+                    <ul className="grid gap-2 text-sm text-muted-foreground">
+                      {courseIntel.signatureMoments.map((moment, index) => (
+                        <li key={index} className="flex items-start gap-2">
+                          <CheckCircle2 className="mt-0.5 h-4 w-4 text-primary" />
+                          <span>{moment}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                ) : null}
+              </div>
+
+              <div className="rounded-2xl border border-border/40 bg-card/60 p-5">
+                <div className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                  <Bot className="h-4 w-4 text-primary" /> Concierge prompt
+                </div>
+                <p className="mt-3 rounded-2xl border border-dashed border-primary/30 bg-background/60 p-4 text-sm leading-relaxed text-muted-foreground">
+                  {courseIntel.aiConciergePrompt}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-6">
+            <div className="glass-panel border border-border/40 p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="text-lg font-semibold">Recommended follow-ups</h3>
+                  <p className="text-sm text-muted-foreground">Strategic pairings curated for your concierge journey.</p>
+                </div>
+                <span className="text-xs text-muted-foreground">{courseIntel.followUps.length} picks</span>
+              </div>
+              <div className="mt-4 space-y-3">
+                {courseIntel.followUps.map((followUp) => (
+                  <Link
+                    key={followUp.courseId}
+                    to={`/course/${followUp.courseId}`}
+                    className="group flex flex-col gap-2 rounded-2xl border border-border/40 bg-background/60 p-4 transition hover:border-primary/40 hover:bg-muted/40"
+                  >
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="text-sm font-semibold text-foreground">{followUp.title}</div>
+                      <Badge variant={followUp.status === "completed" ? "secondary" : "outline"} className="uppercase tracking-[0.3em]">
+                        {followUp.status === "completed" ? "Completed" : "Available"}
+                      </Badge>
+                    </div>
+                    <div className="flex items-center justify-between text-xs text-muted-foreground">
+                      <span>{followUp.difficulty}</span>
+                      <span>{followUp.duration}</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground/90">{followUp.reason}</p>
+                    <span className="inline-flex items-center gap-1 text-xs text-primary">
+                      Continue journey
+                      <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="glass-panel border border-border/40 p-6">
+              <div className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                <ClipboardList className="h-4 w-4 text-primary" /> Assessment cadence
+              </div>
+              <h3 className="mt-3 text-lg font-semibold">{courseIntel.assessmentPlan.cadence}</h3>
+              <p className="text-sm text-muted-foreground">{courseIntel.assessmentPlan.successMetric}</p>
+              <Separator className="my-4" />
+              <ul className="space-y-3 text-sm text-muted-foreground">
+                {courseIntel.assessmentPlan.rituals.map((ritual, index) => (
+                  <li key={index} className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 text-primary" />
+                    <span>{ritual}</span>
+                  </li>
+                ))}
+              </ul>
+              {courseIntel.assessmentPlan.items.length > 0 ? (
+                <div className="mt-4 rounded-2xl border border-dashed border-border/40 bg-background/60 p-4">
+                  <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Course assets</p>
+                  <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+                    {courseIntel.assessmentPlan.items.map((item) => (
+                      <li key={item.id} className="leading-relaxed">
+                        <span className="font-medium text-foreground">{item.title}</span>
+                        <span className="ml-2 text-xs uppercase tracking-[0.3em] text-primary">{item.type}</span>
+                        <p className="text-xs text-muted-foreground/90">{item.description}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+            </div>
+
+            {courseIntel.conciergeArtifacts.length > 0 ? (
+              <div className="glass-panel border border-border/40 p-6">
+                <div className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                  <FileText className="h-4 w-4 text-primary" /> Concierge artefacts
+                </div>
+                <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+                  {courseIntel.conciergeArtifacts.map((artifact, index) => (
+                    <li key={index} className="leading-relaxed">• {artifact}</li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+          </div>
+        </section>
 
         <div className="mt-10 space-y-6">
           <div className="glass-panel border border-border/40 p-6">

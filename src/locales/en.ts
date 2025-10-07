@@ -3,6 +3,7 @@ const en = {
     home: "Home",
     categories: "Categories",
     paths: "Paths",
+    immersive: "Immersive Studio",
     exercises: "Exercises",
     pricing: "Pricing",
     insights: "Insights",

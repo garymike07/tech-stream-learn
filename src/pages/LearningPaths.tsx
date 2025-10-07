@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 import {
   Dialog,
   DialogContent,
@@ -25,6 +26,7 @@ import {
   ClipboardList,
   Clock,
   Compass,
+  Gauge,
   Crown,
   Flag,
   Globe2,
@@ -32,16 +34,19 @@ import {
   PhoneCall,
   Share2,
   Sparkles,
+  Target,
   Trophy,
   Users,
+  Bot,
 } from "lucide-react";
+import { buildPathIntel } from "@/utils/pathIntelligence";
 
 const courseTitleMap = new Map(courses.map((course) => [course.id, course.title]));
 
 const LearningPaths = () => {
   const navigate = useNavigate();
   const { enrollments, user } = useAuth();
-  const { pathProgress, getPathProgress, achievements, isCourseCompleted, completionRecords } = useProgress();
+  const { pathProgress, getPathProgress, achievements, isCourseCompleted, completionRecords, mentorSessions } = useProgress();
   const [activePathId, setActivePathId] = useState<string>(learningPaths[0]?.id ?? "");
   const [selectedCohortId, setSelectedCohortId] = useState<string | null>(learningPaths[0]?.cohortWindows?.[0]?.id ?? null);
   const [shareState, setShareState] = useState<"idle" | "copied" | "error">("idle");
@@ -49,6 +54,23 @@ const LearningPaths = () => {
   const activePath = useMemo(() => learningPaths.find((path) => path.id === activePathId) ?? learningPaths[0], [activePathId]);
   const activePathProgress = getPathProgress(activePath?.id ?? "");
   const activeCohort = useMemo(() => activePath?.cohortWindows?.find((cohort) => cohort.id === selectedCohortId) ?? activePath?.cohortWindows?.[0], [activePath, selectedCohortId]);
+  const activePathIntel = useMemo(() => {
+    if (!activePath) return null;
+    return buildPathIntel({
+      path: activePath,
+      progress: activePathProgress
+        ? {
+            percentage: activePathProgress.percentage,
+            completed: activePathProgress.completed,
+            total: activePathProgress.total,
+            nextCourseId: activePathProgress.nextCourseId,
+            completedCourses: activePathProgress.completedCourses,
+          }
+        : null,
+      completions: completionRecords,
+      mentorSessions,
+    });
+  }, [activePath, activePathProgress, completionRecords, mentorSessions]);
 
   useEffect(() => {
     if (!activePath) return;
@@ -267,6 +289,108 @@ const LearningPaths = () => {
                   </div>
                 ))}
               </div>
+
+              {activePathIntel ? (
+                <div className="mt-8 grid gap-4 lg:grid-cols-[1.4fr_minmax(0,1fr)]">
+                  <div className="rounded-3xl border border-border/40 bg-background/60 p-6 space-y-6">
+                    <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                      <Badge variant="outline" className="border-primary/40 text-primary">
+                        <Gauge className="mr-2 h-3.5 w-3.5" /> Path intelligence
+                      </Badge>
+                      <div className="rounded-2xl border border-primary/30 bg-primary/10 px-4 py-3 text-right">
+                        <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-primary">
+                          Readiness
+                        </span>
+                        <div className="mt-2 text-4xl font-semibold text-primary">{activePathIntel.readinessScore}</div>
+                        <p className="text-xs text-muted-foreground">{activePathIntel.readinessLabel}</p>
+                      </div>
+                    </div>
+                    <div>
+                      <Progress value={activePathIntel.readinessScore} className="h-2" />
+                      <p className="mt-3 text-sm text-muted-foreground">{activePathIntel.narrative}</p>
+                    </div>
+                    <div>
+                      <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Recommended focus</p>
+                      <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+                        {activePathIntel.recommendedActions.map((action, index) => (
+                          <li key={index} className="flex items-start gap-2">
+                            <CheckCircle2 className="mt-0.5 h-4 w-4 text-primary" />
+                            <span>{action}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="grid gap-3 sm:grid-cols-2">
+                      <div className="rounded-2xl border border-border/40 bg-background/50 p-4">
+                        <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">30 day completions</p>
+                        <p className="mt-2 text-2xl font-semibold text-primary">{activePathIntel.completionsLast30Days}</p>
+                        <p className="text-xs text-muted-foreground/80">Maintain this cadence to keep executive confidence high.</p>
+                      </div>
+                      <div className="rounded-2xl border border-border/40 bg-background/50 p-4">
+                        <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Mentor touchpoints</p>
+                        <p className="mt-2 text-2xl font-semibold text-primary">{activePathIntel.mentorSessionsLast21Days}</p>
+                        <p className="text-xs text-muted-foreground/80">Use concierge sessions to rehearse milestone storytelling.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="rounded-3xl border border-border/40 bg-background/60 p-6 space-y-3">
+                      <div className="flex items-center justify-between">
+                        <p className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                          <Target className="h-3.5 w-3.5 text-primary" /> Next milestone
+                        </p>
+                        <span className="text-xs text-muted-foreground">Goal {activePathIntel.nextMilestone.targetPercentage}%</span>
+                      </div>
+                      <h3 className="text-lg font-semibold">{activePathIntel.nextMilestone.label}</h3>
+                      <p className="text-sm text-muted-foreground">{activePathIntel.nextMilestone.description}</p>
+                      <div className="rounded-2xl border border-dashed border-primary/30 bg-primary/10 p-3 text-xs text-primary">
+                        {activePathIntel.nextMilestone.conciergeCue}
+                      </div>
+                    </div>
+                    <div className="rounded-3xl border border-border/40 bg-background/60 p-6">
+                      <p className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                        <ClipboardList className="h-3.5 w-3.5 text-primary" /> Executive signals
+                      </p>
+                      <ul className="mt-3 space-y-3 text-sm text-muted-foreground">
+                        {activePathIntel.executiveSignals.map((signal) => (
+                          <li key={signal.label} className="rounded-2xl border border-border/40 bg-background/50 p-3">
+                            <div className="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-muted-foreground/80">
+                              <span>{signal.label}</span>
+                              <span>{signal.metric}</span>
+                            </div>
+                            <p className="mt-2 text-sm text-muted-foreground/90">{signal.description}</p>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="rounded-3xl border border-border/40 bg-background/60 p-6 space-y-4">
+                      <div>
+                        <p className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                          <Calendar className="h-3.5 w-3.5 text-primary" /> Concierge touchpoints
+                        </p>
+                        <div className="mt-3 space-y-3 text-sm text-muted-foreground">
+                          {activePathIntel.conciergeTouchpoints.map((touchpoint, index) => (
+                            <div key={`${touchpoint.window}-${index}`} className="rounded-2xl border border-border/40 bg-background/50 p-3">
+                              <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground/70">{touchpoint.window}</p>
+                              <p className="mt-1 text-sm font-semibold text-foreground">{touchpoint.focus}</p>
+                              <p className="mt-1 text-xs text-muted-foreground/80">{touchpoint.outcome}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      <Separator />
+                      <div>
+                        <p className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                          <Bot className="h-3.5 w-3.5 text-primary" /> Concierge prompt
+                        </p>
+                        <p className="mt-2 rounded-2xl border border-dashed border-primary/30 bg-background/60 p-4 text-sm leading-relaxed text-muted-foreground">
+                          {activePathIntel.aiPrompt}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : null}
 
               {(activePath.concierge || activePath.cohortWindows?.length || activePath.spotlightProjects?.length) ? (
                 <div className="mt-8 grid gap-4 lg:grid-cols-3">

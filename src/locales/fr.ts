@@ -5,6 +5,7 @@ const fr: TranslationSchema = {
     home: "Accueil",
     categories: "Catégories",
     paths: "Parcours",
+    immersive: "Studio immersif",
     exercises: "Exercices",
     pricing: "Tarification",
     insights: "Insights",

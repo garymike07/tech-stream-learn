@@ -66,6 +66,7 @@ const Header = () => {
       { type: "link" as const, label: t("nav.home"), to: "/" },
       { type: "categories" as const, label: t("nav.categories") },
       { type: "link" as const, label: t("nav.paths"), to: "/paths" },
+      { type: "link" as const, label: t("nav.immersive"), to: "/immersive-studio" },
       { type: "link" as const, label: t("nav.insights"), to: "/insights" },
       { type: "link" as const, label: t("nav.exercises"), to: "/exercises" },
       { type: "link" as const, label: t("nav.pricing"), to: "/subscribe" },

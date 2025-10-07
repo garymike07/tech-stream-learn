@@ -17,6 +17,12 @@ export interface Module {
   sections: Section[];
 }
 
+export interface ImmersiveExperienceSettings {
+  sceneIds: string[];
+  recommendedHardware?: string[];
+  ambientNotes?: string[];
+}
+
 export interface Course {
   id: string;
   title: string;
@@ -36,6 +42,7 @@ export interface Course {
   projectBriefs?: ProjectBrief[];
   assessments?: CourseAssessment[];
   localizedResources?: LocalizedResource[];
+  immersiveExperience?: ImmersiveExperienceSettings;
 }
 
 export type CourseStatus = "live" | "beta" | "archived";
@@ -1575,6 +1582,11 @@ export const courses: Course[] = [
         description: "Review and critique an edge deployment diagram for latency bottlenecks.",
       },
     ],
+    immersiveExperience: {
+      sceneIds: ["frontend-aurora-stage"],
+      recommendedHardware: ["Apple Vision Pro", "Meta Quest Pro"],
+      ambientNotes: ["Edge telemetry halos", "Latency pulse lighting", "Segmented audience overlays"],
+    },
     modules: [
       {
         id: "nextjs-edge-foundations",
@@ -2053,6 +2065,11 @@ export const courses: Course[] = [
         description: "Evaluate knowledge of Go concurrency, gRPC contracts, and resiliency patterns.",
       },
     ],
+    immersiveExperience: {
+      sceneIds: ["backend-atlas-bay"],
+      recommendedHardware: ["Meta Quest 3", "Valve Index"],
+      ambientNotes: ["Service constellation canopy", "Error budget beacon", "Incident concourse hum"],
+    },
     modules: [
       {
         id: "go-microservices-foundations",
@@ -4525,6 +4542,11 @@ export const courses: Course[] = [
         description: "Test understanding of retrieval strategies, chunking, and evaluation.",
       },
     ],
+    immersiveExperience: {
+      sceneIds: ["ai-nebula-lounge"],
+      recommendedHardware: ["Apple Vision Pro", "Meta Quest Pro"],
+      ambientNotes: ["Sentiment auroras", "Model drift halos", "Guardrail pulse"],
+    },
     modules: [
       {
         id: "rag-foundations",
@@ -6293,6 +6315,11 @@ export const courses: Course[] = [
         description: "Evaluate mastery of telemetry pipelines, SLOs, and governance.",
       },
     ],
+    immersiveExperience: {
+      sceneIds: ["cloud-horizon-dome"],
+      recommendedHardware: ["Meta Quest 3", "HTC Vive Focus"],
+      ambientNotes: ["Failover jetstream", "Cost prism lattice", "Compliance pulse"],
+    },
     modules: [
       {
         id: "observability-foundations",
