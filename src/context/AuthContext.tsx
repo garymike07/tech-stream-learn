@@ -1,5 +1,4 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
-import { useAuth as useClerkAuth, useUser } from "@clerk/clerk-react";
 import { addDays, differenceInCalendarDays, isAfter, isValid, parseISO, startOfDay } from "date-fns";
 
 type AuthUser = {
@@ -19,6 +18,8 @@ interface AuthContextValue {
   yearlyPriceKes: number;
   maxFreeCourses: number;
   logout: () => Promise<void>;
+  login: (input: { email: string; password: string }) => Promise<void>;
+  signup: (input: { email: string; fullName: string; password: string }) => Promise<void>;
   enrollCourse: (courseId: string) => void;
   requestSubscription: () => void;
 }
@@ -30,10 +31,66 @@ type StoredSubscription = {
   monthlyPriceKes: number | null;
 };
 
+type StoredAccount = {
+  email: string;
+  fullName: string;
+  passwordHash: string;
+  createdAt: string;
+};
+
 const STORAGE_KEYS = {
   ENROLLMENTS: "tech-stream-learn-enrollments",
   SUBSCRIPTION: "tech-stream-learn-subscription",
+  ACCOUNTS: "tech-stream-learn-accounts",
+  SESSION: "tech-stream-learn-session",
 } as const;
+
+const hasStorage = () => typeof window !== "undefined" && typeof window.localStorage !== "undefined";
+
+const normalizeEmail = (email: string) => email.trim().toLowerCase();
+
+const hashPassword = (password: string) => {
+  const normalized = password.normalize("NFKC");
+  return Array.from(normalized)
+    .map((char) => char.codePointAt(0)?.toString(16).padStart(4, "0") ?? "")
+    .join("");
+};
+
+const getStoredAccounts = (): Record<string, StoredAccount> => {
+  if (!hasStorage()) return {};
+  const raw = localStorage.getItem(STORAGE_KEYS.ACCOUNTS);
+  if (!raw) return {};
+  try {
+    const parsed = JSON.parse(raw);
+    return typeof parsed === "object" && parsed !== null ? (parsed as Record<string, StoredAccount>) : {};
+  } catch (error) {
+    console.error("Failed to parse stored accounts", error);
+    return {};
+  }
+};
+
+const persistAccounts = (accounts: Record<string, StoredAccount>) => {
+  if (!hasStorage()) return;
+  localStorage.setItem(STORAGE_KEYS.ACCOUNTS, JSON.stringify(accounts));
+};
+
+const getStoredSession = (): string | null => {
+  if (!hasStorage()) return null;
+  const raw = localStorage.getItem(STORAGE_KEYS.SESSION);
+  if (!raw) return null;
+  const trimmed = raw.trim();
+  return trimmed.length > 0 ? trimmed : null;
+};
+
+const persistSession = (email: string) => {
+  if (!hasStorage()) return;
+  localStorage.setItem(STORAGE_KEYS.SESSION, email);
+};
+
+const clearSession = () => {
+  if (!hasStorage()) return;
+  localStorage.removeItem(STORAGE_KEYS.SESSION);
+};
 
 const TRIAL_DURATION_DAYS = 30;
 const MONTHLY_PRICE_KES = 2000;
@@ -42,6 +99,7 @@ const YEARLY_PRICE_KES = 20000;
 const AuthContext = createContext<AuthContextValue | undefined>(undefined);
 
 const getStoredEnrollments = (): Record<string, string[]> => {
+  if (!hasStorage()) return {};
   const raw = localStorage.getItem(STORAGE_KEYS.ENROLLMENTS);
   if (!raw) return {};
   try {
@@ -54,12 +112,14 @@ const getStoredEnrollments = (): Record<string, string[]> => {
 };
 
 const persistEnrollments = (map: Record<string, string[]>) => {
+  if (!hasStorage()) return;
   localStorage.setItem(STORAGE_KEYS.ENROLLMENTS, JSON.stringify(map));
 };
 
 const getSubscriptionKey = (email: string) => `${STORAGE_KEYS.SUBSCRIPTION}-${email}`;
 
 const getStoredSubscription = (email: string): StoredSubscription | null => {
+  if (!hasStorage()) return null;
   const raw = localStorage.getItem(getSubscriptionKey(email));
   if (!raw) return null;
   try {
@@ -72,6 +132,7 @@ const getStoredSubscription = (email: string): StoredSubscription | null => {
 };
 
 const persistSubscription = (email: string, subscription: StoredSubscription) => {
+  if (!hasStorage()) return;
   localStorage.setItem(getSubscriptionKey(email), JSON.stringify(subscription));
 };
 
@@ -170,8 +231,7 @@ const evaluateSubscription = (record: StoredSubscription, now: Date) => {
 };
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
-  const { user: clerkUser, isLoaded } = useUser();
-  const { isSignedIn, signOut } = useClerkAuth();
+  const [user, setUser] = useState<AuthUser | null>(null);
   const [enrollments, setEnrollments] = useState<string[]>([]);
   const [subscriptionStatus, setSubscriptionStatus] = useState<SubscriptionStatus>("free");
   const [trialEndsAt, setTrialEndsAt] = useState<string | null>(null);
@@ -179,29 +239,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const maxFreeCourses = 3;
   const monthlyPriceKes = MONTHLY_PRICE_KES;
   const yearlyPriceKes = YEARLY_PRICE_KES;
-
-  const userEmail = useMemo(() => {
-    const emailAddress = clerkUser?.primaryEmailAddress?.emailAddress;
-    return emailAddress ? emailAddress.trim().toLowerCase() : null;
-  }, [clerkUser]);
-
-  const userFullName = useMemo(() => {
-    if (!clerkUser) return null;
-    if (clerkUser.fullName) return clerkUser.fullName;
-    const parts = [clerkUser.firstName, clerkUser.lastName].filter(Boolean) as string[];
-    if (parts.length > 0) {
-      return parts.join(" ");
-    }
-    return clerkUser.username ?? clerkUser.primaryEmailAddress?.emailAddress ?? null;
-  }, [clerkUser]);
-
-  const user = useMemo<AuthUser | null>(() => {
-    if (!isSignedIn || !userEmail) return null;
-    return {
-      email: userEmail,
-      fullName: userFullName ?? userEmail,
-    };
-  }, [isSignedIn, userEmail, userFullName]);
 
   const syncSubscription = useCallback(
     (email: string, existingRecord?: StoredSubscription) => {
@@ -227,11 +264,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   );
 
   useEffect(() => {
-    if (!isLoaded) {
-      return;
-    }
-
-    if (!isSignedIn || !userEmail) {
+    const sessionEmail = getStoredSession();
+    if (!sessionEmail) {
+      setUser(null);
       setEnrollments([]);
       setSubscriptionStatus("free");
       setTrialEndsAt(null);
@@ -239,27 +274,113 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       return;
     }
 
+    const accounts = getStoredAccounts();
+    const account = accounts[sessionEmail];
+    if (!account) {
+      clearSession();
+      setUser(null);
+      setEnrollments([]);
+      setSubscriptionStatus("free");
+      setTrialEndsAt(null);
+      setTrialDaysRemaining(null);
+      return;
+    }
+
+    setUser({ email: account.email, fullName: account.fullName });
     const existing = getStoredEnrollments();
-    setEnrollments(existing[userEmail] ?? []);
-    syncSubscription(userEmail);
-  }, [isLoaded, isSignedIn, userEmail, syncSubscription]);
+    setEnrollments(existing[account.email] ?? []);
+    syncSubscription(account.email);
+  }, [syncSubscription]);
 
   useEffect(() => {
-    if (!isSignedIn || !userEmail) {
+    if (!user) {
       return;
     }
     const existing = getStoredEnrollments();
-    existing[userEmail] = enrollments;
+    existing[user.email] = enrollments;
     persistEnrollments(existing);
-  }, [enrollments, isSignedIn, userEmail]);
+  }, [enrollments, user]);
+
+  const login = useCallback(
+    async ({ email, password }: { email: string; password: string }) => {
+      if (!hasStorage()) {
+        throw new Error("Authentication is unavailable in this environment.");
+      }
+      const normalizedEmail = normalizeEmail(email);
+      if (!normalizedEmail) {
+        throw new Error("Enter your email address.");
+      }
+      if (!password) {
+        throw new Error("Enter your password.");
+      }
+      const accounts = getStoredAccounts();
+      const account = accounts[normalizedEmail];
+      if (!account) {
+        throw new Error("No account found for that email.");
+      }
+      const hashed = hashPassword(password);
+      if (account.passwordHash !== hashed) {
+        throw new Error("Incorrect email or password.");
+      }
+      persistSession(normalizedEmail);
+      setUser({ email: account.email, fullName: account.fullName });
+      const enrollmentMap = getStoredEnrollments();
+      setEnrollments(enrollmentMap[normalizedEmail] ?? []);
+      const subscription = getStoredSubscription(normalizedEmail) ?? undefined;
+      syncSubscription(normalizedEmail, subscription);
+    },
+    [syncSubscription],
+  );
+
+  const signup = useCallback(
+    async ({ email, fullName, password }: { email: string; fullName: string; password: string }) => {
+      if (!hasStorage()) {
+        throw new Error("Authentication is unavailable in this environment.");
+      }
+      const normalizedEmail = normalizeEmail(email);
+      if (!normalizedEmail) {
+        throw new Error("Enter a valid email address.");
+      }
+      const normalizedName = fullName.trim();
+      if (!normalizedName) {
+        throw new Error("Enter your full name.");
+      }
+      if (password.trim().length < 8) {
+        throw new Error("Password must be at least 8 characters long.");
+      }
+      const accounts = getStoredAccounts();
+      if (accounts[normalizedEmail]) {
+        throw new Error("An account with this email already exists.");
+      }
+      const hashed = hashPassword(password);
+      const account: StoredAccount = {
+        email: normalizedEmail,
+        fullName: normalizedName,
+        passwordHash: hashed,
+        createdAt: new Date().toISOString(),
+      };
+      persistAccounts({ ...accounts, [normalizedEmail]: account });
+      const enrollmentMap = getStoredEnrollments();
+      enrollmentMap[normalizedEmail] = [];
+      persistEnrollments(enrollmentMap);
+      persistSession(normalizedEmail);
+      setUser({ email: normalizedEmail, fullName: normalizedName });
+      setEnrollments([]);
+      const subscription = createTrialSubscription(new Date());
+      persistSubscription(normalizedEmail, subscription);
+      syncSubscription(normalizedEmail, subscription);
+    },
+    [syncSubscription],
+  );
 
   const logout = useCallback(async () => {
-    await signOut();
+    clearSession();
+    setUser(null);
     setEnrollments([]);
     setSubscriptionStatus("free");
     setTrialEndsAt(null);
     setTrialDaysRemaining(null);
-  }, [signOut]);
+  }, []);
 
   const enrollCourse = useCallback(
     (courseId: string) => {
@@ -310,6 +431,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       yearlyPriceKes,
       maxFreeCourses,
       logout,
+      login,
+      signup,
       enrollCourse,
       requestSubscription,
     }),
@@ -323,6 +446,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       yearlyPriceKes,
       maxFreeCourses,
       logout,
+      login,
+      signup,
       enrollCourse,
       requestSubscription,
     ],
