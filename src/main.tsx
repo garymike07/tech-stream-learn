@@ -1,6 +1,5 @@
-import { useCallback } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, useNavigate } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { ClerkLoaded, ClerkLoading, ClerkProvider } from "@clerk/clerk-react";
 
 import App from "./App.tsx";
@@ -17,23 +16,13 @@ if (!clerkPublishableKey) {
   throw new Error("Missing VITE_CLERK_PUBLISHABLE_KEY environment variable.");
 }
 
-const AppProviders = () => {
-  const navigate = useNavigate();
-
-  const handlePush = useCallback((to: string) => navigate(to), [navigate]);
-  const handleReplace = useCallback((to: string) => navigate(to, { replace: true }), [navigate]);
-
-  return (
-    <ClerkProvider
-      publishableKey={clerkPublishableKey}
-      routerPush={handlePush}
-      routerReplace={handleReplace}
-      navigate={handlePush}
-    >
-      <ClerkLoading>
-        <RouteLoading />
-      </ClerkLoading>
-      <ClerkLoaded>
+createRoot(document.getElementById("root")!).render(
+  <ClerkProvider publishableKey={clerkPublishableKey}>
+    <ClerkLoading>
+      <RouteLoading />
+    </ClerkLoading>
+    <ClerkLoaded>
+      <BrowserRouter>
         <ThemeProvider>
           <LocaleProvider>
             <AuthProvider>
@@ -43,13 +32,7 @@ const AppProviders = () => {
             </AuthProvider>
           </LocaleProvider>
         </ThemeProvider>
-      </ClerkLoaded>
-    </ClerkProvider>
-  );
-};
-
-createRoot(document.getElementById("root")!).render(
-  <BrowserRouter>
-    <AppProviders />
-  </BrowserRouter>,
+      </BrowserRouter>
+    </ClerkLoaded>
+  </ClerkProvider>,
 );
