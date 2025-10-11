@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import RouteLoading from "@/components/RouteLoading";
 import { useAuth } from "@/context/AuthContext";
 
@@ -56,9 +56,8 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        <Suspense fallback={<RouteLoading />}>
-          <Routes>
+      <Suspense fallback={<RouteLoading />}>
+        <Routes>
           <Route path="/" element={<Index />} />
           <Route
             path="/categories"
@@ -153,9 +152,8 @@ const App = () => (
           <Route path="/signup/*" element={<Signup />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
-      </BrowserRouter>
+        </Routes>
+      </Suspense>
     </TooltipProvider>
   </QueryClientProvider>
 );

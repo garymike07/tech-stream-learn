@@ -5,6 +5,7 @@ import { SignUp } from "@clerk/clerk-react";
 import Header from "@/components/Header";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { useAuth } from "@/context/AuthContext";
+import { DEFAULT_AUTH_REDIRECT, resolveRedirectTarget } from "@/lib/auth";
 
 const Signup = () => {
   const { monthlyPriceKes, user, isLoaded } = useAuth();
@@ -12,10 +13,10 @@ const Signup = () => {
   const navigate = useNavigate();
   const formattedPrice = monthlyPriceKes.toLocaleString("en-KE");
 
-  const returnTo = useMemo(() => {
-    const state = location.state as { intended?: string } | null;
-    return state?.intended ?? "/";
-  }, [location.state]);
+  const returnTo = useMemo(
+    () => resolveRedirectTarget(location.state, DEFAULT_AUTH_REDIRECT),
+    [location.state],
+  );
 
   useEffect(() => {
     if (isLoaded && user) {
@@ -39,9 +40,13 @@ const Signup = () => {
               routing="path"
               path="/signup"
               signInUrl="/login"
+              redirectUrl={returnTo}
               afterSignUpUrl={returnTo}
               appearance={{ elements: { formButtonPrimary: "bg-primary hover:bg-primary/90" } }}
             />
+            <p className="text-center text-xs text-muted-foreground">
+              Already registered with Google or another provider? Use the same option on the sign-in page to avoid account mismatch.
+            </p>
           </CardContent>
           <CardFooter className="flex flex-col gap-3 text-sm text-muted-foreground">
             <div className="w-full text-center">

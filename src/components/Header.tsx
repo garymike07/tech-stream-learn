@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ChevronDown, LogOut, Sparkles } from "lucide-react";
+import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
 
 import { Button } from "@/components/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
@@ -10,6 +11,7 @@ import { useAuth } from "@/context/AuthContext";
 import { useTranslation } from "@/context/LocaleContext";
 import { toast } from "@/hooks/use-toast";
 import { categories } from "@/data/courses";
+import { DEFAULT_AUTH_REDIRECT } from "@/lib/auth";
 
 const Header = () => {
   const { user, logout, subscriptionStatus, trialDaysRemaining } = useAuth();
@@ -51,7 +53,7 @@ const Header = () => {
         title: "Signed out",
         description: "Come back soon to continue learning.",
       });
-      navigate("/");
+      navigate(DEFAULT_AUTH_REDIRECT);
     } catch (error) {
       toast({
         title: "Sign out failed",
@@ -204,23 +206,31 @@ const Header = () => {
           <div className="flex items-center gap-3">
             <LocaleToggle />
             <ThemeToggle />
-            {tierChip ? <span className="hidden text-xs uppercase tracking-[0.35em] text-primary/75 lg:inline-flex">{tierChip}</span> : null}
-            {user ? (
+            <SignedIn>
               <div className="flex items-center gap-3">
+                {tierChip ? (
+                  <span className="hidden text-xs uppercase tracking-[0.35em] text-primary/75 lg:inline-flex">{tierChip}</span>
+                ) : null}
                 <div className="hidden text-right text-sm font-medium text-foreground/70 sm:flex sm:flex-col">
                   <span className="lux-chip">{statusText}</span>
-                  <span>{user.fullName}</span>
+                  <span>{user?.fullName ?? "Learner"}</span>
                 </div>
+                <UserButton
+                  afterSignOutUrl={DEFAULT_AUTH_REDIRECT}
+                  appearance={{ elements: { avatarBox: "h-9 w-9 border border-border/50" } }}
+                />
                 <Button
                   variant="ghost"
                   size="icon"
                   onClick={handleLogout}
                   className="border border-border/50 bg-card/50 text-muted-foreground hover:text-primary"
+                  aria-label="Sign out"
                 >
                   <LogOut className="h-4 w-4" />
                 </Button>
               </div>
-            ) : (
+            </SignedIn>
+            <SignedOut>
               <div className="flex items-center gap-2">
                 <Link to="/login">
                   <Button variant="ghost" className="text-foreground/70 hover:text-primary">
@@ -231,7 +241,7 @@ const Header = () => {
                   <Button className="shadow-glow">{t("nav.join")}</Button>
                 </Link>
               </div>
-            )}
+            </SignedOut>
           </div>
         </div>
       </div>
