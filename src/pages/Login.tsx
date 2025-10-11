@@ -5,16 +5,17 @@ import { SignIn } from "@clerk/clerk-react";
 import Header from "@/components/Header";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { useAuth } from "@/context/AuthContext";
+import { DEFAULT_AUTH_REDIRECT, resolveRedirectTarget } from "@/lib/auth";
 
 const Login = () => {
   const { user, isLoaded } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
 
-  const redirectTarget = useMemo(() => {
-    const state = location.state as { from?: string; intended?: string } | null;
-    return state?.intended ?? state?.from ?? "/";
-  }, [location.state]);
+  const redirectTarget = useMemo(
+    () => resolveRedirectTarget(location.state, DEFAULT_AUTH_REDIRECT),
+    [location.state],
+  );
 
   useEffect(() => {
     if (isLoaded && user) {
@@ -38,9 +39,13 @@ const Login = () => {
               routing="path"
               path="/login"
               signUpUrl="/signup"
+              redirectUrl={redirectTarget}
               afterSignInUrl={redirectTarget}
               appearance={{ elements: { formButtonPrimary: "bg-primary hover:bg-primary/90" } }}
             />
+            <p className="text-center text-xs text-muted-foreground">
+              Trouble signing in? If this email isn&apos;t registered yet, create an account first or try the provider you originally used.
+            </p>
           </CardContent>
           <CardFooter className="flex flex-col gap-3 text-sm text-muted-foreground">
             <div className="w-full text-center">

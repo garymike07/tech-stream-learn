@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { addDays, differenceInCalendarDays, isAfter, isValid, parseISO, startOfDay } from "date-fns";
-import { useAuth as useClerkAuth, useUser } from "@clerk/clerk-react";
+import { useAuth as useClerkAuth, useSession, useUser } from "@clerk/clerk-react";
 
 type AuthUser = {
   id: string;
@@ -40,6 +40,13 @@ const STORAGE_KEYS = {
 const hasStorage = () => typeof window !== "undefined" && typeof window.localStorage !== "undefined";
 
 const normalizeEmail = (email: string) => email.trim().toLowerCase();
+
+const buildAccountKey = (id: string, email: string | null) => {
+  if (email && email.length > 0) {
+    return normalizeEmail(email);
+  }
+  return `clerk-user-${id}`;
+};
 
 const TRIAL_DURATION_DAYS = 30;
 const MONTHLY_PRICE_KES = 2000;
@@ -181,6 +188,7 @@ const evaluateSubscription = (record: StoredSubscription, now: Date) => {
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const { isLoaded: isUserLoaded, isSignedIn, user: clerkUser } = useUser();
+  const { isLoaded: isSessionLoaded } = useSession();
   const clerkAuth = useClerkAuth();
   const [user, setUser] = useState<AuthUser | null>(null);
   const [enrollments, setEnrollments] = useState<string[]>([]);
@@ -228,8 +236,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       return;
     }
 
-    const rawEmail = clerkUser.primaryEmailAddress?.emailAddress ?? "";
-    const accountKey = normalizeEmail(rawEmail || clerkUser.id);
+    const rawEmail = clerkUser.primaryEmailAddress?.emailAddress ?? null;
+    const accountKey = buildAccountKey(clerkUser.id, rawEmail);
     const displayName =
       clerkUser.fullName ||
       [clerkUser.firstName, clerkUser.lastName].filter(Boolean).join(" ") ||
@@ -308,7 +316,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
   const value = useMemo<AuthContextValue>(
     () => ({
-      isLoaded: isUserLoaded && clerkAuth.isLoaded,
+      isLoaded: isUserLoaded && isSessionLoaded && clerkAuth.isLoaded,
       user,
       enrollments,
       subscriptionStatus,
@@ -324,6 +332,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     [
       clerkAuth.isLoaded,
       enrollments,
+      isSessionLoaded,
       isUserLoaded,
       logout,
       maxFreeCourses,
