@@ -18,21 +18,21 @@ if (!clerkPublishableKey) {
 
 createRoot(document.getElementById("root")!).render(
   <ClerkProvider publishableKey={clerkPublishableKey}>
-    <ClerkLoading>
-      <RouteLoading />
-    </ClerkLoading>
-    <ClerkLoaded>
-      <BrowserRouter>
-        <ThemeProvider>
-          <LocaleProvider>
-            <AuthProvider>
-              <ProgressProvider>
+    <BrowserRouter>
+      <ThemeProvider>
+        <LocaleProvider>
+          <AuthProvider>
+            <ProgressProvider>
+              <ClerkLoading>
+                <RouteLoading />
+              </ClerkLoading>
+              <ClerkLoaded>
                 <App />
-              </ProgressProvider>
-            </AuthProvider>
-          </LocaleProvider>
-        </ThemeProvider>
-      </BrowserRouter>
-    </ClerkLoaded>
+              </ClerkLoaded>
+            </ProgressProvider>
+          </AuthProvider>
+        </LocaleProvider>
+      </ThemeProvider>
+    </BrowserRouter>
   </ClerkProvider>,
 );
