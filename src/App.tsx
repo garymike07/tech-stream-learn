@@ -27,9 +27,13 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 const queryClient = new QueryClient();
 
 const RequireAuth = ({ children }: { children: JSX.Element }) => {
-  const { user } = useAuth();
+  const { user, isLoaded } = useAuth();
   const location = useLocation();
   const target = `${location.pathname}${location.search}${location.hash}`;
+
+  if (!isLoaded) {
+    return <RouteLoading />;
+  }
 
   if (!user) {
     return (
